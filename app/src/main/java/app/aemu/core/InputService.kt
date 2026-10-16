@@ -51,6 +51,7 @@ class InputService(private val paths: VmPaths, private val log: (String) -> Unit
     val connected: Int get() = clients.size
 
     private var lastIds: List<Int> = emptyList()
+    private var lastSentPts: List<P> = emptyList()
     private var lastSentAt = 0L
     private var pending: List<P>? = null
     private var pendingAt = 0L
@@ -173,10 +174,17 @@ class InputService(private val paths: VmPaths, private val log: (String) -> Unit
 
     @Synchronized
     fun touch(now: List<P>, force: Boolean = false) {
-        val gap = if (rateHz > 0) 1000L / rateHz else 0L
+        // Real touch panels report only when a finger moves. A held finger (typing on the soft keyboard) used to
+        // be re-sent as identical frames; 1.5/1.6 hand every one to the IME window and wait for it to finish the
+        // event, so a slow IME (AxT9) fell behind and the whole screen stopped taking input.
+        if (now.isNotEmpty() && now == lastSentPts) { pending = null; return }
+        val baseGap = if (rateHz > 0) 1000L / rateHz else 0L
+        // single-touch guests (API <= 4) dispatch events one at a time: never faster than ~30 Hz, even for "forced" history points
+        val gap = if (mtMode == 4 && baseGap in 1..32) 33L else baseGap
         val ids = now.map { it.id }
         val t = SystemClock.uptimeMillis()
-        if (!force && gap > 0 && now.isNotEmpty() && ids == lastIds && t - lastSentAt < gap) {
+        val sameIds = ids == lastIds
+        if ((!force || (mtMode == 4 && sameIds)) && gap > 0 && now.isNotEmpty() && sameIds && t - lastSentAt < gap) {
             pending = now
             pendingAt = t
             startPump()
@@ -188,6 +196,7 @@ class InputService(private val paths: VmPaths, private val log: (String) -> Unit
         if (held != null && now.isEmpty() && held.isNotEmpty()) send(held)
         lastIds = ids
         lastSentAt = t
+        lastSentPts = now
         send(now)
     }
 
@@ -201,11 +210,12 @@ class InputService(private val paths: VmPaths, private val log: (String) -> Unit
                 synchronized(this) {
                     val list = pending
                     if (list != null) {
-                        val gap = if (rateHz > 0) 1000L / rateHz else 0L
+                        val bg = if (rateHz > 0) 1000L / rateHz else 0L
+                        val gap = if (mtMode == 4 && bg in 1..32) 33L else bg
                         if (SystemClock.uptimeMillis() - lastSentAt >= gap) {
                             pending = null
                             lastSentAt = SystemClock.uptimeMillis()
-                            send(list)
+                            if (list != lastSentPts) { lastSentPts = list; send(list) }
                         }
                     }
                 }

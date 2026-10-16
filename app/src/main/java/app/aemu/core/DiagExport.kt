@@ -45,7 +45,14 @@ object DiagExport {
                 // what is on screen right now: layers (format, alpha, size), windows (flags, hardware acceleration) and the
                 // top activity. This shows what covers the UI when the guest runs but the screen looks black.
                 if (vm.state == GuestVm.State.RUNNING) {
-                    for ((file, cmd) in listOf("guest-sf-dump.txt" to "dumpsys SurfaceFlinger",
+                    // Dalvik thread dumps (SIGQUIT) of the keyboard, system_server and every other guest app, taken first so the
+                    // stacks show what the frozen keyboard's main thread is blocked on. Sent from the host: the Android 1.5 toolbox
+                    // has no working ps/tail, so a guest-side `kill -3` pipeline dumps nothing there (guest-threads.txt came back empty).
+                    entry(zip, "guest-threads.txt") { o -> o.write(guestThreadDump(vm).toByteArray(Charsets.ISO_8859_1)) }
+                    for ((file, cmd) in listOf(
+                        // who the input dispatcher is waiting for, and the IME's own view of the focused client
+                        "guest-input-method.txt" to "dumpsys input_method",
+                        "guest-sf-dump.txt" to "dumpsys SurfaceFlinger",
                         "guest-window-dump.txt" to "dumpsys window windows", "guest-activity-top.txt" to "dumpsys activity top")) {
                         entry(zip, file) { o ->
                             val (code, text) = vm.guestRunner.run(listOf("/system/bin/sh", "-c",
@@ -103,6 +110,51 @@ object DiagExport {
         operator fun component1() = out
         operator fun component2() = where
         operator fun component3() = finish
+    }
+
+    /**
+     * SIGQUIT to every guest app process (zygote children: the keyboard, system_server, ...), then the stack dumps that Dalvik's
+     * signal catcher appended to /data/anr/traces.txt. The guest processes are ordinary host processes of this app's uid, so the
+     * host can signal them directly; qemu hands SIGQUIT to the guest. Returns the host-side thread states plus only the bytes
+     * this call added to traces.txt (the file also holds older crash dumps).
+     */
+    private fun guestThreadDump(vm: GuestVm): String {
+        val traces = File(vm.paths.root, "data/anr/traces.txt")
+        val before = if (traces.isFile) traces.length() else 0L
+        val marker = "/images/${vm.img.id}/"
+        val sb = StringBuilder("== guest app processes (host view: pid comm, thread tid:comm:state)\n")
+        var signalled = 0
+        File("/proc").listFiles()?.forEach { d ->
+            val pid = d.name.toIntOrNull() ?: return@forEach
+            val cmd = runCatching { String(File(d, "cmdline").readBytes(), Charsets.ISO_8859_1) }.getOrNull() ?: return@forEach
+            if (!cmd.contains(marker) || !cmd.contains("/system/bin/app_process") || cmd.contains("aemu-stubs.jar") ||
+                cmd.contains("aemu-bt.jar") || cmd.contains(WifiEmu.JAR_NAME) || cmd.contains("aemu-sensorhub.jar")) return@forEach
+            val comm = runCatching { File(d, "comm").readText().trim() }.getOrDefault("?")
+            val threads = runCatching {
+                File(d, "task").listFiles()?.sortedBy { it.name.toIntOrNull() ?: 0 }?.joinToString(" ") { t ->
+                    val name = runCatching { File(t, "comm").readText().trim() }.getOrDefault("?")
+                    // /proc/<pid>/task/<tid>/stat: "tid (name) S ..." - the state letter follows the last ')'
+                    val st = runCatching { File(t, "stat").readText().substringAfterLast(')').trim().firstOrNull() }.getOrNull() ?: '?'
+                    "${t.name}:$name:$st"
+                }
+            }.getOrNull() ?: "?"
+            sb.append("$pid $comm  $threads\n")
+            if (runCatching { android.os.Process.sendSignal(pid, 3) }.isSuccess) signalled++
+        }
+        sb.append("SIGQUIT sent to $signalled processes\n\n")
+        // the catcher writes each process's stacks one after another; give them time (the emulated guest is slow)
+        Thread.sleep(4000)
+        sb.append("== new /data/anr/traces.txt content\n")
+        runCatching {
+            RandomAccessFile(traces, "r").use { r ->
+                val len = r.length()
+                val from = if (len >= before) before else 0L        // shorter than before = the guest truncated it: take it all
+                val n = minOf(len - from, 900_000L).toInt()
+                val b = ByteArray(n); r.seek(len - n); r.readFully(b)
+                sb.append(String(b, Charsets.ISO_8859_1))
+            }
+        }.onFailure { sb.append("[cannot read traces.txt: $it]\n") }
+        return sb.toString()
     }
 
     private fun openDownloads(ctx: Context, name: String): Target {

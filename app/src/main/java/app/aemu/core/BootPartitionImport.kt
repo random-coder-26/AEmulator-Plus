@@ -68,7 +68,7 @@ internal object BootPartitionImport {
                 require(File(paths.root, "init.rc").isFile)
                 val analyzed = Analyzer(ctx, paths, entries).analyze(id, old.name, persistBuildProp = false)
                 File(paths.dir, "boot.img").also { created += it }.writeBytes(bytes)
-                val refreshed = analyzed.copy(name = old.name, settings = old.settings, baseId = old.baseId,
+                val refreshed = analyzed.copy(name = old.name, settings = BootImage.withKernelBanner(old.settings, bytes), baseId = old.baseId,
                     oneTimeNote = old.oneTimeNote,
                     createdAt = old.createdAt, lastBootMs = old.lastBootMs, bootCount = old.bootCount,
                     sizeBytes = ImageStore.du(paths.dir))

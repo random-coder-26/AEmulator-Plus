@@ -15,6 +15,8 @@ object LegacySimIo {
     class Files(val iccid: ByteArray, val spn: ByteArray? = null, val msisdn: ByteArray? = null, val ad: ByteArray? = null)
     private val DEFAULT = Files(SimCards.efIccid(ICCID))
 
+    /** 22-byte DF_GSM header: file id 7F20, type DF, 3 CHVs, CHV1/UNBLOCK1/CHV2/UNBLOCK2 = initialised, 3/10/3/10 tries left */
+    private const val STATUS_DF = "00000000" + "7F20" + "02" + "0000000000" + "09" + "00" + "00" + "0A" + "03" + "00" + "838A838A"
     private const val EF_ICCID = 0x2fe2
     private const val EF_SPN = 0x6f46
     private const val EF_MSISDN = 0x6f40
@@ -46,7 +48,8 @@ object LegacySimIo {
             else -> null
         }
         val record = file == EF_MSISDN
-        if (data == null) notFound
+        if (command == 0xf2) Reply(0x90, 0, STATUS_DF)   // HTC Sense polls STATUS and reads bytes 18..21 (CHV status); AOSP never sends it
+        else if (data == null) notFound
         else if (p1 !in 0..255 || p2 !in 0..255 || p3 !in 0..255) badArguments
         else when (command) {
             0xc0 -> { // GET_RESPONSE: the 15-byte 2G header IccFileHandler reads for every file

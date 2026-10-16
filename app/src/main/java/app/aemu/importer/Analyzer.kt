@@ -77,12 +77,16 @@ class Analyzer(private val ctx: Context, private val paths: VmPaths, private val
 
         val density = all["ro.sf.lcd_density"]?.toIntOrNull() ?: 240
         val engine = Engine.forApi(api)
-        val settings = when {
+        val baseSettings = when {
             engine == Engine.GB || api < 14 -> VmSettings(width = 480, height = 800, density = 240, fbHz = 60, touchHz = 60)
             // 540×960 — лучший баланс скорости и чёткости под эмуляцией; поменять можно в настройках
             density <= 160 -> VmSettings(width = 480, height = 800, density = 240)
             else -> VmSettings(width = 540, height = 960, density = 240)
         }
+
+        // kernel version of the firmware: read from the boot.img the importer stored (kernel banner -> /proc/version, uname -r)
+        val settings = runCatching { File(paths.dir, "boot.img").takeIf { it.isFile }?.readBytes() }.getOrNull()
+            ?.let { BootImage.withKernelBanner(baseSettings, it) } ?: baseSettings
 
         writePropsTemplate(deflt, build, api, engine, rc.setprops)
 

@@ -1,6 +1,7 @@
 /* Modified for AEmulator Super Plus, 2026-10-11: Sony ELF boot images. GPL-3.0; see LICENSE and NOTICE.md. */
 package app.aemu.importer
 
+import app.aemu.core.VmSettings
 import org.tukaani.xz.LZMAInputStream
 import org.tukaani.xz.XZInputStream
 import java.io.ByteArrayInputStream
@@ -253,6 +254,101 @@ object BootImage {
     }
 
     fun readAll(i: InputStream): ByteArray = i.readBytes()
+
+    // ---- kernel version banner ("Linux version ...") ----
+
+    /** The parsed linux_banner of a kernel; every part is already cleaned for [VmSettings]. */
+    data class KernelBanner(val release: String, val user: String, val host: String, val compiler: String,
+                            val build: String, val flags: String, val date: String)
+
+    private val BANNER = Regex("""^Linux version (\S+)(?: \(([^()@\s]+)@([^()\s]+)\))?(?: \((.*)\))? #(\d+)\s*(.*)$""")
+    private val BANNER_DATE = Regex("""\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) \w{3} +\d+ [\d:]+ .*$""")
+
+    /** First "Linux version <digit>..." line of [d], or null. */
+    private fun findBannerLine(d: ByteArray): String? {
+        val key = "Linux version ".toByteArray(Charsets.ISO_8859_1)
+        var i = 0
+        val last = d.size - key.size - 3
+        while (i <= last) {
+            if (d[i] == key[0]) {
+                var k = 1
+                while (k < key.size && d[i + k] == key[k]) k++
+                if (k == key.size && d[i + key.size] in '0'.code.toByte()..'9'.code.toByte()) {
+                    var e = i
+                    while (e < d.size && e - i < 512 && d[e] != 0.toByte() && d[e] != '\n'.code.toByte()) e++
+                    return String(d, i, e - i, Charsets.ISO_8859_1).trim().takeIf { it.length > 20 }
+                }
+            }
+            i++
+        }
+        return null
+    }
+
+    /** linux_banner of the kernel inside a boot image / zImage / Sony ELF: plain text first, then inside the compressed payload. */
+    fun kernelBanner(raw: ByteArray): KernelBanner? {
+        val img = stripHtcSignature(raw)
+        var from = 0; var to = img.size
+        if (img.size > 64 && String(img, 0, 8, Charsets.ISO_8859_1) == "ANDROID!") {
+            val bb = ByteBuffer.wrap(img).order(ByteOrder.LITTLE_ENDIAN)
+            val kernelSize = bb.getInt(8).toLong() and 0xffffffffL
+            val pageSize = bb.getInt(36).let { if (it in 2048..131072) it else 2048 }
+            if (kernelSize > 0 && pageSize + kernelSize <= img.size) { from = pageSize; to = (pageSize + kernelSize).toInt() }
+        }
+        val kernel = img.copyOfRange(from, to)
+        val line = findBannerLine(kernel) ?: findBannerInCompressed(kernel) ?: return null
+        return parseBanner(line)
+    }
+
+    private fun findBannerInCompressed(img: ByteArray): String? {
+        var tries = 0
+        for (i in 0 until img.size - 6) {
+            val gz = img[i] == 0x1f.toByte() && img[i + 1] == 0x8b.toByte() && img[i + 2] == 0x08.toByte()
+            val lz = img[i] == 0x5d.toByte() && img[i + 1] == 0x00.toByte() && img[i + 2] == 0x00.toByte() &&
+                (img[i + 3] == 0x80.toByte() || img[i + 3] == 0x40.toByte() || img[i + 3] == 0x00.toByte() || img[i + 3] == 0x01.toByte())
+            val xz = img[i] == 0xfd.toByte() && img[i + 1] == '7'.code.toByte() && img[i + 2] == 'z'.code.toByte() &&
+                img[i + 3] == 'X'.code.toByte() && img[i + 4] == 'Z'.code.toByte()
+            if (!gz && !lz && !xz) continue
+            if (++tries > 64) return null
+            val k = runCatching {
+                val tail = img.copyOfRange(i, img.size)
+                when {
+                    gz -> gunzipLenient(tail)
+                    lz -> lzmaLenient(tail)
+                    else -> XZInputStream(ByteArrayInputStream(tail), 65536).use { it.bounded() }
+                }
+            }.getOrNull() ?: continue
+            if (k.size < 500_000) continue
+            findBannerLine(k)?.let { return it }
+        }
+        return null
+    }
+
+    fun parseBanner(line: String): KernelBanner? {
+        val l = VmSettings.cleanKernel(line).trim()
+        val m = BANNER.find(l)
+        if (m == null) {
+            val rel = Regex("""^Linux version (\S+)""").find(l)?.groupValues?.get(1) ?: return null
+            return KernelBanner(VmSettings.cleanToken(rel, VmSettings.KERNEL_MAX), "", "", "", "", "", "")
+        }
+        val (rel, user, host, cc, build, rest) = m.destructured
+        val date = BANNER_DATE.find(rest)?.value ?: ""
+        val flags = if (date.isEmpty()) rest else rest.removeSuffix(date)
+        return KernelBanner(
+            VmSettings.cleanToken(rel, VmSettings.KERNEL_MAX), VmSettings.cleanToken(user, VmSettings.TOKEN_MAX),
+            VmSettings.cleanToken(host, 64), VmSettings.cleanCompiler(cc), build.take(6),
+            VmSettings.cleanText(flags, 40), VmSettings.cleanText(date, 40))
+    }
+
+    /**
+     * [s] with the kernel version of [boot] filled in. Settings the user already customized are never touched;
+     * returns [s] unchanged when the image has no readable banner.
+     */
+    fun withKernelBanner(s: VmSettings, boot: ByteArray): VmSettings {
+        if (VmSettings.kernelCustom(s)) return s
+        val b = runCatching { kernelBanner(boot) }.getOrNull() ?: return s
+        return s.copy(kernel = b.release, kernelUser = b.user, kernelHost = b.host, kernelCompiler = b.compiler,
+            kernelBuild = b.build, kernelFlags = b.flags, kernelDate = b.date)
+    }
 }
 
 /** Минимальный распаковщик LZ4 legacy (рамдиски некоторых ядер 4.x). */

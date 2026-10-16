@@ -1091,6 +1091,30 @@ class TreeFixer(
         if (img.api > 4) return@runCatching
         val parked = File(root, "system/.aemu-parked").apply { mkdirs() }
         val marker = "com.tmobile.myfaves"
+        if (TEMP_UNPARK_MYFAVES) {
+            // TEMPORARY experiment: TwLauncher needs the "myfaves" provider (NPE in MyFavesClientStatusReceiver.getStatus
+            // without it). Put MyFaves back and do not park it; watch whether com.android.phone crash-loops again.
+            var restored = 0
+            for (f in parked.listFiles() ?: emptyArray()) {
+                val n = f.name
+                if (!(n.startsWith("system#app#") || n.startsWith("system#priv-app#"))) continue
+                if (!(n.endsWith(".apk") || n.endsWith(".odex"))) continue
+                val isMyFaves = n.contains("myfaves", ignoreCase = true) || (n.endsWith(".apk") && runCatching {
+                    java.util.zip.ZipFile(f).use { z ->
+                        val b = z.getEntry("AndroidManifest.xml")?.let { e -> z.getInputStream(e).use { it.readBytes() } } ?: return@use false
+                        val u = marker.toByteArray(Charsets.UTF_16LE); val a = marker.toByteArray()
+                        fun has(h: ByteArray, p: ByteArray): Boolean { outer@ for (i in 0..h.size - p.size) { for (k in p.indices) if (h[i + k] != p[k]) continue@outer; return true }; return false }
+                        has(b, u) || has(b, a)
+                    }
+                }.getOrDefault(false))
+                if (!isMyFaves) continue
+                val dst = File(root, n.replace('#', '/'))
+                if (dst.exists()) continue
+                if (f.renameTo(dst)) restored++ else log("sms: could not restore ${f.name}")
+            }
+            if (restored > 0) log("sms: MyFaves restored ($restored file(s)) for the launcher's myfaves provider (temporary)")
+            return@runCatching
+        }
         val utf16 = marker.toByteArray(Charsets.UTF_16LE)
         var moved = 0
         for (dir in listOf("system/app", "system/priv-app")) {
@@ -1250,6 +1274,25 @@ class TreeFixer(
             freq.parentFile?.mkdirs()
             freq.writeText(listOf(384000, 594000, 810000, 1026000, 1242000, 1512000).joinToString("\n") { "$it 0" } + "\n")
         }
+        // Samsung's com.samsung.bootsetting (BootBroadcastReceiver, BOOT_COMPLETED) writes the CPU governor and reads it back;
+        // with no scaling_governor node the open fails (FileNotFoundException) and the receiver dies with an NPE at every boot.
+        // qemu's -L prefix only redirects a path that exists in the tree, so these are real, writable regular files.
+        runCatching {
+            val cf = File(root, "sys/devices/system/cpu/cpu0/cpufreq").apply { mkdirs() }
+            run { var d: File? = cf; while (d != null && d != root && d.path.startsWith(root.path)) { d.setReadable(true, false); d.setExecutable(true, false); d = d.parentFile } }
+            for ((n, v) in listOf(
+                "scaling_governor" to "ondemand",
+                "scaling_available_governors" to "ondemand performance powersave userspace",
+                "scaling_available_frequencies" to "384000 594000 810000 1026000 1242000 1512000",
+                "scaling_min_freq" to "384000", "scaling_max_freq" to "1512000", "scaling_cur_freq" to "1512000",
+                "cpuinfo_min_freq" to "384000", "cpuinfo_max_freq" to "1512000", "cpuinfo_cur_freq" to "1512000",
+            )) {
+                File(cf, n).let { f ->
+                    if (!f.isFile || f.length() == 0L) f.writeText(v + "\n")
+                    f.setReadable(true, false); f.setWritable(true, false)
+                }
+            }
+        }.onFailure { log("sysfs: cannot create cpufreq nodes: ${it.message}") }
         val cpus = Runtime.getRuntime().availableProcessors().coerceIn(1, 8)
         val cpu = File(root, "sys/devices/system/cpu").apply { mkdirs() }
         for ((n, v) in listOf("present" to "0-${cpus - 1}", "possible" to "0-${cpus - 1}", "online" to "0-${cpus - 1}", "offline" to "")) {
@@ -1348,7 +1391,7 @@ class TreeFixer(
     private fun procNetNodes() {
         val nodes = linkedMapOf(
             "proc/net/if_inet6" to "00000000000000000000000000000001 01 80 10 80       lo\n",
-            "proc/version" to VmSettings.procVersion(img.settings.kernel),
+            "proc/version" to VmSettings.procVersion(img.settings),
             // Chinese "xhl" firmware: SpenService.checkVersion() writes to /proc/versioncheck, and Launcher.onCreate()
             // returns before setupViews() when that check fails, so onResume then dies on a null mWorkspace
             // (NullPointerException at Launcher.onResume, relaunched forever as the only HOME app)
@@ -2339,6 +2382,8 @@ class TreeFixer(
             // the framework hardcodes /dbdata on Samsung 2.x/3.x even when the ramdisk's init.rc never mentions it (the mount lives in a vendor script)
             if (legacySamsung || alreadyThere || initDirs.any { it.contains("dbdata") } || rcTexts.any { it.contains("/dbdata") }) DBDATA_DIRS else emptyList()
 
+        /** Temporary experiment: restore MyFaves instead of parking it (see parkAutoSmsApps). Set to false to park it again. */
+        private const val TEMP_UNPARK_MYFAVES = true
         private val LOGS = listOf("main", "system", "radio") // events — канал, его делает EventsSink
         private val DATA_DIRS = listOf(
             "data", "data/app", "data/app-private", "data/app-lib", "data/app-asec", "data/data", "data/dalvik-cache",

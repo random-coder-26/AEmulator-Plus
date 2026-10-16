@@ -88,7 +88,7 @@ class GuestRunner(
         e["ASHMEM_SHIM_DIR"] = "/data/local/tmp"
         e["TZ"] = "UTC"
         // uname -r / os.version: qemu-user reports this release instead of the host kernel's
-        if (img.settings.kernel.isNotBlank()) e["QEMU_UNAME"] = VmSettings.kernelRelease(img.settings.kernel)
+        if (VmSettings.kernelCustom(img.settings)) e["QEMU_UNAME"] = VmSettings.kernelRelease(img.settings)
         e["DHD_FB_W"] = s.width.toString()
         e["DHD_FB_H"] = s.height.toString()
         e["DHD_IN_W"] = s.width.toString()

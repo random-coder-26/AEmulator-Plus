@@ -1,4 +1,4 @@
-/* Modified for AEmulator Plus, 2026-10-14: RUU installers that hold rom.nbh instead of rom.zip (HTC Sapphire / Magic). GPL-3.0; see NOTICE.md. */
+/* Modified for AEmulator Plus, 2026-10-14: RUU installers that hold rom.nbh instead of rom.zip (HTC Sapphire / Magic). 2026-10-16: RUUs whose images are split over rom.zip + rom1.zip ... GPL-3.0; see NOTICE.md. */
 package app.aemu.importer.tools;
 
 import java.io.BufferedInputStream;
@@ -108,20 +108,37 @@ public final class HtcFirmware {
             IsCabinet cabinet = new IsCabinet(hb);
             log.accept("RUU: InstallShield " + cabinet.major + " cabinet, " + cabinet.files.size() + " files");
 
-            IsFile rom = cabinet.find("rom.zip");
-            if (rom == null) rom = cabinet.largestWithExt(".zip");
-            if (rom == null) {
+            List<IsFile> roms = cabinet.romZips();
+            if (roms.isEmpty()) {
                 // Dream / Magic / Hero era RUUs (SAPPIMG, DREAIMG ...) ship a Dream-style rom.nbh instead of rom.zip
                 IsFile nbh = cabinet.find("rom.nbh");
                 if (nbh == null) nbh = cabinet.largestWithExt(".nbh");
                 if (nbh != null) return extractRuuNbh(r, cab, nbh, work, log);
                 throw new IOException("RUU: no rom.zip or rom.nbh inside the installer");
             }
-            log.accept("RUU: " + rom.name + " " + (rom.usize >> 20) + " MB");
 
-            try (InputStream raw = new IsFileStream(r, cab.offset, cab.size, rom)) {
-                return extractRomZip(raw, work, log);
+            // Newer Sapphire / Magic RUUs split the firmware over several archives: rom.zip carries only
+            // hboot / radio / boot_special.img, and boot / recovery / system sit in rom1.zip (rom2.zip ...).
+            // Walk them in order and merge, stopping as soon as boot, recovery and system were all found.
+            List<Item> out = new ArrayList<>();
+            Set<String> got = new HashSet<>();
+            IOException last = null;
+            for (IsFile rom : roms) {
+                if (got.size() == 3) break;
+                log.accept("RUU: " + rom.name + " " + (rom.usize >> 20) + " MB");
+                try (InputStream raw = new IsFileStream(r, cab.offset, cab.size, rom)) {
+                    extractRomZip(raw, work, log, got, out);
+                } catch (IOException e) {
+                    // one unreadable archive is not fatal while another one may still deliver the images
+                    last = e;
+                    log.accept("RUU: " + rom.name + ": " + e.getMessage());
+                }
             }
+            if (out.isEmpty()) {
+                if (last != null) throw last;
+                throw new IOException("RUU: none of " + roms.size() + " firmware archive(s) holds a boot, recovery or system image");
+            }
+            return out;
         }
     }
 
@@ -151,6 +168,17 @@ public final class HtcFirmware {
      * Stops reading as soon as all three were found.
      */
     static List<Item> extractRomZip(InputStream raw, File work, Consumer<String> log) throws IOException {
+        List<Item> out = new ArrayList<>();
+        extractRomZip(raw, work, log, new HashSet<>(), out);
+        if (out.isEmpty()) throw new IOException("rom.zip holds no boot, recovery or system image");
+        return out;
+    }
+
+    /**
+     * Same, but adds to [out] / [got]: kinds that are already in [got] (found in an earlier archive of the
+     * same RUU) are skipped. An archive without any of them is not an error here; the caller decides.
+     */
+    static void extractRomZip(InputStream raw, File work, Consumer<String> log, Set<String> got, List<Item> out) throws IOException {
         PushbackInputStream pb = new PushbackInputStream(new BufferedInputStream(raw, 1 << 16), SIG + 8);
         byte[] head = new byte[SIG + 4];
         int n = readUpTo(pb, head);
@@ -159,8 +187,6 @@ public final class HtcFirmware {
         if (!plainZip && !signedZip) throw new IOException("rom.zip: not a ZIP (neither at offset 0 nor behind a 256-byte signature)");
         pb.unread(head, signedZip && !plainZip ? SIG : 0, n - (signedZip && !plainZip ? SIG : 0));
 
-        List<Item> out = new ArrayList<>();
-        Set<String> got = new HashSet<>();
         try (ZipInputStream zin = new ZipInputStream(pb)) {
             ZipEntry e;
             while ((e = zin.getNextEntry()) != null) {
@@ -180,8 +206,6 @@ public final class HtcFirmware {
                 if (got.size() == 3) break;
             }
         }
-        if (out.isEmpty()) throw new IOException("rom.zip holds no boot, recovery or system image");
-        return out;
     }
 
     /** boot / recovery / system, plain or signed, with or without the .img suffix. */
@@ -360,6 +384,27 @@ public final class HtcFirmware {
         IsFile find(String name) {
             for (IsFile f : files) if (f.name.equalsIgnoreCase(name)) return f;
             return null;
+        }
+
+        /**
+         * The firmware archives of an RUU in flashing order: rom.zip, rom1.zip, rom2.zip ... (a name without a
+         * number sorts first). Falls back to the largest .zip when nothing is called rom*.zip.
+         */
+        List<IsFile> romZips() {
+            List<IsFile> l = new ArrayList<>();
+            for (IsFile f : files) if (f.name.toLowerCase(Locale.US).matches("rom\\d*\\.zip")) l.add(f);
+            if (l.isEmpty()) {
+                IsFile big = largestWithExt(".zip");
+                if (big != null) l.add(big);
+                return l;
+            }
+            l.sort((a, b) -> Integer.compare(romZipIndex(a.name), romZipIndex(b.name)));
+            return l;
+        }
+
+        private static int romZipIndex(String n) {
+            String d = n.toLowerCase(Locale.US).replaceAll("[^0-9]", "");
+            return d.isEmpty() ? -1 : Integer.parseInt(d);
         }
 
         IsFile largestWithExt(String ext) {

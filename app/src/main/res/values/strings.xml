@@ -125,6 +125,17 @@
     <string name="vs_serial">Serial number</string>
     <string name="vs_kernel">Kernel version</string>
     <string name="vs_kernel_sub">Shown in /proc/version and uname -r (e.g. 3.0.31-custom, or a full "Linux version ..." line). Applied on next boot. Blank = default</string>
+    <string name="vs_kernel_build">Kernel build details</string>
+    <string name="vs_kernel_build_sub">Composed into /proc/version and uname -r. Applied on next boot. Blank = default. Ignored when the kernel version above is a full &quot;Linux version ...&quot; line</string>
+    <string name="vs_kernel_branch">Branch (release suffix)</string>
+    <string name="vs_kernel_commit">Commit ID (-g&lt;id&gt;)</string>
+    <string name="vs_kernel_user">Build user</string>
+    <string name="vs_kernel_host">Build host</string>
+    <string name="vs_kernel_compiler">Compiler</string>
+    <string name="vs_kernel_number">Build #</string>
+    <string name="vs_kernel_flags">Build flags</string>
+    <string name="vs_kernel_date">Build date</string>
+    <string name="vs_kernel_preview">Result:</string>
     <string name="vs_baseband">Baseband version</string>
     <string name="vs_baseband_sub">Reported as gsm.version.baseband and by the modem. Applied on next boot. Blank = default</string>
     <string name="vs_serial_sub">Reported as ro.serialno and ro.boot.serialno (letters and digits, up to 32). Applied on next boot. Blank = default</string>

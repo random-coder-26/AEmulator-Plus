@@ -492,7 +492,12 @@ class GuestVm(val ctx: Context, val img: GuestImage, val lowPowerBoot: Boolean =
             overrides["dalvik.vm.heapsize"] = "${heap}m"
             overrides["dalvik.vm.heapgrowthlimit"] = "${(heap / 2).coerceAtLeast(24)}m"
         }
+        // Cupcake..Froyo PhoneFactory.makeDefaultPhones(): SystemProperties.get("ro.radio.noril", "").equals("") -> real gsm.RIL
+        // (our RilStub on /dev/socket/rild), ANY other value -> SimulatedCommands. The importer writes "false", which is not
+        // empty, so the framework always took the built-in fake modem (SC< logs, "El Telco Loco", sendSMS answered with a
+        // RuntimeException that SMSDispatcher.handleSendComplete casts to CommandException -> com.android.phone dies).
         if (!s.radio) overrides["ro.radio.noril"] = "true"
+        else if (img.api <= 8) overrides["ro.radio.noril"] = ""
         if (!s.hwui) overrides["debug.hwui.renderer"] = "skia"
         // PBO для текстур шрифтов (hwui 4.4+ на GLES3) ломают часть драйверов (Mali) — грузим текстуры напрямую
         if (HostInfo.gpu().contains("mali")) overrides["ro.hwui.use_gpu_pixel_buffers"] = "false"
@@ -665,6 +670,17 @@ class GuestVm(val ctx: Context, val img: GuestImage, val lowPowerBoot: Boolean =
                 startService(GuestService("aemu-sensorhub", listOf(appProcess,
                     "-Djava.class.path=/system/framework/aemu-sensorhub.jar", "/system/bin",
                     "app.aemu.stub.SensorHubStub", "sensorhubservice"), optional = true))
+            }
+            // 1.5–2.1: system_server's BluetoothA2dpService needs the BlueZ D-Bus socket, which the guest does not have, so it
+            // fails to start ("Could not init BluetoothA2dpService") and "bluetooth_a2dp" is never registered. Vendor Bluetooth
+            // apps then die in BluetoothA2dp.<init> ("Bluetooth A2DP service not available!", com.android.WizBTsettings
+            // crashing at every BOOT_COMPLETED). The same placeholder binder answers every call "empty"; it exits at once
+            // when a real service is already registered.
+            if (svc.name == "zygote" && img.api < 9 && engine == Engine.KK && File(paths.root, "system/framework/aemu-stubs.jar").isFile) {
+                synchronized(procs) { procs.remove("aemu-a2dp") }?.let { runCatching { it.destroyForcibly() } }
+                startStub(GuestService("aemu-a2dp", listOf(appProcess,
+                    "-Djava.class.path=/system/framework/aemu-stubs.jar", "/system/bin",
+                    "app.aemu.stub.BtStub", "bluetooth_a2dp"), optional = true))
             }
             // 4.2+: заглушка bluetooth_manager до зиготы (system_server с ro.kernel.qemu=1 свою не поднимает)
             if (svc.name == "zygote" && img.api >= 9 && engine == Engine.KK && File(paths.root, "system/framework/aemu-stubs.jar").isFile) {

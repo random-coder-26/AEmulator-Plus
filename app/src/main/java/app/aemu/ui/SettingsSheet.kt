@@ -185,6 +185,41 @@ fun SettingsSheet(img: GuestImage, onDismiss: () -> Unit, onSave: (VmSettings) -
                 label = { Text(stringResource(R.string.vs_kernel)) }, placeholder = { Text(VmSettings.DEFAULT_KERNEL) },
                 supportingText = { Text(stringResource(R.string.vs_kernel_sub)) }, singleLine = true,
                 modifier = Modifier.fillMaxWidth().padding(top = 4.dp))
+            Text(stringResource(R.string.vs_kernel_build), style = MaterialTheme.typography.titleSmall, modifier = Modifier.padding(top = 8.dp))
+            Text(stringResource(R.string.vs_kernel_build_sub), style = MaterialTheme.typography.bodySmall)
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth().padding(top = 4.dp)) {
+                OutlinedTextField(value = s.kernelBranch, onValueChange = { v -> s = s.copy(kernelBranch = VmSettings.cleanToken(v, VmSettings.TOKEN_MAX)) },
+                    label = { Text(stringResource(R.string.vs_kernel_branch), maxLines = 1) }, placeholder = { Text("master") }, singleLine = true,
+                    modifier = Modifier.weight(1f))
+                OutlinedTextField(value = s.kernelCommit, onValueChange = { v -> s = s.copy(kernelCommit = VmSettings.cleanToken(v, 40)) },
+                    label = { Text(stringResource(R.string.vs_kernel_commit), maxLines = 1) }, placeholder = { Text("1a2b3c4d") }, singleLine = true,
+                    modifier = Modifier.weight(1f))
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth().padding(top = 4.dp)) {
+                OutlinedTextField(value = s.kernelUser, onValueChange = { v -> s = s.copy(kernelUser = VmSettings.cleanToken(v, VmSettings.TOKEN_MAX)) },
+                    label = { Text(stringResource(R.string.vs_kernel_user), maxLines = 1) }, placeholder = { Text("aemu") }, singleLine = true,
+                    modifier = Modifier.weight(1f))
+                OutlinedTextField(value = s.kernelHost, onValueChange = { v -> s = s.copy(kernelHost = VmSettings.cleanToken(v, 64)) },
+                    label = { Text(stringResource(R.string.vs_kernel_host), maxLines = 1) }, placeholder = { Text("aemu") }, singleLine = true,
+                    modifier = Modifier.weight(1f))
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth().padding(top = 4.dp)) {
+                OutlinedTextField(value = s.kernelBuild, onValueChange = { v -> s = s.copy(kernelBuild = v.filter { it in '0'..'9' }.take(6)) },
+                    label = { Text(stringResource(R.string.vs_kernel_number), maxLines = 1) }, placeholder = { Text("1") }, singleLine = true,
+                    modifier = Modifier.weight(1f))
+                OutlinedTextField(value = s.kernelFlags, onValueChange = { v -> s = s.copy(kernelFlags = VmSettings.cleanText(v, 40)) },
+                    label = { Text(stringResource(R.string.vs_kernel_flags), maxLines = 1) }, placeholder = { Text("SMP PREEMPT") }, singleLine = true,
+                    modifier = Modifier.weight(1f))
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth().padding(top = 4.dp)) {
+                OutlinedTextField(value = s.kernelCompiler, onValueChange = { v -> s = s.copy(kernelCompiler = VmSettings.cleanCompiler(v)) },
+                    label = { Text(stringResource(R.string.vs_kernel_compiler), maxLines = 1) }, placeholder = { Text("gcc version 4.6") }, singleLine = true,
+                    modifier = Modifier.weight(1f))
+                OutlinedTextField(value = s.kernelDate, onValueChange = { v -> s = s.copy(kernelDate = VmSettings.cleanText(v, 40)) },
+                    label = { Text(stringResource(R.string.vs_kernel_date), maxLines = 1) }, placeholder = { Text("Thu Jan 1 00:00:00 UTC 2026") }, singleLine = true,
+                    modifier = Modifier.weight(1f))
+            }
+            Text(stringResource(R.string.vs_kernel_preview) + " " + VmSettings.procVersion(s).trim(), style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(top = 4.dp))
             OutlinedTextField(value = s.baseband, onValueChange = { v -> s = s.copy(baseband = VmSettings.cleanBaseband(v)) },
                 label = { Text(stringResource(R.string.vs_baseband)) }, placeholder = { Text(VmSettings.DEFAULT_BASEBAND) },
                 supportingText = { Text(stringResource(R.string.vs_baseband_sub)) }, singleLine = true,

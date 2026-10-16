@@ -63,6 +63,22 @@ data class VmSettings(
     val serial: String = "",
     /** kernel version shown in /proc/version and uname -r; blank = built-in default. A full "Linux version ..." line is used as is */
     val kernel: String = "",
+    /** branch/local-version suffix appended to the release (e.g. "perf" -> 3.0.31-aemu-perf); blank = none. Ignored when [kernel] is a full "Linux version ..." line */
+    val kernelBranch: String = "",
+    /** commit id appended to the release as -g<id> (e.g. "1a2b3c4d"); blank = none. Ignored when [kernel] is a full "Linux version ..." line */
+    val kernelCommit: String = "",
+    /** user in (user@host) of /proc/version; blank = aemu. Ignored when [kernel] is a full "Linux version ..." line */
+    val kernelUser: String = "",
+    /** host in (user@host) of /proc/version; blank = aemu. Ignored when [kernel] is a full "Linux version ..." line */
+    val kernelHost: String = "",
+    /** compiler text of /proc/version; blank = "gcc version 4.6". Ignored when [kernel] is a full "Linux version ..." line */
+    val kernelCompiler: String = "",
+    /** build counter after the # sign; blank = 1. Ignored when [kernel] is a full "Linux version ..." line */
+    val kernelBuild: String = "",
+    /** build flags after the counter; blank = "SMP PREEMPT". Ignored when [kernel] is a full "Linux version ..." line */
+    val kernelFlags: String = "",
+    /** build date at the end of /proc/version; blank = "Thu Jan 1 00:00:00 UTC 2026". Ignored when [kernel] is a full "Linux version ..." line */
+    val kernelDate: String = "",
     /** gsm.version.baseband and the modem's baseband answer; blank = default */
     val baseband: String = "",
     /** radio technology the fake modem reports (see [NetworkType]); default 2G (EDGE) */
@@ -107,7 +123,7 @@ data class VmSettings(
         .put("motionSensors", motionSensors).put("disableSensors", disableSensors).put("gyroLock", gyroLock).put("hostResolution", hostResolution)
         .put("skipSetupWizard", skipSetupWizard)
         .put("disableGoogleApps", disableGoogleApps)
-        .put("ramMb", ramMb).put("radio", radio).put("imei", imei).put("serial", serial).put("kernel", kernel).put("baseband", baseband).put("networkType", networkType).put("qemuArgs", qemuArgs).put("straceServices", straceServices)
+        .put("ramMb", ramMb).put("radio", radio).put("imei", imei).put("serial", serial).put("kernel", kernel).put("kernelBranch", kernelBranch).put("kernelCommit", kernelCommit).put("kernelUser", kernelUser).put("kernelHost", kernelHost).put("kernelCompiler", kernelCompiler).put("kernelBuild", kernelBuild).put("kernelFlags", kernelFlags).put("kernelDate", kernelDate).put("baseband", baseband).put("networkType", networkType).put("qemuArgs", qemuArgs).put("straceServices", straceServices)
         .put("hardware", hardware)
         .put("wifi", wifi).put("wifiSsid", wifiSsid).put("wifiPassword", wifiPassword)
         .put("sim", sim.toJson()).put("sim2", sim2.toJson()).put("dualSim", dualSim)
@@ -138,12 +154,41 @@ data class VmSettings(
         /** Single line of printable ASCII (no newline, so /proc/version and property values stay well-formed). */
         private fun cleanLine(v: String, max: Int): String = v.filter { it in ' '..'~' }.take(max)
         fun cleanKernel(v: String): String = cleanLine(v, KERNEL_MAX)
+        const val TOKEN_MAX = 32
+        /** Release/user/host pieces: letters, digits and . _ - + only, so the line stays parseable ("Linux version REL (user@host)") */
+        fun cleanToken(v: String, max: Int): String = v.filter { it in 'a'..'z' || it in 'A'..'Z' || it in '0'..'9' || it == '.' || it == '_' || it == '-' || it == '+' }.take(max)
+        /** Free text piece of /proc/version: printable ASCII without parentheses or # */
+        /** Compiler text keeps its own parentheses (real banners: "gcc version 4.4.3 (GCC) "), only # is dropped */
+        fun cleanCompiler(v: String): String = cleanLine(v, 80).filter { it != '#' }.trim()
+        fun cleanText(v: String, max: Int): String = cleanLine(v, max).filter { it != '(' && it != ')' && it != '#' }.trim()
         fun cleanBaseband(v: String): String = cleanLine(v, BASEBAND_MAX)
 
         /** Release part for uname -r: the word after "Linux version " if a full line was typed, else the first token. */
         fun kernelRelease(v: String): String {
             val t = cleanKernel(v).trim().removePrefix("Linux version").trim()
             return t.substringBefore(' ').ifEmpty { DEFAULT_KERNEL }
+        }
+
+        private fun isFullLine(v: String) = cleanKernel(v).trim().startsWith("Linux version")
+        /** True when any kernel setting differs from the default, so uname -r / /proc/version must be composed */
+        fun kernelCustom(s: VmSettings): Boolean = listOf(s.kernel, s.kernelBranch, s.kernelCommit, s.kernelUser, s.kernelHost,
+            s.kernelCompiler, s.kernelBuild, s.kernelFlags, s.kernelDate).any { it.isNotBlank() }
+        /** uname -r: base release + "-branch" + "-g<commit>" (a full typed line wins and is used unchanged) */
+        fun kernelRelease(s: VmSettings): String {
+            val base = kernelRelease(s.kernel)
+            if (isFullLine(s.kernel)) return base
+            return base + (if (s.kernelBranch.isNotBlank()) "-" + s.kernelBranch.trim('-') else "") +
+                (if (s.kernelCommit.isNotBlank()) "-g" + s.kernelCommit.removePrefix("g") else "")
+        }
+        /** Whole /proc/version from all kernel settings */
+        fun procVersion(s: VmSettings): String {
+            if (isFullLine(s.kernel)) return procVersion(s.kernel)
+            val user = s.kernelUser.ifBlank { "aemu" }; val host = s.kernelHost.ifBlank { "aemu" }
+            val cc = s.kernelCompiler.ifBlank { "gcc version 4.6" }
+            val build = s.kernelBuild.ifBlank { "1" }
+            val flags = s.kernelFlags.ifBlank { "SMP PREEMPT" }
+            val date = s.kernelDate.ifBlank { "Thu Jan 1 00:00:00 UTC 2026" }
+            return "Linux version ${kernelRelease(s)} ($user@$host) ($cc) #$build ${flags.trim()} $date".replace("  ", " ") + "\n"
         }
 
         /** Full /proc/version text for the setting. */
@@ -212,6 +257,14 @@ data class VmSettings(
                 imei = o.optString("imei", ""),
                 serial = cleanSerial(o.optString("serial", "")),
                 kernel = cleanKernel(o.optString("kernel", "")),
+                kernelBranch = cleanToken(o.optString("kernelBranch", ""), TOKEN_MAX),
+                kernelCommit = cleanToken(o.optString("kernelCommit", ""), 40),
+                kernelUser = cleanToken(o.optString("kernelUser", ""), TOKEN_MAX),
+                kernelHost = cleanToken(o.optString("kernelHost", ""), 64),
+                kernelCompiler = cleanCompiler(o.optString("kernelCompiler", "")),
+                kernelBuild = o.optString("kernelBuild", "").filter { it in '0'..'9' }.take(6),
+                kernelFlags = cleanText(o.optString("kernelFlags", ""), 40),
+                kernelDate = cleanText(o.optString("kernelDate", ""), 40),
                 baseband = cleanBaseband(o.optString("baseband", "")),
                 networkType = NetworkType.sanitize(o.optInt("networkType", d.networkType)),
                 qemuArgs = o.optString("qemuArgs", ""),

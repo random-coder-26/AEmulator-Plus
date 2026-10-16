@@ -251,7 +251,7 @@ class RilStub(
             in 114..117 -> E_GENERIC_FAILURE to ByteArray(0)
             // unknown request: four elements that parse both as int[4] of zeros and String[4] of "" —
             // shorter payloads crash com.android.phone (Samsung reads [0], Qualcomm IMS state reads [1])
-            else -> 0 to (le(4) + ByteArray(32))
+            else -> { log("radio: unhandled request $req"); 0 to (le(4) + ByteArray(32)) }
         }
     }
 
@@ -260,7 +260,7 @@ class RilStub(
         // 4.0+ knows only OFF/UNAVAILABLE/ON(10); 2.3 has "SIM ready" (4) instead of ON
         unsol(o, UNSOL_RADIO_STATE_CHANGED, le(if (!on) 0 else radioOnState))
         if (on) {
-            unsol(o, UNSOL_RESPONSE_SIM_STATUS_CHANGED, ByteArray(0))
+            if (api > 4) unsol(o, UNSOL_RESPONSE_SIM_STATUS_CHANGED, ByteArray(0))   // Cupcake RIL does not know 1019
             unsol(o, UNSOL_RESPONSE_VOICE_NETWORK_STATE_CHANGED, ByteArray(0))
         }
     }
@@ -269,6 +269,12 @@ class RilStub(
         val (number, state) = call ?: return le(0)
         val b = ByteArrayOutputStream()
         b.write(le(1))
+        if (api <= 4) {   // Cupcake DriverCall: state, index, TOA, mpty, MT, als, voice, number, presentation - nothing else
+            b.write(le(state)); b.write(le(1)); b.write(le(129))
+            b.write(le(0)); b.write(le(1)); b.write(le(0)); b.write(le(1))
+            b.write(str(number)); b.write(le(0))
+            return b.toByteArray()
+        }
         b.write(le(state)); b.write(le(1)); b.write(le(129))   // state, index, type of address
         b.write(le(0)); b.write(le(1)); b.write(le(0))         // not multiparty, mobile terminated, als
         b.write(le(1))                                         // voice
@@ -281,6 +287,8 @@ class RilStub(
     }
 
     private fun simStatus(): ByteArray {
+        // Cupcake RIL.responseSimStatus: one int, RIL_SIM_ABSENT 0 / NOT_READY 1 / READY 2 / PIN 3 / PUK 4 (no card-status struct)
+        if (api <= 4) return ints(if (sim.present) 2 else 0)
         val b = ByteArrayOutputStream()
         if (!sim.present) {                               // empty slot: "No SIM card"
             b.write(le(0)); b.write(le(0))                // CARDSTATE_ABSENT, universal PIN unknown
@@ -308,6 +316,7 @@ class RilStub(
 
     private fun dataCall(single: Boolean): ByteArray {
         if (api < 14) {   // 2.3: cid, interface, address
+            if (!single && api <= 4) return le(1) + le(1) + le(2) + str("IP") + str("internet") + str("10.0.2.15")   // Cupcake PDPContextState: cid, active, type, apn, address
             return if (single) strs("1", IFACE, "10.0.2.15") else (le(1) + le(1) + le(2) + str("IP") + str("10.0.2.15"))
         }
         val b = ByteArrayOutputStream()
