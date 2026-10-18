@@ -596,6 +596,21 @@ class TreeFixer(
                 if (runCatching { romGralloc.copyTo(parked) }.isSuccess) log("Eclair: firmware gralloc replaced with engine gralloc")
             }
         }
+        // The firmware gralloc that the engine's replaces (kept in the parking dir, so the answer is the same on every boot), and
+        // whether the standard engine gralloc would break that firmware: it unmaps buffers its own process allocated while the
+        // firmware's gralloc leaves them alone (see GtiGralloc / GrallocProbe). Only then the Eclair-behaviour variant is installed.
+        val eclairParkedGralloc = File(root, "system/.aemu-parked/system#lib#hw#gralloc.default.so.eclair")
+        val ionParkedGralloc = File(root, "system/.aemu-parked/system#lib#hw#gralloc.default.so.ion")
+        val replacedGralloc = listOf(eclairParkedGralloc.takeIf { eclairGralloc }, ionParkedGralloc)
+            .firstOrNull { it != null && it.isFile }
+            ?.let { runCatching { it.readBytes() }.getOrNull() }
+        val replacingFirmwareGralloc = eclairGralloc || ionParkedGralloc.isFile
+        val engineGralloc = if (replacedGralloc == null) null
+            else runCatching { ctx.assets.open("engines/${engine.id}/gralloc.default.so").use { it.readBytes() } }.getOrNull()
+        val grallocVariant = GtiGralloc.applies(replacedGralloc, engineGralloc)
+        if (replacedGralloc != null && engineGralloc != null)
+            log("gralloc: firmware ${GrallocProbe.verdict(replacedGralloc)}, engine ${GrallocProbe.verdict(engineGralloc)} -> " +
+                if (grallocVariant) "Eclair-behaviour variant" else "standard engine gralloc")
         var copied = 0
         // 7.0+ libEGL on a qemu kernel (qemu.gles=1) only tries the "emulation" driver name
         val nougat = if (img.api >= 24 && copies.any { it.second == "system/lib/egl/libGLES_bridge.so" })
@@ -616,7 +631,7 @@ class TreeFixer(
             (if (GuestPreload.isGlibcFirmware(root)) listOf("@libshmshim.so" to GuestPreload.SHMSHIM.removePrefix("/")) else emptyList())) {
             val dst = File(root, to)
             // gralloc движка — только если в прошивке своего нет
-            if (from == "gralloc.default.so" && dst.isFile && !eclairGralloc) continue
+            if (from == "gralloc.default.so" && dst.isFile && !replacingFirmwareGralloc) continue
             // «@» — общий для всех движков файл
             // звуковой HAL стенда разложен под AudioFlinger HTC; остальным 4.2+ — вариант с раскладкой AOSP.
             // У Samsung свой audio_stream_out (лишние слоты) — с ним AOSP-вариант роняет mediaserver,
@@ -630,6 +645,8 @@ class TreeFixer(
             val htcLike = img.skin.contains("HTC", true) || (samsung && img.api in 16..17)
             val mtkHw = from == "audio.primary.default.so" && engine == Engine.KK && isMtkHwOnlyAudio(root)
             val name = when {
+                // firmware whose gralloc leaves same-process buffers alone but the engine's would unmap them (see GtiGralloc)
+                from == "gralloc.default.so" && grallocVariant -> GtiGralloc.ASSET
                 mtkHw -> "audio.primary.mtk.so"
                 from != "audio.primary.default.so" || htcLike -> from
                 // 4.0 has its own audio_hw_device layout; Qualcomm CAF builds add set_fm_volume/open_output_session
@@ -675,6 +692,7 @@ class TreeFixer(
                 dst.setExecutable(true, false)
                 copied++
                 if (name == "audio.primary.directtrack.so") log("audio: verified CAF direct-track stream ABI selected")
+                if (name == GtiGralloc.ASSET) log("gralloc: Eclair-behaviour variant installed (same-process buffers are not re-mapped or unmapped)")
             }.onFailure { log("${from.removePrefix("@")} missing from engine set: ${it.message}") }
         }
         // вендорские драйверы RenderScript (Adreno, Mali…) лезут в GPU; без них libRS берёт процессорный
@@ -1364,7 +1382,35 @@ class TreeFixer(
         tungstenLedNodes()
         tungstenLedInitPatch()
         tungstenLedCountPatch()
+        idmeSysNodes()
     }
+
+    /**
+     * Amazon (Kindle Fire) firmware: idme.jar is on the boot class path, so every Dalvik process (zygote, and with it
+     * app_process services such as aemu-bt and aemu-sensorhub) loads libidme.so. Its init fopen()s
+     * /sys/class/mmc_host/mmc0/mmc0:0001/shift for writing and never checks the result: with no such node it goes on to use
+     * the NULL FILE* and libc segfaults on `fp->_flags` (SIGSEGV addr 0xc, pc libc+0x19508), so zygote exits with 139 and
+     * the system never comes up. qemu's -L prefix only redirects a path that exists in the tree, so give the library that
+     * node, and every other /sys path it names, as plain world-writable files.
+     */
+    private fun idmeSysNodes() = runCatching {
+        val libs = IDME_LIBS.map { File(root, it) }.filter { it.isFile }
+        if (libs.isEmpty()) return@runCatching // not an Amazon firmware
+        val paths = LinkedHashSet<String>().apply { add(IDME_SHIFT_NODE) }
+        for (lib in libs) if (lib.length() < 20_000_000) paths += idmeSysPaths(lib.readBytes())
+        for (path in idmeNodesToCreate(paths)) runCatching {
+            val f = File(root, path.removePrefix("/"))
+            if (f.exists()) { f.setReadable(true, false); f.setWritable(true, false); return@runCatching }
+            f.parentFile?.let { dir ->
+                dir.mkdirs()
+                var d: File? = dir
+                while (d != null && d != root && d.path.startsWith(root.path)) { d.setReadable(true, false); d.setExecutable(true, false); d = d.parentFile }
+            }
+            f.writeText("0\n")
+            f.setReadable(true, false); f.setWritable(true, false)
+            log("idme: placeholder sysfs node $path")
+        }.onFailure { log("idme: cannot create $path: ${it.message}") }
+    }.onFailure { log("idme: sysfs node scan failed: ${it.message}") }
 
     /** ARMv7 /proc/cpuinfo in the layout of a Tegra K1 (Cortex-A15) tablet, 4 cores, ending with the board lines. */
     private val GUEST_CPUINFO: String = buildString {
@@ -2360,6 +2406,36 @@ class TreeFixer(
                 Regex("(?m)^ro\\.build\\.version\\.sdk=(\\d+)").find(File(root, "system/build.prop").readText())?.groupValues?.get(1)?.toInt()
             }.getOrNull() ?: return false
             return sdk in 17..20 && mtkTraces(root)
+        }
+
+        /** The node libidme.so fopen()s for writing at load time (seen in a Kindle Fire firmware's strace right before the SIGSEGV). */
+        private const val IDME_SHIFT_NODE = "/sys/class/mmc_host/mmc0/mmc0:0001/shift"
+        private val IDME_LIBS = listOf("system/lib/libidme.so", "vendor/lib/libidme.so", "system/vendor/lib/libidme.so")
+        private val SYS_PATH = Regex("/sys/[A-Za-z0-9_.:+-]+(?:/[A-Za-z0-9_.:+-]+)*")
+
+        /**
+         * The complete /sys paths written out in a native library's string table. A path that a format string finishes
+         * ("/sys/foo/%s") or that ends in a slash names a directory, so it is skipped; so are paths shorter than three
+         * components (always directories) and anything with a ".." in it.
+         */
+        internal fun idmeSysPaths(bytes: ByteArray): List<String> {
+            val text = String(bytes, Charsets.ISO_8859_1)
+            val out = LinkedHashSet<String>()
+            for (m in SYS_PATH.findAll(text)) {
+                val next = text.getOrNull(m.range.last + 1)
+                if (next == '%' || next == '/') continue
+                val path = m.value.trimEnd('.')
+                if (path.split('/').contains("..")) continue
+                if (path.removePrefix("/sys/").split('/').size < 3) continue
+                out += path
+            }
+            return out.toList()
+        }
+
+        /** [paths] that are safe to create as plain files: under /sys, and not a directory above another path in the list. */
+        internal fun idmeNodesToCreate(paths: Collection<String>): List<String> {
+            val all = paths.filter { it.startsWith("/sys/") && !it.endsWith("/") }.distinct()
+            return all.filter { p -> all.none { it.startsWith("$p/") } }
         }
 
         /** r-x for everyone (0755-style): lets guest app uids walk through a directory that no uid owns in the owners table. */

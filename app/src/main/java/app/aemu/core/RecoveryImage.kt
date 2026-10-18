@@ -72,7 +72,7 @@ object RecoveryImage {
     )
 
     /** Runtime pieces the ramdisk lacks: device nodes qemu emulates, mount points, the shared framebuffer. */
-    fun prepare(paths: VmPaths, sdcard: File?, log: (String) -> Unit = {}): Prepared {
+    fun prepare(paths: VmPaths, sdcard: File?, log: (String) -> Unit = {}, api: Int = 0): Prepared {
         val r = dir(paths)
         for (d in listOf("dev/graphics", "dev/input", "tmp", "cache", "data", "system", "sdcard", "proc", "sys")) File(r, d).mkdirs()
         // no tty0: minui gives up on graphics when it opens one but KDSETMODE fails; without it, it skips the step
@@ -106,18 +106,25 @@ object RecoveryImage {
             val link = File(r, "sdcard")
             if (link.isDirectory && link.list().isNullOrEmpty()) { link.delete(); runCatching { Os.symlink(sdcard.absolutePath, link.path) } }
         }
-        return prepareStatic(r, log)
+        return prepareStatic(r, log, api)
     }
 
     // ---- statically linked recoveries (stock AOSP / vendor ones) --------------------------------------------
     // They cannot get librecshim/libaemushim through LD_PRELOAD, so what the shims do for TWRP is done here:
     // the binary and the tree are adjusted instead.
 
-    private fun prepareStatic(r: File, log: (String) -> Unit): Prepared {
+    private fun prepareStatic(r: File, log: (String) -> Unit, api: Int): Prepared {
         val bin = File(r, "sbin/recovery")
         val data = runCatching { bin.readBytes() }.getOrNull() ?: return Prepared()
         if (!isStaticArmElf(data)) return Prepared()
         val notes = ArrayList<String>()
+        // pre-2.3 recoveries draw with libpixelflinger, which assembles scanline code into malloc()ed heap and then calls
+        // cacheflush(); qemu-user will not run that non-PROT_EXEC page (SIGSEGV with PC at the start of an rw-p heap range)
+        val flush = patchCacheflushExec(data)
+        if (flush > 0) {
+            runCatching { bin.writeBytes(data) }.onFailure { log("recovery: cacheflush patch failed: ${it.message}") }
+                .onSuccess { notes += "cacheflush() makes generated code executable (static libc before 2.3)" }
+        }
         stubBlockDevices(r)?.let { notes += "stubbed $it block device nodes" }
         stubProcMounts(r)
         // the input FIFO cannot answer EVIOCG* ioctls; vendor recoveries that probe the device (LG: EVIOCGNAME,
@@ -128,11 +135,49 @@ object RecoveryImage {
         // spot is where minui derives its row pitch, which qemu answers for 16 bpp (see patchFramebuffer)
         val fb = runCatching { patchFramebuffer(data)?.also { if (it.patched > 0) bin.writeBytes(data) } }
             .onFailure { log("recovery: framebuffer patch failed: ${it.message}") }.getOrNull()
-        val format = fb?.format ?: if (fbWants32Bit(data)) 1 else null
+        val format = chooseFormat(api, fb?.format) { fbWants32Bit(data) }
         if (format != null) notes += when (format) { 0 -> "framebuffer RGB565"; 2 -> "framebuffer BGRA_8888"; else -> "framebuffer 32 bpp RGBX" }
         if (fb != null && fb.patched > 0) notes += "framebuffer pitch matched to the host (${fb.patched} instructions)"
         notes.forEach { log("recovery: $it") }
         return Prepared(touchProtocolB = mask and 1 != 0, format = format, notes = notes)
+    }
+
+    /**
+     * The pixel format the screen view should read the recovery's framebuffer in (0 RGB565, 1 RGBX_8888, 2 BGRA_8888), or null
+     * when nothing is known. [patched] is what [patchFramebuffer] read from the binary and always wins. Otherwise minui before
+     * ICS (API < 14: Eclair, Froyo, Gingerbread) draws RGB565 by definition (`vi.bits_per_pixel = 16`), whatever the byte
+     * heuristic [wants32] makes of its ARM code: a 16 bpp buffer read as 32 bpp shows the picture four times over (two rows
+     * side by side, two pages stacked) in scrambled colours. [wants32] is only consulted for newer firmware.
+     */
+    internal fun chooseFormat(api: Int, patched: Int?, wants32: () -> Boolean): Int? =
+        patched ?: if (api in 1..13) 0 else if (wants32()) 1 else null
+
+    /**
+     * Static twin of [ElfPatch.execCacheflush]: a statically linked recovery carries its own copy of bionic's stock ARM
+     * `cacheflush` stub and has no symbols to find it by. The stub's literal `0xf0002` (__ARM_NR_cacheflush) sits at most
+     * 11 words behind its `stmfd sp!, {...}` entry; [ElfPatch.cacheflushExecBytes] checks the rest (the `ldr r7` that loads
+     * that very literal, a following `swi #0`) and returns null for anything that is not the stub or is already patched.
+     * Patches [d] in place and returns how many stubs were rewritten.
+     */
+    internal fun patchCacheflushExec(d: ByteArray): Int {
+        val b = java.nio.ByteBuffer.wrap(d).order(java.nio.ByteOrder.LITTLE_ENDIAN)
+        var n = 0
+        var i = 0
+        while (i + 4 <= d.size) {
+            if (b.getInt(i) == 0x000F0002) {
+                for (k in 1..11) {
+                    val off = i - 4 * k
+                    if (off < 0) break
+                    if ((b.getInt(off) and 0xffff0000.toInt()) == 0xE92D0000.toInt()) { // stmfd sp!, {...}
+                        val code = ElfPatch.cacheflushExecBytes(d, off)
+                        if (code != null) { System.arraycopy(code, 0, d, off, code.size); n++ }
+                        break
+                    }
+                }
+            }
+            i += 4
+        }
+        return n
     }
 
     private fun isStaticArmElf(d: ByteArray): Boolean {

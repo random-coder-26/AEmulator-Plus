@@ -7,6 +7,7 @@ import app.aemu.R
 import android.content.Context
 import android.net.Uri
 import android.system.Os
+import app.aemu.core.CscImport
 import app.aemu.core.GuestImage
 import app.aemu.core.LocalizedIOException
 import app.aemu.core.ImageStore
@@ -63,12 +64,18 @@ class Importer(
     private val MAX_RAMDISK = 64L * 1024 * 1024
     private val MAX_RAMDISK_FILE = 32L * 1024 * 1024
     private var recovery: ByteArray? = null
+    /** recovery-from-boot.p, install-recovery.sh and recovery-resource.dat of an OTA zip ("recovery/" is extracted to /system by its script) */
+    private var rfbPatch: ByteArray? = null
+    private var rfbScript: String? = null
+    private var rfbBonus: ByteArray? = null
     private val symlinks = ArrayList<Pair<String, String>>() // (цель, путь ссылки в госте)
     private val perms = ArrayList<Triple<String, Int, Boolean>>() // (путь, режим, рекурсивно-файлы)
     private var files = 0
     private var bytes = 0L
     private var gotSystem = false
     private var gotOem = false
+    /** a Samsung CSC package found in the firmware, kept aside until build.prop shows whether this is Samsung firmware */
+    private var pendingCsc: File? = null
     /** The system partition held the whole root file system (Android 7+ A/B "system-as-root": init, init*.rc, sepolicy, sbin/ at its top). */
     private var systemAsRoot = false
     /** boot image whose ramdisk is only the recovery ramdisk (A/B devices keep recovery in boot); used only if the system partition is not system-as-root. */
@@ -107,6 +114,8 @@ class Importer(
             if (!File(root, "system/framework").isDirectory && !File(root, "system/build.prop").isFile)
                 throw LocalizedIOException("no Android system partition found in file", R.string.imp_no_android_system_partition_found_in)
             finishTree()
+            applyPendingCsc()
+            if (recovery == null) runCatching { rebuildRecoveryFromBoot() }.onFailure { log("recovery: rebuild from boot failed (${it.message}), skipped") }
             recovery?.let { r -> runCatching { RecoveryImage.install(paths, r, log) }.onFailure { log("recovery: install failed (${it.message}), skipped") } }
             onProgress(lt(R.string.imp_analyzing_firmware), 0.97f)
             val img = Analyzer(ctx, paths, ramdisk).analyze(id, name)
@@ -319,6 +328,28 @@ class Importer(
             if (cancelled) throw t
             log("vendor: skipped, cannot read the partition (${t.message ?: t.javaClass.simpleName})")
         }
+    }
+
+    /** Keeps a CSC package aside (first one wins); it is read only once the system partition shows Samsung. */
+    private fun takeCsc(s: InputStream, name: String) {
+        if (pendingCsc != null) { drain(s); return }
+        pendingCsc = spill(s, name)
+    }
+
+    /** Installs the CSC package found in the firmware into /system/csc. Anything but Samsung firmware ignores it silently. */
+    private fun applyPendingCsc() {
+        val f = pendingCsc ?: return
+        pendingCsc = null
+        if (!CscImport.isSamsung(root)) return
+        val scratch = File(tmp, "csc-${System.nanoTime()}").apply { mkdirs() }
+        try {
+            val csc = f.inputStream().use { CscPackage.read(it, f.name, scratch) }
+            val n = CscImport.apply(root, csc)
+            log("csc: $n files from ${f.name} installed into /system/csc")
+        } catch (t: Throwable) {
+            if (cancelled) throw t
+            log("csc: skipped ${f.name} (${t.message ?: t.javaClass.simpleName})")
+        } finally { deleteTree(scratch) }
     }
 
     /**
@@ -584,6 +615,23 @@ class Importer(
         }.onFailure { log("recovery: cannot read $base (${it.message}), skipped") }
     }
 
+    /**
+     * No recovery image in the firmware, but a stock recovery-from-boot.p (from the OTA's "recovery/" folder, or from /system of a
+     * system image): the recovery is the boot image patched with it, exactly what install-recovery.sh does on the device.
+     */
+    private fun rebuildRecoveryFromBoot() {
+        fun tree(rel: String): ByteArray? = File(root, rel).takeIf { it.isFile && it.length() in 1..(64L shl 20) }
+            ?.let { runCatching { it.readBytes() }.getOrNull() }
+        val patch = rfbPatch ?: tree("system/recovery-from-boot.p") ?: return
+        val script = rfbScript ?: (tree("system/etc/install-recovery.sh") ?: tree("system/bin/install-recovery.sh"))?.toString(Charsets.UTF_8)
+        val bonus = rfbBonus ?: tree("system/etc/recovery-resource.dat")
+        val boot = File(paths.dir, "boot.img").takeIf { it.isFile }?.readBytes()
+        if (boot == null) { log("recovery: recovery-from-boot.p found, but the firmware has no boot image to patch"); return }
+        log("recovery: no recovery image, rebuilding it from the boot image and recovery-from-boot.p")
+        RecoveryFromBoot.rebuild(boot, script, patch, bonus, log)?.let { takeRecovery(it.inputStream(), "recovery (recovery-from-boot.p)") }
+        rfbPatch = null; rfbScript = null; rfbBonus = null
+    }
+
     private fun isTar(h: ByteArray) = h.size > 262 && String(h, 257, 5, Charsets.ISO_8859_1) == "ustar"
 
     private fun streamOf(src: RandomSource): InputStream = object : InputStream() {
@@ -675,6 +723,11 @@ class Importer(
                     val ok = zip.getInputStream(e).use { importGptStream(it, base) }
                     if (!ok) log("$base: partition table unreadable, skipped")
                 }
+                // stock OTA: no recovery.img, the recovery is boot.img + recovery-from-boot.p (see rebuildRecoveryFromBoot)
+                RecoveryFromBoot.isPatchFile(base) && e.size in 1..(32L shl 20) -> zip.getInputStream(e).use { rfbPatch = it.readBytes() }
+                RecoveryFromBoot.isScriptFile(base) && e.size in 1..(1L shl 20) ->
+                    zip.getInputStream(e).use { val t = String(it.readBytes(), Charsets.UTF_8); if (rfbScript == null) rfbScript = t }
+                RecoveryFromBoot.isBonusFile(base) && e.size in 1..(8L shl 20) -> zip.getInputStream(e).use { rfbBonus = it.readBytes() }
                 base.equals("system.yaffs2.img", true) -> withEntrySource(zip, e) { importImage(it, "system") }
                 base.endsWith(".yaffs2.img", true) -> {} // CWM user-data/cache backups are not firmware.
                 // Sony Flashtool .ftf bundle: system.sin, kernel.sin, fotakernel.sin ...
@@ -684,6 +737,7 @@ class Importer(
                 // boot.img at any depth; the shallowest valid one is taken after the loop
                 isBootName(base) -> bootEntries.add(n to e)
                 isRecoveryName(base) && e.size < 64_000_000 -> zip.getInputStream(e).use { takeRecovery(it, base) }
+                CscPackage.isCscContainer(base) && e.size > 0 -> zip.getInputStream(e).use { takeCsc(it, base) }
                 isOemName(base) -> withEntrySource(zip, e) { importOem(it) }
                 isSystemImageName(base) ->
                     withEntrySource(zip, e) { importImage(if (SparseSource.probe(it)) SparseSource(listOf(it)) else it, "system") }
@@ -874,6 +928,7 @@ class Importer(
                     base.endsWith(".yaffs2.img", true) && !base.equals("system.yaffs2.img", true) -> drain(entryStream)
                     isBootName(base) -> takeBoot(entryStream.readBytes())
                     isRecoveryName(base) && e.size < 64_000_000 -> takeRecovery(entryStream, base)
+                    CscPackage.isCscContainer(base) && e.size > 0 -> takeCsc(entryStream, base)
                     isOemName(base) -> nested.add(spill(entryStream, base) to "oem")
                     isVendorName(base) -> nested.add(spill(entryStream, base) to "vendor")
                     base.equals("system.yaffs2.img", true) ||
@@ -1395,6 +1450,7 @@ class Importer(
                     finally { t.delete() }
                 }
                 n == "userdata" && e.isFile -> {}
+                CscPackage.isCscContainer(base) && e.isFile && e.size > 0 && !inSystemDump(n) -> takeCsc(tar.nonClosing(), base)
                 isOemName(base.replace(Regex("(?i)\\.lz4$"), "")) && e.isFile && !inSystemDump(n) -> {
                     val t = spill(maybeLz4(tar, base), base)
                     try { FileChannel.open(t.toPath(), StandardOpenOption.READ).use { c -> importOem(ChannelSource(c)) } } finally { t.delete() }

@@ -8,6 +8,7 @@ AEmulator Plus imports firmware into the guest filesystem; it is not a general-p
 - TAR, TAR.MD5, TWRP `.win`, gzip, xz, and bzip2 streams.
 - Android OTA `system.new.dat` / `system.new.dat.br` plus transfer lists, Android sparse images and Motorola sparse chunks.
 - ext2/3/4 images, YAFFS2 images, rootfs trees, boot/recovery images, and CPIO newc/crc/odc archives.
+- Stock recovery without a recovery image: OTAs and system images that ship `recovery-from-boot.p` (+ `install-recovery.sh`, and `recovery-resource.dat` on Android 5+) get their recovery rebuilt from the firmware's boot image, checked against the hash in the script.
 
 Several scripts in the supplied companion archive are standalone desktop tools for vendor-specific or encrypted formats (for example PAC, SBF, NBH, LG BIN, TOT, OFP, and OPS). They depend on Python, external utilities, device/vendor-specific parsing, or decryption keys and have **not** been ported into the Android importer by this change. They are not silently treated as supported. SquashFS and RFS images are converted by the Android importer (see firmware-tools-port.md).
 

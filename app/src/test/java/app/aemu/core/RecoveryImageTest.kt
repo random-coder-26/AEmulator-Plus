@@ -181,4 +181,55 @@ class RecoveryImageTest {
         assertEquals(1, fix.patched)                                      // lsrs r0,r2,#2 -> #1 only
         assertEquals(0x0850, hw(d, (hook + 4 + 4) / 2))
     }
+
+    // ---- statically linked pre-2.3 recovery: its own bionic cacheflush() stub must mprotect the generated code RWX ----
+
+    private val stockCacheflush = intArrayOf(
+        0xE92D0090.toInt(), 0xE59F7010.toInt(), 0xEF000000.toInt(), 0xE8BD0090.toInt(),
+        0xE1B00000.toInt(), 0x512FFF1E, 0xEAFFFFE0.toInt(), 0x000F0002
+    )
+
+    /** [stub] placed at byte offset [at] of a file otherwise full of unrelated words (an ARM nop and the odd literal). */
+    private fun staticBinary(stub: IntArray, at: Int): ByteArray {
+        val b = java.nio.ByteBuffer.allocate(0x200).order(java.nio.ByteOrder.LITTLE_ENDIAN)
+        for (o in 0 until 0x200 step 4) b.putInt(o, 0xE1A00000.toInt())
+        b.putInt(0x20, 0x000F0003) // a similar-looking literal that is not the cacheflush number
+        stub.forEachIndexed { i, w -> b.putInt(at + 4 * i, w) }
+        return b.array()
+    }
+    private fun words(d: ByteArray, off: Int, n: Int): IntArray {
+        val b = java.nio.ByteBuffer.wrap(d).order(java.nio.ByteOrder.LITTLE_ENDIAN)
+        return IntArray(n) { b.getInt(off + 4 * it) }
+    }
+
+    @Test fun staticRecoveryCacheflushStubIsPatched() {
+        val d = staticBinary(stockCacheflush, 0x100)
+        assertEquals(1, RecoveryImage.patchCacheflushExec(d))
+        assertArrayEquals(ElfPatch.CACHEFLUSH_EXEC, words(d, 0x100, ElfPatch.CACHEFLUSH_EXEC.size))
+        assertEquals(0, RecoveryImage.patchCacheflushExec(d)) // already patched: nothing more to do
+    }
+
+    @Test fun staticRecoveryWithoutTheStubIsLeftAlone() {
+        val d = staticBinary(intArrayOf(0xE92D0090.toInt(), 0xE1A00000.toInt(), 0x000F0002), 0x100) // literal, but no ldr r7 / swi
+        val before = d.copyOf()
+        assertEquals(0, RecoveryImage.patchCacheflushExec(d))
+        assertArrayEquals(before, d)
+    }
+
+    // ---- which pixel format the screen view reads the recovery framebuffer in ----
+
+    @Test fun preIcsRecoveryIsRgb565EvenWhenTheByteHeuristicSaysOtherwise() {
+        // Eclair Nexus One: its ARM code happened to contain a "movs rN,#0x20"-looking byte pair before FBIOPUT_VSCREENINFO
+        for (api in intArrayOf(5, 7, 8, 10, 13)) assertEquals(0, RecoveryImage.chooseFormat(api, null) { true })
+        assertEquals(0, RecoveryImage.chooseFormat(7, null) { false })
+    }
+
+    @Test fun newerRecoveriesStillUseTheHeuristicAndThePatchWins() {
+        assertEquals(1, RecoveryImage.chooseFormat(19, null) { true })
+        assertNull(RecoveryImage.chooseFormat(19, null) { false })
+        assertEquals(2, RecoveryImage.chooseFormat(19, 2) { false })
+        assertEquals(0, RecoveryImage.chooseFormat(19, 0) { true })
+        assertEquals(1, RecoveryImage.chooseFormat(7, 1) { false })   // read from the binary: believed
+        assertNull(RecoveryImage.chooseFormat(0, null) { false })      // api unknown: no guess
+    }
 }

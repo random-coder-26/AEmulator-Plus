@@ -422,4 +422,22 @@
     <string name="sk_hint">Arraste a área azul do ecrã ou uma tecla amarela para mover, um ponto do canto para redimensionar.</string>
     <string name="sk_empty">Adicione um PNG de um telemóvel para criar uma skin de aparelho</string>
     <string name="sk_bar_hidden">Esta skin tem teclas próprias, por isso a barra no ecrã fica oculta enquanto é mostrada.</string>
+    <string name="vs_kernel_build">Detalhes da compilação do kernel</string>
+    <string name="vs_kernel_build_sub">Composto em /proc/version e uname -r. Aplicado no próximo arranque. Em branco = predefinição. Ignorado quando a versão do kernel acima é uma linha «Linux version …» completa</string>
+    <string name="vs_kernel_branch">Ramo (sufixo da versão)</string>
+    <string name="vs_kernel_commit">ID do commit (-g&lt;id&gt;)</string>
+    <string name="vs_kernel_user">Utilizador da compilação</string>
+    <string name="vs_kernel_host">Anfitrião da compilação</string>
+    <string name="vs_kernel_compiler">Compilador</string>
+    <string name="vs_kernel_number">N.º da compilação</string>
+    <string name="vs_kernel_flags">Opções da compilação</string>
+    <string name="vs_kernel_date">Data da compilação</string>
+    <string name="vs_kernel_preview">Resultado:</string>
+    <string name="vmfail_recovery_exited">O Recovery parou por si só (%1$s). O registo foi guardado em run/recovery-last.log; abra-o para o ler, tente o Recovery novamente ou arranque o sistema.</string>
+    <string name="vm_recovery_retry">Tentar o Recovery novamente</string>
+    <string name="vm_boot_system">Arrancar o sistema</string>
+    <string name="vm_import_csc">Importar CSC (Samsung)</string>
+    <string name="vm_import_csc_replace">Substituir CSC (Samsung)</string>
+    <string name="vm_import_csc_working">A ler o pacote CSC… Pare todas as VMs antes de importar.</string>
+    <string name="vm_import_csc_done">CSC instalado em /system/csc (as aplicações do operador incluídas no pacote não são instaladas). Reinicie a VM para o aplicar.</string>
 </resources>

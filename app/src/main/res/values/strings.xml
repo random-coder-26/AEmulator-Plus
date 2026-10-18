@@ -10,7 +10,7 @@
     <string name="add_firmware">Add firmware</string>
     <string name="settings">Settings</string>
     <string name="delete_title">Delete “%1$s”?</string>
-    <string name="delete_text">The system and all data inside it will be deleted (%1$s). The shared memory card folder's data will remain.</string>
+    <string name="delete_text">The system and all data inside it will be deleted (%1$s). The shared memory card folder\'s data will remain.</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
     <string name="name">Name</string>
@@ -50,11 +50,11 @@
     <string name="vs_proxy_sub">Lets old browsers and apps open today’s HTTPS sites.</string>
     <string name="vs_controls">Controls</string>
     <string name="vs_nav">Android button bar</string>
-    <string name="vs_nav_sub">Enables the app-level navbar. Disabling this option will enable the firmware's navigation bar. Causes issues if disabled on Android 2.3 and older.</string>
+    <string name="vs_nav_sub">Enables the app-level navbar. Disabling this option will enable the firmware\'s navigation bar. Causes issues if disabled on Android 2.3 and older.</string>
     <string name="vs_awake">Keep screen on</string>
     <string name="vs_awake_sub">While the system is open.</string>
     <string name="vs_single">Single touch</string>
-    <string name="vs_single_sub">For older firmware that doesn't support multitouch.</string>
+    <string name="vs_single_sub">For older firmware that doesn\'t support multitouch.</string>
     <string name="vm_booting_short">Booting · %1$d s</string>
     <string name="menu">Menu</string>
     <string name="log">Log</string>
@@ -124,7 +124,7 @@
     <string name="vs_device_id">Device identity</string>
     <string name="vs_serial">Serial number</string>
     <string name="vs_kernel">Kernel version</string>
-    <string name="vs_kernel_sub">Shown in /proc/version and uname -r (e.g. 3.0.31-custom, or a full "Linux version ..." line). Applied on next boot. Blank = default</string>
+    <string name="vs_kernel_sub">Shown in /proc/version and uname -r (e.g. 3.0.31-custom, or a full \"Linux version ...\" line). Applied on next boot. Blank = default</string>
     <string name="vs_kernel_build">Kernel build details</string>
     <string name="vs_kernel_build_sub">Composed into /proc/version and uname -r. Applied on next boot. Blank = default. Ignored when the kernel version above is a full &quot;Linux version ...&quot; line</string>
     <string name="vs_kernel_branch">Branch (release suffix)</string>
@@ -301,6 +301,9 @@
     <string name="open_vm">Open</string>
     <string name="vm_restarting">Restarting virtual machine…</string>
     <string name="vm_restart_failed">Could not restart the emulator. Close this screen and open the firmware again.</string>
+    <string name="vmfail_recovery_exited">Recovery stopped on its own (%1$s). Its log was saved to run/recovery-last.log; open the log to read it, try recovery again, or boot the system.</string>
+    <string name="vm_recovery_retry">Try recovery again</string>
+    <string name="vm_boot_system">Boot the system</string>
     <string name="as_license_notices">License and modification notices</string>
     <string name="vm_storage_busy">VM storage is busy. Wait for data reset to finish, then try again.</string>
     <string name="lpm_start">Start in charging-only mode</string>
@@ -355,6 +358,10 @@
     <string name="vm_import_oem">Import OEM partition</string>
     <string name="vm_import_oem_working">Reading OEM partition… Stop all VMs before importing.</string>
     <string name="vm_import_oem_done">OEM partition imported and mounted at /oem. System and data are unchanged.</string>
+    <string name="vm_import_csc">Import CSC (Samsung)</string>
+    <string name="vm_import_csc_replace">Replace CSC (Samsung)</string>
+    <string name="vm_import_csc_working">Reading CSC package… Stop all VMs before importing.</string>
+    <string name="vm_import_csc_done">CSC installed into /system/csc (carrier apps bundled in the package are not installed). Restart the VM to apply it.</string>
     <string name="as_tablet_navbar_rotation">Rotate tablet navbar</string>
     <string name="as_tablet_navbar_rotation_sub">Follow the tablet window rotation. Off keeps controls on the device’s natural bottom edge. Does not follow motion when host auto-rotate is off. Guest screen is never rotated or stretched by the host.</string>
     <string name="soc_warning_title">Chipset compatibility is unverified</string>

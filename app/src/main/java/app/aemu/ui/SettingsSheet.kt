@@ -239,6 +239,7 @@ fun SettingsSheet(img: GuestImage, onDismiss: () -> Unit, onSave: (VmSettings) -
             Spacer(Modifier.height(8.dp))
             RecoverySection(img)
             OemImportSection(img, resetting) { resetting = it }
+            CscImportSection(img, resetting) { resetting = it }
 
             Spacer(Modifier.height(8.dp))
             OtaSection(img, resetting) { resetting = it }

@@ -20,6 +20,27 @@ class VmUiPolicyTest {
         listOf("PREPARING", "BOOTING", "RUNNING").forEach { assertTrue(VmUiPolicy.active(it)) }
         listOf("STOPPED", "STOPPING", "FAILED", "unknown").forEach { assertFalse(VmUiPolicy.active(it)) }
     }
+    // area 400x800, button 100x100: it can travel up to 300 left and 700 down from its top-right resting spot
+    @Test fun menuButtonInsideTheBorderIsLeftAlone() {
+        assertEquals(0f to 0f, VmUiPolicy.clampMenuOffset(0f, 0f, 400, 800, 100, 100))
+        assertEquals(-120f to 250f, VmUiPolicy.clampMenuOffset(-120f, 250f, 400, 800, 100, 100))
+        assertEquals(-300f to 700f, VmUiPolicy.clampMenuOffset(-300f, 700f, 400, 800, 100, 100))
+    }
+    @Test fun menuButtonCannotBeDraggedPastAnyEdge() {
+        assertEquals(0f to 0f, VmUiPolicy.clampMenuOffset(50f, -50f, 400, 800, 100, 100)) // right / up
+        assertEquals(-300f to 700f, VmUiPolicy.clampMenuOffset(-5000f, 5000f, 400, 800, 100, 100)) // left / down
+    }
+    @Test fun menuButtonFromASmallerScreenIsPulledBackAfterRotation() {
+        // saved while portrait (-300,700); landscape is 800x400
+        assertEquals(-300f to 300f, VmUiPolicy.clampMenuOffset(-300f, 700f, 800, 400, 100, 100))
+    }
+    @Test fun unmeasuredOrTooSmallAreaPinsTheMenuButtonToItsCorner() {
+        assertEquals(0f to 0f, VmUiPolicy.clampMenuOffset(-90f, 90f, 0, 0, 0, 0))
+        assertEquals(0f to 0f, VmUiPolicy.clampMenuOffset(-90f, 90f, 80, 80, 100, 100))
+    }
+    @Test fun damagedSavedMenuPositionFallsBackToTheCorner() {
+        assertEquals(0f to 0f, VmUiPolicy.clampMenuOffset(Float.NaN, Float.POSITIVE_INFINITY, 400, 800, 100, 100))
+    }
     @Test fun staleStatusAndClosedLeaseDoNotReportRunning() {
         val directory = Files.createTempDirectory("sunset-vm-status-").toFile()
         val writer = LiveVmStatus(directory)

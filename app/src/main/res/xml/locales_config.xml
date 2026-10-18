@@ -35,6 +35,9 @@
     <locale android:name="nb" />
     <locale android:name="nl" />
     <locale android:name="hr" />
+    <locale android:name="sk" />
+    <locale android:name="sl" />
+    <locale android:name="mk" />
     <locale android:name="bs" />
     <locale android:name="sq" />
     <locale android:name="he" />

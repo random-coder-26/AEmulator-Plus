@@ -108,6 +108,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -355,7 +356,7 @@ class VmActivity : ComponentActivity() {
         vm.onState { st -> runOnUiThread { state = st } }
         vm.onLog { line -> runOnUiThread { logLines.add(line); if (logLines.size > 400) logLines.removeRange(0, logLines.size - 400) } }
         guest.start()
-        loadMenuOffset()
+        resetMenuOffset() // every start of the emulator puts the menu button back in its corner
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -386,6 +387,7 @@ class VmActivity : ComponentActivity() {
         super.onNewIntent(intent)
         setIntent(intent)
         if (!::vm.isInitialized) return
+        resetMenuOffset() // the emulator is opened again: menu button back in its corner
         val id = intent.getStringExtra(EXTRA_ID) ?: vm.img.id
         val charging = intent.getBooleanExtra(EXTRA_LOW_POWER, false)
         val recovery = intent.getBooleanExtra(EXTRA_RECOVERY, false)
@@ -518,13 +520,20 @@ class VmActivity : ComponentActivity() {
 
     private enum class Dlg { NONE, SMS, CALL, BATTERY, ADB, SHELL, DEVICE }
 
-    // position of the floating menu button, kept across launches
-    private val uiPrefs by lazy { getSharedPreferences("vm_ui", MODE_PRIVATE) }
+    // position of the floating menu button; only lasts until the emulator is started again (see resetMenuOffset)
     private var menuOffset by mutableStateOf(Offset.Zero)
+    // the "border" the button cannot be dragged past: the screen area (minus a margin) and the button's own size, in px
+    private var menuArea by mutableStateOf(androidx.compose.ui.unit.IntSize.Zero)
+    private var menuSize by mutableStateOf(androidx.compose.ui.unit.IntSize.Zero)
     private var menuOpen by mutableStateOf(false)
     private var showLog by mutableStateOf(false)
-    private fun loadMenuOffset() { menuOffset = Offset(uiPrefs.getFloat("menu_x", 0f), uiPrefs.getFloat("menu_y", 0f)) }
-    private fun saveMenuOffset() { uiPrefs.edit().putFloat("menu_x", menuOffset.x).putFloat("menu_y", menuOffset.y).apply() }
+    /** [o] pulled back inside the screen border; also fixes a saved position that no longer fits (rotation, other screen size) */
+    private fun clampMenuOffset(o: Offset): Offset {
+        val (x, y) = VmUiPolicy.clampMenuOffset(o.x, o.y, menuArea.width, menuArea.height, menuSize.width, menuSize.height)
+        return Offset(x, y)
+    }
+    /** Puts the button back in its corner; done every time the emulator is started or opened again. */
+    private fun resetMenuOffset() { menuOffset = Offset.Zero }
 
     private fun toast(msg: String) = runOnUiThread { Toast.makeText(this, msg, Toast.LENGTH_SHORT).show() }
 
@@ -934,11 +943,19 @@ class VmActivity : ComponentActivity() {
             }
 
             // top menu button (hidden while the log is open so it does not cover the log toolbar); drag to move it
-            if (!showLog || vm.settings.hideMenuButton) Box(Modifier.align(Alignment.TopEnd).statusBarsPadding().padding(8.dp)
-                .offset { IntOffset(menuOffset.x.roundToInt(), menuOffset.y.roundToInt()) }
+            // The outer box is the border: the whole screen minus the status bar and an 8dp margin. It takes no touches itself.
+            if (!showLog || vm.settings.hideMenuButton) Box(Modifier.fillMaxSize().statusBarsPadding().padding(8.dp)
+                .onSizeChanged { menuArea = it }) {
+            Box(Modifier.align(Alignment.TopEnd)
+                .offset { clampMenuOffset(menuOffset).let { IntOffset(it.x.roundToInt(), it.y.roundToInt()) } }
                 .pointerInput(Unit) {
-                    detectDragGestures(onDragEnd = { saveMenuOffset() }) { ch, d -> ch.consume(); menuOffset += d }
-                }) {
+                    detectDragGestures { ch, d ->
+                        ch.consume()
+                        // start from where the button is actually drawn, and never store a spot outside the border
+                        menuOffset = clampMenuOffset(clampMenuOffset(menuOffset) + d)
+                    }
+                }
+                .onSizeChanged { menuSize = it }) {
                 if (!vm.settings.hideMenuButton) {
                     FilledTonalIconButton(onClick = { menu = true }, modifier = Modifier.size(40.dp)) {
                         Icon(Icons.Rounded.MoreVert, contentDescription = stringResource(R.string.menu))
@@ -1005,6 +1022,7 @@ class VmActivity : ComponentActivity() {
                     DropdownMenuItem(text = { Text(stringResource(R.string.shutdown)) }, leadingIcon = { Icon(Icons.Rounded.Close, null) },
                         onClick = { menu = false; stopVm() })
                 }
+            }
             }
 
             when (dialog) {
@@ -1166,7 +1184,21 @@ class VmActivity : ComponentActivity() {
                     Spacer(Modifier.height(8.dp))
                     Text(vm.failure?.text(androidx.compose.ui.platform.LocalContext.current) ?: "", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.error)
                     Spacer(Modifier.height(16.dp))
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    if (vm.recoveryMode) {
+                        // the recovery quit: let the person read why, try again, or go on to Android
+                        Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                            Button(onClick = { thread { vm.stop(); vm.boot() } }, modifier = Modifier.fillMaxWidth()) {
+                                Text(stringResource(R.string.vm_recovery_retry))
+                            }
+                            FilledTonalButton(onClick = { rebootVm(false) }, modifier = Modifier.fillMaxWidth()) {
+                                Text(stringResource(R.string.vm_boot_system))
+                            }
+                            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                OutlinedButton(onClick = { showLog = true }) { Text(stringResource(R.string.log)) }
+                                OutlinedButton(onClick = { stopVm() }) { Text(stringResource(R.string.close)) }
+                            }
+                        }
+                    } else Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         OutlinedButton(onClick = { stopVm() }) { Text(stringResource(R.string.close)) }
                         Button(onClick = { thread { vm.stop(); vm.boot() } }) { Text(stringResource(R.string.retry)) }
                     }

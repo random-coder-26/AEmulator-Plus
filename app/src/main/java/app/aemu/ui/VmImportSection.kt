@@ -101,3 +101,33 @@ internal fun OemImportSection(img: GuestImage, busy: Boolean, setBusy: (Boolean)
     }) { Text(stringResource(R.string.vm_import_oem)) }
     message?.let { Text(it, style = MaterialTheme.typography.bodySmall) }
 }
+
+/** Samsung only: import of the CSC package (carrier / country defaults in /system/csc), next to the OEM option. */
+@Composable
+internal fun CscImportSection(img: GuestImage, busy: Boolean, setBusy: (Boolean) -> Unit) {
+    val ctx = LocalContext.current
+    val scope = rememberCoroutineScope()
+    val root = VmPaths(ctx, img.id).root
+    if (!remember(img.id) { CscImport.isSamsung(root) }) return
+    var present by remember { mutableStateOf(CscImport.present(root)) }
+    var message by remember { mutableStateOf<String?>(null) }
+    var picking by remember { mutableStateOf(false) }
+    val pickCsc = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+        picking = false
+        if (uri != null) {
+            setBusy(true)
+            message = ctx.getString(R.string.vm_import_csc_working)
+            scope.launch {
+                val result = withContext(Dispatchers.IO) { runCatching { CscImport.install(ctx, img.id, uri) } }
+                present = CscImport.present(root)
+                setBusy(false)
+                message = result.fold({ ctx.getString(R.string.vm_import_csc_done) },
+                    { ctx.getString(R.string.vm_import_failed, it.userMessage(ctx)) })
+            }
+        }
+    }
+    TextButton(enabled = !busy && !picking, modifier = Modifier.fillMaxWidth(), onClick = {
+        picking = true; pickCsc.launch(arrayOf("*/*"))
+    }) { Text(stringResource(if (present) R.string.vm_import_csc_replace else R.string.vm_import_csc)) }
+    message?.let { Text(it, style = MaterialTheme.typography.bodySmall) }
+}

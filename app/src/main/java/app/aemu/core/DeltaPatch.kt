@@ -85,7 +85,11 @@ internal object ImgPatch {
     private const val CHUNK_DEFLATE = 2
     private const val CHUNK_RAW = 3
 
-    fun apply(old: ByteArray, patch: ByteArray): ByteArray {
+    /**
+     * [bonus]: applypatch's `--bonus` data (recovery-resource.dat). An imgdiff made with it counts the bonus bytes as the tail of
+     * the inflated source of its second chunk, so they are appended there (imgpatch.cpp: `i == 1 && bonus_data != NULL`).
+     */
+    fun apply(old: ByteArray, patch: ByteArray, bonus: ByteArray? = null): ByteArray {
         if (BsPatch.isBsdiff(patch)) return BsPatch.apply(old, 0, old.size, patch, 0)
         if (patch.size < 12 || String(patch, 0, 8, Charsets.ISO_8859_1) != MAGIC) throw IOException("unknown patch format")
         val bb = ByteBuffer.wrap(patch).order(ByteOrder.LITTLE_ENDIAN)
@@ -97,7 +101,7 @@ internal object ImgPatch {
         fun range(start: Long, len: Long) {
             if (start < 0 || len < 0 || start + len > old.size) throw IOException("imgdiff chunk outside the source")
         }
-        repeat(chunks) {
+        repeat(chunks) { index ->
             need(4)
             val type = bb.getInt(pos); pos += 4
             when (type) {
@@ -126,7 +130,10 @@ internal object ImgPatch {
                         throw IOException("corrupt imgdiff patch")
                     // java.util.zip can only produce raw deflate with a 32K window and memLevel 8: what AOSP uses
                     if (method != 8 || windowBits != -15 || memLevel != 8) throw IOException("unsupported deflate parameters")
-                    val source = inflateRaw(old, start.toInt(), len.toInt(), expanded.toInt())
+                    val bonusSize = if (index == 1 && bonus != null) bonus.size else 0
+                    if (bonusSize > expanded) throw IOException("corrupt imgdiff patch")
+                    val inflated = inflateRaw(old, start.toInt(), len.toInt(), expanded.toInt() - bonusSize)
+                    val source = if (bonusSize > 0) inflated + bonus!! else inflated
                     val data = BsPatch.apply(source, 0, source.size, patch, at.toInt())
                     if (data.size.toLong() != target) throw IOException("imgdiff chunk has unexpected size")
                     out.write(deflateRaw(data, level, strategy))

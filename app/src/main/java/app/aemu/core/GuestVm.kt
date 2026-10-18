@@ -351,9 +351,9 @@ class GuestVm(val ctx: Context, val img: GuestImage, val lowPowerBoot: Boolean =
         TreeFixer(ctx, paths, img, ::log).fixup()   // framebuffer, input node
         battery.start()
         val sd = Sdcard.setup(ctx, paths, img, ::log)
-        val prep = RecoveryImage.prepare(paths, sd, ::log)
+        val prep = RecoveryImage.prepare(paths, sd, ::log, img.api)
         input.sinkProtocolB = prep.touchProtocolB
-        prep.format?.let { recoveryFormat = it; log("recovery framebuffer: ${when (it) { 0 -> "RGB565"; 2 -> "BGRA_8888"; else -> "32-bit RGBX" }} (from its binary)") }
+        prep.format?.let { recoveryFormat = it; log("recovery framebuffer: ${when (it) { 0 -> "RGB565"; 2 -> "BGRA_8888"; else -> "32-bit RGBX" }}") }
         input.rateHz = settings.touchHz
         input.mtMode = settings.mtMode
         input.trackballEnabled = false // recovery does not load the Android evdev shim
@@ -383,6 +383,7 @@ class GuestVm(val ctx: Context, val img: GuestImage, val lowPowerBoot: Boolean =
             "DHD_FB_W" to "$w", "DHD_FB_H" to "$h", "DHD_IN_W" to "$w", "DHD_IN_H" to "$h",
             "DHD_INPUT" to paths.inputSock.absolutePath,
         ))
+        powerHandled = false
         bootAt = System.currentTimeMillis()
         val p = pb.start()
         synchronized(procs) { procs["recovery"] = p }
@@ -417,9 +418,46 @@ class GuestVm(val ctx: Context, val img: GuestImage, val lowPowerBoot: Boolean =
         Thread {
             val code = runCatching { p.waitFor() }.getOrDefault(-1)
             if (stopping || powerHandled) return@Thread
-            log("recovery exited (code $code), booting the system")
-            onPower?.invoke(true, "")
+            // a normal "reboot system now" writes its request to /dev/aemu_power and then exits: honour it before calling this a failure
+            val pw = File(RecoveryImage.dir(paths), "dev/aemu_power")
+            val req = if (pw.length() > 0) runCatching { pw.readText().trim() }.getOrDefault("") else ""
+            if (req.isNotEmpty()) { runCatching { pw.writeText("") }; powerRequest(req); return@Thread }
+            powerHandled = true
+            // do not fall through to the system: keep the evidence and let the person choose (retry recovery / boot system)
+            recoveryEnded("recovery process exited by itself (code $code) after ${(System.currentTimeMillis() - bootAt) / 1000.0} s",
+                "exit code $code")
         }.start()
+    }
+
+    /** A recovery that quits (or asks to reboot) right after it started is a failure, not a reboot request. */
+    private fun recoveryEarlyExit(): Boolean = recoveryMode && System.currentTimeMillis() - bootAt < RECOVERY_EARLY_MS
+
+    /**
+     * The recovery ended without the person asking for it. Saves what the recovery and the host said to run/recovery-last.log
+     * (the next start truncates aemu.log), writes the tail into the host log, and parks the VM in FAILED so the screen can offer
+     * "try recovery again" / "boot the system".
+     */
+    private fun recoveryEnded(what: String, shortWhat: String) {
+        log("✖ $what")
+        val r = RecoveryImage.dir(paths)
+        val recLog = runCatching { File(r, "tmp/recovery.log").readLines() }.getOrDefault(emptyList())
+        val recOut = runCatching { File(paths.bin, "recovery.out").readLines() }.getOrDefault(emptyList())
+        log("recovery: tmp/recovery.log ${if (recLog.isEmpty()) "is empty or missing" else "(last ${minOf(40, recLog.size)} of ${recLog.size} lines)"}")
+        recLog.takeLast(40).forEach { log("  recovery.log| $it") }
+        log("recovery: stdout/stderr ${if (recOut.isEmpty()) "is empty (a recovery writes its messages to tmp/recovery.log)" else "(last ${minOf(40, recOut.size)} lines)"}")
+        recOut.takeLast(40).forEach { log("  recovery.out| $it") }
+        runCatching {
+            File(paths.bin, "recovery-last.log").writeText(buildString {
+                append("=== host log (aemu.log) ===\n"); this@GuestVm.lines().forEach { append(it).append('\n') }
+                append("\n=== recovery tmp/recovery.log (last 400 lines) ===\n"); recLog.takeLast(400).forEach { append(it).append('\n') }
+                append("\n=== recovery stdout/stderr (run/recovery.out, last 400 lines) ===\n"); recOut.takeLast(400).forEach { append(it).append('\n') }
+            })
+            log("recovery: log saved to run/recovery-last.log (it is kept across restarts and goes into the exported log bundle)")
+        }.onFailure { log("recovery: could not save the log: ${it.message}") }
+        synchronized(procs) { procs["recovery"] }?.let { runCatching { it.destroyForcibly() } }
+        failure = Msg("Recovery stopped on its own ($shortWhat). Its log was saved to run/recovery-last.log.",
+            R.string.vmfail_recovery_exited, shortWhat)
+        setState(State.FAILED)
     }
 
     private fun doBoot() {
@@ -683,8 +721,10 @@ class GuestVm(val ctx: Context, val img: GuestImage, val lowPowerBoot: Boolean =
                     "app.aemu.stub.BtStub", "bluetooth_a2dp"), optional = true))
             }
             // 4.2+: заглушка bluetooth_manager до зиготы (system_server с ro.kernel.qemu=1 свою не поднимает)
-            if (svc.name == "zygote" && img.api >= 9 && engine == Engine.KK && File(paths.root, "system/framework/aemu-stubs.jar").isFile) {
-                // 2.2–4.1 look up "bluetooth" instead; without it BluetoothAdapter is null and the vendor's Bluetooth apps crash
+            if (svc.name == "zygote" && img.api >= 5 && engine == Engine.KK && File(paths.root, "system/framework/aemu-stubs.jar").isFile) {
+                // 2.0–4.1 look up "bluetooth" instead; without it BluetoothAdapter is null and the vendor's code crashes. On
+                // 2.0/2.1 (API 5-7, Samsung GT-I5500) that is StatusBarService.readQuickPanelSetting, called from systemReady()
+                // in system_server: the NullPointerException kills it and zygote exits with 137.
                 val btName = if (img.api >= 17) "bluetooth_manager" else "bluetooth"
                 // Android 4.4 (API 19, incl. the KKWT Wear image): the real bridge client; everything else keeps the placeholder
                 val bridgeJar = img.api == 19 && File(paths.root, "system/framework/aemu-bt.jar").isFile
@@ -1054,6 +1094,12 @@ class GuestVm(val ctx: Context, val img: GuestImage, val lowPowerBoot: Boolean =
         val reboot = v.startsWith("reboot")
         val reason = v.substringAfter(',', "")
         log("guest requested ${if (reboot) "reboot" else "power off"}${if (reason.isNotEmpty()) " ($reason)" else ""}")
+        if (recoveryEarlyExit()) {
+            // nobody could have chosen that from a menu this fast: the recovery gave up on its own
+            recoveryEnded("recovery asked to ${if (reboot) "reboot" else "power off"} ${(System.currentTimeMillis() - bootAt) / 1000.0} s after it started",
+                "it asked to ${if (reboot) "reboot" else "power off"} right away")
+            return
+        }
         if (reason == "recovery" && !RecoveryImage.installed(paths)) log("no recovery installed, booting the system again")
         onPower?.invoke(reboot, reason)
     }
@@ -1568,3 +1614,6 @@ class GuestVm(val ctx: Context, val img: GuestImage, val lowPowerBoot: Boolean =
 
     private fun stamp() = java.text.SimpleDateFormat("HH:mm:ss", java.util.Locale.US).format(java.util.Date())
 }
+
+/** A recovery that asks to reboot or exits within this long after it started did not get a person to choose anything. */
+private const val RECOVERY_EARLY_MS = 8_000L
