@@ -292,12 +292,21 @@ fun Library(model: LibraryModel) {
                         Box(Modifier.padding(bottom = 12.dp)) {
                         ImageCard(
                             img,
-                            onStart = { VmActivity.start(ctx, img.id) },
-                            onSettings = { settingsFor = img },
-                            onRename = { renameFor = img },
-                            onDelete = { deleteFor = img },
-                            baseName = images.firstOrNull { it.id == img.baseId }?.name,
-                            active = activeVmId == img.id,
+                            onStart = { 
+                // Create an explicit intent targeting VmActivity
+                                val intent = Intent(ctx, VmActivity::class.java).apply {
+                                    putExtra("id", img.id) // Pass the required instance ID parameter
+                    
+                    // Add flags to create an entirely new, independent task window
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+                }
+                ctx.startActivity(intent)
+            },
+            onSettings = { settingsFor = img },
+            onRename = { renameFor = img },
+            onDelete = { deleteFor = img },
+            baseName = images.firstOrNull { it.id == img.baseId }?.name,
+            active = activeVmId == img.id,
                         )
                         }
                     }
