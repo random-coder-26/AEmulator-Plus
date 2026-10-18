@@ -560,17 +560,37 @@ private fun ImageCard(img: GuestImage, onStart: () -> Unit, onSettings: () -> Un
             img.warnings.firstOrNull()?.let { Text("⚠ " + ImportWarnings.text(ctx, it), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.tertiary) }
             Spacer(Modifier.height(12.dp))
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Surface(shape = ButtonDefaults.shape, color = MaterialTheme.colorScheme.primary,
+                // MODIFIED LAUNCH BUTTON FOR MULTI-INSTANCE SUPPORT
+                Surface(
+                    shape = ButtonDefaults.shape, 
+                    color = MaterialTheme.colorScheme.primary,
                     contentColor = MaterialTheme.colorScheme.onPrimary,
-                    modifier = Modifier.height(48.dp).combinedClickable(role = Role.Button,
-                        onClick = onStart, onLongClickLabel = if (!active) lowPowerLabel else null,
+                    modifier = Modifier.height(48.dp).combinedClickable(
+                        role = Role.Button,
+                        onClick = {
+                            // Standard Tap: Open virtual machine instance in a new task window
+                            val intent = Intent(ctx, VmActivity::class.java).apply {
+                                putExtra("id", img.id)
+                                addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+                            }
+                            ctx.startActivity(intent)
+                        }, 
+                        onLongClickLabel = if (!active) lowPowerLabel else null,
                         onLongClick = if (!active) ({
-                            VmActivity.start(ctx, img.id, lowPower = true)
-                        }) else null)) {
+                            // Long Press: Open low power mode instance in a new task window
+                            val intent = Intent(ctx, VmActivity::class.java).apply {
+                                putExtra("id", img.id)
+                                putExtra("lowPower", true)
+                                addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+                            }
+                            ctx.startActivity(intent)
+                        }) else null
+                    )
+                ) {
                     Row(Modifier.padding(ButtonDefaults.ButtonWithIconContentPadding), verticalAlignment = Alignment.CenterVertically) {
-                    Icon(Icons.Rounded.PlayArrow, null)
-                    Spacer(Modifier.width(8.dp))
-                    Text(stringResource(if (active) R.string.open_vm else R.string.start))
+                        Icon(Icons.Rounded.PlayArrow, null)
+                        Spacer(Modifier.width(8.dp))
+                        Text(stringResource(if (active) R.string.open_vm else R.string.start))
                     }
                 }
                 Spacer(Modifier.weight(1f))
