@@ -121,6 +121,23 @@ final class WifiService extends Binder {
         if (l != null) l.onConnectionChanged(now);
     }
 
+<<<<<<< HEAD
+    // ------------------------------------------------------------------ wifi direct feature detection
+
+    /** True when the guest has android.hardware.wifi.direct declared (TreeFixer writes aemu-wifi-direct.xml). */
+    private static boolean hasWifiDirectFeature() {
+        try {
+            // PackageManager.hasSystemFeature is the canonical check, but this process has no Context;
+            // the permission file TreeFixer writes is a faster, dependency-free indicator.
+            java.io.File f = new java.io.File("/system/etc/permissions/aemu-wifi-direct.xml");
+            return f.isFile() && f.length() > 0;
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
+=======
+>>>>>>> efb4f53f81abf064295e4304362fbc4a225f7e1d
     // ------------------------------------------------------------------ credentials
 
     private static String unquote(String s) {
@@ -503,9 +520,19 @@ final class WifiService extends Binder {
             // without a null check, so these must be real empty collections, not null.
             writeEmpty(name, reply);
         } else if (name.equals("getSupportedFeatures")) {
+<<<<<<< HEAD
+            // WIFI_FEATURE_INFRA (0x1) always; WIFI_FEATURE_P2P (0x8) when android.hardware.wifi.direct is declared
+            // in the guest (the feature is added by TreeFixer for Samsung / Huawei / api 34+ firmware whose WiFi Display
+            // or WifiEnhanceService requires it). Without the P2P bit the wifip2p service may refuse to initialise.
+            long features = 0x1L; // WIFI_FEATURE_INFRA
+            if (hasWifiDirectFeature()) features |= 0x8L; // WIFI_FEATURE_P2P
+            Method fm = methods.get(name);
+            if (fm != null && fm.getReturnType() == long.class) reply.writeLong(features); else reply.writeInt((int) features);
+=======
             // WIFI_FEATURE_INFRA (0x1): plain infrastructure mode only. A long on 8+, an int before.
             Method fm = methods.get(name);
             if (fm != null && fm.getReturnType() == long.class) reply.writeLong(1L); else reply.writeInt(1);
+>>>>>>> efb4f53f81abf064295e4304362fbc4a225f7e1d
         } else if (name.equals("reportActivityInfo")) {
             writeParcelable(reply, null); // no controller energy counters to report
         } else if (name.equals("requestActivityInfo")) {
