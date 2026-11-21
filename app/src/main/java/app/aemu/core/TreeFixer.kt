@@ -1631,6 +1631,7 @@ class TreeFixer(
             if (un.isEmpty()) f.delete()
             else f.writeText("<permissions>" + un.joinToString("") { "<unavailable-feature name=\"android.hardware.$it\" />" } + "</permissions>")
         }
+<<<<<<< HEAD
         // Wi-Fi Display: Samsung overlays (One UI 5 and later, including One UI 8 / api 36) set config_enableWifiDisplay,
         // and WifiDisplayAdapter's constructor then throws "WiFi display was requested, but there is no WiFi Direct
         // feature" on the android.display thread, which ends system_server (zygote follows with 137). No firmware file
@@ -1638,6 +1639,12 @@ class TreeFixer(
         // has no P2P radio behind it. Samsung enables it across One UI versions (confirmed: One UI 5.1 / api 33,
         // One UI 8 / api 36), so the feature is declared on all Samsung firmware from api 28 (Pie, where WifiDisplayAdapter
         // gained the check) onwards, plus any firmware from api 34+ (AOSP WifiDisplayAdapter keeps the check there too).
+=======
+        // Wi-Fi Display: a Samsung overlay (One UI 8, api 36) sets config_enableWifiDisplay, and WifiDisplayAdapter's
+        // constructor then throws "WiFi display was requested, but there is no WiFi Direct feature" on the android.display
+        // thread, which ends system_server (zygote follows with 137). No firmware file declares wifi.direct here, so the
+        // feature is declared; the flag is only the adapter's precondition, the engine has no P2P radio behind it.
+>>>>>>> efb4f53f81abf064295e4304362fbc4a225f7e1d
         File(root, "system/etc/permissions/aemu-wifi-direct.xml").let { f ->
             val declared = listOf("system/etc/permissions", "vendor/etc/permissions", "system/vendor/etc/permissions").any { d ->
                 File(root, d).listFiles()?.any { it.isFile && it.name != f.name && it.name.endsWith(".xml") &&
@@ -1648,6 +1655,7 @@ class TreeFixer(
             // feature SystemServer never starts the wifip2p service ("Manager wrapper not available: wifip2p"), the call hits a null
             // manager, "Failed to boot service com.huawei.server.wifi.WifiEnhanceService" ends system_server and zygote follows with 137.
             val huaweiWifiEnhance = File(root, "system/framework/hwWifiEnhance-service.jar").isFile
+<<<<<<< HEAD
             // Samsung firmware enables WiFi Display (config_enableWifiDisplay) across One UI versions (5.x, 6, 7, 8+);
             // the WifiDisplayAdapter check exists from API 28 (Pie). Without the feature, system_server dies on boot.
             val samsungWifiDisplay = isSamsungFirmware() && img.api >= 28
@@ -1659,6 +1667,11 @@ class TreeFixer(
                     else -> "WifiDisplayAdapter refuses to start without it"
                 }
                 log("wifi direct: android.hardware.wifi.direct declared ($reason)")
+=======
+            if ((img.api >= 34 || huaweiWifiEnhance) && !declared) {
+                f.writeText("<permissions><feature name=\"android.hardware.wifi.direct\" /></permissions>")
+                log("wifi direct: android.hardware.wifi.direct declared (" + (if (huaweiWifiEnhance) "Huawei WifiEnhanceService needs the wifip2p manager" else "WifiDisplayAdapter refuses to start without it") + ")")
+>>>>>>> efb4f53f81abf064295e4304362fbc4a225f7e1d
             } else f.delete()
         }
         // Qualcomm location core loads its modem (QMI) back end by name and crashes inside it without a modem;
