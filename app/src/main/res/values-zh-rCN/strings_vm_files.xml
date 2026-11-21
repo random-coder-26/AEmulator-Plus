@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">浏览虚拟机文件</string>
+    <string name="vmf_unreadable">无法读取此文件夹。</string>
+    <string name="vmf_readonly_folder">只读：此文件夹不属于虚拟机自身的文件。你可以查看和复制，但不能更改。</string>
+    <string name="vmf_link">链接</string>
+    <string name="vmf_no_folders">这里没有文件夹</string>
+    <string name="vmf_preview_failed">无法读取此文件。</string>
+    <string name="vmf_preview_truncated">显示前 %1$s（共 %2$s）</string>
+    <string name="vmf_copy">复制</string>
+    <string name="vmf_copy_to">复制到</string>
+    <string name="vmf_copy_to_vm">此虚拟机中的其他位置</string>
+    <string name="vmf_copy_to_device">虚拟机之外（设备存储）</string>
+    <string name="vmf_copy_here">复制到此处</string>
+    <string name="vmf_new_folder">新建文件夹</string>
+    <string name="vmf_folder_name">文件夹名称</string>
+    <string name="vmf_create">创建</string>
+    <string name="vmf_new_name">新名称</string>
+    <string name="vmf_delete_one">要删除“%1$s”吗？此操作无法撤销。</string>
+    <string name="vmf_delete_many">要删除 %1$d 个项目吗？此操作无法撤销。</string>
+    <string name="vmf_delete_core">这是虚拟机的核心部分（分区或映像）。没有它，虚拟机可能无法再启动。</string>
+    <string name="vmf_working_copy">正在复制…</string>
+    <string name="vmf_working_delete">正在删除…</string>
+    <string name="vmf_working_rename">正在重命名…</string>
+    <string name="vmf_result_copied">已复制：%1$d</string>
+    <string name="vmf_result_copied_skipped">已复制：%1$d。已跳过：%2$d（指向虚拟机之外的链接、套接字等）。</string>
+    <string name="vmf_result_deleted">已删除：%1$d</string>
+    <string name="vmf_failed">失败：%1$s</string>
+    <string name="vmf_readonly">此项目不属于虚拟机自身的文件，因此无法在此更改。</string>
+    <string name="vmf_protected">这属于虚拟机自身的内部记录，无法在此更改。</string>
+    <string name="vmf_bad_name">不允许使用该名称。</string>
+    <string name="vmf_exists">已存在同名项目。</string>
+    <string name="vmf_no_space">可用空间不足。</string>
+</resources>

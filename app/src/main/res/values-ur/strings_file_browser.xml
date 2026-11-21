@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">فائلیں منتخب کریں</string>
+    <string name="fb_title_single">ایک فائل منتخب کریں</string>
+    <string name="fb_up">اوپر</string>
+    <string name="fb_system_picker">سسٹم پکر</string>
+    <string name="fb_use_system_picker">اس کے بجائے سسٹم پکر استعمال کریں</string>
+    <string name="fb_internal">اندرونی اسٹوریج</string>
+    <string name="fb_removable">SD کارڈ / USB %1$d</string>
+    <string name="fb_downloads">ڈاؤن لوڈز</string>
+    <string name="fb_documents">دستاویزات</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">نام</string>
+    <string name="fb_sort_date">تاریخ</string>
+    <string name="fb_sort_size">سائز</string>
+    <string name="fb_hidden">چھپی ہوئی</string>
+    <string name="fb_selected">%1$d منتخب</string>
+    <string name="fb_clear">صاف کریں</string>
+    <string name="fb_import">امپورٹ کریں</string>
+    <string name="fb_empty">یہاں کچھ نہیں ہے</string>
+    <string name="fb_unreadable">یہ فولڈر پڑھا نہیں جا سکتا۔ Android کچھ فولڈرز (جیسے دوسری ایپس کا ڈیٹا) تمام ایپس کے لیے بند رکھتا ہے۔</string>
+    <string name="fb_access_title">فائلوں تک رسائی کی اجازت دیں</string>
+    <string name="fb_access_text">آپ کی فرم ویئر فائلیں دکھانے اور ایک ساتھ کئی منتخب کرنے کے لیے براؤزر کو آپ کی فائلوں تک رسائی درکار ہے۔ آپ اس کے بجائے سسٹم پکر بھی استعمال کر سکتے ہیں۔</string>
+    <string name="fb_access_scoped">Android 10 ان ایپس سے زیادہ تر فائلیں چھپا دیتا ہے جنہوں نے اسکوپڈ اسٹوریج سے استثنا نہیں لیا، اس لیے یہ براؤزر انہیں یہاں نہیں دکھا سکتا۔ اس کے بجائے سسٹم پکر استعمال کریں۔</string>
+    <string name="as_builtin_browser">بلٹ اِن فائل براؤزر</string>
+    <string name="as_builtin_browser_sub">تاریخ اور سائز کے لحاظ سے ترتیب کے ساتھ فرم ویئر منتخب کریں اور ایک ساتھ کئی فائلیں چنیں۔ سسٹم پکر استعمال کرنے کے لیے بند کریں۔</string>
+    <string name="imp_archive_alone">VM بیک اپ (.aessvm) کو اکیلے امپورٹ کرنا ہوگا، دوسری فائلوں کے ساتھ نہیں۔</string>
+    <string name="imp_joining">%1$s کے %2$d حصے جوڑے جا رہے ہیں…</string>
+    <string name="imp_split_missing">تقسیم شدہ آرکائیو %1$s کا حصہ %2$s موجود نہیں ہے۔ اس کے تمام حصے منتخب کریں یا انہیں ایک فولڈر میں رکھیں۔</string>
+</resources>

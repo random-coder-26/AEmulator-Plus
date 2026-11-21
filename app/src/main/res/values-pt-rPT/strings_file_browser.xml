@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Escolher ficheiros</string>
+    <string name="fb_title_single">Escolher um ficheiro</string>
+    <string name="fb_up">Para cima</string>
+    <string name="fb_system_picker">Seletor do sistema</string>
+    <string name="fb_use_system_picker">Usar antes o seletor do sistema</string>
+    <string name="fb_internal">Armazenamento interno</string>
+    <string name="fb_removable">Cartão SD / USB %1$d</string>
+    <string name="fb_downloads">Transferências</string>
+    <string name="fb_documents">Documentos</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Nome</string>
+    <string name="fb_sort_date">Data</string>
+    <string name="fb_sort_size">Tamanho</string>
+    <string name="fb_hidden">Ocultos</string>
+    <string name="fb_selected">%1$d selecionados</string>
+    <string name="fb_clear">Limpar</string>
+    <string name="fb_import">Importar</string>
+    <string name="fb_empty">Nada aqui</string>
+    <string name="fb_unreadable">Não é possível ler esta pasta. O Android mantém algumas pastas (como os dados de outras apps) fechadas a todas as apps.</string>
+    <string name="fb_access_title">Permitir acesso aos ficheiros</string>
+    <string name="fb_access_text">Para listar os seus ficheiros de firmware e escolher vários de uma só vez, o navegador precisa de acesso aos seus ficheiros. Também pode usar antes o seletor do sistema.</string>
+    <string name="fb_access_scoped">O Android 10 oculta a maioria dos ficheiros às apps que não optaram por sair do armazenamento com âmbito, pelo que este navegador não os consegue listar aqui. Use antes o seletor do sistema.</string>
+    <string name="as_builtin_browser">Navegador de ficheiros integrado</string>
+    <string name="as_builtin_browser_sub">Escolha o firmware com ordenação por data e tamanho e vários ficheiros de uma só vez. Desative para usar o seletor do sistema.</string>
+    <string name="imp_archive_alone">Uma cópia de segurança de VM (.aessvm) tem de ser importada sozinha, não juntamente com outros ficheiros.</string>
+    <string name="imp_joining">A juntar %2$d partes de %1$s…</string>
+    <string name="imp_split_missing">Falta a parte %2$s do arquivo dividido %1$s. Selecione todas as partes ou mantenha-as numa única pasta.</string>
+</resources>

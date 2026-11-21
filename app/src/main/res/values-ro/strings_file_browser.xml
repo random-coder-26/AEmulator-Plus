@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Alege fișiere</string>
+    <string name="fb_title_single">Alege un fișier</string>
+    <string name="fb_up">Sus</string>
+    <string name="fb_system_picker">Selector de sistem</string>
+    <string name="fb_use_system_picker">Folosește în schimb selectorul de sistem</string>
+    <string name="fb_internal">Stocare internă</string>
+    <string name="fb_removable">Card SD / USB %1$d</string>
+    <string name="fb_downloads">Descărcări</string>
+    <string name="fb_documents">Documente</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Nume</string>
+    <string name="fb_sort_date">Dată</string>
+    <string name="fb_sort_size">Dimensiune</string>
+    <string name="fb_hidden">Ascunse</string>
+    <string name="fb_selected">%1$d selectate</string>
+    <string name="fb_clear">Golește</string>
+    <string name="fb_import">Importă</string>
+    <string name="fb_empty">Nimic aici</string>
+    <string name="fb_unreadable">Acest dosar nu poate fi citit. Android păstrează unele dosare (precum datele altor aplicații) închise pentru toate aplicațiile.</string>
+    <string name="fb_access_title">Permite accesul la fișiere</string>
+    <string name="fb_access_text">Pentru a lista fișierele de firmware și a alege mai multe deodată, browserul are nevoie de acces la fișierele tale. Poți folosi și selectorul de sistem.</string>
+    <string name="fb_access_scoped">Android 10 ascunde majoritatea fișierelor de aplicațiile care nu au renunțat la stocarea cu domeniu restrâns, așa că acest browser nu le poate lista aici. Folosește în schimb selectorul de sistem.</string>
+    <string name="as_builtin_browser">Browser de fișiere încorporat</string>
+    <string name="as_builtin_browser_sub">Alege firmware cu sortare după dată și dimensiune și mai multe fișiere deodată. Dezactivează pentru a folosi selectorul de sistem.</string>
+    <string name="imp_archive_alone">O copie de rezervă a unui VM (.aessvm) trebuie importată singură, nu împreună cu alte fișiere.</string>
+    <string name="imp_joining">Se îmbină %2$d părți din %1$s…</string>
+    <string name="imp_split_missing">Lipsește partea %2$s din arhiva împărțită %1$s. Selectează toate părțile ei sau ține-le într-un singur dosar.</string>
+</resources>

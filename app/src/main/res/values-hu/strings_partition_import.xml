@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Partíció importálása</string>
+    <string name="vm_import_partition_working">%1$s partíció olvasása… Importálás előtt állítsd le az összes VM-et.</string>
+    <string name="vm_import_partition_done">A(z) %1$s partíció importálva és csatolva. A rendszer és az adatok változatlanok.</string>
+    <string name="vm_import_partition_exists">Ennek a VM-nek már van %1$s partíciója.</string>
+    <string name="vm_import_partition_conflict">A VM mappaszerkezete nem engedi ezt a partíciót.</string>
+    <string name="vm_import_partition_unsupported">A(z) %1$s kép ezzel a lehetőséggel nem importálható.</string>
+    <string name="vm_import_partition_which">Melyik partíció ez?</string>
+    <string name="vm_import_partition_which_info">A fájlnév nem árulja el, mit tartalmaz. Válaszd ki a partíciót.</string>
+    <string name="vm_import_partition_have">%1$s (már ebben a VM-ben)</string>
+    <string name="vm_import_partition_headline">Partíciókép importálása ebbe a VM-be</string>
+    <string name="vm_import_partition_sub">Boot, recovery (gyári, TWRP, OrangeFox vagy CWM), OEM, vendor, odm, product vagy system_ext. A típust a fájlból olvassuk ki; ha nem lehet, megkérdezünk. Csak a recovery cseréli a meglévőt; a VM többi része változatlan marad. Indítsd újra recoveryben a ⋮ menüből.</string>
+    <string name="vm_import_partition_button">Importálás…</string>
+    <string name="vm_import_recovery_done">Recovery importálva. A használatához indítsd újra recoveryben a ⋮ menüből.</string>
+</resources>

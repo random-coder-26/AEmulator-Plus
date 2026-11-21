@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">फ़ाइलें चुनें</string>
+    <string name="fb_title_single">फ़ाइल चुनें</string>
+    <string name="fb_up">ऊपर</string>
+    <string name="fb_system_picker">सिस्टम पिकर</string>
+    <string name="fb_use_system_picker">इसके बजाय सिस्टम पिकर इस्तेमाल करें</string>
+    <string name="fb_internal">इंटरनल स्टोरेज</string>
+    <string name="fb_removable">SD कार्ड / USB %1$d</string>
+    <string name="fb_downloads">डाउनलोड</string>
+    <string name="fb_documents">दस्तावेज़</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">नाम</string>
+    <string name="fb_sort_date">तारीख़</string>
+    <string name="fb_sort_size">आकार</string>
+    <string name="fb_hidden">छिपी हुई</string>
+    <string name="fb_selected">%1$d चुनी गईं</string>
+    <string name="fb_clear">साफ़ करें</string>
+    <string name="fb_import">इम्पोर्ट करें</string>
+    <string name="fb_empty">यहाँ कुछ नहीं है</string>
+    <string name="fb_unreadable">यह फ़ोल्डर पढ़ा नहीं जा सकता। Android कुछ फ़ोल्डर (जैसे दूसरे ऐप का डेटा) सभी ऐप के लिए बंद रखता है।</string>
+    <string name="fb_access_title">फ़ाइलों तक पहुँच की अनुमति दें</string>
+    <string name="fb_access_text">आपकी फ़र्मवेयर फ़ाइलें दिखाने और एक साथ कई चुनने के लिए ब्राउज़र को आपकी फ़ाइलों तक पहुँच चाहिए। आप इसके बजाय सिस्टम पिकर भी इस्तेमाल कर सकते हैं।</string>
+    <string name="fb_access_scoped">Android 10 उन ऐप से ज़्यादातर फ़ाइलें छिपा देता है जिन्होंने स्कोप्ड स्टोरेज से छूट नहीं ली है, इसलिए यह ब्राउज़र उन्हें यहाँ नहीं दिखा सकता। इसके बजाय सिस्टम पिकर इस्तेमाल करें।</string>
+    <string name="as_builtin_browser">बिल्ट-इन फ़ाइल ब्राउज़र</string>
+    <string name="as_builtin_browser_sub">तारीख़ और आकार के अनुसार क्रम से फ़र्मवेयर चुनें और एक साथ कई फ़ाइलें चुनें। सिस्टम पिकर इस्तेमाल करने के लिए बंद करें।</string>
+    <string name="imp_archive_alone">VM बैकअप (.aessvm) को अकेले इम्पोर्ट करना होगा, दूसरी फ़ाइलों के साथ नहीं।</string>
+    <string name="imp_joining">%1$s के %2$d हिस्से जोड़े जा रहे हैं…</string>
+    <string name="imp_split_missing">बँटे हुए आर्काइव %1$s का हिस्सा %2$s नहीं मिला। उसके सभी हिस्से चुनें या उन्हें एक फ़ोल्डर में रखें।</string>
+</resources>

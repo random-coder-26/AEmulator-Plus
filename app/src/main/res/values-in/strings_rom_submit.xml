@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Kirim ROM</string>
+    <string name="submit_action">Kirim ROM</string>
+    <string name="submit_intro">Bagikan tautan unduhan ROM. Kiriman ditinjau sebelum muncul di katalog.</string>
+    <string name="submit_variant">Varian</string>
+    <string name="submit_version">Kategori versi</string>
+    <string name="submit_pick_variant_first">Pilih varian terlebih dahulu</string>
+    <string name="submit_name">Nama ROM</string>
+    <string name="submit_rom_version">Versi ROM</string>
+    <string name="submit_device">Perangkat</string>
+    <string name="submit_url">URL unduhan</string>
+    <string name="submit_size_mb">Ukuran file dalam MB (opsional)</string>
+    <string name="submit_emulator">Versi emulator (opsional)</string>
+    <string name="submit_by">Nama Anda</string>
+    <string name="submit_notes">Catatan (opsional)</string>
+    <string name="submit_send">Kirim</string>
+    <string name="submit_required">Wajib</string>
+    <string name="submit_bad_url">Masukkan tautan http(s) yang valid</string>
+    <string name="submit_bad_size">Masukkan angka, 0 atau lebih</string>
+    <string name="submit_success">Terima kasih! ROM Anda telah dikirim dan akan muncul di katalog setelah ditinjau.</string>
+    <string name="submit_another">Kirim lagi</string>
+    <string name="submit_close">Tutup</string>
+    <string name="submit_categories_failed">Tidak dapat memuat kategori: %1$s</string>
+    <string name="submit_err_duplicate">Tautan unduhan ini sudah dikirim.</string>
+    <string name="submit_err_rate_limited">Terlalu banyak kiriman. Coba lagi dalam sekitar %1$d mnt.</string>
+    <string name="submit_err_rejected">Server menolak kiriman: %1$s</string>
+    <string name="submit_err_server">Server mengembalikan kesalahan (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Server mengirim respons yang tidak terduga.</string>
+    <string name="catalog_err_bad_json">Katalog bukan daftar ROM yang valid.</string>
+    <string name="catalog_err_too_many_roms">Katalog memiliki lebih dari 10000 ROM.</string>
+    <string name="catalog_tested_on">Emulator %1$s</string>
+    <string name="catalog_submitted_by">Dikirim oleh %1$s</string>
+</resources>

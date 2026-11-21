@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Прапанаваць ROM</string>
+    <string name="submit_action">Прапанаваць ROM</string>
+    <string name="submit_intro">Падзяліцеся спасылкай на загрузку ROM. Заяўкі правяраюцца, перш чым трапіць у каталог.</string>
+    <string name="submit_variant">Варыянт</string>
+    <string name="submit_version">Катэгорыя версіі</string>
+    <string name="submit_pick_variant_first">Спачатку выберыце варыянт</string>
+    <string name="submit_name">Назва ROM</string>
+    <string name="submit_rom_version">Версія ROM</string>
+    <string name="submit_device">Прылада</string>
+    <string name="submit_url">URL для загрузкі</string>
+    <string name="submit_size_mb">Памер файла ў МБ (неабавязкова)</string>
+    <string name="submit_emulator">Версія эмулятара (неабавязкова)</string>
+    <string name="submit_by">Ваша імя</string>
+    <string name="submit_notes">Заўвагі (неабавязкова)</string>
+    <string name="submit_send">Адправіць</string>
+    <string name="submit_required">Абавязкова</string>
+    <string name="submit_bad_url">Увядзіце сапраўдную спасылку http(s)</string>
+    <string name="submit_bad_size">Увядзіце лік, 0 або больш</string>
+    <string name="submit_success">Дзякуй! Ваш ROM адпраўлены і з’явіцца ў каталогу пасля праверкі.</string>
+    <string name="submit_another">Адправіць яшчэ</string>
+    <string name="submit_close">Закрыць</string>
+    <string name="submit_categories_failed">Не ўдалося загрузіць катэгорыі: %1$s</string>
+    <string name="submit_err_duplicate">Гэтая спасылка на загрузку ўжо была адпраўлена.</string>
+    <string name="submit_err_rate_limited">Занадта шмат заявак. Паўтарыце прыкладна праз %1$d хв.</string>
+    <string name="submit_err_rejected">Сервер адхіліў заяўку: %1$s</string>
+    <string name="submit_err_server">Сервер вярнуў памылку (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Сервер даслаў нечаканы адказ.</string>
+    <string name="catalog_err_bad_json">Каталог не з’яўляецца сапраўдным спісам ROM.</string>
+    <string name="catalog_err_too_many_roms">У каталогу больш за 10000 ROM.</string>
+    <string name="catalog_tested_on">Эмулятар %1$s</string>
+    <string name="catalog_submitted_by">Адправіў(-ла): %1$s</string>
+</resources>

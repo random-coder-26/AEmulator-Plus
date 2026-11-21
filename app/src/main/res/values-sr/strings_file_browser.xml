@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Изаберите датотеке</string>
+    <string name="fb_title_single">Изаберите датотеку</string>
+    <string name="fb_up">Горе</string>
+    <string name="fb_system_picker">Системски бирач</string>
+    <string name="fb_use_system_picker">Уместо тога користи системски бирач</string>
+    <string name="fb_internal">Интерна меморија</string>
+    <string name="fb_removable">SD картица / USB %1$d</string>
+    <string name="fb_downloads">Преузимања</string>
+    <string name="fb_documents">Документи</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Назив</string>
+    <string name="fb_sort_date">Датум</string>
+    <string name="fb_sort_size">Величина</string>
+    <string name="fb_hidden">Скривено</string>
+    <string name="fb_selected">Изабрано: %1$d</string>
+    <string name="fb_clear">Очисти</string>
+    <string name="fb_import">Увези</string>
+    <string name="fb_empty">Овде нема ничега</string>
+    <string name="fb_unreadable">Овај фолдер се не може прочитати. Android неке фолдере (попут података других апликација) држи затвореним за све апликације.</string>
+    <string name="fb_access_title">Дозволи приступ датотекама</string>
+    <string name="fb_access_text">Да би приказао ваше датотеке фирмвера и омогућио избор више њих одједном, прегледач треба приступ вашим датотекама. Можете да користите и системски бирач.</string>
+    <string name="fb_access_scoped">Android 10 крије већину датотека од апликација које нису одустале од ограниченог складишта, па их овај прегледач не може приказати овде. Користите системски бирач.</string>
+    <string name="as_builtin_browser">Уграђени прегледач датотека</string>
+    <string name="as_builtin_browser_sub">Изаберите фирмвер уз сортирање по датуму и величини и више датотека одједном. Искључите да бисте користили системски бирач.</string>
+    <string name="imp_archive_alone">Резервну копију ВМ-а (.aessvm) треба увести засебно, а не заједно с другим датотекама.</string>
+    <string name="imp_joining">Спајање делова (%2$d) датотеке %1$s…</string>
+    <string name="imp_split_missing">Недостаје део %2$s подељене архиве %1$s. Изаберите све њене делове или их држите у једном фолдеру.</string>
+</resources>

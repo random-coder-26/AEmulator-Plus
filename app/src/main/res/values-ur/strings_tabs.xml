@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">لائبریری</string>
+    <string name="tab_close">ٹیب بند کریں</string>
+    <string name="tab_close_title">%1$s بند کریں؟</string>
+    <string name="tab_close_text">“چھوٹا کریں” ٹیب کو بند کر دیتا ہے لیکن مشین پس منظر میں چلتی رہتی ہے؛ اسے لائبریری سے دوبارہ کھولیں۔ “شٹ ڈاؤن” مشین کو بند کر دیتا ہے۔</string>
+    <string name="tab_minimize">چھوٹا کریں</string>
+    <string name="tab_shutdown">شٹ ڈاؤن</string>
+    <string name="vm_slots_full">مشین کے تمام %1$d سلاٹ استعمال میں ہیں۔ پہلے کسی ایک کو شٹ ڈاؤن کریں۔</string>
+    <string name="tab_group_title">2 ٹیبز</string>
+    <string name="tab_split_failed">وہ مشین اب اس ٹیب میں شامل نہیں کی جا سکتی۔</string>
+    <string name="tab_drag_label">تقسیم کرنے کے لیے اسکرین پر گھسیٹیں</string>
+    <string name="tab_split_title">2 ٹیبز الگ کریں؟</string>
+    <string name="tab_split_text">ہر مشین اپنے الگ ٹیب میں واپس چلی جاتی ہے۔ دونوں چلتی رہتی ہیں۔</string>
+    <string name="tab_split_action">الگ کریں</string>
+    <string name="tab_bar_hide">ٹیب بار چھپائیں</string>
+    <string name="tab_bar_show">ٹیب بار دکھائیں</string>
+</resources>

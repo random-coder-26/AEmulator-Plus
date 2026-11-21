@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Kitaphana</string>
+    <string name="tab_close">Goýmany ýap</string>
+    <string name="tab_close_title">%1$s ýapylsynmy?</string>
+    <string name="tab_close_text">“Kiçelt” goýmany ýapýar, emma maşyn fonda işlemegini dowam etdirýär; ony kitaphanadan gaýtadan açyň. “Öçür” maşyny öçürýär.</string>
+    <string name="tab_minimize">Kiçelt</string>
+    <string name="tab_shutdown">Öçür</string>
+    <string name="vm_slots_full">Maşynyň ähli %1$d uyasy ulanylýar. Ilki birini öçüriň.</string>
+    <string name="tab_group_title">2 goýma</string>
+    <string name="tab_split_failed">Ol maşyny indi bu goýma goşup bolmaýar.</string>
+    <string name="tab_drag_label">Bölmek üçin ekrana süýräň</string>
+    <string name="tab_split_title">2 goýma aýrylsynmy?</string>
+    <string name="tab_split_text">Her maşyn öz goýmasyna gaýdyp barýar. Ikisi hem işlemegini dowam etdirýär.</string>
+    <string name="tab_split_action">Aýyr</string>
+    <string name="tab_bar_hide">Goýma panelini gizle</string>
+    <string name="tab_bar_show">Goýma panelini görkez</string>
+</resources>

@@ -1,0 +1,15 @@
+<manifest version="1.0" type="device">
+    <!-- 16 (builds whose libui no longer tries the HIDL mappers 2 and 3): libui takes a mapper of version 4 or 5 only; the engine's own (native/gralloc5) over its gralloc module -->
+    <hal format="aidl">
+        <name>android.hardware.graphics.allocator</name>
+        <version>2</version>
+        <fqname>IAllocator/default</fqname>
+    </hal>
+    <hal format="native">
+        <name>mapper</name>
+        <version>5.0</version>
+        <interface>
+            <instance>aemu</instance>
+        </interface>
+    </hal>
+</manifest>

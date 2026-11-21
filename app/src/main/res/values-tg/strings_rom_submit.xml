@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Пешниҳоди ROM</string>
+    <string name="submit_action">Пешниҳоди ROM</string>
+    <string name="submit_intro">Пайванди боргирии ROM-ро мубодила кунед. Пешниҳодҳо пеш аз пайдо шудан дар феҳрист санҷида мешаванд.</string>
+    <string name="submit_variant">Вариант</string>
+    <string name="submit_version">Категорияи нусха</string>
+    <string name="submit_pick_variant_first">Аввал вариантро интихоб кунед</string>
+    <string name="submit_name">Номи ROM</string>
+    <string name="submit_rom_version">Нусхаи ROM</string>
+    <string name="submit_device">Дастгоҳ</string>
+    <string name="submit_url">URL-и боргирӣ</string>
+    <string name="submit_size_mb">Андозаи файл бо МБ (ихтиёрӣ)</string>
+    <string name="submit_emulator">Нусхаи эмулятор (ихтиёрӣ)</string>
+    <string name="submit_by">Номи шумо</string>
+    <string name="submit_notes">Қайдҳо (ихтиёрӣ)</string>
+    <string name="submit_send">Фиристодан</string>
+    <string name="submit_required">Ҳатмӣ</string>
+    <string name="submit_bad_url">Пайванди дурусти http(s) ворид кунед</string>
+    <string name="submit_bad_size">Рақам ворид кунед, 0 ё бештар</string>
+    <string name="submit_success">Ташаккур! ROM-и шумо фиристода шуд ва пас аз санҷиш дар феҳрист пайдо мешавад.</string>
+    <string name="submit_another">Боз як дигарро фиристодан</string>
+    <string name="submit_close">Пӯшидан</string>
+    <string name="submit_categories_failed">Категорияҳоро бор кардан натавонист: %1$s</string>
+    <string name="submit_err_duplicate">Ин пайванди боргирӣ аллакай фиристода шудааст.</string>
+    <string name="submit_err_rate_limited">Пешниҳодҳо аз ҳад зиёданд. Тақрибан баъд аз %1$d дақиқа дубора кӯшиш кунед.</string>
+    <string name="submit_err_rejected">Сервер пешниҳодро рад кард: %1$s</string>
+    <string name="submit_err_server">Сервер хато баргардонд (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Сервер ҷавоби ғайричашмдошт фиристод.</string>
+    <string name="catalog_err_bad_json">Феҳрист рӯйхати дурусти ROM нест.</string>
+    <string name="catalog_err_too_many_roms">Дар феҳрист зиёда аз 10000 ROM ҳаст.</string>
+    <string name="catalog_tested_on">Эмулятор %1$s</string>
+    <string name="catalog_submitted_by">Фиристодааст: %1$s</string>
+</resources>

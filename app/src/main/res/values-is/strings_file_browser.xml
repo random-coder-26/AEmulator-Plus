@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Veldu skrár</string>
+    <string name="fb_title_single">Veldu skrá</string>
+    <string name="fb_up">Upp</string>
+    <string name="fb_system_picker">Kerfisval</string>
+    <string name="fb_use_system_picker">Nota kerfisval í staðinn</string>
+    <string name="fb_internal">Innra geymslurými</string>
+    <string name="fb_removable">SD-kort / USB %1$d</string>
+    <string name="fb_downloads">Niðurhal</string>
+    <string name="fb_documents">Skjöl</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Heiti</string>
+    <string name="fb_sort_date">Dagsetning</string>
+    <string name="fb_sort_size">Stærð</string>
+    <string name="fb_hidden">Falið</string>
+    <string name="fb_selected">%1$d valið</string>
+    <string name="fb_clear">Hreinsa</string>
+    <string name="fb_import">Flytja inn</string>
+    <string name="fb_empty">Ekkert hér</string>
+    <string name="fb_unreadable">Ekki er hægt að lesa þessa möppu. Android heldur sumum möppum (eins og gögnum annarra forrita) lokuðum fyrir öllum forritum.</string>
+    <string name="fb_access_title">Leyfa aðgang að skrám</string>
+    <string name="fb_access_text">Til að birta fastbúnaðarskrárnar þínar og velja nokkrar í einu þarf vafrinn aðgang að skránum þínum. Þú getur líka notað kerfisvalið í staðinn.</string>
+    <string name="fb_access_scoped">Android 10 felur flestar skrár fyrir forritum sem hafa ekki afþakkað afmarkaða geymslu, svo þessi vafri getur ekki birt þær hér. Notaðu kerfisvalið í staðinn.</string>
+    <string name="as_builtin_browser">Innbyggður skráavafri</string>
+    <string name="as_builtin_browser_sub">Veldu fastbúnað með röðun eftir dagsetningu og stærð og nokkrar skrár í einu. Slökktu til að nota kerfisvalið.</string>
+    <string name="imp_archive_alone">Afrit af sýndarvél (.aessvm) verður að flytja inn eitt og sér, ekki með öðrum skrám.</string>
+    <string name="imp_joining">Sameina %2$d hluta af %1$s…</string>
+    <string name="imp_split_missing">Hluta %2$s vantar í skipta safnskrá %1$s. Veldu alla hluta hennar eða hafðu þá í einni möppu.</string>
+</resources>

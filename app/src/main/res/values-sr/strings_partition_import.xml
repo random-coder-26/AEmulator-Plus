@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Увези партицију</string>
+    <string name="vm_import_partition_working">Читање партиције %1$s… Пре увоза зауставите све ВМ-ове.</string>
+    <string name="vm_import_partition_done">Партиција %1$s је увезена и монтирана. Систем и подаци нису промењени.</string>
+    <string name="vm_import_partition_exists">Ова ВМ већ има партицију %1$s.</string>
+    <string name="vm_import_partition_conflict">Распоред фолдера ВМ-а не дозвољава ову партицију.</string>
+    <string name="vm_import_partition_unsupported">Слика %1$s не може се увести овом опцијом.</string>
+    <string name="vm_import_partition_which">Која је ово партиција?</string>
+    <string name="vm_import_partition_which_info">Назив датотеке не говори шта садржи. Изаберите партицију.</string>
+    <string name="vm_import_partition_have">%1$s (већ у овој ВМ)</string>
+    <string name="vm_import_partition_headline">Увези слику партиције у ову ВМ</string>
+    <string name="vm_import_partition_sub">Boot, recovery (оригинални, TWRP, OrangeFox или CWM), OEM, vendor, odm, product или system_ext. Врста се чита из датотеке; питаћемо вас када то није могуће. Само recovery замењује постојећи; остатак ВМ-а остаје непромењен. Поново покрените у recovery из менија ⋮.</string>
+    <string name="vm_import_partition_button">Увези…</string>
+    <string name="vm_import_recovery_done">Recovery је увезен. Да бисте га користили, поново покрените у recovery из менија ⋮.</string>
+</resources>

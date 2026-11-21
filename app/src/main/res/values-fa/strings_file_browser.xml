@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">انتخاب فایلها</string>
+    <string name="fb_title_single">انتخاب یک فایل</string>
+    <string name="fb_up">بالا</string>
+    <string name="fb_system_picker">انتخابگر سیستم</string>
+    <string name="fb_use_system_picker">استفاده از انتخابگر سیستم</string>
+    <string name="fb_internal">حافظهٔ داخلی</string>
+    <string name="fb_removable">کارت SD / USB %1$d</string>
+    <string name="fb_downloads">دانلودها</string>
+    <string name="fb_documents">اسناد</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">نام</string>
+    <string name="fb_sort_date">تاریخ</string>
+    <string name="fb_sort_size">اندازه</string>
+    <string name="fb_hidden">پنهان</string>
+    <string name="fb_selected">%1$d مورد انتخاب شد</string>
+    <string name="fb_clear">پاک کردن</string>
+    <string name="fb_import">وارد کردن</string>
+    <string name="fb_empty">اینجا چیزی نیست</string>
+    <string name="fb_unreadable">این پوشه خوانده نمیشود. Android برخی پوشهها (مانند دادههای برنامههای دیگر) را به روی همهٔ برنامهها بسته نگه میدارد.</string>
+    <string name="fb_access_title">اجازهٔ دسترسی به فایلها</string>
+    <string name="fb_access_text">برای فهرست کردن فایلهای فریمور و انتخاب چندتایی، مرورگر به فایلهای شما دسترسی نیاز دارد. میتوانید بهجای آن از انتخابگر سیستم هم استفاده کنید.</string>
+    <string name="fb_access_scoped">Android 10 بیشتر فایلها را از برنامههایی که از حافظهٔ محدودشده خارج نشدهاند پنهان میکند، پس این مرورگر نمیتواند آنها را اینجا فهرست کند. بهجای آن از انتخابگر سیستم استفاده کنید.</string>
+    <string name="as_builtin_browser">مرورگر فایل داخلی</string>
+    <string name="as_builtin_browser_sub">فریمور را با مرتبسازی بر اساس تاریخ و اندازه و چند فایل همزمان انتخاب کنید. برای استفاده از انتخابگر سیستم خاموش کنید.</string>
+    <string name="imp_archive_alone">پشتیبان ماشین مجازی (.aessvm) باید بهتنهایی وارد شود، نه همراه فایلهای دیگر.</string>
+    <string name="imp_joining">در حال اتصال %2$d بخش از %1$s…</string>
+    <string name="imp_split_missing">بخش %2$s از بایگانی تقسیمشدهٔ %1$s موجود نیست. همهٔ بخشهای آن را انتخاب کنید یا در یک پوشه نگه دارید.</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Vælg filer</string>
+    <string name="fb_title_single">Vælg en fil</string>
+    <string name="fb_up">Op</string>
+    <string name="fb_system_picker">Systemvælger</string>
+    <string name="fb_use_system_picker">Brug systemvælgeren i stedet</string>
+    <string name="fb_internal">Intern lagerplads</string>
+    <string name="fb_removable">SD-kort / USB %1$d</string>
+    <string name="fb_downloads">Downloads</string>
+    <string name="fb_documents">Dokumenter</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Navn</string>
+    <string name="fb_sort_date">Dato</string>
+    <string name="fb_sort_size">Størrelse</string>
+    <string name="fb_hidden">Skjulte</string>
+    <string name="fb_selected">%1$d valgt</string>
+    <string name="fb_clear">Ryd</string>
+    <string name="fb_import">Importér</string>
+    <string name="fb_empty">Intet her</string>
+    <string name="fb_unreadable">Denne mappe kan ikke læses. Android holder nogle mapper (som andre apps\' data) lukket for alle apps.</string>
+    <string name="fb_access_title">Tillad adgang til filer</string>
+    <string name="fb_access_text">For at vise dine firmwarefiler og vælge flere ad gangen skal browseren have adgang til dine filer. Du kan også bruge systemvælgeren i stedet.</string>
+    <string name="fb_access_scoped">Android 10 skjuler de fleste filer for apps, der ikke har fravalgt afgrænset lager, så denne browser kan ikke vise dem her. Brug systemvælgeren i stedet.</string>
+    <string name="as_builtin_browser">Indbygget filbrowser</string>
+    <string name="as_builtin_browser_sub">Vælg firmware med sortering efter dato og størrelse og flere filer ad gangen. Slå fra for at bruge systemvælgeren.</string>
+    <string name="imp_archive_alone">En VM-sikkerhedskopi (.aessvm) skal importeres alene, ikke sammen med andre filer.</string>
+    <string name="imp_joining">Samler %2$d dele af %1$s…</string>
+    <string name="imp_split_missing">Del %2$s af det opdelte arkiv %1$s mangler. Vælg alle dets dele, eller hav dem i én mappe.</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Importēt nodalījumu</string>
+    <string name="vm_import_partition_working">Lasa nodalījumu %1$s… Pirms importēšanas apturiet visas VM.</string>
+    <string name="vm_import_partition_done">Nodalījums %1$s importēts un pievienots. Sistēma un dati nav mainīti.</string>
+    <string name="vm_import_partition_exists">Šajā VM jau ir nodalījums %1$s.</string>
+    <string name="vm_import_partition_conflict">VM mapju struktūra šo nodalījumu neatļauj.</string>
+    <string name="vm_import_partition_unsupported">Attēlu %1$s nevar importēt ar šo opciju.</string>
+    <string name="vm_import_partition_which">Kāds ir šis nodalījums?</string>
+    <string name="vm_import_partition_which_info">Faila nosaukums neizsaka, kas tajā ir. Izvēlieties nodalījumu.</string>
+    <string name="vm_import_partition_have">%1$s (jau šajā VM)</string>
+    <string name="vm_import_partition_headline">Importēt nodalījuma attēlu šajā VM</string>
+    <string name="vm_import_partition_sub">Boot, recovery (oriģinālais, TWRP, OrangeFox vai CWM), OEM, vendor, odm, product vai system_ext. Veids tiek nolasīts no faila; ja to nevar nolasīt, jums pajautās. Tikai recovery aizstāj esošo; pārējā VM daļa nemainās. Pārstartējiet uz recovery no izvēlnes ⋮.</string>
+    <string name="vm_import_partition_button">Importēt…</string>
+    <string name="vm_import_recovery_done">Recovery importēts. Lai to izmantotu, pārstartējiet uz recovery no izvēlnes ⋮.</string>
+</resources>

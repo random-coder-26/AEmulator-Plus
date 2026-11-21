@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">ارسال ROM</string>
+    <string name="submit_action">ارسال ROM</string>
+    <string name="submit_intro">پیوند دانلود یک ROM را به اشتراک بگذارید. ارسالها پیش از نمایش در فهرست بررسی میشوند.</string>
+    <string name="submit_variant">گونه</string>
+    <string name="submit_version">دستهٔ نسخه</string>
+    <string name="submit_pick_variant_first">ابتدا یک گونه انتخاب کنید</string>
+    <string name="submit_name">نام ROM</string>
+    <string name="submit_rom_version">نسخهٔ ROM</string>
+    <string name="submit_device">دستگاه</string>
+    <string name="submit_url">نشانی دانلود</string>
+    <string name="submit_size_mb">اندازهٔ فایل به مگابایت (اختیاری)</string>
+    <string name="submit_emulator">نسخهٔ شبیهساز (اختیاری)</string>
+    <string name="submit_by">نام شما</string>
+    <string name="submit_notes">یادداشتها (اختیاری)</string>
+    <string name="submit_send">ارسال</string>
+    <string name="submit_required">الزامی</string>
+    <string name="submit_bad_url">یک پیوند http(s) معتبر وارد کنید</string>
+    <string name="submit_bad_size">یک عدد وارد کنید، ۰ یا بیشتر</string>
+    <string name="submit_success">متشکریم! ROM شما ارسال شد و پس از بررسی در فهرست نمایش داده میشود.</string>
+    <string name="submit_another">ارسال مورد دیگر</string>
+    <string name="submit_close">بستن</string>
+    <string name="submit_categories_failed">بارگیری دستهها ممکن نشد: %1$s</string>
+    <string name="submit_err_duplicate">این پیوند دانلود قبلاً ارسال شده است.</string>
+    <string name="submit_err_rate_limited">ارسالهای بسیار زیاد. حدود %1$d دقیقهٔ دیگر دوباره تلاش کنید.</string>
+    <string name="submit_err_rejected">سرور ارسال را رد کرد: %1$s</string>
+    <string name="submit_err_server">سرور خطا برگرداند (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">سرور پاسخ غیرمنتظرهای فرستاد.</string>
+    <string name="catalog_err_bad_json">فهرست، یک فهرست ROM معتبر نیست.</string>
+    <string name="catalog_err_too_many_roms">فهرست بیش از ۱۰۰۰۰ ROM دارد.</string>
+    <string name="catalog_tested_on">شبیهساز %1$s</string>
+    <string name="catalog_submitted_by">ارسالشده توسط %1$s</string>
+</resources>

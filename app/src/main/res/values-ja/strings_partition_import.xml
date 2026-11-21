@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">パーティションをインポート</string>
+    <string name="vm_import_partition_working">%1$s パーティションを読み込み中… インポートの前にすべてのVMを停止してください。</string>
+    <string name="vm_import_partition_done">%1$s パーティションをインポートしてマウントしました。システムとデータは変更されていません。</string>
+    <string name="vm_import_partition_exists">このVMにはすでに %1$s パーティションがあります。</string>
+    <string name="vm_import_partition_conflict">VMのフォルダ構成ではこのパーティションを使えません。</string>
+    <string name="vm_import_partition_unsupported">%1$s イメージはこのオプションではインポートできません。</string>
+    <string name="vm_import_partition_which">これはどのパーティションですか？</string>
+    <string name="vm_import_partition_which_info">ファイル名から中身がわかりません。パーティションを選んでください。</string>
+    <string name="vm_import_partition_have">%1$s（このVMに既にあります）</string>
+    <string name="vm_import_partition_headline">パーティションイメージをこのVMにインポート</string>
+    <string name="vm_import_partition_sub">boot、recovery（標準、TWRP、OrangeFox、CWM）、OEM、vendor、odm、product、system_ext に対応します。種類はファイルから読み取り、判別できない場合は確認します。置き換えられるのはrecoveryのみで、VMのそれ以外の部分は変更されません。⋮メニューからrecoveryに再起動してください。</string>
+    <string name="vm_import_partition_button">インポート…</string>
+    <string name="vm_import_recovery_done">Recoveryをインポートしました。使うには⋮メニューからrecoveryに再起動してください。</string>
+</resources>

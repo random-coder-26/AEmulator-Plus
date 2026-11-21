@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Bestanden kiezen</string>
+    <string name="fb_title_single">Een bestand kiezen</string>
+    <string name="fb_up">Omhoog</string>
+    <string name="fb_system_picker">Systeemkiezer</string>
+    <string name="fb_use_system_picker">In plaats daarvan de systeemkiezer gebruiken</string>
+    <string name="fb_internal">Interne opslag</string>
+    <string name="fb_removable">SD-kaart / USB %1$d</string>
+    <string name="fb_downloads">Downloads</string>
+    <string name="fb_documents">Documenten</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Naam</string>
+    <string name="fb_sort_date">Datum</string>
+    <string name="fb_sort_size">Grootte</string>
+    <string name="fb_hidden">Verborgen</string>
+    <string name="fb_selected">%1$d geselecteerd</string>
+    <string name="fb_clear">Wissen</string>
+    <string name="fb_import">Importeren</string>
+    <string name="fb_empty">Hier is niets</string>
+    <string name="fb_unreadable">Deze map kan niet worden gelezen. Android houdt sommige mappen (zoals de gegevens van andere apps) voor alle apps gesloten.</string>
+    <string name="fb_access_title">Toegang tot bestanden toestaan</string>
+    <string name="fb_access_text">Om je firmwarebestanden weer te geven en er meerdere tegelijk te kiezen, heeft de browser toegang tot je bestanden nodig. Je kunt ook de systeemkiezer gebruiken.</string>
+    <string name="fb_access_scoped">Android 10 verbergt de meeste bestanden voor apps die geen afstand hebben gedaan van scoped storage, dus deze browser kan ze hier niet weergeven. Gebruik in plaats daarvan de systeemkiezer.</string>
+    <string name="as_builtin_browser">Ingebouwde bestandsbrowser</string>
+    <string name="as_builtin_browser_sub">Kies firmware met sortering op datum en grootte en meerdere bestanden tegelijk. Schakel uit om de systeemkiezer te gebruiken.</string>
+    <string name="imp_archive_alone">Een VM-back-up (.aessvm) moet afzonderlijk worden geïmporteerd, niet samen met andere bestanden.</string>
+    <string name="imp_joining">%2$d delen van %1$s samenvoegen…</string>
+    <string name="imp_split_missing">Deel %2$s van het gesplitste archief %1$s ontbreekt. Selecteer alle delen of bewaar ze in één map.</string>
+</resources>

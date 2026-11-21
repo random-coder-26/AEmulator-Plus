@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">استيراد قسم</string>
+    <string name="vm_import_partition_working">جارٍ قراءة القسم %1$s… أوقف جميع الأجهزة الافتراضية قبل الاستيراد.</string>
+    <string name="vm_import_partition_done">تم استيراد القسم %1$s وتركيبه. لم يتغير النظام ولا البيانات.</string>
+    <string name="vm_import_partition_exists">يحتوي هذا الجهاز الافتراضي بالفعل على القسم %1$s.</string>
+    <string name="vm_import_partition_conflict">بنية مجلدات الجهاز الافتراضي لا تسمح بهذا القسم.</string>
+    <string name="vm_import_partition_unsupported">لا يمكن استيراد صورة %1$s بهذا الخيار.</string>
+    <string name="vm_import_partition_which">أي قسم هذا؟</string>
+    <string name="vm_import_partition_which_info">اسم الملف لا يوضح محتواه. اختر القسم.</string>
+    <string name="vm_import_partition_have">%1$s (موجود بالفعل في هذا الجهاز الافتراضي)</string>
+    <string name="vm_import_partition_headline">استيراد صورة قسم إلى هذا الجهاز الافتراضي</string>
+    <string name="vm_import_partition_sub">boot وrecovery (الأصلي أو TWRP أو OrangeFox أو CWM) وOEM وvendor وodm وproduct وsystem_ext. يُقرأ النوع من الملف، ويُطلب منك تحديده إن تعذّر ذلك. يستبدل recovery وحده القسم الموجود؛ ولا يتغير باقي الجهاز الافتراضي. أعد التشغيل إلى recovery من القائمة ⋮.</string>
+    <string name="vm_import_partition_button">استيراد…</string>
+    <string name="vm_import_recovery_done">تم استيراد recovery. أعد التشغيل إلى recovery من القائمة ⋮ لاستخدامه.</string>
+</resources>

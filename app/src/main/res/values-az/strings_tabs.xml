@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Kitabxana</string>
+    <string name="tab_close">Vərəqi bağla</string>
+    <string name="tab_close_title">%1$s bağlansın?</string>
+    <string name="tab_close_text">“Kiçilt” vərəqi bağlayır, maşın isə arxa planda işləməyə davam edir; onu yenidən kitabxanadan açın. “Söndür” maşını söndürür.</string>
+    <string name="tab_minimize">Kiçilt</string>
+    <string name="tab_shutdown">Söndür</string>
+    <string name="vm_slots_full">Bütün %1$d maşın yuvası istifadədədir. Əvvəlcə birini söndürün.</string>
+    <string name="tab_group_title">2 vərəq</string>
+    <string name="tab_split_failed">Həmin maşın artıq bu vərəqə əlavə edilə bilməz.</string>
+    <string name="tab_drag_label">Bölmək üçün ekrana sürükləyin</string>
+    <string name="tab_split_title">2 vərəq ayrılsın?</string>
+    <string name="tab_split_text">Hər maşın öz vərəqinə qayıdır. Hər ikisi işləməyə davam edir.</string>
+    <string name="tab_split_action">Ayır</string>
+    <string name="tab_bar_hide">Vərəq panelini gizlət</string>
+    <string name="tab_bar_show">Vərəq panelini göstər</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Flytja inn skiptingu</string>
+    <string name="vm_import_partition_working">Les %1$s-skiptingu… Stöðvaðu allar sýndarvélar áður en þú flytur inn.</string>
+    <string name="vm_import_partition_done">%1$s-skipting flutt inn og tengd. Kerfi og gögn eru óbreytt.</string>
+    <string name="vm_import_partition_exists">Þessi sýndarvél er þegar með %1$s-skiptingu.</string>
+    <string name="vm_import_partition_conflict">Möppuskipan sýndarvélarinnar leyfir ekki þessa skiptingu.</string>
+    <string name="vm_import_partition_unsupported">Ekki er hægt að flytja inn %1$s-mynd með þessum valkosti.</string>
+    <string name="vm_import_partition_which">Hvaða skipting er þetta?</string>
+    <string name="vm_import_partition_which_info">Skráarheitið segir ekki hvað er í skránni. Veldu skiptinguna.</string>
+    <string name="vm_import_partition_have">%1$s (þegar í þessari sýndarvél)</string>
+    <string name="vm_import_partition_headline">Flytja skiptingarmynd inn í þessa sýndarvél</string>
+    <string name="vm_import_partition_sub">Boot, recovery (upprunalegt, TWRP, OrangeFox eða CWM), OEM, vendor, odm, product eða system_ext. Gerðin er lesin úr skránni; þú ert spurð/ur þegar það er ekki hægt. Aðeins recovery kemur í stað þess sem fyrir er; restin af sýndarvélinni breytist ekki. Endurræstu í recovery úr ⋮-valmyndinni.</string>
+    <string name="vm_import_partition_button">Flytja inn…</string>
+    <string name="vm_import_recovery_done">Recovery flutt inn. Endurræstu í recovery úr ⋮-valmyndinni til að nota það.</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">匯入分割區</string>
+    <string name="vm_import_partition_working">正在讀取 %1$s 分割區… 匯入前請先停止所有虛擬機器。</string>
+    <string name="vm_import_partition_done">已匯入並掛載 %1$s 分割區。系統與資料維持不變。</string>
+    <string name="vm_import_partition_exists">此虛擬機已有 %1$s 分割區。</string>
+    <string name="vm_import_partition_conflict">虛擬機的資料夾結構不允許此分割區。</string>
+    <string name="vm_import_partition_unsupported">無法使用此選項匯入 %1$s 映像檔。</string>
+    <string name="vm_import_partition_which">這是哪個分割區？</string>
+    <string name="vm_import_partition_which_info">檔名無法說明其內容。請選擇分割區。</string>
+    <string name="vm_import_partition_have">%1$s（此虛擬機中已有）</string>
+    <string name="vm_import_partition_headline">將分割區映像檔匯入此虛擬機</string>
+    <string name="vm_import_partition_sub">支援 boot、recovery（原廠、TWRP、OrangeFox 或 CWM）、OEM、vendor、odm、product 或 system_ext。類型會從檔案中讀取；無法讀取時會詢問你。只有 recovery 會取代現有的；虛擬機的其餘部分維持不變。請透過 ⋮ 選單重新啟動到 recovery。</string>
+    <string name="vm_import_partition_button">匯入…</string>
+    <string name="vm_import_recovery_done">已匯入 recovery。請透過 ⋮ 選單重新啟動到 recovery 來使用。</string>
+</resources>

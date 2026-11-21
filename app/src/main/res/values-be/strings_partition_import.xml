@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Імпарт раздзела</string>
+    <string name="vm_import_partition_working">Чытанне раздзела %1$s… Перад імпартам спыніце ўсе ВМ.</string>
+    <string name="vm_import_partition_done">Раздзел %1$s імпартаваны і падключаны. Сістэма і даныя не зменены.</string>
+    <string name="vm_import_partition_exists">У гэтай ВМ ужо ёсць раздзел %1$s.</string>
+    <string name="vm_import_partition_conflict">Структура папак ВМ не дапускае гэты раздзел.</string>
+    <string name="vm_import_partition_unsupported">Вобраз %1$s нельга імпартаваць гэтым спосабам.</string>
+    <string name="vm_import_partition_which">Што гэта за раздзел?</string>
+    <string name="vm_import_partition_which_info">Па імені файла не зразумець, што ў ім. Выберыце раздзел.</string>
+    <string name="vm_import_partition_have">%1$s (ужо ў гэтай ВМ)</string>
+    <string name="vm_import_partition_headline">Імпарт вобраза раздзела ў гэтую ВМ</string>
+    <string name="vm_import_partition_sub">Boot, recovery (стандартны, TWRP, OrangeFox або CWM), OEM, vendor, odm, product або system_ext. Тып вызначаецца па файле; калі не атрымалася, вас спытаюць. Замяняецца толькі recovery; астатняе ў ВМ не змяняецца. Перазагрузіцеся ў recovery з меню ⋮.</string>
+    <string name="vm_import_partition_button">Імпарт…</string>
+    <string name="vm_import_recovery_done">Recovery імпартаваны. Каб ім скарыстацца, перазагрузіцеся ў recovery з меню ⋮.</string>
+</resources>

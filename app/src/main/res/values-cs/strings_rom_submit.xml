@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Odeslat ROM</string>
+    <string name="submit_action">Odeslat ROM</string>
+    <string name="submit_intro">Sdílejte odkaz ke stažení ROM. Příspěvky se před zobrazením v katalogu kontrolují.</string>
+    <string name="submit_variant">Varianta</string>
+    <string name="submit_version">Kategorie verze</string>
+    <string name="submit_pick_variant_first">Nejprve vyberte variantu</string>
+    <string name="submit_name">Název ROM</string>
+    <string name="submit_rom_version">Verze ROM</string>
+    <string name="submit_device">Zařízení</string>
+    <string name="submit_url">URL ke stažení</string>
+    <string name="submit_size_mb">Velikost souboru v MB (volitelné)</string>
+    <string name="submit_emulator">Verze emulátoru (volitelné)</string>
+    <string name="submit_by">Vaše jméno</string>
+    <string name="submit_notes">Poznámky (volitelné)</string>
+    <string name="submit_send">Odeslat</string>
+    <string name="submit_required">Povinné</string>
+    <string name="submit_bad_url">Zadejte platný odkaz http(s)</string>
+    <string name="submit_bad_size">Zadejte číslo, 0 nebo více</string>
+    <string name="submit_success">Děkujeme! Vaše ROM byla odeslána a po kontrole se objeví v katalogu.</string>
+    <string name="submit_another">Odeslat další</string>
+    <string name="submit_close">Zavřít</string>
+    <string name="submit_categories_failed">Kategorie se nepodařilo načíst: %1$s</string>
+    <string name="submit_err_duplicate">Tento odkaz ke stažení už byl odeslán.</string>
+    <string name="submit_err_rate_limited">Příliš mnoho příspěvků. Zkuste to znovu přibližně za %1$d min.</string>
+    <string name="submit_err_rejected">Server příspěvek odmítl: %1$s</string>
+    <string name="submit_err_server">Server vrátil chybu (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Server poslal neočekávanou odpověď.</string>
+    <string name="catalog_err_bad_json">Katalog není platný seznam ROM.</string>
+    <string name="catalog_err_too_many_roms">Katalog obsahuje více než 10000 ROM.</string>
+    <string name="catalog_tested_on">Emulátor %1$s</string>
+    <string name="catalog_submitted_by">Odeslal(a): %1$s</string>
+</resources>

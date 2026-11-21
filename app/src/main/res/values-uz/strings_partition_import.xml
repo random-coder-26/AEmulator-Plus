@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Boʻlimni import qilish</string>
+    <string name="vm_import_partition_working">%1$s boʻlimi oʻqilmoqda… Import qilishdan oldin barcha VMlarni toʻxtating.</string>
+    <string name="vm_import_partition_done">%1$s boʻlimi import qilindi va ulandi. Tizim va maʼlumotlar oʻzgarmadi.</string>
+    <string name="vm_import_partition_exists">Bu VMda %1$s boʻlimi allaqachon bor.</string>
+    <string name="vm_import_partition_conflict">VM jildlar tuzilishi bu boʻlimga ruxsat bermaydi.</string>
+    <string name="vm_import_partition_unsupported">%1$s tasvirini bu variant bilan import qilib boʻlmaydi.</string>
+    <string name="vm_import_partition_which">Bu qaysi boʻlim?</string>
+    <string name="vm_import_partition_which_info">Fayl nomi uning ichida nima borligini bildirmaydi. Boʻlimni tanlang.</string>
+    <string name="vm_import_partition_have">%1$s (bu VMda allaqachon bor)</string>
+    <string name="vm_import_partition_headline">Boʻlim tasvirini ushbu VMga import qilish</string>
+    <string name="vm_import_partition_sub">Boot, recovery (asl, TWRP, OrangeFox yoki CWM), OEM, vendor, odm, product yoki system_ext. Turi fayldan oʻqiladi; oʻqib boʻlmasa, sizdan soʻraladi. Faqat recovery mavjudini almashtiradi; VMning qolgan qismi oʻzgarmaydi. ⋮ menyusidan recovery rejimiga qayta yuklang.</string>
+    <string name="vm_import_partition_button">Import…</string>
+    <string name="vm_import_recovery_done">Recovery import qilindi. Undan foydalanish uchun ⋮ menyusidan recovery rejimiga qayta yuklang.</string>
+</resources>

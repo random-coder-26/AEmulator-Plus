@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Importo ndarjen</string>
+    <string name="vm_import_partition_working">Po lexohet ndarja %1$s… Ndalo të gjitha VM-të para importimit.</string>
+    <string name="vm_import_partition_done">Ndarja %1$s u importua dhe u montua. Sistemi dhe të dhënat nuk ndryshuan.</string>
+    <string name="vm_import_partition_exists">Kjo VM ka tashmë një ndarje %1$s.</string>
+    <string name="vm_import_partition_conflict">Strukturat e dosjeve të VM-së nuk e lejojnë këtë ndarje.</string>
+    <string name="vm_import_partition_unsupported">Një imazh %1$s nuk mund të importohet me këtë opsion.</string>
+    <string name="vm_import_partition_which">Cila ndarje është kjo?</string>
+    <string name="vm_import_partition_which_info">Emri i skedarit nuk tregon çfarë përmban. Zgjidh ndarjen.</string>
+    <string name="vm_import_partition_have">%1$s (tashmë në këtë VM)</string>
+    <string name="vm_import_partition_headline">Importo një imazh ndarjeje në këtë VM</string>
+    <string name="vm_import_partition_sub">Boot, recovery (origjinal, TWRP, OrangeFox ose CWM), OEM, vendor, odm, product ose system_ext. Lloji lexohet nga skedari; të pyetet kur nuk lexohet dot. Vetëm recovery zëvendëson një ekzistues; pjesa tjetër e VM-së nuk ndryshon. Rinise në recovery nga menyja ⋮.</string>
+    <string name="vm_import_partition_button">Importo…</string>
+    <string name="vm_import_recovery_done">Recovery u importua. Rinise në recovery nga menyja ⋮ për ta përdorur.</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Zgłoś ROM</string>
+    <string name="submit_action">Zgłoś ROM</string>
+    <string name="submit_intro">Udostępnij link do pobrania ROM-u. Zgłoszenia są sprawdzane, zanim pojawią się w katalogu.</string>
+    <string name="submit_variant">Wariant</string>
+    <string name="submit_version">Kategoria wersji</string>
+    <string name="submit_pick_variant_first">Najpierw wybierz wariant</string>
+    <string name="submit_name">Nazwa ROM-u</string>
+    <string name="submit_rom_version">Wersja ROM-u</string>
+    <string name="submit_device">Urządzenie</string>
+    <string name="submit_url">Adres URL pobierania</string>
+    <string name="submit_size_mb">Rozmiar pliku w MB (opcjonalnie)</string>
+    <string name="submit_emulator">Wersja emulatora (opcjonalnie)</string>
+    <string name="submit_by">Twoje imię</string>
+    <string name="submit_notes">Uwagi (opcjonalnie)</string>
+    <string name="submit_send">Wyślij</string>
+    <string name="submit_required">Wymagane</string>
+    <string name="submit_bad_url">Wpisz prawidłowy link http(s)</string>
+    <string name="submit_bad_size">Wpisz liczbę, 0 lub większą</string>
+    <string name="submit_success">Dziękujemy! Twój ROM został zgłoszony i po sprawdzeniu pojawi się w katalogu.</string>
+    <string name="submit_another">Zgłoś kolejny</string>
+    <string name="submit_close">Zamknij</string>
+    <string name="submit_categories_failed">Nie udało się wczytać kategorii: %1$s</string>
+    <string name="submit_err_duplicate">Ten link do pobrania został już zgłoszony.</string>
+    <string name="submit_err_rate_limited">Zbyt wiele zgłoszeń. Spróbuj ponownie za około %1$d min.</string>
+    <string name="submit_err_rejected">Serwer odrzucił zgłoszenie: %1$s</string>
+    <string name="submit_err_server">Serwer zwrócił błąd (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Serwer wysłał nieoczekiwaną odpowiedź.</string>
+    <string name="catalog_err_bad_json">Katalog nie jest prawidłową listą ROM-ów.</string>
+    <string name="catalog_err_too_many_roms">Katalog zawiera ponad 10000 ROM-ów.</string>
+    <string name="catalog_tested_on">Emulator %1$s</string>
+    <string name="catalog_submitted_by">Zgłosił(a): %1$s</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Kitaplık</string>
+    <string name="tab_close">Sekmeyi kapat</string>
+    <string name="tab_close_title">%1$s kapatılsın mı?</string>
+    <string name="tab_close_text">“Küçült” sekmeyi kapatır ancak makine arka planda çalışmaya devam eder; kitaplıktan yeniden açın. “Makineyi kapat” makineyi tamamen kapatır.</string>
+    <string name="tab_minimize">Küçült</string>
+    <string name="tab_shutdown">Makineyi kapat</string>
+    <string name="vm_slots_full">%1$d makine yuvasının tümü kullanımda. Önce birini kapatın.</string>
+    <string name="tab_group_title">2 sekme</string>
+    <string name="tab_split_failed">Bu makine artık bu sekmeye eklenemez.</string>
+    <string name="tab_drag_label">Bölmek için ekrana sürükleyin</string>
+    <string name="tab_split_title">2 sekme ayrılsın mı?</string>
+    <string name="tab_split_text">Her makine kendi sekmesine döner. İkisi de çalışmaya devam eder.</string>
+    <string name="tab_split_action">Ayır</string>
+    <string name="tab_bar_hide">Sekme çubuğunu gizle</string>
+    <string name="tab_bar_show">Sekme çubuğunu göster</string>
+</resources>

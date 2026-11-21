@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Importovať oddiel</string>
+    <string name="vm_import_partition_working">Číta sa oddiel %1$s… Pred importom zastavte všetky VM.</string>
+    <string name="vm_import_partition_done">Oddiel %1$s bol importovaný a pripojený. Systém a údaje zostávajú bez zmeny.</string>
+    <string name="vm_import_partition_exists">Toto VM už oddiel %1$s má.</string>
+    <string name="vm_import_partition_conflict">Štruktúra priečinkov VM tento oddiel nepovoľuje.</string>
+    <string name="vm_import_partition_unsupported">Obraz %1$s sa touto voľbou nedá importovať.</string>
+    <string name="vm_import_partition_which">Ktorý oddiel to je?</string>
+    <string name="vm_import_partition_which_info">Názov súboru nehovorí, čo obsahuje. Vyberte oddiel.</string>
+    <string name="vm_import_partition_have">%1$s (už v tomto VM)</string>
+    <string name="vm_import_partition_headline">Importovať obraz oddielu do tohto VM</string>
+    <string name="vm_import_partition_sub">Boot, recovery (pôvodné, TWRP, OrangeFox alebo CWM), OEM, vendor, odm, product alebo system_ext. Typ sa prečíta zo súboru; ak sa nedá, budete sa pýtať. Iba recovery nahradí existujúce; zvyšok VM zostane bez zmeny. Reštartujte do recovery z ponuky ⋮.</string>
+    <string name="vm_import_partition_button">Importovať…</string>
+    <string name="vm_import_recovery_done">Recovery bolo importované. Na jeho použitie reštartujte do recovery z ponuky ⋮.</string>
+</resources>

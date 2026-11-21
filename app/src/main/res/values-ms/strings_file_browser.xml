@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Pilih fail</string>
+    <string name="fb_title_single">Pilih fail</string>
+    <string name="fb_up">Naik</string>
+    <string name="fb_system_picker">Pemilih sistem</string>
+    <string name="fb_use_system_picker">Gunakan pemilih sistem sebagai ganti</string>
+    <string name="fb_internal">Storan dalaman</string>
+    <string name="fb_removable">Kad SD / USB %1$d</string>
+    <string name="fb_downloads">Muat turun</string>
+    <string name="fb_documents">Dokumen</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Nama</string>
+    <string name="fb_sort_date">Tarikh</string>
+    <string name="fb_sort_size">Saiz</string>
+    <string name="fb_hidden">Tersembunyi</string>
+    <string name="fb_selected">%1$d dipilih</string>
+    <string name="fb_clear">Kosongkan</string>
+    <string name="fb_import">Import</string>
+    <string name="fb_empty">Tiada apa-apa di sini</string>
+    <string name="fb_unreadable">Folder ini tidak dapat dibaca. Android memastikan sesetengah folder (seperti data aplikasi lain) tertutup kepada semua aplikasi.</string>
+    <string name="fb_access_title">Benarkan akses kepada fail</string>
+    <string name="fb_access_text">Untuk menyenaraikan fail perisian tegar anda dan memilih beberapa sekali gus, pelayar memerlukan akses kepada fail anda. Anda juga boleh menggunakan pemilih sistem.</string>
+    <string name="fb_access_scoped">Android 10 menyembunyikan kebanyakan fail daripada aplikasi yang belum keluar daripada storan berskop, jadi pelayar ini tidak dapat menyenaraikannya di sini. Gunakan pemilih sistem sebagai ganti.</string>
+    <string name="as_builtin_browser">Pelayar fail terbina dalam</string>
+    <string name="as_builtin_browser_sub">Pilih perisian tegar dengan pengisihan mengikut tarikh dan saiz serta beberapa fail sekali gus. Matikan untuk menggunakan pemilih sistem.</string>
+    <string name="imp_archive_alone">Sandaran VM (.aessvm) mesti diimport secara bersendirian, bukan bersama fail lain.</string>
+    <string name="imp_joining">Menggabungkan %2$d bahagian %1$s…</string>
+    <string name="imp_split_missing">Bahagian %2$s arkib terpisah %1$s tiada. Pilih semua bahagiannya atau simpan dalam satu folder.</string>
+</resources>

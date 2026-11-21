@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">Агляд файлаў ВМ</string>
+    <string name="vmf_unreadable">Гэту папку немагчыма прачытаць.</string>
+    <string name="vmf_readonly_folder">Толькі чытанне: гэтая папка не ўваходзіць у ўласныя файлы ВМ. Можна глядзець і капіраваць, але не змяняць.</string>
+    <string name="vmf_link">Спасылка</string>
+    <string name="vmf_no_folders">Тут няма папак</string>
+    <string name="vmf_preview_failed">Гэты файл немагчыма прачытаць.</string>
+    <string name="vmf_preview_truncated">Паказаны першыя %1$s з %2$s</string>
+    <string name="vmf_copy">Капіраваць</string>
+    <string name="vmf_copy_to">Капіраваць у</string>
+    <string name="vmf_copy_to_vm">Іншае месца ў гэтай ВМ</string>
+    <string name="vmf_copy_to_device">За межы ВМ (памяць прылады)</string>
+    <string name="vmf_copy_here">Капіраваць сюды</string>
+    <string name="vmf_new_folder">Новая папка</string>
+    <string name="vmf_folder_name">Імя папкі</string>
+    <string name="vmf_create">Стварыць</string>
+    <string name="vmf_new_name">Новае імя</string>
+    <string name="vmf_delete_one">Выдаліць «%1$s»? Гэта дзеянне нельга адмяніць.</string>
+    <string name="vmf_delete_many">Выдаліць элементы (%1$d)? Гэта дзеянне нельга адмяніць.</string>
+    <string name="vmf_delete_core">Гэта важная частка ВМ (раздзел або вобраз). Без яе ВМ можа перастаць запускацца.</string>
+    <string name="vmf_working_copy">Капіраванне…</string>
+    <string name="vmf_working_delete">Выдаленне…</string>
+    <string name="vmf_working_rename">Перайменаванне…</string>
+    <string name="vmf_result_copied">Скапіравана: %1$d</string>
+    <string name="vmf_result_copied_skipped">Скапіравана: %1$d. Прапушчана: %2$d (спасылкі за межы ВМ, сокеты і падобнае).</string>
+    <string name="vmf_result_deleted">Выдалена: %1$d</string>
+    <string name="vmf_failed">Памылка: %1$s</string>
+    <string name="vmf_readonly">Гэты элемент не ўваходзіць у ўласныя файлы ВМ, таму яго нельга змяніць тут.</string>
+    <string name="vmf_protected">Гэта частка службовых даных ВМ, і змяніць яе тут нельга.</string>
+    <string name="vmf_bad_name">Гэта імя недапушчальнае.</string>
+    <string name="vmf_exists">Элемент з такім імем ужо існуе.</string>
+    <string name="vmf_no_space">Недастаткова вольнага месца.</string>
+</resources>

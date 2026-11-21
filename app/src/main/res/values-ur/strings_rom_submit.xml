@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">ROM جمع کرائیں</string>
+    <string name="submit_action">ROM جمع کرائیں</string>
+    <string name="submit_intro">کسی ROM کا ڈاؤن لوڈ لنک شیئر کریں۔ کیٹلاگ میں ظاہر ہونے سے پہلے جمع کرائی گئی چیزوں کا جائزہ لیا جاتا ہے۔</string>
+    <string name="submit_variant">ویریئنٹ</string>
+    <string name="submit_version">ورژن کی قسم</string>
+    <string name="submit_pick_variant_first">پہلے ایک ویریئنٹ منتخب کریں</string>
+    <string name="submit_name">ROM کا نام</string>
+    <string name="submit_rom_version">ROM ورژن</string>
+    <string name="submit_device">ڈیوائس</string>
+    <string name="submit_url">ڈاؤن لوڈ URL</string>
+    <string name="submit_size_mb">فائل کا سائز MB میں (اختیاری)</string>
+    <string name="submit_emulator">ایمولیٹر ورژن (اختیاری)</string>
+    <string name="submit_by">آپ کا نام</string>
+    <string name="submit_notes">نوٹس (اختیاری)</string>
+    <string name="submit_send">جمع کرائیں</string>
+    <string name="submit_required">ضروری</string>
+    <string name="submit_bad_url">درست http(s) لنک درج کریں</string>
+    <string name="submit_bad_size">ایک نمبر درج کریں، 0 یا زیادہ</string>
+    <string name="submit_success">شکریہ! آپ کا ROM جمع ہو گیا ہے اور جائزے کے بعد کیٹلاگ میں ظاہر ہوگا۔</string>
+    <string name="submit_another">ایک اور جمع کرائیں</string>
+    <string name="submit_close">بند کریں</string>
+    <string name="submit_categories_failed">زمرے لوڈ نہیں ہو سکے: %1$s</string>
+    <string name="submit_err_duplicate">یہ ڈاؤن لوڈ لنک پہلے ہی جمع کرایا جا چکا ہے۔</string>
+    <string name="submit_err_rate_limited">بہت زیادہ جمع کرائے گئے۔ تقریباً %1$d منٹ بعد دوبارہ کوشش کریں۔</string>
+    <string name="submit_err_rejected">سرور نے جمع کرائی گئی چیز مسترد کر دی: %1$s</string>
+    <string name="submit_err_server">سرور نے خرابی لوٹائی (HTTP %1$d)۔</string>
+    <string name="submit_err_bad_response">سرور نے غیر متوقع جواب بھیجا۔</string>
+    <string name="catalog_err_bad_json">کیٹلاگ ایک درست ROM فہرست نہیں ہے۔</string>
+    <string name="catalog_err_too_many_roms">کیٹلاگ میں 10000 سے زیادہ ROM ہیں۔</string>
+    <string name="catalog_tested_on">ایمولیٹر %1$s</string>
+    <string name="catalog_submitted_by">%1$s کی طرف سے جمع کرایا گیا</string>
+</resources>

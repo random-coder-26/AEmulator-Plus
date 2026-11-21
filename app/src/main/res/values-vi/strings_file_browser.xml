@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Chọn tệp</string>
+    <string name="fb_title_single">Chọn một tệp</string>
+    <string name="fb_up">Lên</string>
+    <string name="fb_system_picker">Bộ chọn của hệ thống</string>
+    <string name="fb_use_system_picker">Dùng bộ chọn của hệ thống thay thế</string>
+    <string name="fb_internal">Bộ nhớ trong</string>
+    <string name="fb_removable">Thẻ SD / USB %1$d</string>
+    <string name="fb_downloads">Tải xuống</string>
+    <string name="fb_documents">Tài liệu</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Tên</string>
+    <string name="fb_sort_date">Ngày</string>
+    <string name="fb_sort_size">Kích thước</string>
+    <string name="fb_hidden">Ẩn</string>
+    <string name="fb_selected">Đã chọn %1$d</string>
+    <string name="fb_clear">Xóa</string>
+    <string name="fb_import">Nhập</string>
+    <string name="fb_empty">Không có gì ở đây</string>
+    <string name="fb_unreadable">Không đọc được thư mục này. Android giữ một số thư mục (như dữ liệu của ứng dụng khác) đóng đối với mọi ứng dụng.</string>
+    <string name="fb_access_title">Cho phép truy cập tệp</string>
+    <string name="fb_access_text">Để liệt kê tệp firmware và chọn nhiều tệp cùng lúc, trình duyệt cần quyền truy cập tệp của bạn. Bạn cũng có thể dùng bộ chọn của hệ thống thay thế.</string>
+    <string name="fb_access_scoped">Android 10 ẩn hầu hết tệp khỏi các ứng dụng chưa từ bỏ bộ nhớ có phạm vi, nên trình duyệt này không thể liệt kê chúng ở đây. Hãy dùng bộ chọn của hệ thống thay thế.</string>
+    <string name="as_builtin_browser">Trình duyệt tệp tích hợp</string>
+    <string name="as_builtin_browser_sub">Chọn firmware với tùy chọn sắp xếp theo ngày và kích thước, và chọn nhiều tệp cùng lúc. Tắt để dùng bộ chọn của hệ thống.</string>
+    <string name="imp_archive_alone">Bản sao lưu máy ảo (.aessvm) phải được nhập riêng, không nhập cùng các tệp khác.</string>
+    <string name="imp_joining">Đang ghép %2$d phần của %1$s…</string>
+    <string name="imp_split_missing">Thiếu phần %2$s của kho lưu trữ chia nhỏ %1$s. Hãy chọn tất cả các phần của nó hoặc để chúng trong cùng một thư mục.</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">提交 ROM</string>
+    <string name="submit_action">提交 ROM</string>
+    <string name="submit_intro">分享 ROM 下载链接。提交的内容经审核后才会出现在目录中。</string>
+    <string name="submit_variant">变体</string>
+    <string name="submit_version">版本类别</string>
+    <string name="submit_pick_variant_first">请先选择变体</string>
+    <string name="submit_name">ROM 名称</string>
+    <string name="submit_rom_version">ROM 版本</string>
+    <string name="submit_device">设备</string>
+    <string name="submit_url">下载 URL</string>
+    <string name="submit_size_mb">文件大小（MB，可选）</string>
+    <string name="submit_emulator">模拟器版本（可选）</string>
+    <string name="submit_by">你的名字</string>
+    <string name="submit_notes">备注（可选）</string>
+    <string name="submit_send">提交</string>
+    <string name="submit_required">必填</string>
+    <string name="submit_bad_url">请输入有效的 http(s) 链接</string>
+    <string name="submit_bad_size">请输入数字，0 或更大</string>
+    <string name="submit_success">谢谢！你的 ROM 已提交，审核后将出现在目录中。</string>
+    <string name="submit_another">再提交一个</string>
+    <string name="submit_close">关闭</string>
+    <string name="submit_categories_failed">无法加载类别：%1$s</string>
+    <string name="submit_err_duplicate">此下载链接已被提交过。</string>
+    <string name="submit_err_rate_limited">提交过多。请约 %1$d 分钟后重试。</string>
+    <string name="submit_err_rejected">服务器拒绝了提交：%1$s</string>
+    <string name="submit_err_server">服务器返回了错误（HTTP %1$d）。</string>
+    <string name="submit_err_bad_response">服务器返回了意外的响应。</string>
+    <string name="catalog_err_bad_json">该目录不是有效的 ROM 列表。</string>
+    <string name="catalog_err_too_many_roms">该目录包含超过 10000 个 ROM。</string>
+    <string name="catalog_tested_on">模拟器 %1$s</string>
+    <string name="catalog_submitted_by">提交者：%1$s</string>
+</resources>

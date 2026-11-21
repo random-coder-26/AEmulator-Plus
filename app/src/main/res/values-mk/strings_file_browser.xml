@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Изберете датотеки</string>
+    <string name="fb_title_single">Изберете датотека</string>
+    <string name="fb_up">Нагоре</string>
+    <string name="fb_system_picker">Системски избирач</string>
+    <string name="fb_use_system_picker">Наместо тоа користи го системскиот избирач</string>
+    <string name="fb_internal">Внатрешна меморија</string>
+    <string name="fb_removable">SD-картичка / USB %1$d</string>
+    <string name="fb_downloads">Преземања</string>
+    <string name="fb_documents">Документи</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Име</string>
+    <string name="fb_sort_date">Датум</string>
+    <string name="fb_sort_size">Големина</string>
+    <string name="fb_hidden">Скриени</string>
+    <string name="fb_selected">Избрани: %1$d</string>
+    <string name="fb_clear">Исчисти</string>
+    <string name="fb_import">Увези</string>
+    <string name="fb_empty">Тука нема ништо</string>
+    <string name="fb_unreadable">Оваа папка не може да се прочита. Android некои папки (како податоците на други апликации) ги држи затворени за сите апликации.</string>
+    <string name="fb_access_title">Дозволи пристап до датотеките</string>
+    <string name="fb_access_text">За да ги прикаже вашите датотеки на фирмверот и да овозможи избор на повеќе одеднаш, прелистувачот има потреба од пристап до вашите датотеки. Можете да го користите и системскиот избирач.</string>
+    <string name="fb_access_scoped">Android 10 ги крие повеќето датотеки од апликации што не се откажале од ограничената меморија, па овој прелистувач не може да ги прикаже тука. Користете го системскиот избирач.</string>
+    <string name="as_builtin_browser">Вграден прелистувач на датотеки</string>
+    <string name="as_builtin_browser_sub">Изберете фирмвер со подредување по датум и големина и повеќе датотеки одеднаш. Исклучете за да го користите системскиот избирач.</string>
+    <string name="imp_archive_alone">Резервна копија на ВМ (.aessvm) мора да се увезе самостојно, а не заедно со други датотеки.</string>
+    <string name="imp_joining">Спојување на %2$d делови од %1$s…</string>
+    <string name="imp_split_missing">Недостасува делот %2$s од поделената архива %1$s. Изберете ги сите нејзини делови или чувајте ги во една папка.</string>
+</resources>

@@ -1,0 +1,384 @@
+package app.aemu.core
+
+import java.io.File
+import java.util.concurrent.TimeUnit
+
+/**
+ * Собирает командную строку и окружение гостевого процесса:
+ *   dhdrun <область свойств> 30 qemu-arm -L <root> -0 <argv0> <root/argv0> args…
+ * dhdrun отображает область свойств на fd 30 (ANDROID_PROPERTY_WORKSPACE), создаёт сокеты init
+ * (DHD_SOCK_<имя>=путь,права → ANDROID_SOCKET_<имя>) и переносит DHD_ENV_X в X перед exec qemu.
+ */
+class GuestRunner(
+    val paths: VmPaths,
+    val img: GuestImage,
+    val net: NetConfig = NetConfig(),
+) {
+    /** [netDbg]/[netDns]: the HTTP debugger's header door and DNS port for the native engine (AEMU64_NETDBG / AEMU64_NETDNS) */
+    data class NetConfig(val http80: Int = 0, val https443: Int = 0, val dns53: Int = 0, val glPath: String? = null, val netDbg: Int = 0, val netDns: Int = 0)
+
+    var qemuLog = false
+    var qemuStrace = false
+    var tbFlush = 0
+    var noSmc = false
+    var noTcgOpt = false
+    var singleTouch = false
+    var binderVerbose = false
+    /** set by the VM at start from [BinderGuard]: preload the binder guard into every guest program of this boot */
+    @Volatile var guardArmed = false
+    var sdcardHost: File? = null
+    /** user's extra qemu options from firmware settings: KEY=VALUE tokens become env vars, the rest go to qemu */
+    var userQemuArgs: String = ""
+
+    private val userTokens: List<String> get() = Regex("""("[^"]*"|\S+)""").findAll(userQemuArgs).map { it.value.trim('"') }.toList()
+    private fun isEnvToken(t: String) = !t.startsWith("-") && Regex("^[A-Z_][A-Z0-9_]*=").containsMatchIn(t)
+
+    /**
+     * Added for AEmulator Plus (2026-11-15): a pre-1.0 tree whose runtime is to start JamVM (runtime.vm=jam, class-file jars,
+     * see LegacyFirmware.runtimeVm). The runtime reads ANDROIDVM before it asks the property service.
+     */
+    private val jamVm: Boolean by lazy { LegacyFirmware.usesJamVm(paths.root) }
+
+    val engine: Engine get() = img.engine
+    /** instruction set of the guest's programs: picks the translator, the preload set and whether DHD_NO_SMC may be sent */
+    val arch: GuestArch get() = img.arch
+    val kernel: Kernel64 get() = Kernel64.forApi(img.api)
+    val qemu: File get() = paths.nativeBin(
+        if (engine == Engine.N64) kernel.runner
+        // x86-32: one translator (libqemu_kk_i386.so); the 2.x mmap-base fallback is an ARM linker workaround, it has no x86 build
+        else if (arch != GuestArch.ARM) arch.translator(engine)
+        // pre-1.0 images only: the translator with read-implies-exec (see LegacyFirmware.PRE_RELEASE_TRANSLATOR)
+        else if (LegacyFirmware.isPreRelease(img.release) && paths.nativeBin(LegacyFirmware.PRE_RELEASE_TRANSLATOR).canExecute()) LegacyFirmware.PRE_RELEASE_TRANSLATOR
+        // Android 1.0 / 1.1: the translator whose fb0 reports a second page (see LegacyFirmware.API1_TRANSLATOR)
+        else if (img.api in 1..2 && engine == Engine.KK && paths.nativeBin(LegacyFirmware.API1_TRANSLATOR).canExecute()) LegacyFirmware.API1_TRANSLATOR
+        else if (QemuFallback.enabled(paths) && paths.nativeBin(engine.qemuXperiaPlay).canExecute()) engine.qemuXperiaPlay else engine.qemu)
+    val runner: File get() = paths.nativeBin(engine.runner)
+
+    fun cmdline(argv: List<String>, propsFile: File? = null): List<String> {
+        val prog = argv.first()
+        val host = File(paths.root, prog.removePrefix("/")).absolutePath
+        val cmd = ArrayList<String>()
+        if (engine == Engine.N64) return listOf(qemu.absolutePath, prog) + argv
+        val props = propsFile ?: paths.props
+        if (runner.canExecute() && props.isFile) {
+            cmd += runner.absolutePath; cmd += props.absolutePath; cmd += "30"
+        }
+        // (native32 runs the guest's ARM code directly on an AArch32-capable phone; an x86 guest is always translated)
+        if (arch == GuestArch.ARM && img.settings.native32 && CpuInfo.hasAArch32) {
+            cmd += host
+            cmd += argv.drop(1)
+            return cmd
+        }
+        cmd += qemu.absolutePath
+        cmd += listOf("-L", paths.root.absolutePath, "-0", prog)
+        if (qemuLog || qemuStrace) {
+            if (qemuLog) cmd += listOf("-d", "unimp,guest_errors")
+            if (qemuStrace) cmd += "-strace"
+            cmd += listOf("-D", File(paths.bin, "qemu-${prog.substringAfterLast('/')}.log").absolutePath)
+        }
+        cmd += userTokens.filterNot(::isEnvToken)
+        cmd += host
+        cmd += argv.drop(1)
+        return cmd
+    }
+
+    /**
+     * 12+: the class paths (BOOTCLASSPATH, DEX2OATBOOTCLASSPATH, SYSTEMSERVERCLASSPATH) are put together at boot from
+     * the modules' own lists by the firmware's derive_classpath, and init exports them to every service after it.
+     */
+    @Volatile var derivedExports: Map<String, String> = emptyMap()
+
+    /** Native arm64 guest: libaemu64 redirects paths itself, the firmware's own linker and libraries run as they are. */
+    private fun env64(extra: Map<String, String>, program: String?): Map<String, String> {
+        val e = LinkedHashMap<String, String>()
+        for ((k, v) in img.exports) if (k !in EXPORTS_SKIP) e[k] = v
+        e["PATH"] = img.exports["PATH"] ?: "/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin"
+        e["LD_LIBRARY_PATH"] = "/vendor/lib64:/system/lib64"
+        e["ANDROID_ROOT"] = img.exports["ANDROID_ROOT"] ?: "/system"
+        e["ANDROID_DATA"] = img.exports["ANDROID_DATA"] ?: "/data"
+        e["ANDROID_ASSETS"] = img.exports["ANDROID_ASSETS"] ?: "/system/app"
+        e["EXTERNAL_STORAGE"] = img.exports["EXTERNAL_STORAGE"] ?: img.sdcardPath
+        e["BOOTCLASSPATH"] = img.bootclasspath
+        e.putIfAbsent("EMULATED_STORAGE_SOURCE", "/mnt/shell/emulated")
+        e.putIfAbsent("EMULATED_STORAGE_TARGET", "/storage/emulated")
+        // Modified for AEmulator Plus (2026-10-30): the APEX roots come from init.environ.rc of the boot ramdisk, which an
+        // image without one (Starnix Wear) does not have. ART, libnativeloader and libicu take them from the environment.
+        for ((k, apex) in listOf("ANDROID_ART_ROOT" to "com.android.art", "ANDROID_I18N_ROOT" to "com.android.i18n",
+            "ANDROID_TZDATA_ROOT" to "com.android.tzdata", "ANDROID_RUNTIME_ROOT" to "com.android.runtime"))
+            if (File(paths.root, "apex/$apex").isDirectory) e.putIfAbsent(k, "/apex/$apex")
+        // a system-only image (GSI) has no init.environ.rc: that lives in the boot ramdisk
+        e.putIfAbsent("ASEC_MOUNTPOINT", "/mnt/asec")
+        e.putIfAbsent("ANDROID_BOOTLOGO", "1")
+        e.putIfAbsent("ANDROID_STORAGE", "/storage")
+        if ("DOWNLOAD_CACHE" !in e && img.api >= 26) {
+            File(paths.root, "data/cache").mkdirs()
+            e["DOWNLOAD_CACHE"] = "/data/cache"
+        }
+        if ("SYSTEMSERVERCLASSPATH" !in e) {
+            val jars = listOf("services.jar", "ethernet-service.jar", "wifi-service.jar")
+                .filter { File(paths.root, "system/framework/$it").isFile }
+            if (jars.isNotEmpty()) e["SYSTEMSERVERCLASSPATH"] = jars.joinToString(":") { "/system/framework/$it" }
+        }
+        e["HOME"] = "/data"; e["TMPDIR"] = "/data/local/tmp"; e["TZ"] = "UTC"
+        e["AEMU64_ROOT"] = paths.root.absolutePath
+        e["AEMU64_PROPS"] = paths.props.absolutePath
+        e["AEMU64_BINDER"] = paths.binderSock.absolutePath
+        if (kernel.treble) {
+            e["AEMU64_HWBINDER"] = paths.hwbinderSock.absolutePath
+            e["AEMU64_VNDBINDER"] = paths.vndbinderSock.absolutePath
+        }
+        e["AEMU64_INPUT"] = paths.inputSock.absolutePath
+        // input method "mouse and keyboard": the sockets of the emulated touchpad and keyboard (InputService); the runner
+        // only opens them when the guest opens the nodes aemu-touchpad / aemu-keyboard, which exist in that mode alone
+        e["AEMU64_PAD"] = File(paths.root, "dev/aemu_touchpad").absolutePath
+        e["AEMU64_KBD"] = File(paths.root, "dev/aemu_keyboard").absolutePath
+        // 32-bit firmware whose libbinder insists on protocol 7: the guest runner (libaemu64_26/27) answers BINDER_VERSION
+        // with it and translates the 32-bit binder structures for those programs (see BinderProtocol)
+        BinderProtocol.saved(paths.bin)?.let { e[BinderProtocol.GUEST_ENV] = it.toString() }
+        // Modified for AEmulator Plus (2026-11-04): the translators come from the firmware's architecture (GuestArch.n64Lib32/64):
+        // ARM: libqemu_arm.so for its 32-bit programs; x86: libqemu_i386.so; x86-64: libqemu_x86_64.so for the 64-bit programs
+        // and libqemu_i386.so for the 32-bit side. The runner (libaemu64_<api>.so) picks by the program's ELF class and machine.
+        arch.n64Lib32.takeIf { it.isNotEmpty() }?.let { paths.nativeBin(it) }?.takeIf { it.canExecute() }?.let { e["AEMU64_QEMU"] = it.absolutePath }
+        arch.n64Lib64?.let { paths.nativeBin(it) }?.takeIf { it.canExecute() }?.let { e["AEMU64_QEMU64"] = it.absolutePath }
+        sdcardHost?.let { e["AEMU64_SDCARD"] = it.absolutePath }
+        // (the GPU bridge for 32-bit programs is an ARM library: a firmware of another architecture never gets it)
+        if (img.settings.gpu && kernel.gpuBridge32 != null && !arch.foreign) {
+            e["DHD_GL"] = "/dev/socket/gl"
+            if (!HostInfo.gpu().contains("adreno")) e["DHD_GL3"] = "0"
+            e["AEMU_GL_RETARGET"] = "0"; e["AEMU_GL_CLIENT_ARRAYS"] = "0"      // as on the 4.4 engine for 4.3+
+        }
+        e["AEMU64_FB"] = "${img.settings.width}x${img.settings.height}"
+        if (net.netDbg > 0) e["AEMU64_NETDBG"] = net.netDbg.toString()
+        if (net.netDns > 0) e["AEMU64_NETDNS"] = net.netDns.toString()
+        // Modified for AEmulator Plus (2026-10-28): uname -r. The native engine never set QEMU_UNAME (only env() did), so the
+        // guest saw the phone's own kernel even with the firmware's version imported from boot.img. A 32-bit-only Android 14
+        // firmware's netd refuses a 32-bit userspace on Linux >= 6.2 ("libnetd_updatable_init: Failed: 32 bit userspace with
+        // Kernel version >= 6.2.0 is unsupported") and aborts in a loop; with the imported 5.15.x release it starts.
+        if (VmSettings.kernelCustom(img.settings)) e["QEMU_UNAME"] = VmSettings.kernelRelease(img.settings)
+        // debugging: run/crash.report makes the runner print pc/lr and their mappings on a fatal signal
+        // SurfaceFlinger is C++ only (no ART fault handler that the report would replace), so its fatal signals are
+        // always reported: pc/lr, the fault address and the registers go to <root>/dev/aemu_crash.log (and the log export)
+        // Setting "SurfaceFlinger crash tombstone" (opt-in): leave SurfaceFlinger's fatal signals to the guest's own handler. With AEMU64_CRASH the
+        // runner reports and exits at once, so the firmware's debuggerd never runs: no guest pc, no symbolised backtrace.
+        // Without it a guest crash gives the normal "F DEBUG" tombstone in logcat (and the runner still reports if the
+        // guest has no handler left).
+        val sfTombstone = program == "/system/bin/surfaceflinger" && img.settings.sfTombstone
+        if (File(paths.bin, "crash.report").exists() || (program == "/system/bin/surfaceflinger" && !sfTombstone)) e["AEMU64_CRASH"] = "1"
+        for (t in userTokens.filter(::isEnvToken)) e[t.substringBefore('=')] = t.substringAfter('=')
+        for ((k, v) in extra) when {
+            k.startsWith("DHD_SOCK_") -> e["AEMU64_SOCK_" + k.removePrefix("DHD_SOCK_")] = v
+            k == "DHD_UID" -> e["AEMU64_ID"] = v + "," + (extra["DHD_GID"] ?: v)
+            k == "DHD_GID" -> {}
+            k == "AEMU64_PROPS_FILE" -> e["AEMU64_PROPS"] = v
+            else -> e[k] = v
+        }
+        // A firmware with no 64-bit side runs its own 32-bit installd under qemu-arm, and the phone's kernel answers
+        // every extended-attribute call with ENOSYS. TreeFixer installs libaemuxattr.so for exactly that case, but only
+        // the 32-bit engine's env() ever preloaded it: here installd kept failing on getxattr / lgetxattr / setxattr
+        // ("Failed before getfilecon ... Function not implemented"), deleted /data/user_de/0/<pkg> for every package,
+        // SettingsProvider had no database directory, system_server died and zygote went with it.
+        // DHD_ENV_<X> is the guest-only form (the translator turns it into <X> for the guest program, not for itself).
+        // The path depends on the program: a /vendor program's linker namespace (permitted_paths=/odm:/vendor) refuses
+        // /system/lib/libaemuxattr.so ("CANNOT LINK EXECUTABLE", exit code 1), so it gets the copy in /vendor/lib.
+        val xattrPath = GuestPreload.xattrFor(program)
+        // installd is left out: it marks an app's default storage with getxattr/setxattr("user.default"), and PMS's
+        // migrateAppData() moves /data/user_de/0/<pkg> over /data/data/<pkg> (or the other way) for every system app
+        // whose directory does not carry the mark. The shim answers ENODATA to every name but security.selinux and
+        // stores nothing, so no directory ever carries it: each boot the DE (or CE) directory was deleted/renamed away,
+        // and the apps that use device-protected storage (the contacts provider's calllog_shadow.db, then
+        // android.process.acore) failed with "mkdir failed: ENOENT". The libc of the tree is patched instead
+        // (TreeFixer.xattrNoop: a get reports one byte, a set succeeds), which marks both directories as default.
+        // Modified for AEmulator Plus (2026-11-01): a tree with both sides gets the preload for its 32-bit ELF programs
+        // only. LD_PRELOAD of a 32-bit library into a 64-bit program is a fatal linker error, and QEMU_SET_ENV is only
+        // read by qemu-arm anyway. (run64.c do_exec drops it again when a 32-bit program starts a 64-bit one.)
+        // (libaemuxattr.so is an ARM library: never for a firmware of another architecture, whose translator forwards the calls itself)
+        val xattrTarget = !arch.foreign && (isPure32Tree(paths.root) || (has32BitSide(paths.root) && isGuestElf32(paths.root, program)))
+        if (xattrTarget && File(paths.root, xattrPath.removePrefix("/")).isFile &&
+            program?.substringAfterLast('/') != "installd") {
+            val key = "DHD_ENV_LD_PRELOAD"
+            val have = e[key].orEmpty().split(':').filter { it.isNotEmpty() && it != GuestPreload.XATTR && it != GuestPreload.XATTR_VENDOR }
+            e[key] = (have + xattrPath).joinToString(":")
+            // The native engine's runner (libaemu64) execs qemu-arm itself and never translates DHD_ENV_<X> (that is the
+            // 32-bit engine's runner), so the guest saw no LD_PRELOAD at all. qemu-user's own guest-only environment
+            // (QEMU_SET_ENV, "A=b,C=d") reaches the guest program without preloading the library into qemu itself.
+            val set = e["QEMU_SET_ENV"].orEmpty().split(',').filter { it.isNotEmpty() && !it.startsWith("LD_PRELOAD=") }
+            e["QEMU_SET_ENV"] = (set + ("LD_PRELOAD=" + e.getValue(key))).joinToString(",")
+        }
+        e.putAll(derivedExports)
+        return e
+    }
+
+    /** [program]: the guest path of the program the environment is for (argv[0] of the service), null for a shell */
+    fun env(extra: Map<String, String> = emptyMap(), program: String? = null): Map<String, String> {
+        if (engine == Engine.N64) return env64(extra, program)
+        val s = img.settings
+        val e = LinkedHashMap<String, String>()
+        // переменные из init.rc прошивки (export …), кроме тех, что задаём сами
+        for ((k, v) in img.exports) if (k !in EXPORTS_SKIP) e[k] = v
+        e["PATH"] = img.exports["PATH"] ?: "/sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin"
+        e["DHD_ENV_LD_LIBRARY_PATH"] = (img.exports["LD_LIBRARY_PATH"] ?: "/vendor/lib:/system/lib").let { lp ->
+            // Dalvik's java.library.path is this variable: System.loadLibrary("android_servers") only looks there,
+            // so a firmware export that leaves out /system/lib ends in "Library android_servers not found"
+            if (lp.split(':').contains("/system/lib")) lp else "$lp:/system/lib"
+        }
+        // ashmem через memfd (движок) + наша прослойка от запрещённых в песочнице вызовов (mount, reboot…).
+        // glibc firmware (Google TV) cannot load the bionic-linked libaemushim.so (DT_NEEDED libc.so): ashmem shim only.
+        // The binder guard only for a VM that has shown the daemon's bare-object fault (BinderGuard), and only where its
+        // library is in the tree: an ARM bionic userland on the universal/2.x engines, never glibc or a foreign architecture.
+        val guard = guardArmed && !arch.foreign && !GuestPreload.isGlibcFirmware(paths.root) &&
+            File(paths.root, GuestPreload.GUARD.removePrefix("/")).isFile
+        e["DHD_ENV_LD_PRELOAD"] = GuestPreload.value(GuestPreload.isGlibcFirmware(paths.root),
+            xattr = isPure32Tree(paths.root) && File(paths.root, GuestPreload.xattrFor(program).removePrefix("/")).isFile,
+            xattrPath = GuestPreload.xattrFor(program), guard = guard)
+        if (guard) {
+            e[BinderGuard.ENV] = "1"
+            e[BinderGuard.ENV_LOG] = File(paths.bin, BinderGuard.LOG).absolutePath
+        }
+        e["ANDROID_ROOT"] = img.exports["ANDROID_ROOT"] ?: "/system"
+        e["ANDROID_DATA"] = img.exports["ANDROID_DATA"] ?: "/data"
+        e["ANDROID_ASSETS"] = img.exports["ANDROID_ASSETS"] ?: "/system/app"
+        e["EXTERNAL_STORAGE"] = img.exports["EXTERNAL_STORAGE"] ?: img.sdcardPath
+        if (jamVm) e[LegacyFirmware.VM_ENV] = LegacyFirmware.VM_JAM
+        e["ASEC_MOUNTPOINT"] = img.exports["ASEC_MOUNTPOINT"] ?: "/mnt/asec"
+        e["LOOP_MOUNTPOINT"] = img.exports["LOOP_MOUNTPOINT"] ?: "/mnt/obb"
+        // Modified for AEmulator Plus (2026-11-06): jars the firmware's own libandroid_runtime registers classes from, but its init.rc leaves out (see BootClasspathRepair)
+        e["BOOTCLASSPATH"] = BootClasspathRepair.repair(paths.root, img.bootclasspath).bootclasspath
+        // 4.2+: зигота монтирует карту для каждого пользователя и без этих переменных роняет приложения
+        // 5.0+: Environment.isExternalStorageEmulated() ищет путь /storage/emulated/<user> среди томов MountService (storage_list.xml).
+        // У прошивки с единственным физическим томом (SDK/goldfish: /storage/sdcard) такого тома нет, и ActivityManager не может
+        // запустить ни один процесс приложения ("Failed to find storage device at /storage/emulated/0"), так что эти переменные не задаём.
+        val ext = img.exports["EXTERNAL_STORAGE"]
+        val physicalOnly = img.api >= 21 && ext != null && !ext.startsWith("/storage/emulated")
+        if (img.api >= 17 && !physicalOnly) {
+            e.putIfAbsent("EMULATED_STORAGE_SOURCE", "/mnt/shell/emulated")
+            e.putIfAbsent("EMULATED_STORAGE_TARGET", "/storage/emulated")
+        }
+        // libaemushim: the precompiled code under /system is read-only like on the real mount
+        e["AEMU_RO_SYSTEM"] = "1"
+        // libaemushim serves /proc/meminfo scaled to this budget instead of the phone's own memory
+        e["AEMU_RAM_KB"] = (guestRamMb(img.api, s.ramMb) * 1024L).toString()
+        e["HOME"] = "/data"
+        e["TMPDIR"] = "/data/local/tmp"
+        e["ASHMEM_SHIM_DIR"] = "/data/local/tmp"
+        e["TZ"] = "UTC"
+        // uname -r / os.version: qemu-user reports this release instead of the host kernel's
+        if (VmSettings.kernelCustom(img.settings)) e["QEMU_UNAME"] = VmSettings.kernelRelease(img.settings)
+        e["DHD_FB_W"] = s.width.toString()
+        e["DHD_FB_H"] = s.height.toString()
+        e["DHD_IN_W"] = s.width.toString()
+        e["DHD_IN_H"] = s.height.toString()
+        e["DHD_FB_HZ"] = s.fbHz.toString()
+        e["DHD_OWNERS"] = paths.owners.absolutePath
+        e["DHD_NET_LOG"] = File(paths.bin, "net.log").absolutePath
+        e["DHD_ASHMEM_LOG"] = File(paths.bin, "ashmem.log").absolutePath
+        e["DHD_BINDER"] = paths.binderSock.absolutePath
+        e["DHD_BINDER_LOG"] = File(paths.bin, "binder-warn.log").absolutePath
+        e["DHD_CREDS"] = paths.creds.absolutePath
+        e["DHD_INPUT"] = paths.inputSock.absolutePath
+        if (singleTouch) e["DHD_INPUT_ST"] = "1"
+        if (binderVerbose) e["DHD_BINDER_VERBOSE"] = "1"
+        sdcardHost?.let { e["DHD_SDCARD"] = it.absolutePath }
+        if (net.http80 > 0) e["DHD_HTTP80"] = net.http80.toString()
+        if (net.https443 > 0) e["DHD_HTTPS443"] = net.https443.toString()
+        if (net.dns53 > 0) {
+            e["DHD_DNS53"] = net.dns53.toString()
+            e["DHD_ENV_ANDROID_DNS_MODE"] = "local"
+        }
+        net.glPath?.let { e["DHD_GL"] = it }
+        // GL-мост отдаёт гостю ES 3.0, но hwui ≤4.3 и загрузка текстур с шагом строки (ROW_LENGTH)
+        // через мост не работают — для них сообщаем ES 2.0. На Adreno 4.4 с ES 3 и PBO работает правильно.
+        if (img.api < 19 || !HostInfo.gpu().contains("adreno")) e["DHD_GL3"] = "0"
+        // 4.3+: SurfaceFlinger (GLConsumer) re-targets its EGLImages itself; forcing it again blanks the screen
+        if (img.api >= 18) { e["AEMU_GL_RETARGET"] = "0"; e["AEMU_GL_CLIENT_ARRAYS"] = "0" }
+        if (tbFlush > 0) e["DHD_TBFLUSH"] = tbFlush.toString()
+        if (noSmc && arch.supportsNoSmc) e["DHD_NO_SMC"] = "1"
+        if (noTcgOpt) e["DHD_NO_TCGOPT"] = "1"
+        for (t in userTokens.filter(::isEnvToken)) e[t.substringBefore('=')] = t.substringAfter('=')
+        e.putAll(extra)
+        if (arch != GuestArch.ARM) archFixups(e)
+        return e
+    }
+
+    /**
+     * What differs for a guest that is not ARM, applied last so that nothing (user options, [extra]) can undo it:
+     *  - no DHD_NO_SMC / GUEST_NO_SMC: stale translations on a JIT, see [GuestArch.supportsNoSmc];
+     *  - no preload of a library that is not built for this architecture: until the x86 builds of the helper libraries
+     *    (assets/engines/…-x86) exist, an x86 firmware boots without the shims, and a preload of an ARM file would
+     *    only make the guest's linker complain about the wrong ELF class/machine on every program.
+     */
+    private fun archFixups(e: MutableMap<String, String>) {
+        if (!arch.supportsNoSmc) { e.remove("DHD_NO_SMC"); e.remove("GUEST_NO_SMC") }
+        // The stand variables (binder socket, framebuffer size, input socket, creds, owners, sdcard, net ports, uid/gid...)
+        // are named DHD_<X> for the ARM translators (libqemu_kk/gb), but libqemu_kk_i386.so (QEMU 8.2 + SENSES patches) only
+        // reads GUEST_<X>. With DHD_BINDER alone the x86 guest never gets a /dev/binder ("GUEST_BINDER не задан — открытие
+        // отклонено" -> ENOENT): servicemanager, surfaceflinger and every other native service abort, zygote segfaults.
+        // dhdrun keeps GUEST_* (it only strips DHD_*), and qemu hides GUEST_* from the guest's own environment.
+        // DHD_ENV_<X> (guest-only variables) and DHD_SOCK_<X> (init sockets) are dhdrun's, they are not mirrored.
+        for ((k, v) in e.entries.toList()) {
+            if (k.startsWith("DHD_") && !k.startsWith("DHD_ENV_") && !k.startsWith("DHD_SOCK_")) {
+                e.putIfAbsent("GUEST_" + k.removePrefix("DHD_"), v)
+            }
+        }
+        for (key in listOf("DHD_ENV_LD_PRELOAD", "LD_PRELOAD")) {
+            val v = e[key] ?: continue
+            val kept = v.split(':').filter { it.isNotEmpty() && GuestArch.isOfArch(File(paths.root, it.removePrefix("/")), arch) }
+            if (kept.isEmpty()) e.remove(key) else e[key] = kept.joinToString(":")
+        }
+    }
+
+    /** Одноразовый запуск гостевой команды (am, pm, settings, sh -c …) с ожиданием вывода. */
+    fun run(argv: List<String>, timeoutMs: Long = 120_000, extra: Map<String, String> = emptyMap()): Pair<Int, String> {
+        if (!qemu.canExecute()) return -1 to "no qemu"
+        val pb = ProcessBuilder(cmdline(argv)).directory(paths.bin).redirectErrorStream(true)
+        pb.environment().clear()
+        pb.environment().putAll(env(extra))
+        val p = pb.start()
+        val sb = StringBuilder()
+        val t = Thread {
+            runCatching { p.inputStream.bufferedReader().forEachLine { if (sb.length < 256_000) sb.append(it).append('\n') } }
+        }.apply { isDaemon = true; start() }
+        if (!p.waitFor(timeoutMs, TimeUnit.MILLISECONDS)) p.destroyForcibly()
+        t.join(2000)
+        val code = runCatching { p.exitValue() }.getOrDefault(-9)
+        return code to sb.toString()
+    }
+
+    companion object {
+        /** PATH for an interactive/adb shell: /system/bin and /system/xbin first (the firmware's /sbin-first PATH breaks pm/am) */
+        fun shellPath(path: String?): String {
+            val rest = (path ?: "").split(':').filter { it.isNotEmpty() && it != "/system/bin" && it != "/system/xbin" }
+            return (listOf("/system/bin", "/system/xbin") + rest).joinToString(":")
+        }
+
+        /**
+         * qemu cannot exec a script (even with #!: "Error while loading .../bin/pm: Exec format error"), so typing
+         * `pm`, `am`, `input`... in the shell failed. Shell functions run them through `sh <script>` instead.
+         * Only for files that are really scripts (no ELF magic) and only in the shell the user types into.
+         */
+        fun scriptFns(root: File): String {
+            val sb = StringBuilder()
+            for (n in listOf("am", "pm", "input", "monkey", "svc", "ime", "bmgr", "wm", "content", "settings")) {
+                val f = File(root, "system/bin/$n")
+                if (!f.isFile) continue
+                val head = runCatching { f.inputStream().use { s -> ByteArray(4).also { b -> s.read(b) } } }.getOrNull() ?: continue
+                if (head[0] == 0x7f.toByte() && head[1] == 'E'.code.toByte()) continue
+                sb.append(n).append("() { /system/bin/sh /system/bin/").append(n).append(" \"\$@\"; }; ")
+            }
+            return sb.toString()
+        }
+
+        private val EXPORTS_SKIP = setOf("PATH", "LD_LIBRARY_PATH", "BOOTCLASSPATH", "LD_PRELOAD")
+
+        /** RAM the guest is told it has: the user's choice, or what phones of that Android version shipped with. */
+        fun guestRamMb(api: Int, chosen: Int): Int {
+            // Modified for AEmulator Plus (2026-11-04): "host / max" is a negative setting, resolved to the host's RAM here
+            val picked = RamChoice.resolve(chosen)
+            if (picked > 0) return picked
+            val typical = when { api <= 10 -> 512; api <= 15 -> 1024; api <= 19 -> 2048; api <= 23 -> 3072; else -> 4096 }
+            val hostMb = runCatching {
+                java.io.File("/proc/meminfo").useLines { l -> l.first { it.startsWith("MemTotal:") } }.split(Regex("\\s+"))[1].toLong() / 1024
+            }.getOrDefault(8192L)
+            return typical.coerceAtMost((hostMb / 2).toInt())
+        }
+    }
+}

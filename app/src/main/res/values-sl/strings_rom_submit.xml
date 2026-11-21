@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Pošlji ROM</string>
+    <string name="submit_action">Pošlji ROM</string>
+    <string name="submit_intro">Delite povezavo za prenos ROM-a. Prispevki se pred prikazom v katalogu pregledajo.</string>
+    <string name="submit_variant">Različica</string>
+    <string name="submit_version">Kategorija različice</string>
+    <string name="submit_pick_variant_first">Najprej izberite različico</string>
+    <string name="submit_name">Ime ROM-a</string>
+    <string name="submit_rom_version">Različica ROM-a</string>
+    <string name="submit_device">Naprava</string>
+    <string name="submit_url">URL za prenos</string>
+    <string name="submit_size_mb">Velikost datoteke v MB (izbirno)</string>
+    <string name="submit_emulator">Različica emulatorja (izbirno)</string>
+    <string name="submit_by">Vaše ime</string>
+    <string name="submit_notes">Opombe (izbirno)</string>
+    <string name="submit_send">Pošlji</string>
+    <string name="submit_required">Obvezno</string>
+    <string name="submit_bad_url">Vnesite veljavno povezavo http(s)</string>
+    <string name="submit_bad_size">Vnesite število, 0 ali več</string>
+    <string name="submit_success">Hvala! Vaš ROM je poslan in se bo po pregledu prikazal v katalogu.</string>
+    <string name="submit_another">Pošlji še enega</string>
+    <string name="submit_close">Zapri</string>
+    <string name="submit_categories_failed">Kategorij ni bilo mogoče naložiti: %1$s</string>
+    <string name="submit_err_duplicate">Ta povezava za prenos je že bila poslana.</string>
+    <string name="submit_err_rate_limited">Preveč prispevkov. Poskusite znova čez približno %1$d min.</string>
+    <string name="submit_err_rejected">Strežnik je prispevek zavrnil: %1$s</string>
+    <string name="submit_err_server">Strežnik je vrnil napako (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Strežnik je poslal nepričakovan odgovor.</string>
+    <string name="catalog_err_bad_json">Katalog ni veljaven seznam ROM-ov.</string>
+    <string name="catalog_err_too_many_roms">Katalog vsebuje več kot 10000 ROM-ov.</string>
+    <string name="catalog_tested_on">Emulator %1$s</string>
+    <string name="catalog_submitted_by">Poslal(a): %1$s</string>
+</resources>

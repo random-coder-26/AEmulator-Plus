@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Υποβολή ROM</string>
+    <string name="submit_action">Υποβολή ROM</string>
+    <string name="submit_intro">Μοιραστείτε έναν σύνδεσμο λήψης ROM. Οι υποβολές ελέγχονται πριν εμφανιστούν στον κατάλογο.</string>
+    <string name="submit_variant">Παραλλαγή</string>
+    <string name="submit_version">Κατηγορία έκδοσης</string>
+    <string name="submit_pick_variant_first">Επιλέξτε πρώτα μια παραλλαγή</string>
+    <string name="submit_name">Όνομα ROM</string>
+    <string name="submit_rom_version">Έκδοση ROM</string>
+    <string name="submit_device">Συσκευή</string>
+    <string name="submit_url">URL λήψης</string>
+    <string name="submit_size_mb">Μέγεθος αρχείου σε MB (προαιρετικό)</string>
+    <string name="submit_emulator">Έκδοση εξομοιωτή (προαιρετικό)</string>
+    <string name="submit_by">Το όνομά σας</string>
+    <string name="submit_notes">Σημειώσεις (προαιρετικό)</string>
+    <string name="submit_send">Υποβολή</string>
+    <string name="submit_required">Απαιτείται</string>
+    <string name="submit_bad_url">Εισαγάγετε έναν έγκυρο σύνδεσμο http(s)</string>
+    <string name="submit_bad_size">Εισαγάγετε έναν αριθμό, 0 ή περισσότερο</string>
+    <string name="submit_success">Ευχαριστούμε! Το ROM σας υποβλήθηκε και θα εμφανιστεί στον κατάλογο μετά τον έλεγχο.</string>
+    <string name="submit_another">Υποβολή άλλου</string>
+    <string name="submit_close">Κλείσιμο</string>
+    <string name="submit_categories_failed">Δεν ήταν δυνατή η φόρτωση των κατηγοριών: %1$s</string>
+    <string name="submit_err_duplicate">Αυτός ο σύνδεσμος λήψης έχει ήδη υποβληθεί.</string>
+    <string name="submit_err_rate_limited">Πάρα πολλές υποβολές. Δοκιμάστε ξανά σε περίπου %1$d λεπτά.</string>
+    <string name="submit_err_rejected">Ο διακομιστής απέρριψε την υποβολή: %1$s</string>
+    <string name="submit_err_server">Ο διακομιστής επέστρεψε σφάλμα (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Ο διακομιστής έστειλε μη αναμενόμενη απάντηση.</string>
+    <string name="catalog_err_bad_json">Ο κατάλογος δεν είναι έγκυρη λίστα ROM.</string>
+    <string name="catalog_err_too_many_roms">Ο κατάλογος έχει περισσότερα από 10000 ROM.</string>
+    <string name="catalog_tested_on">Εξομοιωτής %1$s</string>
+    <string name="catalog_submitted_by">Υποβλήθηκε από %1$s</string>
+</resources>

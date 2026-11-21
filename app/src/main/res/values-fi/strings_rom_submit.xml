@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Lähetä ROM</string>
+    <string name="submit_action">Lähetä ROM</string>
+    <string name="submit_intro">Jaa ROMin latauslinkki. Lähetykset tarkistetaan ennen kuin ne tulevat luetteloon.</string>
+    <string name="submit_variant">Variantti</string>
+    <string name="submit_version">Versioluokka</string>
+    <string name="submit_pick_variant_first">Valitse ensin variantti</string>
+    <string name="submit_name">ROMin nimi</string>
+    <string name="submit_rom_version">ROMin versio</string>
+    <string name="submit_device">Laite</string>
+    <string name="submit_url">Lataus-URL</string>
+    <string name="submit_size_mb">Tiedostokoko Mt:na (valinnainen)</string>
+    <string name="submit_emulator">Emulaattorin versio (valinnainen)</string>
+    <string name="submit_by">Nimesi</string>
+    <string name="submit_notes">Huomautukset (valinnainen)</string>
+    <string name="submit_send">Lähetä</string>
+    <string name="submit_required">Pakollinen</string>
+    <string name="submit_bad_url">Anna kelvollinen http(s)-linkki</string>
+    <string name="submit_bad_size">Anna luku, 0 tai suurempi</string>
+    <string name="submit_success">Kiitos! ROMisi on lähetetty ja tulee luetteloon tarkistuksen jälkeen.</string>
+    <string name="submit_another">Lähetä toinen</string>
+    <string name="submit_close">Sulje</string>
+    <string name="submit_categories_failed">Luokkien lataus epäonnistui: %1$s</string>
+    <string name="submit_err_duplicate">Tämä latauslinkki on jo lähetetty.</string>
+    <string name="submit_err_rate_limited">Liian monta lähetystä. Yritä uudelleen noin %1$d min kuluttua.</string>
+    <string name="submit_err_rejected">Palvelin hylkäsi lähetyksen: %1$s</string>
+    <string name="submit_err_server">Palvelin palautti virheen (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Palvelin lähetti odottamattoman vastauksen.</string>
+    <string name="catalog_err_bad_json">Luettelo ei ole kelvollinen ROM-luettelo.</string>
+    <string name="catalog_err_too_many_roms">Luettelossa on yli 10000 ROMia.</string>
+    <string name="catalog_tested_on">Emulaattori %1$s</string>
+    <string name="catalog_submitted_by">Lähettäjä: %1$s</string>
+</resources>

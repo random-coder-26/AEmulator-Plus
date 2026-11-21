@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Библиотека</string>
+    <string name="tab_close">Затвори го јазичето</string>
+    <string name="tab_close_title">Да се затвори %1$s?</string>
+    <string name="tab_close_text">„Минимизирај“ го затвора јазичето, а машината продолжува да работи во заднина; отворете ја повторно од библиотеката. „Исклучи“ ја исклучува машината.</string>
+    <string name="tab_minimize">Минимизирај</string>
+    <string name="tab_shutdown">Исклучи</string>
+    <string name="vm_slots_full">Сите %1$d места за машини се зафатени. Прво исклучете една.</string>
+    <string name="tab_group_title">2 јазичиња</string>
+    <string name="tab_split_failed">Таа машина повеќе не може да се додаде на ова јазиче.</string>
+    <string name="tab_drag_label">Повлечете на екранот за поделба</string>
+    <string name="tab_split_title">Да се раздвојат 2 јазичиња?</string>
+    <string name="tab_split_text">Секоја машина се враќа на свое јазиче. И двете продолжуваат да работат.</string>
+    <string name="tab_split_action">Раздвои</string>
+    <string name="tab_bar_hide">Скриј ја лентата со јазичиња</string>
+    <string name="tab_bar_show">Прикажи ја лентата со јазичиња</string>
+</resources>

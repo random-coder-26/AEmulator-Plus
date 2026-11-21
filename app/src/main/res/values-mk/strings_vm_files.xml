@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">Прелистај датотеки на ВМ</string>
+    <string name="vmf_unreadable">Оваа папка не може да се прочита.</string>
+    <string name="vmf_readonly_folder">Само за читање: оваа папка не е дел од сопствените датотеки на ВМ. Можете да гледате и копирате, но не и да менувате.</string>
+    <string name="vmf_link">Врска</string>
+    <string name="vmf_no_folders">Тука нема папки</string>
+    <string name="vmf_preview_failed">Оваа датотека не може да се прочита.</string>
+    <string name="vmf_preview_truncated">Се прикажуваат првите %1$s од %2$s</string>
+    <string name="vmf_copy">Копирај</string>
+    <string name="vmf_copy_to">Копирај во</string>
+    <string name="vmf_copy_to_vm">Друго место во оваа ВМ</string>
+    <string name="vmf_copy_to_device">Надвор од ВМ (меморија на уредот)</string>
+    <string name="vmf_copy_here">Копирај тука</string>
+    <string name="vmf_new_folder">Нова папка</string>
+    <string name="vmf_folder_name">Име на папката</string>
+    <string name="vmf_create">Создади</string>
+    <string name="vmf_new_name">Ново име</string>
+    <string name="vmf_delete_one">Да се избрише „%1$s“? Ова не може да се врати.</string>
+    <string name="vmf_delete_many">Да се избришат %1$d ставки? Ова не може да се врати.</string>
+    <string name="vmf_delete_core">Ова е клучен дел од ВМ (партиција или слика). Без него ВМ можеби повеќе нема да се стартува.</string>
+    <string name="vmf_working_copy">Копирање…</string>
+    <string name="vmf_working_delete">Бришење…</string>
+    <string name="vmf_working_rename">Преименување…</string>
+    <string name="vmf_result_copied">Копирани: %1$d</string>
+    <string name="vmf_result_copied_skipped">Копирани: %1$d. Прескокнати: %2$d (врски надвор од ВМ, сокети и слично).</string>
+    <string name="vmf_result_deleted">Избришани: %1$d</string>
+    <string name="vmf_failed">Неуспешно: %1$s</string>
+    <string name="vmf_readonly">Оваа ставка не е дел од сопствените датотеки на ВМ, па не може да се менува тука.</string>
+    <string name="vmf_protected">Ова е дел од внатрешната евиденција на ВМ и не може да се менува тука.</string>
+    <string name="vmf_bad_name">Тоа име не е дозволено.</string>
+    <string name="vmf_exists">Веќе постои ставка со тоа име.</string>
+    <string name="vmf_no_space">Нема доволно слободен простор.</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">Дидани файлҳои VM</string>
+    <string name="vmf_unreadable">Ин ҷузвдонро хондан мумкин нест.</string>
+    <string name="vmf_readonly_folder">Танҳо барои хондан: ин ҷузвдон ҷузъи файлҳои худи VM нест. Метавонед бубинед ва нусха бардоред, аммо тағйир дода наметавонед.</string>
+    <string name="vmf_link">Пайванд</string>
+    <string name="vmf_no_folders">Дар ин ҷо ҷузвдон нест</string>
+    <string name="vmf_preview_failed">Ин файлро хондан мумкин нест.</string>
+    <string name="vmf_preview_truncated">%1$s-и аввал аз %2$s нишон дода мешавад</string>
+    <string name="vmf_copy">Нусха бардоштан</string>
+    <string name="vmf_copy_to">Нусха бардоштан ба</string>
+    <string name="vmf_copy_to_vm">Ҷойи дигар дар ин VM</string>
+    <string name="vmf_copy_to_device">Берун аз VM (хотираи дастгоҳ)</string>
+    <string name="vmf_copy_here">Ба ин ҷо нусха бардоштан</string>
+    <string name="vmf_new_folder">Ҷузвдони нав</string>
+    <string name="vmf_folder_name">Номи ҷузвдон</string>
+    <string name="vmf_create">Эҷод кардан</string>
+    <string name="vmf_new_name">Номи нав</string>
+    <string name="vmf_delete_one">«%1$s» нест карда шавад? Инро бозгардонидан мумкин нест.</string>
+    <string name="vmf_delete_many">%1$d ҷузъ нест карда шавад? Инро бозгардонидан мумкин нест.</string>
+    <string name="vmf_delete_core">Ин қисми асосии VM аст (бахш ё тасвир). Бе он VM шояд дигар оғоз нашавад.</string>
+    <string name="vmf_working_copy">Нусха бардошта истодааст…</string>
+    <string name="vmf_working_delete">Нест карда истодааст…</string>
+    <string name="vmf_working_rename">Ном тағйир дода истодааст…</string>
+    <string name="vmf_result_copied">Нусха бардошта шуд: %1$d</string>
+    <string name="vmf_result_copied_skipped">Нусха бардошта шуд: %1$d. Гузаронида шуд: %2$d (пайвандҳо ба берун аз VM, сокетҳо ва монанди инҳо).</string>
+    <string name="vmf_result_deleted">Нест карда шуд: %1$d</string>
+    <string name="vmf_failed">Номуваффақ: %1$s</string>
+    <string name="vmf_readonly">Ин ҷузъ ҷузъи файлҳои худи VM нест, бинобар ин онро дар ин ҷо тағйир додан мумкин нест.</string>
+    <string name="vmf_protected">Ин қисми сабти дохилии худи VM аст ва онро дар ин ҷо тағйир додан мумкин нест.</string>
+    <string name="vmf_bad_name">Ин ном иҷозат дода намешавад.</string>
+    <string name="vmf_exists">Ҷузъи бо ин ном аллакай вуҷуд дорад.</string>
+    <string name="vmf_no_space">Фазои озод кофӣ нест.</string>
+</resources>

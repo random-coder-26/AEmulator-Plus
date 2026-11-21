@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">Περιήγηση στα αρχεία του VM</string>
+    <string name="vmf_unreadable">Αυτός ο φάκελος δεν μπορεί να διαβαστεί.</string>
+    <string name="vmf_readonly_folder">Μόνο ανάγνωση: αυτός ο φάκελος δεν ανήκει στα δικά αρχεία του VM. Μπορείτε να δείτε και να αντιγράψετε, όχι να αλλάξετε.</string>
+    <string name="vmf_link">Σύνδεσμος</string>
+    <string name="vmf_no_folders">Δεν υπάρχουν φάκελοι εδώ</string>
+    <string name="vmf_preview_failed">Αυτό το αρχείο δεν μπορεί να διαβαστεί.</string>
+    <string name="vmf_preview_truncated">Εμφάνιση των πρώτων %1$s από %2$s</string>
+    <string name="vmf_copy">Αντιγραφή</string>
+    <string name="vmf_copy_to">Αντιγραφή σε</string>
+    <string name="vmf_copy_to_vm">Άλλη θέση σε αυτό το VM</string>
+    <string name="vmf_copy_to_device">Εκτός του VM (αποθηκευτικός χώρος συσκευής)</string>
+    <string name="vmf_copy_here">Αντιγραφή εδώ</string>
+    <string name="vmf_new_folder">Νέος φάκελος</string>
+    <string name="vmf_folder_name">Όνομα φακέλου</string>
+    <string name="vmf_create">Δημιουργία</string>
+    <string name="vmf_new_name">Νέο όνομα</string>
+    <string name="vmf_delete_one">Διαγραφή του «%1$s»; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.</string>
+    <string name="vmf_delete_many">Διαγραφή %1$d στοιχείων; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.</string>
+    <string name="vmf_delete_core">Αυτό είναι βασικό μέρος του VM (διαμέρισμα ή εικόνα). Χωρίς αυτό το VM μπορεί να μην ξεκινά πια.</string>
+    <string name="vmf_working_copy">Αντιγραφή…</string>
+    <string name="vmf_working_delete">Διαγραφή…</string>
+    <string name="vmf_working_rename">Μετονομασία…</string>
+    <string name="vmf_result_copied">Αντιγράφηκαν: %1$d</string>
+    <string name="vmf_result_copied_skipped">Αντιγράφηκαν: %1$d. Παραλείφθηκαν: %2$d (σύνδεσμοι προς εκτός VM, sockets και παρόμοια).</string>
+    <string name="vmf_result_deleted">Διαγράφηκαν: %1$d</string>
+    <string name="vmf_failed">Αποτυχία: %1$s</string>
+    <string name="vmf_readonly">Αυτό το στοιχείο δεν ανήκει στα δικά αρχεία του VM, οπότε δεν μπορεί να αλλάξει εδώ.</string>
+    <string name="vmf_protected">Αυτό ανήκει στην εσωτερική τήρηση αρχείων του VM και δεν μπορεί να αλλάξει εδώ.</string>
+    <string name="vmf_bad_name">Αυτό το όνομα δεν επιτρέπεται.</string>
+    <string name="vmf_exists">Υπάρχει ήδη στοιχείο με αυτό το όνομα.</string>
+    <string name="vmf_no_space">Δεν υπάρχει αρκετός ελεύθερος χώρος.</string>
+</resources>

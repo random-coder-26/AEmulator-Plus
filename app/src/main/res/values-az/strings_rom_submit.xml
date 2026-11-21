@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">ROM göndər</string>
+    <string name="submit_action">ROM göndər</string>
+    <string name="submit_intro">ROM endirmə keçidini paylaşın. Göndərilənlər kataloqda görünməzdən əvvəl nəzərdən keçirilir.</string>
+    <string name="submit_variant">Variant</string>
+    <string name="submit_version">Versiya kateqoriyası</string>
+    <string name="submit_pick_variant_first">Əvvəlcə variant seçin</string>
+    <string name="submit_name">ROM adı</string>
+    <string name="submit_rom_version">ROM versiyası</string>
+    <string name="submit_device">Cihaz</string>
+    <string name="submit_url">Endirmə URL-i</string>
+    <string name="submit_size_mb">Faylın ölçüsü MB ilə (könüllü)</string>
+    <string name="submit_emulator">Emulyator versiyası (könüllü)</string>
+    <string name="submit_by">Adınız</string>
+    <string name="submit_notes">Qeydlər (könüllü)</string>
+    <string name="submit_send">Göndər</string>
+    <string name="submit_required">Tələb olunur</string>
+    <string name="submit_bad_url">Etibarlı http(s) keçidi daxil edin</string>
+    <string name="submit_bad_size">Bir ədəd daxil edin, 0 və ya daha çox</string>
+    <string name="submit_success">Təşəkkürlər! ROM-unuz göndərildi və nəzərdən keçirildikdən sonra kataloqda görünəcək.</string>
+    <string name="submit_another">Daha birini göndər</string>
+    <string name="submit_close">Bağla</string>
+    <string name="submit_categories_failed">Kateqoriyalar yüklənə bilmədi: %1$s</string>
+    <string name="submit_err_duplicate">Bu endirmə keçidi artıq göndərilib.</string>
+    <string name="submit_err_rate_limited">Çox sayda göndəriş. Təxminən %1$d dəq. sonra yenidən cəhd edin.</string>
+    <string name="submit_err_rejected">Server göndərişi rədd etdi: %1$s</string>
+    <string name="submit_err_server">Server xəta qaytardı (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Server gözlənilməz cavab göndərdi.</string>
+    <string name="catalog_err_bad_json">Kataloq etibarlı ROM siyahısı deyil.</string>
+    <string name="catalog_err_too_many_roms">Kataloqda 10000-dən çox ROM var.</string>
+    <string name="catalog_tested_on">Emulyator %1$s</string>
+    <string name="catalog_submitted_by">Göndərən: %1$s</string>
+</resources>

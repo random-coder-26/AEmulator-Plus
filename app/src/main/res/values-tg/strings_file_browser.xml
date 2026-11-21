@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Интихоби файлҳо</string>
+    <string name="fb_title_single">Интихоби файл</string>
+    <string name="fb_up">Боло</string>
+    <string name="fb_system_picker">Интихобкунаки низом</string>
+    <string name="fb_use_system_picker">Ба ҷои он интихобкунаки низомро истифода баред</string>
+    <string name="fb_internal">Хотираи дохилӣ</string>
+    <string name="fb_removable">Корти SD / USB %1$d</string>
+    <string name="fb_downloads">Боргириҳо</string>
+    <string name="fb_documents">Ҳуҷҷатҳо</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Ном</string>
+    <string name="fb_sort_date">Сана</string>
+    <string name="fb_sort_size">Андоза</string>
+    <string name="fb_hidden">Пинҳон</string>
+    <string name="fb_selected">%1$d интихоб шуд</string>
+    <string name="fb_clear">Тоза кардан</string>
+    <string name="fb_import">Воридкунӣ</string>
+    <string name="fb_empty">Дар ин ҷо чизе нест</string>
+    <string name="fb_unreadable">Ин ҷузвдонро хондан мумкин нест. Android баъзе ҷузвдонҳоро (масалан, маълумоти барномаҳои дигар) барои ҳамаи барномаҳо баста нигоҳ медорад.</string>
+    <string name="fb_access_title">Иҷозат додан ба дастрасӣ ба файлҳо</string>
+    <string name="fb_access_text">Барои намоиш додани файлҳои фирмвер ва якбора интихоб кардани якчанд файл, браузер ба файлҳои шумо дастрасӣ лозим дорад. Инчунин метавонед интихобкунаки низомро истифода баред.</string>
+    <string name="fb_access_scoped">Android 10 аксари файлҳоро аз барномаҳое, ки аз хотираи маҳдуд даст накашидаанд, пинҳон мекунад, бинобар ин ин браузер онҳоро дар ин ҷо нишон дода наметавонад. Ба ҷои он интихобкунаки низомро истифода баред.</string>
+    <string name="as_builtin_browser">Браузери файлҳои дарунсохт</string>
+    <string name="as_builtin_browser_sub">Фирмверро бо тартиби сана ва андоза ва якчанд файл якбора интихоб кунед. Барои истифодаи интихобкунаки низом хомӯш кунед.</string>
+    <string name="imp_archive_alone">Нусхаи эҳтиётии VM (.aessvm)-ро бояд ба таври ҷудогона ворид кард, на якҷоя бо файлҳои дигар.</string>
+    <string name="imp_joining">Пайваст кардани %2$d қисми %1$s…</string>
+    <string name="imp_split_missing">Қисми %2$s-и бойгонии тақсимшудаи %1$s вуҷуд надорад. Ҳамаи қисмҳои онро интихоб кунед ё дар як ҷузвдон нигоҳ доред.</string>
+</resources>

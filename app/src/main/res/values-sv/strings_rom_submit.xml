@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Skicka in en ROM</string>
+    <string name="submit_action">Skicka in en ROM</string>
+    <string name="submit_intro">Dela en nedladdningslänk till en ROM. Bidrag granskas innan de visas i katalogen.</string>
+    <string name="submit_variant">Variant</string>
+    <string name="submit_version">Versionskategori</string>
+    <string name="submit_pick_variant_first">Välj en variant först</string>
+    <string name="submit_name">ROM-namn</string>
+    <string name="submit_rom_version">ROM-version</string>
+    <string name="submit_device">Enhet</string>
+    <string name="submit_url">Nedladdnings-URL</string>
+    <string name="submit_size_mb">Filstorlek i MB (valfritt)</string>
+    <string name="submit_emulator">Emulatorversion (valfritt)</string>
+    <string name="submit_by">Ditt namn</string>
+    <string name="submit_notes">Anteckningar (valfritt)</string>
+    <string name="submit_send">Skicka</string>
+    <string name="submit_required">Obligatoriskt</string>
+    <string name="submit_bad_url">Ange en giltig http(s)-länk</string>
+    <string name="submit_bad_size">Ange ett tal, 0 eller mer</string>
+    <string name="submit_success">Tack! Din ROM har skickats in och visas i katalogen efter granskning.</string>
+    <string name="submit_another">Skicka in en till</string>
+    <string name="submit_close">Stäng</string>
+    <string name="submit_categories_failed">Det gick inte att läsa in kategorierna: %1$s</string>
+    <string name="submit_err_duplicate">Den här nedladdningslänken har redan skickats in.</string>
+    <string name="submit_err_rate_limited">För många bidrag. Försök igen om cirka %1$d min.</string>
+    <string name="submit_err_rejected">Servern avvisade bidraget: %1$s</string>
+    <string name="submit_err_server">Servern returnerade ett fel (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Servern skickade ett oväntat svar.</string>
+    <string name="catalog_err_bad_json">Katalogen är inte en giltig ROM-lista.</string>
+    <string name="catalog_err_too_many_roms">Katalogen innehåller fler än 10000 ROM.</string>
+    <string name="catalog_tested_on">Emulator %1$s</string>
+    <string name="catalog_submitted_by">Inskickad av %1$s</string>
+</resources>

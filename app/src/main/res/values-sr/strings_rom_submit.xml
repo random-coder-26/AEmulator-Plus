@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Пошаљи ROM</string>
+    <string name="submit_action">Пошаљи ROM</string>
+    <string name="submit_intro">Поделите везу за преузимање ROM-а. Пријаве се прегледају пре него што се појаве у каталогу.</string>
+    <string name="submit_variant">Варијанта</string>
+    <string name="submit_version">Категорија верзије</string>
+    <string name="submit_pick_variant_first">Прво изаберите варијанту</string>
+    <string name="submit_name">Назив ROM-а</string>
+    <string name="submit_rom_version">Верзија ROM-а</string>
+    <string name="submit_device">Уређај</string>
+    <string name="submit_url">URL за преузимање</string>
+    <string name="submit_size_mb">Величина датотеке у MB (необавезно)</string>
+    <string name="submit_emulator">Верзија емулатора (необавезно)</string>
+    <string name="submit_by">Ваше име</string>
+    <string name="submit_notes">Напомене (необавезно)</string>
+    <string name="submit_send">Пошаљи</string>
+    <string name="submit_required">Обавезно</string>
+    <string name="submit_bad_url">Унесите важећу http(s) везу</string>
+    <string name="submit_bad_size">Унесите број, 0 или више</string>
+    <string name="submit_success">Хвала! Ваш ROM је послат и појавиће се у каталогу након прегледа.</string>
+    <string name="submit_another">Пошаљи још један</string>
+    <string name="submit_close">Затвори</string>
+    <string name="submit_categories_failed">Категорије није могуће учитати: %1$s</string>
+    <string name="submit_err_duplicate">Ова веза за преузимање је већ послата.</string>
+    <string name="submit_err_rate_limited">Превише пријава. Покушајте поново за око %1$d мин.</string>
+    <string name="submit_err_rejected">Сервер је одбио пријаву: %1$s</string>
+    <string name="submit_err_server">Сервер је вратио грешку (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Сервер је послао неочекиван одговор.</string>
+    <string name="catalog_err_bad_json">Каталог није важећа листа ROM-ова.</string>
+    <string name="catalog_err_too_many_roms">Каталог има више од 10000 ROM-ова.</string>
+    <string name="catalog_tested_on">Емулатор %1$s</string>
+    <string name="catalog_submitted_by">Послао/ла: %1$s</string>
+</resources>

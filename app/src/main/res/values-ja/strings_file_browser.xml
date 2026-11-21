@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">ファイルを選択</string>
+    <string name="fb_title_single">ファイルを選択</string>
+    <string name="fb_up">上へ</string>
+    <string name="fb_system_picker">システムピッカー</string>
+    <string name="fb_use_system_picker">代わりにシステムピッカーを使う</string>
+    <string name="fb_internal">内部ストレージ</string>
+    <string name="fb_removable">SDカード / USB %1$d</string>
+    <string name="fb_downloads">ダウンロード</string>
+    <string name="fb_documents">ドキュメント</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">名前</string>
+    <string name="fb_sort_date">日付</string>
+    <string name="fb_sort_size">サイズ</string>
+    <string name="fb_hidden">非表示</string>
+    <string name="fb_selected">%1$d 件選択中</string>
+    <string name="fb_clear">クリア</string>
+    <string name="fb_import">インポート</string>
+    <string name="fb_empty">ここには何もありません</string>
+    <string name="fb_unreadable">このフォルダは読み取れません。Androidは一部のフォルダ（他のアプリのデータなど）をすべてのアプリに対して閉じています。</string>
+    <string name="fb_access_title">ファイルへのアクセスを許可</string>
+    <string name="fb_access_text">ファームウェアファイルを一覧表示して複数まとめて選択するには、ブラウザーがファイルにアクセスできる必要があります。代わりにシステムピッカーを使うこともできます。</string>
+    <string name="fb_access_scoped">Android 10では、スコープ付きストレージをオプトアウトしていないアプリからほとんどのファイルが見えなくなるため、このブラウザーではここに一覧表示できません。代わりにシステムピッカーを使ってください。</string>
+    <string name="as_builtin_browser">内蔵ファイルブラウザー</string>
+    <string name="as_builtin_browser_sub">日付やサイズで並べ替えながら、複数のファイルをまとめてファームウェアとして選べます。システムピッカーを使うにはオフにします。</string>
+    <string name="imp_archive_alone">VMバックアップ（.aessvm）は、他のファイルと一緒ではなく単独でインポートする必要があります。</string>
+    <string name="imp_joining">%1$s の %2$d 個のパートを結合中…</string>
+    <string name="imp_split_missing">分割アーカイブ %1$s のパート %2$s がありません。すべてのパートを選択するか、同じフォルダに置いてください。</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Избор на файлове</string>
+    <string name="fb_title_single">Избор на файл</string>
+    <string name="fb_up">Нагоре</string>
+    <string name="fb_system_picker">Системен избор</string>
+    <string name="fb_use_system_picker">Използване на системния избор</string>
+    <string name="fb_internal">Вътрешна памет</string>
+    <string name="fb_removable">SD карта / USB %1$d</string>
+    <string name="fb_downloads">Изтегляния</string>
+    <string name="fb_documents">Документи</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Име</string>
+    <string name="fb_sort_date">Дата</string>
+    <string name="fb_sort_size">Размер</string>
+    <string name="fb_hidden">Скрити</string>
+    <string name="fb_selected">Избрани: %1$d</string>
+    <string name="fb_clear">Изчистване</string>
+    <string name="fb_import">Импортиране</string>
+    <string name="fb_empty">Тук няма нищо</string>
+    <string name="fb_unreadable">Тази папка не може да бъде прочетена. Android държи някои папки (като данните на други приложения) затворени за всички приложения.</string>
+    <string name="fb_access_title">Разрешаване на достъп до файловете</string>
+    <string name="fb_access_text">За да покаже файловете на фърмуера и да избере няколко наведнъж, браузърът има нужда от достъп до файловете ви. Можете да ползвате и системния избор.</string>
+    <string name="fb_access_scoped">Android 10 скрива повечето файлове от приложения, които не са се отказали от ограниченото хранилище, затова този браузър не може да ги покаже тук. Използвайте системния избор.</string>
+    <string name="as_builtin_browser">Вграден файлов браузър</string>
+    <string name="as_builtin_browser_sub">Избор на фърмуер със сортиране по дата и размер и няколко файла наведнъж. Изключете, за да използвате системния избор.</string>
+    <string name="imp_archive_alone">Резервно копие на ВМ (.aessvm) трябва да се импортира самостоятелно, не заедно с други файлове.</string>
+    <string name="imp_joining">Събиране на %2$d части от %1$s…</string>
+    <string name="imp_split_missing">Липсва част %2$s от разделения архив %1$s. Изберете всичките му части или ги дръжте в една папка.</string>
+</resources>

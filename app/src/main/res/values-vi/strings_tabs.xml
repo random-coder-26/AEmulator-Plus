@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Thư viện</string>
+    <string name="tab_close">Đóng tab</string>
+    <string name="tab_close_title">Đóng %1$s?</string>
+    <string name="tab_close_text">“Thu nhỏ” đóng tab nhưng máy ảo vẫn chạy nền; hãy mở lại từ thư viện. “Tắt máy” sẽ tắt máy ảo.</string>
+    <string name="tab_minimize">Thu nhỏ</string>
+    <string name="tab_shutdown">Tắt máy</string>
+    <string name="vm_slots_full">Cả %1$d ô máy ảo đều đang được dùng. Hãy tắt một máy ảo trước.</string>
+    <string name="tab_group_title">2 tab</string>
+    <string name="tab_split_failed">Không thể thêm máy đó vào tab này nữa.</string>
+    <string name="tab_drag_label">Kéo vào màn hình để chia</string>
+    <string name="tab_split_title">Tách 2 tab?</string>
+    <string name="tab_split_text">Mỗi máy quay về tab riêng. Cả hai vẫn tiếp tục chạy.</string>
+    <string name="tab_split_action">Tách</string>
+    <string name="tab_bar_hide">Ẩn thanh tab</string>
+    <string name="tab_bar_show">Hiện thanh tab</string>
+</resources>

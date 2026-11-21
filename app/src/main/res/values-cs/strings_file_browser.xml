@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Vyberte soubory</string>
+    <string name="fb_title_single">Vyberte soubor</string>
+    <string name="fb_up">Nahoru</string>
+    <string name="fb_system_picker">Systémový výběr</string>
+    <string name="fb_use_system_picker">Místo toho použít systémový výběr</string>
+    <string name="fb_internal">Interní úložiště</string>
+    <string name="fb_removable">Karta SD / USB %1$d</string>
+    <string name="fb_downloads">Stažené soubory</string>
+    <string name="fb_documents">Dokumenty</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Název</string>
+    <string name="fb_sort_date">Datum</string>
+    <string name="fb_sort_size">Velikost</string>
+    <string name="fb_hidden">Skryté</string>
+    <string name="fb_selected">Vybráno: %1$d</string>
+    <string name="fb_clear">Vymazat</string>
+    <string name="fb_import">Importovat</string>
+    <string name="fb_empty">Nic tu není</string>
+    <string name="fb_unreadable">Tuto složku nelze přečíst. Android některé složky (například data jiných aplikací) uzavírá všem aplikacím.</string>
+    <string name="fb_access_title">Povolit přístup k souborům</string>
+    <string name="fb_access_text">Aby prohlížeč zobrazil vaše soubory firmwaru a umožnil vybrat jich více najednou, potřebuje přístup k vašim souborům. Můžete také použít systémový výběr.</string>
+    <string name="fb_access_scoped">Android 10 skrývá většinu souborů před aplikacemi, které se nevzdaly omezeného úložiště, takže je tento prohlížeč nemůže zobrazit. Použijte místo něj systémový výběr.</string>
+    <string name="as_builtin_browser">Vestavěný správce souborů</string>
+    <string name="as_builtin_browser_sub">Vybírejte firmware s řazením podle data a velikosti a více souborů najednou. Vypnutím použijete systémový výběr.</string>
+    <string name="imp_archive_alone">Zálohu VM (.aessvm) je nutné importovat samostatně, ne spolu s dalšími soubory.</string>
+    <string name="imp_joining">Spojování částí (%2$d) souboru %1$s…</string>
+    <string name="imp_split_missing">Chybí část %2$s rozděleného archivu %1$s. Vyberte všechny jeho části nebo je mějte v jedné složce.</string>
+</resources>

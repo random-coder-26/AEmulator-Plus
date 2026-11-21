@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Выберыце файлы</string>
+    <string name="fb_title_single">Выберыце файл</string>
+    <string name="fb_up">Уверх</string>
+    <string name="fb_system_picker">Сістэмны выбар</string>
+    <string name="fb_use_system_picker">Выкарыстоўваць сістэмны выбар</string>
+    <string name="fb_internal">Унутраная памяць</string>
+    <string name="fb_removable">SD-карта / USB %1$d</string>
+    <string name="fb_downloads">Загрузкі</string>
+    <string name="fb_documents">Дакументы</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Назва</string>
+    <string name="fb_sort_date">Дата</string>
+    <string name="fb_sort_size">Памер</string>
+    <string name="fb_hidden">Схаваныя</string>
+    <string name="fb_selected">Выбрана: %1$d</string>
+    <string name="fb_clear">Ачысціць</string>
+    <string name="fb_import">Імпарт</string>
+    <string name="fb_empty">Тут нічога няма</string>
+    <string name="fb_unreadable">Гэту папку немагчыма прачытаць. Android закрывае некаторыя папкі (напрыклад, даныя іншых праграм) для ўсіх праграм.</string>
+    <string name="fb_access_title">Дазволіць доступ да файлаў</string>
+    <string name="fb_access_text">Каб паказаць файлы прашыўкі і выбраць некалькі адразу, аглядальніку патрэбны доступ да вашых файлаў. Можна таксама выкарыстоўваць сістэмны выбар.</string>
+    <string name="fb_access_scoped">Android 10 хавае большасць файлаў ад праграм, якія не адмовіліся ад ізаляванага сховішча, таму гэты аглядальнік не можа паказаць іх тут. Выкарыстоўвайце сістэмны выбар.</string>
+    <string name="as_builtin_browser">Убудаваны аглядальнік файлаў</string>
+    <string name="as_builtin_browser_sub">Выбар прашыўкі з сартаваннем па даце і памеры і адразу некалькіх файлаў. Адключыце, каб выкарыстоўваць сістэмны выбар.</string>
+    <string name="imp_archive_alone">Рэзервовую копію ВМ (.aessvm) трэба імпартаваць асобна, а не разам з іншымі файламі.</string>
+    <string name="imp_joining">Склейванне частак (%2$d) файла %1$s…</string>
+    <string name="imp_split_missing">Адсутнічае частка %2$s падзеленага архіва %1$s. Выберыце ўсе яго часткі або трымайце іх у адной папцы.</string>
+</resources>

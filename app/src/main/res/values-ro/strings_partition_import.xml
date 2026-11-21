@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Importă partiția</string>
+    <string name="vm_import_partition_working">Se citește partiția %1$s… Oprește toate VM-urile înainte de import.</string>
+    <string name="vm_import_partition_done">Partiția %1$s a fost importată și montată. Sistemul și datele sunt nemodificate.</string>
+    <string name="vm_import_partition_exists">Acest VM are deja o partiție %1$s.</string>
+    <string name="vm_import_partition_conflict">Structura de dosare a VM-ului nu permite această partiție.</string>
+    <string name="vm_import_partition_unsupported">O imagine %1$s nu poate fi importată cu această opțiune.</string>
+    <string name="vm_import_partition_which">Ce partiție este aceasta?</string>
+    <string name="vm_import_partition_which_info">Numele fișierului nu spune ce conține. Alege partiția.</string>
+    <string name="vm_import_partition_have">%1$s (deja în acest VM)</string>
+    <string name="vm_import_partition_headline">Importă o imagine de partiție în acest VM</string>
+    <string name="vm_import_partition_sub">Boot, recovery (original, TWRP, OrangeFox sau CWM), OEM, vendor, odm, product sau system_ext. Tipul este citit din fișier; ți se cere când nu poate fi citit. Doar recovery îl înlocuiește pe cel existent; restul VM-ului rămâne nemodificat. Repornește în recovery din meniul ⋮.</string>
+    <string name="vm_import_partition_button">Importă…</string>
+    <string name="vm_import_recovery_done">Recovery importat. Repornește în recovery din meniul ⋮ pentru a-l folosi.</string>
+</resources>

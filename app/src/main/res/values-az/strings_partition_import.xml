@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Bölməni idxal et</string>
+    <string name="vm_import_partition_working">%1$s bölməsi oxunur… İdxaldan əvvəl bütün VM-ləri dayandırın.</string>
+    <string name="vm_import_partition_done">%1$s bölməsi idxal edildi və qoşuldu. Sistem və məlumatlar dəyişməyib.</string>
+    <string name="vm_import_partition_exists">Bu VM-də artıq %1$s bölməsi var.</string>
+    <string name="vm_import_partition_conflict">VM-in qovluq quruluşu bu bölməyə icazə vermir.</string>
+    <string name="vm_import_partition_unsupported">%1$s təsviri bu seçimlə idxal edilə bilməz.</string>
+    <string name="vm_import_partition_which">Bu hansı bölmədir?</string>
+    <string name="vm_import_partition_which_info">Faylın adı onun nə saxladığını bildirmir. Bölməni seçin.</string>
+    <string name="vm_import_partition_have">%1$s (artıq bu VM-də var)</string>
+    <string name="vm_import_partition_headline">Bölmə təsvirini bu VM-ə idxal et</string>
+    <string name="vm_import_partition_sub">Boot, recovery (orijinal, TWRP, OrangeFox və ya CWM), OEM, vendor, odm, product və ya system_ext. Növ fayldan oxunur; oxuna bilmədikdə sizdən soruşulur. Yalnız recovery mövcud olanı əvəz edir; VM-in qalan hissəsi dəyişmir. ⋮ menyusundan recovery rejiminə yenidən başladın.</string>
+    <string name="vm_import_partition_button">İdxal et…</string>
+    <string name="vm_import_recovery_done">Recovery idxal edildi. İstifadə etmək üçün ⋮ menyusundan recovery rejiminə yenidən başladın.</string>
+</resources>

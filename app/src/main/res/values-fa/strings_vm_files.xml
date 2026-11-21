@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">مرور فایلهای ماشین مجازی</string>
+    <string name="vmf_unreadable">این پوشه خوانده نمیشود.</string>
+    <string name="vmf_readonly_folder">فقطخواندنی: این پوشه جزو فایلهای خود ماشین مجازی نیست. میتوانید ببینید و کپی کنید، اما نمیتوانید تغییر دهید.</string>
+    <string name="vmf_link">پیوند</string>
+    <string name="vmf_no_folders">اینجا پوشهای نیست</string>
+    <string name="vmf_preview_failed">این فایل خوانده نمیشود.</string>
+    <string name="vmf_preview_truncated">نمایش %1$s مورد اول از %2$s</string>
+    <string name="vmf_copy">کپی</string>
+    <string name="vmf_copy_to">کپی به</string>
+    <string name="vmf_copy_to_vm">جای دیگر در این ماشین مجازی</string>
+    <string name="vmf_copy_to_device">بیرون از ماشین مجازی (حافظهٔ دستگاه)</string>
+    <string name="vmf_copy_here">کپی در اینجا</string>
+    <string name="vmf_new_folder">پوشهٔ جدید</string>
+    <string name="vmf_folder_name">نام پوشه</string>
+    <string name="vmf_create">ایجاد</string>
+    <string name="vmf_new_name">نام جدید</string>
+    <string name="vmf_delete_one">«%1$s» حذف شود؟ این کار قابل بازگشت نیست.</string>
+    <string name="vmf_delete_many">%1$d مورد حذف شود؟ این کار قابل بازگشت نیست.</string>
+    <string name="vmf_delete_core">این بخش اصلی ماشین مجازی است (یک پارتیشن یا تصویر). بدون آن شاید ماشین مجازی دیگر راهاندازی نشود.</string>
+    <string name="vmf_working_copy">در حال کپی…</string>
+    <string name="vmf_working_delete">در حال حذف…</string>
+    <string name="vmf_working_rename">در حال تغییر نام…</string>
+    <string name="vmf_result_copied">کپیشده: %1$d</string>
+    <string name="vmf_result_copied_skipped">کپیشده: %1$d. ردشده: %2$d (پیوندهای بیرون از ماشین مجازی، سوکتها و مانند آن).</string>
+    <string name="vmf_result_deleted">حذفشده: %1$d</string>
+    <string name="vmf_failed">ناموفق: %1$s</string>
+    <string name="vmf_readonly">این مورد جزو فایلهای خود ماشین مجازی نیست، پس اینجا قابل تغییر نیست.</string>
+    <string name="vmf_protected">این بخشی از ثبتهای داخلی ماشین مجازی است و اینجا قابل تغییر نیست.</string>
+    <string name="vmf_bad_name">این نام مجاز نیست.</string>
+    <string name="vmf_exists">موردی با این نام از قبل وجود دارد.</string>
+    <string name="vmf_no_space">فضای خالی کافی نیست.</string>
+</resources>

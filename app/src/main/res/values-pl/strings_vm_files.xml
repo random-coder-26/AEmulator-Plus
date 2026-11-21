@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">Przeglądaj pliki VM</string>
+    <string name="vmf_unreadable">Nie można odczytać tego folderu.</string>
+    <string name="vmf_readonly_folder">Tylko do odczytu: ten folder nie należy do własnych plików VM. Możesz oglądać i kopiować, ale nie zmieniać.</string>
+    <string name="vmf_link">Link</string>
+    <string name="vmf_no_folders">Brak folderów</string>
+    <string name="vmf_preview_failed">Nie można odczytać tego pliku.</string>
+    <string name="vmf_preview_truncated">Wyświetlono pierwsze %1$s z %2$s</string>
+    <string name="vmf_copy">Kopiuj</string>
+    <string name="vmf_copy_to">Kopiuj do</string>
+    <string name="vmf_copy_to_vm">Inne miejsce w tej VM</string>
+    <string name="vmf_copy_to_device">Poza VM (pamięć urządzenia)</string>
+    <string name="vmf_copy_here">Kopiuj tutaj</string>
+    <string name="vmf_new_folder">Nowy folder</string>
+    <string name="vmf_folder_name">Nazwa folderu</string>
+    <string name="vmf_create">Utwórz</string>
+    <string name="vmf_new_name">Nowa nazwa</string>
+    <string name="vmf_delete_one">Usunąć „%1$s”? Tej operacji nie można cofnąć.</string>
+    <string name="vmf_delete_many">Usunąć elementy (%1$d)? Tej operacji nie można cofnąć.</string>
+    <string name="vmf_delete_core">To kluczowy element VM (partycja lub obraz). Bez niego VM może się już nie uruchomić.</string>
+    <string name="vmf_working_copy">Kopiowanie…</string>
+    <string name="vmf_working_delete">Usuwanie…</string>
+    <string name="vmf_working_rename">Zmiana nazwy…</string>
+    <string name="vmf_result_copied">Skopiowano: %1$d</string>
+    <string name="vmf_result_copied_skipped">Skopiowano: %1$d. Pominięto: %2$d (linki poza VM, gniazda i tym podobne).</string>
+    <string name="vmf_result_deleted">Usunięto: %1$d</string>
+    <string name="vmf_failed">Niepowodzenie: %1$s</string>
+    <string name="vmf_readonly">Ten element nie należy do własnych plików VM, więc nie można go tu zmienić.</string>
+    <string name="vmf_protected">To należy do wewnętrznej ewidencji VM i nie można tego tu zmienić.</string>
+    <string name="vmf_bad_name">Ta nazwa jest niedozwolona.</string>
+    <string name="vmf_exists">Element o tej nazwie już istnieje.</string>
+    <string name="vmf_no_space">Za mało wolnego miejsca.</string>
+</resources>

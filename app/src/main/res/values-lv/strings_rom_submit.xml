@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Iesniegt ROM</string>
+    <string name="submit_action">Iesniegt ROM</string>
+    <string name="submit_intro">Kopīgojiet ROM lejupielādes saiti. Iesniegumi tiek pārskatīti, pirms tie parādās katalogā.</string>
+    <string name="submit_variant">Variants</string>
+    <string name="submit_version">Versijas kategorija</string>
+    <string name="submit_pick_variant_first">Vispirms izvēlieties variantu</string>
+    <string name="submit_name">ROM nosaukums</string>
+    <string name="submit_rom_version">ROM versija</string>
+    <string name="submit_device">Ierīce</string>
+    <string name="submit_url">Lejupielādes URL</string>
+    <string name="submit_size_mb">Faila izmērs MB (neobligāti)</string>
+    <string name="submit_emulator">Emulatora versija (neobligāti)</string>
+    <string name="submit_by">Jūsu vārds</string>
+    <string name="submit_notes">Piezīmes (neobligāti)</string>
+    <string name="submit_send">Iesniegt</string>
+    <string name="submit_required">Obligāts</string>
+    <string name="submit_bad_url">Ievadiet derīgu http(s) saiti</string>
+    <string name="submit_bad_size">Ievadiet skaitli, 0 vai vairāk</string>
+    <string name="submit_success">Paldies! Jūsu ROM ir iesniegts un pēc pārskatīšanas parādīsies katalogā.</string>
+    <string name="submit_another">Iesniegt vēl vienu</string>
+    <string name="submit_close">Aizvērt</string>
+    <string name="submit_categories_failed">Neizdevās ielādēt kategorijas: %1$s</string>
+    <string name="submit_err_duplicate">Šī lejupielādes saite jau ir iesniegta.</string>
+    <string name="submit_err_rate_limited">Pārāk daudz iesniegumu. Mēģiniet vēlreiz pēc aptuveni %1$d min.</string>
+    <string name="submit_err_rejected">Serveris noraidīja iesniegumu: %1$s</string>
+    <string name="submit_err_server">Serveris atgrieza kļūdu (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Serveris nosūtīja negaidītu atbildi.</string>
+    <string name="catalog_err_bad_json">Katalogs nav derīgs ROM saraksts.</string>
+    <string name="catalog_err_too_many_roms">Katalogā ir vairāk nekā 10000 ROM.</string>
+    <string name="catalog_tested_on">Emulators %1$s</string>
+    <string name="catalog_submitted_by">Iesniedza: %1$s</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Izvēlēties failus</string>
+    <string name="fb_title_single">Izvēlēties failu</string>
+    <string name="fb_up">Uz augšu</string>
+    <string name="fb_system_picker">Sistēmas atlasītājs</string>
+    <string name="fb_use_system_picker">Tā vietā izmantot sistēmas atlasītāju</string>
+    <string name="fb_internal">Iekšējā krātuve</string>
+    <string name="fb_removable">SD karte / USB %1$d</string>
+    <string name="fb_downloads">Lejupielādes</string>
+    <string name="fb_documents">Dokumenti</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Nosaukums</string>
+    <string name="fb_sort_date">Datums</string>
+    <string name="fb_sort_size">Izmērs</string>
+    <string name="fb_hidden">Paslēptie</string>
+    <string name="fb_selected">Atlasīti: %1$d</string>
+    <string name="fb_clear">Notīrīt</string>
+    <string name="fb_import">Importēt</string>
+    <string name="fb_empty">Šeit nekā nav</string>
+    <string name="fb_unreadable">Šo mapi nevar nolasīt. Android dažas mapes (piemēram, citu lietotņu datus) tur slēgtas visām lietotnēm.</string>
+    <string name="fb_access_title">Atļaut piekļuvi failiem</string>
+    <string name="fb_access_text">Lai parādītu jūsu programmaparatūras failus un atlasītu vairākus vienlaikus, pārlūkam ir nepieciešama piekļuve jūsu failiem. Varat izmantot arī sistēmas atlasītāju.</string>
+    <string name="fb_access_scoped">Android 10 paslēpj lielāko daļu failu no lietotnēm, kas nav atteikušās no ierobežotās krātuves, tāpēc šis pārlūks tos šeit nevar parādīt. Tā vietā izmantojiet sistēmas atlasītāju.</string>
+    <string name="as_builtin_browser">Iebūvētais failu pārlūks</string>
+    <string name="as_builtin_browser_sub">Atlasiet programmaparatūru ar kārtošanu pēc datuma un izmēra un vairākus failus vienlaikus. Izslēdziet, lai izmantotu sistēmas atlasītāju.</string>
+    <string name="imp_archive_alone">VM dublējums (.aessvm) jāimportē atsevišķi, nevis kopā ar citiem failiem.</string>
+    <string name="imp_joining">Apvieno %2$d faila %1$s daļas…</string>
+    <string name="imp_split_missing">Trūkst sadalītā arhīva %1$s daļas %2$s. Atlasiet visas tā daļas vai glabājiet tās vienā mapē.</string>
+</resources>

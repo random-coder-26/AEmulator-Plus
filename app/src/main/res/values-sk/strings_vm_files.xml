@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">Prehliadať súbory VM</string>
+    <string name="vmf_unreadable">Tento priečinok sa nedá prečítať.</string>
+    <string name="vmf_readonly_folder">Iba na čítanie: tento priečinok nie je súčasťou vlastných súborov VM. Môžete si ho prezerať a kopírovať, nie meniť.</string>
+    <string name="vmf_link">Odkaz</string>
+    <string name="vmf_no_folders">Žiadne priečinky</string>
+    <string name="vmf_preview_failed">Tento súbor sa nedá prečítať.</string>
+    <string name="vmf_preview_truncated">Zobrazených prvých %1$s z %2$s</string>
+    <string name="vmf_copy">Kopírovať</string>
+    <string name="vmf_copy_to">Kopírovať do</string>
+    <string name="vmf_copy_to_vm">Iné miesto v tomto VM</string>
+    <string name="vmf_copy_to_device">Mimo VM (úložisko zariadenia)</string>
+    <string name="vmf_copy_here">Kopírovať sem</string>
+    <string name="vmf_new_folder">Nový priečinok</string>
+    <string name="vmf_folder_name">Názov priečinka</string>
+    <string name="vmf_create">Vytvoriť</string>
+    <string name="vmf_new_name">Nový názov</string>
+    <string name="vmf_delete_one">Odstrániť „%1$s“? Túto akciu nemožno vrátiť späť.</string>
+    <string name="vmf_delete_many">Odstrániť položky (%1$d)? Túto akciu nemožno vrátiť späť.</string>
+    <string name="vmf_delete_core">Toto je zásadná súčasť VM (oddiel alebo obraz). Bez nej sa VM už nemusí spustiť.</string>
+    <string name="vmf_working_copy">Kopírovanie…</string>
+    <string name="vmf_working_delete">Odstraňovanie…</string>
+    <string name="vmf_working_rename">Premenovanie…</string>
+    <string name="vmf_result_copied">Skopírované: %1$d</string>
+    <string name="vmf_result_copied_skipped">Skopírované: %1$d. Preskočené: %2$d (odkazy mimo VM, sockety a podobne).</string>
+    <string name="vmf_result_deleted">Odstránené: %1$d</string>
+    <string name="vmf_failed">Zlyhalo: %1$s</string>
+    <string name="vmf_readonly">Táto položka nie je súčasťou vlastných súborov VM, takže ju tu nemožno meniť.</string>
+    <string name="vmf_protected">Toto je súčasť internej evidencie VM a nemožno to tu meniť.</string>
+    <string name="vmf_bad_name">Tento názov nie je povolený.</string>
+    <string name="vmf_exists">Položka s týmto názvom už existuje.</string>
+    <string name="vmf_no_space">Nie je dostatok voľného miesta.</string>
+</resources>

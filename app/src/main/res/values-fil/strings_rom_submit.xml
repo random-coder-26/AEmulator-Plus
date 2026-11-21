@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Magsumite ng ROM</string>
+    <string name="submit_action">Magsumite ng ROM</string>
+    <string name="submit_intro">Magbahagi ng link sa pag-download ng ROM. Sinusuri ang mga isinumite bago lumabas sa catalog.</string>
+    <string name="submit_variant">Variant</string>
+    <string name="submit_version">Kategorya ng bersyon</string>
+    <string name="submit_pick_variant_first">Pumili muna ng variant</string>
+    <string name="submit_name">Pangalan ng ROM</string>
+    <string name="submit_rom_version">Bersyon ng ROM</string>
+    <string name="submit_device">Device</string>
+    <string name="submit_url">URL ng pag-download</string>
+    <string name="submit_size_mb">Laki ng file sa MB (opsyonal)</string>
+    <string name="submit_emulator">Bersyon ng emulator (opsyonal)</string>
+    <string name="submit_by">Ang iyong pangalan</string>
+    <string name="submit_notes">Mga tala (opsyonal)</string>
+    <string name="submit_send">Isumite</string>
+    <string name="submit_required">Kinakailangan</string>
+    <string name="submit_bad_url">Maglagay ng wastong http(s) na link</string>
+    <string name="submit_bad_size">Maglagay ng numero, 0 o higit pa</string>
+    <string name="submit_success">Salamat! Naisumite na ang iyong ROM at lalabas sa catalog pagkatapos masuri.</string>
+    <string name="submit_another">Magsumite pa</string>
+    <string name="submit_close">Isara</string>
+    <string name="submit_categories_failed">Hindi ma-load ang mga kategorya: %1$s</string>
+    <string name="submit_err_duplicate">Naisumite na ang link na ito sa pag-download.</string>
+    <string name="submit_err_rate_limited">Masyadong maraming isinumite. Subukan ulit pagkalipas ng mga %1$d min.</string>
+    <string name="submit_err_rejected">Tinanggihan ng server ang isinumite: %1$s</string>
+    <string name="submit_err_server">Nagbalik ang server ng error (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Nagpadala ang server ng hindi inaasahang tugon.</string>
+    <string name="catalog_err_bad_json">Hindi wastong listahan ng ROM ang catalog.</string>
+    <string name="catalog_err_too_many_roms">Mahigit 10000 ROM ang nasa catalog.</string>
+    <string name="catalog_tested_on">Emulator %1$s</string>
+    <string name="catalog_submitted_by">Isinumite ni %1$s</string>
+</resources>

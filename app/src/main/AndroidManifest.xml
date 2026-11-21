@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" android:maxSdkVersion="30" />
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false" />
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
+
+    <application
+        android:name=".AemuApp"
+        android:allowBackup="false"
+        android:extractNativeLibs="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:localeConfig="@xml/locales_config"
+        android:largeHeap="true"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AEmulator"
+        tools:targetApi="28">
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:launchMode="standard"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="app.aemu.BOOT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:mimeType="application/zip" />
+                <data android:mimeType="application/x-tar" />
+                <data android:mimeType="application/gzip" />
+                <data android:mimeType="application/octet-stream" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.AppSettingsActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity android:name=".ui.RomCatalogActivity" android:exported="false"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".ui.VmActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|density|uiMode|navigation"
+            android:exported="false"
+            android:launchMode="standard"
+            android:process=":vm"
+            android:resizeableActivity="true"
+            android:screenOrientation="unspecified"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.AEmulator.Vm" />
+
+        <!-- Added for AEmulator Plus, 2026-11-09: process slot 1 (a machine of its own, running next to the others) -->
+        <activity
+            android:name=".ui.VmActivity1"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|density|uiMode|navigation"
+            android:exported="false"
+            android:launchMode="standard"
+            android:process=":vm1"
+            android:resizeableActivity="true"
+            android:screenOrientation="unspecified"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.AEmulator.Vm" />
+
+        <!-- Added for AEmulator Plus, 2026-11-09: process slot 2 (a machine of its own, running next to the others) -->
+        <activity
+            android:name=".ui.VmActivity2"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|density|uiMode|navigation"
+            android:exported="false"
+            android:launchMode="standard"
+            android:process=":vm2"
+            android:resizeableActivity="true"
+            android:screenOrientation="unspecified"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.AEmulator.Vm" />
+
+        <!-- Added for AEmulator Plus, 2026-11-09: process slot 3 (a machine of its own, running next to the others) -->
+        <activity
+            android:name=".ui.VmActivity3"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|density|uiMode|navigation"
+            android:exported="false"
+            android:launchMode="standard"
+            android:process=":vm3"
+            android:resizeableActivity="true"
+            android:screenOrientation="unspecified"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.AEmulator.Vm" />
+
+        <!-- Added for AEmulator Plus, 2026-11-09: the translucent windows of a tab with two machines (the one on top) -->
+        <activity
+            android:name=".ui.VmOverlayActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|density|uiMode|navigation"
+            android:exported="false"
+            android:launchMode="standard"
+            android:process=":vm"
+            android:resizeableActivity="true"
+            android:screenOrientation="unspecified"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.AEmulator.Vm.Overlay" />
+        <activity
+            android:name=".ui.VmOverlayActivity1"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|density|uiMode|navigation"
+            android:exported="false"
+            android:launchMode="standard"
+            android:process=":vm1"
+            android:resizeableActivity="true"
+            android:screenOrientation="unspecified"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.AEmulator.Vm.Overlay" />
+        <activity
+            android:name=".ui.VmOverlayActivity2"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|density|uiMode|navigation"
+            android:exported="false"
+            android:launchMode="standard"
+            android:process=":vm2"
+            android:resizeableActivity="true"
+            android:screenOrientation="unspecified"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.AEmulator.Vm.Overlay" />
+        <activity
+            android:name=".ui.VmOverlayActivity3"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|density|uiMode|navigation"
+            android:exported="false"
+            android:launchMode="standard"
+            android:process=":vm3"
+            android:resizeableActivity="true"
+            android:screenOrientation="unspecified"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.AEmulator.Vm.Overlay" />
+
+        <!-- Added for AEmulator Plus, 2026-11-10: the tab bar's dialogs, in a transparent window over everything (both halves of a split) -->
+        <activity
+            android:name=".ui.TabDialogActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="standard"
+            android:theme="@style/Theme.AEmulator.TabDialog" />
+
+        <activity android:name=".ui.VmRestartActivity" android:exported="false" />
+
+        <!-- catalog ROM downloads: keeps a download going with the screen off or the app minimised -->
+        <service
+            android:name=".catalog.RomDownloadService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <service
+            android:name=".core.Keeper"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:process=":vm">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Keeps the emulated Android system running" />
+        </service>
+
+        <service
+            android:name="dev.lk.dhd.BinderSlot"
+            android:exported="false"
+            android:process=":binder" />
+        <service
+            android:name="dev.lk.dhd.GlSlot"
+            android:exported="false"
+            android:process=":gl" />
+
+        <service
+            android:name=".core.Keeper1"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:process=":vm1">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Keeps the emulated Android system running" />
+        </service>
+        <service
+            android:name="dev.lk.dhd.BinderSlot1"
+            android:exported="false"
+            android:process=":binder1" />
+        <service
+            android:name="dev.lk.dhd.GlSlot1"
+            android:exported="false"
+            android:process=":gl1" />
+
+        <service
+            android:name=".core.Keeper2"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:process=":vm2">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Keeps the emulated Android system running" />
+        </service>
+        <service
+            android:name="dev.lk.dhd.BinderSlot2"
+            android:exported="false"
+            android:process=":binder2" />
+        <service
+            android:name="dev.lk.dhd.GlSlot2"
+            android:exported="false"
+            android:process=":gl2" />
+
+        <service
+            android:name=".core.Keeper3"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:process=":vm3">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Keeps the emulated Android system running" />
+        </service>
+        <service
+            android:name="dev.lk.dhd.BinderSlot3"
+            android:exported="false"
+            android:process=":binder3" />
+        <service
+            android:name="dev.lk.dhd.GlSlot3"
+            android:exported="false"
+            android:process=":gl3" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>

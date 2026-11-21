@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">ייבוא מחיצה</string>
+    <string name="vm_import_partition_working">קורא את מחיצת %1$s… עצור את כל המכונות הווירטואליות לפני הייבוא.</string>
+    <string name="vm_import_partition_done">מחיצת %1$s יובאה וחוברה. המערכת והנתונים לא השתנו.</string>
+    <string name="vm_import_partition_exists">למכונה הווירטואלית הזו כבר יש מחיצת %1$s.</string>
+    <string name="vm_import_partition_conflict">מבנה התיקיות של המכונה הווירטואלית אינו מאפשר מחיצה זו.</string>
+    <string name="vm_import_partition_unsupported">לא ניתן לייבא תמונת %1$s באפשרות זו.</string>
+    <string name="vm_import_partition_which">איזו מחיצה זו?</string>
+    <string name="vm_import_partition_which_info">שם הקובץ לא מציין מה יש בו. בחר את המחיצה.</string>
+    <string name="vm_import_partition_have">%1$s (כבר במכונה הווירטואלית הזו)</string>
+    <string name="vm_import_partition_headline">ייבוא תמונת מחיצה למכונה הווירטואלית הזו</string>
+    <string name="vm_import_partition_sub">Boot, recovery (מקורי, TWRP, OrangeFox או CWM), OEM, vendor, odm, product או system_ext. הסוג נקרא מהקובץ; אם אי אפשר, תישאל. רק recovery מחליף קיים; שאר המכונה הווירטואלית לא משתנה. הפעל מחדש ל-recovery מהתפריט ⋮.</string>
+    <string name="vm_import_partition_button">ייבוא…</string>
+    <string name="vm_import_recovery_done">ה-recovery יובא. הפעל מחדש ל-recovery מהתפריט ⋮ כדי להשתמש בו.</string>
+</resources>

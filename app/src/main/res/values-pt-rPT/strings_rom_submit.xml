@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Submeter uma ROM</string>
+    <string name="submit_action">Submeter uma ROM</string>
+    <string name="submit_intro">Partilhe uma ligação de transferência de uma ROM. As submissões são analisadas antes de aparecerem no catálogo.</string>
+    <string name="submit_variant">Variante</string>
+    <string name="submit_version">Categoria da versão</string>
+    <string name="submit_pick_variant_first">Escolha primeiro uma variante</string>
+    <string name="submit_name">Nome da ROM</string>
+    <string name="submit_rom_version">Versão da ROM</string>
+    <string name="submit_device">Dispositivo</string>
+    <string name="submit_url">URL de transferência</string>
+    <string name="submit_size_mb">Tamanho do ficheiro em MB (opcional)</string>
+    <string name="submit_emulator">Versão do emulador (opcional)</string>
+    <string name="submit_by">O seu nome</string>
+    <string name="submit_notes">Notas (opcional)</string>
+    <string name="submit_send">Submeter</string>
+    <string name="submit_required">Obrigatório</string>
+    <string name="submit_bad_url">Introduza uma ligação http(s) válida</string>
+    <string name="submit_bad_size">Introduza um número, 0 ou mais</string>
+    <string name="submit_success">Obrigado! A sua ROM foi submetida e aparecerá no catálogo após análise.</string>
+    <string name="submit_another">Submeter outra</string>
+    <string name="submit_close">Fechar</string>
+    <string name="submit_categories_failed">Não foi possível carregar as categorias: %1$s</string>
+    <string name="submit_err_duplicate">Esta ligação de transferência já foi submetida.</string>
+    <string name="submit_err_rate_limited">Demasiadas submissões. Tente novamente dentro de cerca de %1$d min.</string>
+    <string name="submit_err_rejected">O servidor rejeitou a submissão: %1$s</string>
+    <string name="submit_err_server">O servidor devolveu um erro (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">O servidor enviou uma resposta inesperada.</string>
+    <string name="catalog_err_bad_json">O catálogo não é uma lista de ROMs válida.</string>
+    <string name="catalog_err_too_many_roms">O catálogo tem mais de 10000 ROMs.</string>
+    <string name="catalog_tested_on">Emulador %1$s</string>
+    <string name="catalog_submitted_by">Submetida por %1$s</string>
+</resources>

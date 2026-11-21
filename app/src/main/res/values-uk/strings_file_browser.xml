@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Виберіть файли</string>
+    <string name="fb_title_single">Виберіть файл</string>
+    <string name="fb_up">Вгору</string>
+    <string name="fb_system_picker">Системний вибір</string>
+    <string name="fb_use_system_picker">Використати системний вибір</string>
+    <string name="fb_internal">Внутрішня пам’ять</string>
+    <string name="fb_removable">SD-карта / USB %1$d</string>
+    <string name="fb_downloads">Завантаження</string>
+    <string name="fb_documents">Документи</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Назва</string>
+    <string name="fb_sort_date">Дата</string>
+    <string name="fb_sort_size">Розмір</string>
+    <string name="fb_hidden">Приховані</string>
+    <string name="fb_selected">Вибрано: %1$d</string>
+    <string name="fb_clear">Очистити</string>
+    <string name="fb_import">Імпорт</string>
+    <string name="fb_empty">Тут нічого немає</string>
+    <string name="fb_unreadable">Цю теку не можна прочитати. Android закриває деякі теки (наприклад, дані інших застосунків) для всіх застосунків.</string>
+    <string name="fb_access_title">Дозволити доступ до файлів</string>
+    <string name="fb_access_text">Щоб показати файли прошивки й вибрати одразу кілька, оглядачу потрібен доступ до ваших файлів. Також можна скористатися системним вибором.</string>
+    <string name="fb_access_scoped">Android 10 приховує більшість файлів від застосунків, які не відмовилися від ізольованого сховища, тому цей оглядач не може показати їх тут. Скористайтеся системним вибором.</string>
+    <string name="as_builtin_browser">Вбудований оглядач файлів</string>
+    <string name="as_builtin_browser_sub">Вибір прошивки з сортуванням за датою й розміром та одразу кількох файлів. Вимкніть, щоб використовувати системний вибір.</string>
+    <string name="imp_archive_alone">Резервну копію ВМ (.aessvm) потрібно імпортувати окремо, а не разом з іншими файлами.</string>
+    <string name="imp_joining">Склеювання частин (%2$d) файлу %1$s…</string>
+    <string name="imp_split_missing">Бракує частини %2$s розділеного архіву %1$s. Виберіть усі його частини або тримайте їх в одній теці.</string>
+</resources>

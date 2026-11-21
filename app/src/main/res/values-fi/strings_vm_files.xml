@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">Selaa VM:n tiedostoja</string>
+    <string name="vmf_unreadable">Tätä kansiota ei voi lukea.</string>
+    <string name="vmf_readonly_folder">Vain luku: tämä kansio ei ole VM:n omia tiedostoja. Voit katsoa ja kopioida, mutta et muuttaa.</string>
+    <string name="vmf_link">Linkki</string>
+    <string name="vmf_no_folders">Täällä ei ole kansioita</string>
+    <string name="vmf_preview_failed">Tätä tiedostoa ei voi lukea.</string>
+    <string name="vmf_preview_truncated">Näytetään ensimmäiset %1$s / %2$s</string>
+    <string name="vmf_copy">Kopioi</string>
+    <string name="vmf_copy_to">Kopioi kohteeseen</string>
+    <string name="vmf_copy_to_vm">Toinen paikka tässä VM:ssä</string>
+    <string name="vmf_copy_to_device">VM:n ulkopuolelle (laitteen tallennustila)</string>
+    <string name="vmf_copy_here">Kopioi tänne</string>
+    <string name="vmf_new_folder">Uusi kansio</string>
+    <string name="vmf_folder_name">Kansion nimi</string>
+    <string name="vmf_create">Luo</string>
+    <string name="vmf_new_name">Uusi nimi</string>
+    <string name="vmf_delete_one">Poistetaanko ”%1$s”? Tätä ei voi kumota.</string>
+    <string name="vmf_delete_many">Poistetaanko %1$d kohdetta? Tätä ei voi kumota.</string>
+    <string name="vmf_delete_core">Tämä on VM:n keskeinen osa (osio tai kuva). Ilman sitä VM ei ehkä enää käynnisty.</string>
+    <string name="vmf_working_copy">Kopioidaan…</string>
+    <string name="vmf_working_delete">Poistetaan…</string>
+    <string name="vmf_working_rename">Nimetään uudelleen…</string>
+    <string name="vmf_result_copied">Kopioitu: %1$d</string>
+    <string name="vmf_result_copied_skipped">Kopioitu: %1$d. Ohitettu: %2$d (linkit VM:n ulkopuolelle, socketit ja vastaavat).</string>
+    <string name="vmf_result_deleted">Poistettu: %1$d</string>
+    <string name="vmf_failed">Epäonnistui: %1$s</string>
+    <string name="vmf_readonly">Tämä kohde ei kuulu VM:n omiin tiedostoihin, joten sitä ei voi muuttaa täällä.</string>
+    <string name="vmf_protected">Tämä kuuluu VM:n omaan kirjanpitoon, eikä sitä voi muuttaa täällä.</string>
+    <string name="vmf_bad_name">Tuo nimi ei ole sallittu.</string>
+    <string name="vmf_exists">Samanniminen kohde on jo olemassa.</string>
+    <string name="vmf_no_space">Vapaata tilaa ei ole tarpeeksi.</string>
+</resources>

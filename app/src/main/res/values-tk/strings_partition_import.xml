@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Bölümi import et</string>
+    <string name="vm_import_partition_working">%1$s bölümi okalýar… Import etmezden öň ähli VM-leri duruzyň.</string>
+    <string name="vm_import_partition_done">%1$s bölümi import edildi we birikdirildi. Ulgam we maglumatlar üýtgemedi.</string>
+    <string name="vm_import_partition_exists">Bu VM-de %1$s bölümi eýýäm bar.</string>
+    <string name="vm_import_partition_conflict">VM bukja gurluşy bu bölüme rugsat bermeýär.</string>
+    <string name="vm_import_partition_unsupported">%1$s keşbini bu opsiýa bilen import edip bolmaýar.</string>
+    <string name="vm_import_partition_which">Bu haýsy bölüm?</string>
+    <string name="vm_import_partition_which_info">Faýlyň ady onuň içinde näme bardygyny aýtmaýar. Bölümi saýlaň.</string>
+    <string name="vm_import_partition_have">%1$s (bu VM-de eýýäm bar)</string>
+    <string name="vm_import_partition_headline">Bölüm keşbini şu VM-e import et</string>
+    <string name="vm_import_partition_sub">Boot, recovery (asyl, TWRP, OrangeFox ýa-da CWM), OEM, vendor, odm, product ýa-da system_ext. Görnüşi faýldan okalýar; okap bolmasa, sizden soralýar. Diňe recovery bar bolanyny çalyşýar; VM-iň galan bölegi üýtgemeýär. ⋮ menýusyndan recovery-e gaýtadan ýükläň.</string>
+    <string name="vm_import_partition_button">Import…</string>
+    <string name="vm_import_recovery_done">Recovery import edildi. Ulanmak üçin ⋮ menýusyndan recovery-e gaýtadan ýükläň.</string>
+</resources>

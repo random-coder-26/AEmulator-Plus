@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">Shfleto skedarët e VM-së</string>
+    <string name="vmf_unreadable">Kjo dosje nuk mund të lexohet.</string>
+    <string name="vmf_readonly_folder">Vetëm lexim: kjo dosje nuk është pjesë e skedarëve të vetë VM-së. Mund të shohësh dhe kopjosh, por jo të ndryshosh.</string>
+    <string name="vmf_link">Lidhje</string>
+    <string name="vmf_no_folders">Këtu nuk ka dosje</string>
+    <string name="vmf_preview_failed">Ky skedar nuk mund të lexohet.</string>
+    <string name="vmf_preview_truncated">Po shfaqen %1$s të parat nga %2$s</string>
+    <string name="vmf_copy">Kopjo</string>
+    <string name="vmf_copy_to">Kopjo te</string>
+    <string name="vmf_copy_to_vm">Një vend tjetër në këtë VM</string>
+    <string name="vmf_copy_to_device">Jashtë VM-së (hapësira e pajisjes)</string>
+    <string name="vmf_copy_here">Kopjo këtu</string>
+    <string name="vmf_new_folder">Dosje e re</string>
+    <string name="vmf_folder_name">Emri i dosjes</string>
+    <string name="vmf_create">Krijo</string>
+    <string name="vmf_new_name">Emër i ri</string>
+    <string name="vmf_delete_one">Të fshihet “%1$s”? Kjo nuk mund të zhbëhet.</string>
+    <string name="vmf_delete_many">Të fshihen %1$d artikuj? Kjo nuk mund të zhbëhet.</string>
+    <string name="vmf_delete_core">Kjo është pjesë thelbësore e VM-së (një ndarje ose një imazh). Pa të, VM-ja mund të mos niset më.</string>
+    <string name="vmf_working_copy">Po kopjohet…</string>
+    <string name="vmf_working_delete">Po fshihet…</string>
+    <string name="vmf_working_rename">Po riemërtohet…</string>
+    <string name="vmf_result_copied">Të kopjuara: %1$d</string>
+    <string name="vmf_result_copied_skipped">Të kopjuara: %1$d. Të anashkaluara: %2$d (lidhje jashtë VM-së, socket-e e të ngjashme).</string>
+    <string name="vmf_result_deleted">Të fshira: %1$d</string>
+    <string name="vmf_failed">Dështoi: %1$s</string>
+    <string name="vmf_readonly">Ky artikull nuk është pjesë e skedarëve të vetë VM-së, ndaj nuk mund të ndryshohet këtu.</string>
+    <string name="vmf_protected">Kjo është pjesë e regjistrimeve të brendshme të vetë VM-së dhe nuk mund të ndryshohet këtu.</string>
+    <string name="vmf_bad_name">Ky emër nuk lejohet.</string>
+    <string name="vmf_exists">Ekziston tashmë një artikull me këtë emër.</string>
+    <string name="vmf_no_space">Nuk ka hapësirë të lirë të mjaftueshme.</string>
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus: ROM submission form and JSON ROM catalog (other languages fall back to these) -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!-- Submit form -->
+    <string name="submit_title">Submit a ROM</string>
+    <string name="submit_action">Submit a ROM</string>
+    <string name="submit_intro">Share a ROM download link. Submissions are reviewed before they appear in the catalog.</string>
+    <string name="submit_variant">Variant</string>
+    <string name="submit_version">Version category</string>
+    <string name="submit_pick_variant_first">Pick a variant first</string>
+    <string name="submit_name">ROM name</string>
+    <string name="submit_rom_version">ROM version</string>
+    <string name="submit_device">Device</string>
+    <string name="submit_url">Download URL</string>
+    <string name="submit_size_mb">File size in MB (optional)</string>
+    <string name="submit_emulator">Emulator version (optional)</string>
+    <string name="submit_by">Your name</string>
+    <string name="submit_notes">Notes (optional)</string>
+    <string name="submit_send">Submit</string>
+    <string name="submit_required">Required</string>
+    <string name="submit_bad_url">Enter a valid http(s) link</string>
+    <string name="submit_bad_size">Enter a number, 0 or more</string>
+    <string name="submit_success">Thanks! Your ROM was submitted and will appear in the catalog after review.</string>
+    <string name="submit_another">Submit another</string>
+    <string name="submit_close">Close</string>
+    <string name="submit_categories_failed">Couldn\'t load categories: %1$s</string>
+    <string name="submit_err_duplicate">This download link has already been submitted.</string>
+    <string name="submit_err_rate_limited">Too many submissions. Try again in about %1$d min.</string>
+    <string name="submit_err_rejected">The server rejected the submission: %1$s</string>
+    <string name="submit_err_server">The server returned an error (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">The server sent an unexpected response.</string>
+
+    <!-- JSON catalog -->
+    <string name="catalog_err_bad_json">The catalog is not a valid ROM list.</string>
+    <string name="catalog_err_too_many_roms">The catalog has more than 10000 ROMs.</string>
+    <string name="catalog_tested_on">Emulator %1$s</string>
+    <string name="catalog_submitted_by">Submitted by %1$s</string>
+    <string name="submit_not_direct_title">Direct link required</string>
+    <string name="submit_not_direct_text">Submissions must be direct download links to the ROM file. Links to web pages, or to file hosts that open a page first, are not accepted.\n\nThe recommended place to upload is archive.org.</string>
+</resources>

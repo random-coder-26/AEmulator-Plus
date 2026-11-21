@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">選擇檔案</string>
+    <string name="fb_title_single">選擇檔案</string>
+    <string name="fb_up">上一層</string>
+    <string name="fb_system_picker">系統選擇器</string>
+    <string name="fb_use_system_picker">改用系統選擇器</string>
+    <string name="fb_internal">內部儲存空間</string>
+    <string name="fb_removable">SD 卡 / USB %1$d</string>
+    <string name="fb_downloads">下載</string>
+    <string name="fb_documents">文件</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">名稱</string>
+    <string name="fb_sort_date">日期</string>
+    <string name="fb_sort_size">大小</string>
+    <string name="fb_hidden">隱藏</string>
+    <string name="fb_selected">已選取 %1$d 項</string>
+    <string name="fb_clear">清除</string>
+    <string name="fb_import">匯入</string>
+    <string name="fb_empty">這裡什麼也沒有</string>
+    <string name="fb_unreadable">無法讀取此資料夾。Android 會對所有應用程式關閉某些資料夾（例如其他應用程式的資料）。</string>
+    <string name="fb_access_title">允許存取檔案</string>
+    <string name="fb_access_text">若要列出韌體檔案並一次選取多個，瀏覽器需要存取你的檔案。你也可以改用系統選擇器。</string>
+    <string name="fb_access_scoped">Android 10 會對未退出分區儲存空間的應用程式隱藏大部分檔案，因此此瀏覽器無法在此列出。請改用系統選擇器。</string>
+    <string name="as_builtin_browser">內建檔案瀏覽器</string>
+    <string name="as_builtin_browser_sub">依日期與大小排序來選擇韌體，並可一次選取多個檔案。關閉後使用系統選擇器。</string>
+    <string name="imp_archive_alone">虛擬機備份（.aessvm）必須單獨匯入，不能與其他檔案一起匯入。</string>
+    <string name="imp_joining">正在合併 %1$s 的 %2$d 個分割檔…</string>
+    <string name="imp_split_missing">分割封存檔 %1$s 缺少第 %2$s 部分。請選取所有分割檔，或將它們放在同一個資料夾中。</string>
+</resources>

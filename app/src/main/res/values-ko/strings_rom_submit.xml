@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">ROM 제출</string>
+    <string name="submit_action">ROM 제출</string>
+    <string name="submit_intro">ROM 다운로드 링크를 공유하세요. 제출한 항목은 검토를 거친 후 카탈로그에 표시됩니다.</string>
+    <string name="submit_variant">변형</string>
+    <string name="submit_version">버전 카테고리</string>
+    <string name="submit_pick_variant_first">먼저 변형을 선택하세요</string>
+    <string name="submit_name">ROM 이름</string>
+    <string name="submit_rom_version">ROM 버전</string>
+    <string name="submit_device">기기</string>
+    <string name="submit_url">다운로드 URL</string>
+    <string name="submit_size_mb">파일 크기(MB, 선택 사항)</string>
+    <string name="submit_emulator">에뮬레이터 버전(선택 사항)</string>
+    <string name="submit_by">이름</string>
+    <string name="submit_notes">메모(선택 사항)</string>
+    <string name="submit_send">제출</string>
+    <string name="submit_required">필수</string>
+    <string name="submit_bad_url">올바른 http(s) 링크를 입력하세요</string>
+    <string name="submit_bad_size">0 이상의 숫자를 입력하세요</string>
+    <string name="submit_success">감사합니다! ROM이 제출되었으며 검토 후 카탈로그에 표시됩니다.</string>
+    <string name="submit_another">하나 더 제출</string>
+    <string name="submit_close">닫기</string>
+    <string name="submit_categories_failed">카테고리를 불러오지 못했습니다: %1$s</string>
+    <string name="submit_err_duplicate">이 다운로드 링크는 이미 제출되었습니다.</string>
+    <string name="submit_err_rate_limited">제출이 너무 많습니다. 약 %1$d분 후에 다시 시도하세요.</string>
+    <string name="submit_err_rejected">서버가 제출을 거부했습니다: %1$s</string>
+    <string name="submit_err_server">서버가 오류를 반환했습니다(HTTP %1$d).</string>
+    <string name="submit_err_bad_response">서버가 예기치 않은 응답을 보냈습니다.</string>
+    <string name="catalog_err_bad_json">카탈로그가 올바른 ROM 목록이 아닙니다.</string>
+    <string name="catalog_err_too_many_roms">카탈로그에 ROM이 10000개를 초과합니다.</string>
+    <string name="catalog_tested_on">에뮬레이터 %1$s</string>
+    <string name="catalog_submitted_by">제출자: %1$s</string>
+</resources>

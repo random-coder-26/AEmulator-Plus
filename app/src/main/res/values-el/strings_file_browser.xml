@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Επιλογή αρχείων</string>
+    <string name="fb_title_single">Επιλογή αρχείου</string>
+    <string name="fb_up">Επάνω</string>
+    <string name="fb_system_picker">Επιλογέας συστήματος</string>
+    <string name="fb_use_system_picker">Χρήση του επιλογέα συστήματος</string>
+    <string name="fb_internal">Εσωτερικός χώρος αποθήκευσης</string>
+    <string name="fb_removable">Κάρτα SD / USB %1$d</string>
+    <string name="fb_downloads">Λήψεις</string>
+    <string name="fb_documents">Έγγραφα</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Όνομα</string>
+    <string name="fb_sort_date">Ημερομηνία</string>
+    <string name="fb_sort_size">Μέγεθος</string>
+    <string name="fb_hidden">Κρυφά</string>
+    <string name="fb_selected">Επιλέχθηκαν %1$d</string>
+    <string name="fb_clear">Εκκαθάριση</string>
+    <string name="fb_import">Εισαγωγή</string>
+    <string name="fb_empty">Δεν υπάρχει τίποτα εδώ</string>
+    <string name="fb_unreadable">Αυτός ο φάκελος δεν μπορεί να διαβαστεί. Το Android κρατά ορισμένους φακέλους (όπως τα δεδομένα άλλων εφαρμογών) κλειστούς για όλες τις εφαρμογές.</string>
+    <string name="fb_access_title">Να επιτρέπεται η πρόσβαση στα αρχεία</string>
+    <string name="fb_access_text">Για να εμφανίσει τα αρχεία υλικολογισμικού και να επιλέξετε πολλά ταυτόχρονα, το πρόγραμμα περιήγησης χρειάζεται πρόσβαση στα αρχεία σας. Μπορείτε επίσης να χρησιμοποιήσετε τον επιλογέα συστήματος.</string>
+    <string name="fb_access_scoped">Το Android 10 κρύβει τα περισσότερα αρχεία από εφαρμογές που δεν έχουν εξαιρεθεί από τον περιορισμένο χώρο αποθήκευσης, οπότε αυτό το πρόγραμμα περιήγησης δεν μπορεί να τα εμφανίσει εδώ. Χρησιμοποιήστε τον επιλογέα συστήματος.</string>
+    <string name="as_builtin_browser">Ενσωματωμένο πρόγραμμα περιήγησης αρχείων</string>
+    <string name="as_builtin_browser_sub">Επιλέξτε υλικολογισμικό με ταξινόμηση κατά ημερομηνία και μέγεθος και πολλά αρχεία ταυτόχρονα. Απενεργοποιήστε για να χρησιμοποιήσετε τον επιλογέα συστήματος.</string>
+    <string name="imp_archive_alone">Ένα αντίγραφο ασφαλείας VM (.aessvm) πρέπει να εισαχθεί μόνο του, όχι μαζί με άλλα αρχεία.</string>
+    <string name="imp_joining">Συνένωση %2$d τμημάτων του %1$s…</string>
+    <string name="imp_split_missing">Λείπει το τμήμα %2$s του διαιρεμένου αρχείου %1$s. Επιλέξτε όλα τα τμήματά του ή κρατήστε τα σε έναν φάκελο.</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Gửi ROM</string>
+    <string name="submit_action">Gửi ROM</string>
+    <string name="submit_intro">Chia sẻ liên kết tải xuống ROM. Các nội dung gửi sẽ được xem xét trước khi xuất hiện trong danh mục.</string>
+    <string name="submit_variant">Biến thể</string>
+    <string name="submit_version">Danh mục phiên bản</string>
+    <string name="submit_pick_variant_first">Hãy chọn biến thể trước</string>
+    <string name="submit_name">Tên ROM</string>
+    <string name="submit_rom_version">Phiên bản ROM</string>
+    <string name="submit_device">Thiết bị</string>
+    <string name="submit_url">URL tải xuống</string>
+    <string name="submit_size_mb">Kích thước tệp tính bằng MB (không bắt buộc)</string>
+    <string name="submit_emulator">Phiên bản trình giả lập (không bắt buộc)</string>
+    <string name="submit_by">Tên của bạn</string>
+    <string name="submit_notes">Ghi chú (không bắt buộc)</string>
+    <string name="submit_send">Gửi</string>
+    <string name="submit_required">Bắt buộc</string>
+    <string name="submit_bad_url">Nhập liên kết http(s) hợp lệ</string>
+    <string name="submit_bad_size">Nhập một số, từ 0 trở lên</string>
+    <string name="submit_success">Cảm ơn bạn! ROM của bạn đã được gửi và sẽ xuất hiện trong danh mục sau khi được xem xét.</string>
+    <string name="submit_another">Gửi thêm</string>
+    <string name="submit_close">Đóng</string>
+    <string name="submit_categories_failed">Không tải được các danh mục: %1$s</string>
+    <string name="submit_err_duplicate">Liên kết tải xuống này đã được gửi.</string>
+    <string name="submit_err_rate_limited">Gửi quá nhiều lần. Hãy thử lại sau khoảng %1$d phút.</string>
+    <string name="submit_err_rejected">Máy chủ đã từ chối nội dung gửi: %1$s</string>
+    <string name="submit_err_server">Máy chủ trả về lỗi (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Máy chủ gửi về phản hồi không mong đợi.</string>
+    <string name="catalog_err_bad_json">Danh mục không phải là danh sách ROM hợp lệ.</string>
+    <string name="catalog_err_too_many_roms">Danh mục có hơn 10000 ROM.</string>
+    <string name="catalog_tested_on">Trình giả lập %1$s</string>
+    <string name="catalog_submitted_by">Gửi bởi %1$s</string>
+</resources>

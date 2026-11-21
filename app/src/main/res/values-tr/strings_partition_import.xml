@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Bölümü içe aktar</string>
+    <string name="vm_import_partition_working">%1$s bölümü okunuyor… İçe aktarmadan önce tüm VM’leri durdurun.</string>
+    <string name="vm_import_partition_done">%1$s bölümü içe aktarıldı ve bağlandı. Sistem ve veriler değişmedi.</string>
+    <string name="vm_import_partition_exists">Bu VM’de zaten bir %1$s bölümü var.</string>
+    <string name="vm_import_partition_conflict">VM’nin klasör düzeni bu bölüme izin vermiyor.</string>
+    <string name="vm_import_partition_unsupported">%1$s imajı bu seçenekle içe aktarılamaz.</string>
+    <string name="vm_import_partition_which">Bu hangi bölüm?</string>
+    <string name="vm_import_partition_which_info">Dosya adı içeriğini belirtmiyor. Bölümü seçin.</string>
+    <string name="vm_import_partition_have">%1$s (bu VM’de zaten var)</string>
+    <string name="vm_import_partition_headline">Bu VM’ye bir bölüm imajı içe aktar</string>
+    <string name="vm_import_partition_sub">Boot, recovery (orijinal, TWRP, OrangeFox veya CWM), OEM, vendor, odm, product veya system_ext. Tür dosyadan okunur; okunamazsa size sorulur. Yalnızca recovery mevcut olanın yerini alır; VM’nin geri kalanı değişmez. ⋮ menüsünden recovery’ye yeniden başlatın.</string>
+    <string name="vm_import_partition_button">İçe aktar…</string>
+    <string name="vm_import_recovery_done">Recovery içe aktarıldı. Kullanmak için ⋮ menüsünden recovery’ye yeniden başlatın.</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">파일 선택</string>
+    <string name="fb_title_single">파일 선택</string>
+    <string name="fb_up">위로</string>
+    <string name="fb_system_picker">시스템 선택기</string>
+    <string name="fb_use_system_picker">대신 시스템 선택기 사용</string>
+    <string name="fb_internal">내부 저장소</string>
+    <string name="fb_removable">SD 카드 / USB %1$d</string>
+    <string name="fb_downloads">다운로드</string>
+    <string name="fb_documents">문서</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">이름</string>
+    <string name="fb_sort_date">날짜</string>
+    <string name="fb_sort_size">크기</string>
+    <string name="fb_hidden">숨김</string>
+    <string name="fb_selected">%1$d개 선택됨</string>
+    <string name="fb_clear">지우기</string>
+    <string name="fb_import">가져오기</string>
+    <string name="fb_empty">여기에는 아무것도 없습니다</string>
+    <string name="fb_unreadable">이 폴더를 읽을 수 없습니다. Android는 일부 폴더(다른 앱의 데이터 등)를 모든 앱에 대해 닫아 둡니다.</string>
+    <string name="fb_access_title">파일 접근 허용</string>
+    <string name="fb_access_text">펌웨어 파일을 나열하고 여러 개를 한 번에 선택하려면 브라우저가 파일에 접근할 수 있어야 합니다. 대신 시스템 선택기를 사용할 수도 있습니다.</string>
+    <string name="fb_access_scoped">Android 10은 범위 지정 저장소에서 제외되지 않은 앱에서는 대부분의 파일을 숨기므로, 이 브라우저에서는 여기에 나열할 수 없습니다. 대신 시스템 선택기를 사용하세요.</string>
+    <string name="as_builtin_browser">내장 파일 브라우저</string>
+    <string name="as_builtin_browser_sub">날짜와 크기로 정렬하여 펌웨어를 고르고 여러 파일을 한 번에 선택합니다. 시스템 선택기를 사용하려면 끄세요.</string>
+    <string name="imp_archive_alone">VM 백업(.aessvm)은 다른 파일과 함께가 아니라 단독으로 가져와야 합니다.</string>
+    <string name="imp_joining">%1$s의 %2$d개 파트 결합 중…</string>
+    <string name="imp_split_missing">분할 아카이브 %1$s의 파트 %2$s이(가) 없습니다. 모든 파트를 선택하거나 한 폴더에 두세요.</string>
+</resources>

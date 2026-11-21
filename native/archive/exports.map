@@ -1,0 +1,1 @@
+{ global: JNI_OnLoad; arc_*; arc7z_*; local: *; };

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Fayllar seçin</string>
+    <string name="fb_title_single">Fayl seçin</string>
+    <string name="fb_up">Yuxarı</string>
+    <string name="fb_system_picker">Sistem seçicisi</string>
+    <string name="fb_use_system_picker">Əvəzinə sistem seçicisindən istifadə et</string>
+    <string name="fb_internal">Daxili yaddaş</string>
+    <string name="fb_removable">SD kart / USB %1$d</string>
+    <string name="fb_downloads">Endirmələr</string>
+    <string name="fb_documents">Sənədlər</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Ad</string>
+    <string name="fb_sort_date">Tarix</string>
+    <string name="fb_sort_size">Ölçü</string>
+    <string name="fb_hidden">Gizli</string>
+    <string name="fb_selected">%1$d seçildi</string>
+    <string name="fb_clear">Təmizlə</string>
+    <string name="fb_import">İdxal et</string>
+    <string name="fb_empty">Burada heç nə yoxdur</string>
+    <string name="fb_unreadable">Bu qovluğu oxumaq mümkün deyil. Android bəzi qovluqları (başqa tətbiqlərin məlumatları kimi) bütün tətbiqlər üçün bağlı saxlayır.</string>
+    <string name="fb_access_title">Fayllara girişə icazə verin</string>
+    <string name="fb_access_text">Proqram təminatı fayllarınızı siyahılamaq və bir neçəsini birdən seçmək üçün brauzerin fayllarınıza girişi olmalıdır. Əvəzinə sistem seçicisindən də istifadə edə bilərsiniz.</string>
+    <string name="fb_access_scoped">Android 10 məhdud yaddaşdan imtina etməyən tətbiqlərdən faylların çoxunu gizlədir, ona görə bu brauzer onları burada siyahılaya bilmir. Əvəzinə sistem seçicisindən istifadə edin.</string>
+    <string name="as_builtin_browser">Daxili fayl brauzeri</string>
+    <string name="as_builtin_browser_sub">Proqram təminatını tarix və ölçüyə görə sıralama ilə və bir neçə faylı birdən seçin. Sistem seçicisindən istifadə etmək üçün söndürün.</string>
+    <string name="imp_archive_alone">VM ehtiyat nüsxəsi (.aessvm) digər fayllarla birlikdə deyil, tək idxal edilməlidir.</string>
+    <string name="imp_joining">%1$s faylının %2$d hissəsi birləşdirilir…</string>
+    <string name="imp_split_missing">Bölünmüş %1$s arxivinin %2$s hissəsi çatışmır. Onun bütün hissələrini seçin və ya bir qovluqda saxlayın.</string>
+</resources>

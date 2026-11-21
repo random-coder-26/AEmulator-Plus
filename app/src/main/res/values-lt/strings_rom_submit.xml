@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Pateikti ROM</string>
+    <string name="submit_action">Pateikti ROM</string>
+    <string name="submit_intro">Pasidalykite ROM atsisiuntimo nuoroda. Pateikti įrašai peržiūrimi prieš pasirodydami kataloge.</string>
+    <string name="submit_variant">Variantas</string>
+    <string name="submit_version">Versijos kategorija</string>
+    <string name="submit_pick_variant_first">Pirmiausia pasirinkite variantą</string>
+    <string name="submit_name">ROM pavadinimas</string>
+    <string name="submit_rom_version">ROM versija</string>
+    <string name="submit_device">Įrenginys</string>
+    <string name="submit_url">Atsisiuntimo URL</string>
+    <string name="submit_size_mb">Failo dydis MB (neprivaloma)</string>
+    <string name="submit_emulator">Emuliatoriaus versija (neprivaloma)</string>
+    <string name="submit_by">Jūsų vardas</string>
+    <string name="submit_notes">Pastabos (neprivaloma)</string>
+    <string name="submit_send">Pateikti</string>
+    <string name="submit_required">Privaloma</string>
+    <string name="submit_bad_url">Įveskite tinkamą http(s) nuorodą</string>
+    <string name="submit_bad_size">Įveskite skaičių, 0 arba daugiau</string>
+    <string name="submit_success">Ačiū! Jūsų ROM pateiktas ir po peržiūros pasirodys kataloge.</string>
+    <string name="submit_another">Pateikti dar vieną</string>
+    <string name="submit_close">Uždaryti</string>
+    <string name="submit_categories_failed">Nepavyko įkelti kategorijų: %1$s</string>
+    <string name="submit_err_duplicate">Ši atsisiuntimo nuoroda jau pateikta.</string>
+    <string name="submit_err_rate_limited">Per daug pateikimų. Bandykite dar kartą maždaug po %1$d min.</string>
+    <string name="submit_err_rejected">Serveris atmetė pateikimą: %1$s</string>
+    <string name="submit_err_server">Serveris grąžino klaidą (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Serveris atsiuntė netikėtą atsakymą.</string>
+    <string name="catalog_err_bad_json">Katalogas nėra tinkamas ROM sąrašas.</string>
+    <string name="catalog_err_too_many_roms">Kataloge yra daugiau nei 10000 ROM.</string>
+    <string name="catalog_tested_on">Emuliatorius %1$s</string>
+    <string name="catalog_submitted_by">Pateikė: %1$s</string>
+</resources>

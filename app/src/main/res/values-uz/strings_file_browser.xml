@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Fayllarni tanlang</string>
+    <string name="fb_title_single">Fayl tanlang</string>
+    <string name="fb_up">Yuqoriga</string>
+    <string name="fb_system_picker">Tizim tanlagichi</string>
+    <string name="fb_use_system_picker">Uning oʻrniga tizim tanlagichidan foydalanish</string>
+    <string name="fb_internal">Ichki xotira</string>
+    <string name="fb_removable">SD karta / USB %1$d</string>
+    <string name="fb_downloads">Yuklamalar</string>
+    <string name="fb_documents">Hujjatlar</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Nomi</string>
+    <string name="fb_sort_date">Sana</string>
+    <string name="fb_sort_size">Hajmi</string>
+    <string name="fb_hidden">Yashirin</string>
+    <string name="fb_selected">%1$d ta tanlandi</string>
+    <string name="fb_clear">Tozalash</string>
+    <string name="fb_import">Import</string>
+    <string name="fb_empty">Bu yerda hech narsa yoʻq</string>
+    <string name="fb_unreadable">Bu jildni oʻqib boʻlmaydi. Android baʼzi jildlarni (masalan, boshqa ilovalar maʼlumotlarini) barcha ilovalar uchun yopiq saqlaydi.</string>
+    <string name="fb_access_title">Fayllarga kirishga ruxsat berish</string>
+    <string name="fb_access_text">Proshivka fayllarini roʻyxatlash va bir nechtasini birdan tanlash uchun brauzer fayllaringizga kira olishi kerak. Shuningdek, tizim tanlagichidan ham foydalanishingiz mumkin.</string>
+    <string name="fb_access_scoped">Android 10 cheklangan xotiradan voz kechmagan ilovalardan fayllarning aksariyatini yashiradi, shuning uchun bu brauzer ularni bu yerda koʻrsata olmaydi. Uning oʻrniga tizim tanlagichidan foydalaning.</string>
+    <string name="as_builtin_browser">Ichki fayl brauzeri</string>
+    <string name="as_builtin_browser_sub">Proshivkani sana va hajm boʻyicha saralab, bir nechta faylni birdan tanlang. Tizim tanlagichidan foydalanish uchun oʻchiring.</string>
+    <string name="imp_archive_alone">VM zaxira nusxasini (.aessvm) boshqa fayllar bilan birga emas, alohida import qilish kerak.</string>
+    <string name="imp_joining">%1$s faylining %2$d qismi birlashtirilmoqda…</string>
+    <string name="imp_split_missing">Boʻlingan %1$s arxivining %2$s-qismi yoʻq. Uning barcha qismlarini tanlang yoki bitta jildda saqlang.</string>
+</resources>

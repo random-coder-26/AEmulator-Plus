@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Pasirinkti failus</string>
+    <string name="fb_title_single">Pasirinkti failą</string>
+    <string name="fb_up">Aukštyn</string>
+    <string name="fb_system_picker">Sistemos parinkiklis</string>
+    <string name="fb_use_system_picker">Vietoj to naudoti sistemos parinkiklį</string>
+    <string name="fb_internal">Vidinė saugykla</string>
+    <string name="fb_removable">SD kortelė / USB %1$d</string>
+    <string name="fb_downloads">Atsisiuntimai</string>
+    <string name="fb_documents">Dokumentai</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Pavadinimas</string>
+    <string name="fb_sort_date">Data</string>
+    <string name="fb_sort_size">Dydis</string>
+    <string name="fb_hidden">Paslėpti</string>
+    <string name="fb_selected">Pasirinkta: %1$d</string>
+    <string name="fb_clear">Išvalyti</string>
+    <string name="fb_import">Importuoti</string>
+    <string name="fb_empty">Čia nieko nėra</string>
+    <string name="fb_unreadable">Šio aplanko perskaityti nepavyksta. „Android“ kai kuriuos aplankus (pvz., kitų programų duomenis) laiko uždarytus visoms programoms.</string>
+    <string name="fb_access_title">Leisti pasiekti failus</string>
+    <string name="fb_access_text">Kad galėtų parodyti programinės įrangos failus ir leisti pasirinkti kelis iš karto, naršyklei reikia prieigos prie jūsų failų. Taip pat galite naudoti sistemos parinkiklį.</string>
+    <string name="fb_access_scoped">„Android 10“ paslepia daugumą failų nuo programų, kurios neatsisakė apribotos saugyklos, todėl ši naršyklė negali jų čia parodyti. Vietoj to naudokite sistemos parinkiklį.</string>
+    <string name="as_builtin_browser">Integruota failų naršyklė</string>
+    <string name="as_builtin_browser_sub">Pasirinkite programinę įrangą rūšiuodami pagal datą ir dydį ir kelis failus iš karto. Išjunkite, kad naudotumėte sistemos parinkiklį.</string>
+    <string name="imp_archive_alone">VM atsarginę kopiją (.aessvm) reikia importuoti atskirai, ne kartu su kitais failais.</string>
+    <string name="imp_joining">Jungiamos %2$d failo %1$s dalys…</string>
+    <string name="imp_split_missing">Trūksta suskaidyto archyvo %1$s dalies %2$s. Pasirinkite visas jo dalis arba laikykite jas viename aplanke.</string>
+</resources>

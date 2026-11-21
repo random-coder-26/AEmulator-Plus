@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">เลือกไฟล์</string>
+    <string name="fb_title_single">เลือกไฟล์</string>
+    <string name="fb_up">ขึ้น</string>
+    <string name="fb_system_picker">ตัวเลือกของระบบ</string>
+    <string name="fb_use_system_picker">ใช้ตัวเลือกของระบบแทน</string>
+    <string name="fb_internal">พื้นที่เก็บข้อมูลภายใน</string>
+    <string name="fb_removable">การ์ด SD / USB %1$d</string>
+    <string name="fb_downloads">ดาวน์โหลด</string>
+    <string name="fb_documents">เอกสาร</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">ชื่อ</string>
+    <string name="fb_sort_date">วันที่</string>
+    <string name="fb_sort_size">ขนาด</string>
+    <string name="fb_hidden">ซ่อนอยู่</string>
+    <string name="fb_selected">เลือกแล้ว %1$d</string>
+    <string name="fb_clear">ล้าง</string>
+    <string name="fb_import">นำเข้า</string>
+    <string name="fb_empty">ไม่มีอะไรที่นี่</string>
+    <string name="fb_unreadable">อ่านโฟลเดอร์นี้ไม่ได้ Android ปิดบางโฟลเดอร์ (เช่นข้อมูลของแอปอื่น) ไม่ให้ทุกแอปเข้าถึง</string>
+    <string name="fb_access_title">อนุญาตการเข้าถึงไฟล์</string>
+    <string name="fb_access_text">เพื่อแสดงรายการไฟล์เฟิร์มแวร์และเลือกหลายไฟล์พร้อมกัน เบราว์เซอร์ต้องเข้าถึงไฟล์ของคุณได้ คุณยังเลือกใช้ตัวเลือกของระบบแทนได้</string>
+    <string name="fb_access_scoped">Android 10 ซ่อนไฟล์ส่วนใหญ่จากแอปที่ไม่ได้ยกเลิกการใช้พื้นที่เก็บข้อมูลแบบจำกัดขอบเขต เบราว์เซอร์นี้จึงแสดงรายการไฟล์ที่นี่ไม่ได้ โปรดใช้ตัวเลือกของระบบแทน</string>
+    <string name="as_builtin_browser">ตัวเรียกดูไฟล์ในตัว</string>
+    <string name="as_builtin_browser_sub">เลือกเฟิร์มแวร์พร้อมเรียงตามวันที่และขนาด และเลือกหลายไฟล์พร้อมกัน ปิดเพื่อใช้ตัวเลือกของระบบ</string>
+    <string name="imp_archive_alone">ต้องนำเข้าข้อมูลสำรอง VM (.aessvm) แยกต่างหาก ไม่ใช่พร้อมกับไฟล์อื่น</string>
+    <string name="imp_joining">กำลังรวม %2$d ส่วนของ %1$s…</string>
+    <string name="imp_split_missing">ไม่พบส่วนที่ %2$s ของไฟล์เก็บถาวรที่แบ่งไว้ %1$s เลือกทุกส่วนของไฟล์นั้น หรือเก็บไว้ในโฟลเดอร์เดียวกัน</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Partitie importeren</string>
+    <string name="vm_import_partition_working">%1$s-partitie wordt gelezen… Stop alle VM’s voordat je importeert.</string>
+    <string name="vm_import_partition_done">%1$s-partitie geïmporteerd en gekoppeld. Systeem en gegevens zijn ongewijzigd.</string>
+    <string name="vm_import_partition_exists">Deze VM heeft al een %1$s-partitie.</string>
+    <string name="vm_import_partition_conflict">De mapindeling van de VM staat deze partitie niet toe.</string>
+    <string name="vm_import_partition_unsupported">Een %1$s-image kan niet met deze optie worden geïmporteerd.</string>
+    <string name="vm_import_partition_which">Welke partitie is dit?</string>
+    <string name="vm_import_partition_which_info">De bestandsnaam geeft niet aan wat het bevat. Kies de partitie.</string>
+    <string name="vm_import_partition_have">%1$s (al in deze VM)</string>
+    <string name="vm_import_partition_headline">Een partitie-image in deze VM importeren</string>
+    <string name="vm_import_partition_sub">Boot, recovery (standaard, TWRP, OrangeFox of CWM), OEM, vendor, odm, product of system_ext. Het type wordt uit het bestand gelezen; je wordt gevraagd als dat niet lukt. Alleen recovery vervangt een bestaande; de rest van de VM blijft ongewijzigd. Herstart naar recovery via het ⋮-menu.</string>
+    <string name="vm_import_partition_button">Importeren…</string>
+    <string name="vm_import_recovery_done">Recovery geïmporteerd. Herstart naar recovery via het ⋮-menu om hem te gebruiken.</string>
+</resources>

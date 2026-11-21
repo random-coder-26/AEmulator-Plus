@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">VM 파일 찾아보기</string>
+    <string name="vmf_unreadable">이 폴더를 읽을 수 없습니다.</string>
+    <string name="vmf_readonly_folder">읽기 전용: 이 폴더는 VM 자체 파일이 아닙니다. 보고 복사할 수 있지만 변경할 수는 없습니다.</string>
+    <string name="vmf_link">링크</string>
+    <string name="vmf_no_folders">여기에는 폴더가 없습니다</string>
+    <string name="vmf_preview_failed">이 파일을 읽을 수 없습니다.</string>
+    <string name="vmf_preview_truncated">%2$s 중 처음 %1$s 표시 중</string>
+    <string name="vmf_copy">복사</string>
+    <string name="vmf_copy_to">복사 위치</string>
+    <string name="vmf_copy_to_vm">이 VM의 다른 위치</string>
+    <string name="vmf_copy_to_device">VM 밖(기기 저장소)</string>
+    <string name="vmf_copy_here">여기에 복사</string>
+    <string name="vmf_new_folder">새 폴더</string>
+    <string name="vmf_folder_name">폴더 이름</string>
+    <string name="vmf_create">만들기</string>
+    <string name="vmf_new_name">새 이름</string>
+    <string name="vmf_delete_one">\"%1$s\"을(를) 삭제할까요? 이 작업은 되돌릴 수 없습니다.</string>
+    <string name="vmf_delete_many">항목 %1$d개를 삭제할까요? 이 작업은 되돌릴 수 없습니다.</string>
+    <string name="vmf_delete_core">VM의 핵심 부분(파티션 또는 이미지)입니다. 이것이 없으면 VM이 더 이상 시작되지 않을 수 있습니다.</string>
+    <string name="vmf_working_copy">복사 중…</string>
+    <string name="vmf_working_delete">삭제 중…</string>
+    <string name="vmf_working_rename">이름 변경 중…</string>
+    <string name="vmf_result_copied">복사됨: %1$d</string>
+    <string name="vmf_result_copied_skipped">복사됨: %1$d. 건너뜀: %2$d(VM 밖으로의 링크, 소켓 등).</string>
+    <string name="vmf_result_deleted">삭제됨: %1$d</string>
+    <string name="vmf_failed">실패: %1$s</string>
+    <string name="vmf_readonly">이 항목은 VM 자체 파일이 아니므로 여기서 변경할 수 없습니다.</string>
+    <string name="vmf_protected">VM 자체 관리 정보의 일부이므로 여기서 변경할 수 없습니다.</string>
+    <string name="vmf_bad_name">사용할 수 없는 이름입니다.</string>
+    <string name="vmf_exists">같은 이름의 항목이 이미 있습니다.</string>
+    <string name="vmf_no_space">여유 공간이 부족합니다.</string>
+</resources>

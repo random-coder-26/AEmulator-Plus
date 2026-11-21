@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Velg filer</string>
+    <string name="fb_title_single">Velg en fil</string>
+    <string name="fb_up">Opp</string>
+    <string name="fb_system_picker">Systemvelger</string>
+    <string name="fb_use_system_picker">Bruk systemvelgeren i stedet</string>
+    <string name="fb_internal">Intern lagring</string>
+    <string name="fb_removable">SD-kort / USB %1$d</string>
+    <string name="fb_downloads">Nedlastinger</string>
+    <string name="fb_documents">Dokumenter</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Navn</string>
+    <string name="fb_sort_date">Dato</string>
+    <string name="fb_sort_size">Størrelse</string>
+    <string name="fb_hidden">Skjulte</string>
+    <string name="fb_selected">%1$d valgt</string>
+    <string name="fb_clear">Tøm</string>
+    <string name="fb_import">Importer</string>
+    <string name="fb_empty">Ingenting her</string>
+    <string name="fb_unreadable">Denne mappen kan ikke leses. Android holder noen mapper (som andre apper sine data) stengt for alle apper.</string>
+    <string name="fb_access_title">Tillat tilgang til filer</string>
+    <string name="fb_access_text">For å vise firmwarefilene dine og velge flere samtidig trenger nettleseren tilgang til filene dine. Du kan også bruke systemvelgeren i stedet.</string>
+    <string name="fb_access_scoped">Android 10 skjuler de fleste filer for apper som ikke har valgt bort begrenset lagring, så denne nettleseren kan ikke vise dem her. Bruk systemvelgeren i stedet.</string>
+    <string name="as_builtin_browser">Innebygd filutforsker</string>
+    <string name="as_builtin_browser_sub">Velg firmware med sortering etter dato og størrelse og flere filer samtidig. Slå av for å bruke systemvelgeren.</string>
+    <string name="imp_archive_alone">En VM-sikkerhetskopi (.aessvm) må importeres alene, ikke sammen med andre filer.</string>
+    <string name="imp_joining">Setter sammen %2$d deler av %1$s…</string>
+    <string name="imp_split_missing">Del %2$s av det delte arkivet %1$s mangler. Velg alle delene, eller hold dem i én mappe.</string>
+</resources>

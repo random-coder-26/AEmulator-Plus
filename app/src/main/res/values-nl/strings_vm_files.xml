@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">VM-bestanden bekijken</string>
+    <string name="vmf_unreadable">Deze map kan niet worden gelezen.</string>
+    <string name="vmf_readonly_folder">Alleen-lezen: deze map maakt geen deel uit van de eigen bestanden van de VM. Je kunt kijken en kopiëren, niet wijzigen.</string>
+    <string name="vmf_link">Link</string>
+    <string name="vmf_no_folders">Hier zijn geen mappen</string>
+    <string name="vmf_preview_failed">Dit bestand kan niet worden gelezen.</string>
+    <string name="vmf_preview_truncated">De eerste %1$s van %2$s worden getoond</string>
+    <string name="vmf_copy">Kopiëren</string>
+    <string name="vmf_copy_to">Kopiëren naar</string>
+    <string name="vmf_copy_to_vm">Een andere plek in deze VM</string>
+    <string name="vmf_copy_to_device">Buiten de VM (apparaatopslag)</string>
+    <string name="vmf_copy_here">Hierheen kopiëren</string>
+    <string name="vmf_new_folder">Nieuwe map</string>
+    <string name="vmf_folder_name">Mapnaam</string>
+    <string name="vmf_create">Aanmaken</string>
+    <string name="vmf_new_name">Nieuwe naam</string>
+    <string name="vmf_delete_one">“%1$s” verwijderen? Dit kan niet ongedaan worden gemaakt.</string>
+    <string name="vmf_delete_many">%1$d items verwijderen? Dit kan niet ongedaan worden gemaakt.</string>
+    <string name="vmf_delete_core">Dit is een essentieel onderdeel van de VM (een partitie of een image). Zonder dit start de VM mogelijk niet meer.</string>
+    <string name="vmf_working_copy">Kopiëren…</string>
+    <string name="vmf_working_delete">Verwijderen…</string>
+    <string name="vmf_working_rename">Hernoemen…</string>
+    <string name="vmf_result_copied">Gekopieerd: %1$d</string>
+    <string name="vmf_result_copied_skipped">Gekopieerd: %1$d. Overgeslagen: %2$d (links naar buiten de VM, sockets en dergelijke).</string>
+    <string name="vmf_result_deleted">Verwijderd: %1$d</string>
+    <string name="vmf_failed">Mislukt: %1$s</string>
+    <string name="vmf_readonly">Dit item maakt geen deel uit van de eigen bestanden van de VM en kan hier dus niet worden gewijzigd.</string>
+    <string name="vmf_protected">Dit hoort bij het eigen beheer van de VM en kan hier niet worden gewijzigd.</string>
+    <string name="vmf_bad_name">Die naam is niet toegestaan.</string>
+    <string name="vmf_exists">Er bestaat al een item met die naam.</string>
+    <string name="vmf_no_space">Niet genoeg vrije ruimte.</string>
+</resources>

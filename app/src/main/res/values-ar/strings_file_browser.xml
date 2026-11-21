@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">اختيار ملفات</string>
+    <string name="fb_title_single">اختيار ملف</string>
+    <string name="fb_up">لأعلى</string>
+    <string name="fb_system_picker">أداة الاختيار في النظام</string>
+    <string name="fb_use_system_picker">استخدام أداة الاختيار في النظام بدلًا من ذلك</string>
+    <string name="fb_internal">التخزين الداخلي</string>
+    <string name="fb_removable">بطاقة SD / USB %1$d</string>
+    <string name="fb_downloads">التنزيلات</string>
+    <string name="fb_documents">المستندات</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">الاسم</string>
+    <string name="fb_sort_date">التاريخ</string>
+    <string name="fb_sort_size">الحجم</string>
+    <string name="fb_hidden">المخفية</string>
+    <string name="fb_selected">تم تحديد %1$d</string>
+    <string name="fb_clear">مسح</string>
+    <string name="fb_import">استيراد</string>
+    <string name="fb_empty">لا يوجد شيء هنا</string>
+    <string name="fb_unreadable">تعذّرت قراءة هذا المجلد. يُبقي Android بعض المجلدات (مثل بيانات التطبيقات الأخرى) مغلقة أمام جميع التطبيقات.</string>
+    <string name="fb_access_title">السماح بالوصول إلى الملفات</string>
+    <string name="fb_access_text">لعرض ملفات البرنامج الثابت واختيار عدة ملفات دفعة واحدة، يحتاج المتصفح إلى الوصول إلى ملفاتك. يمكنك أيضًا استخدام أداة الاختيار في النظام بدلًا من ذلك.</string>
+    <string name="fb_access_scoped">يخفي Android 10 معظم الملفات عن التطبيقات التي لم تتخلَّ عن التخزين المحدود النطاق، لذا لا يستطيع هذا المتصفح عرضها هنا. استخدم أداة الاختيار في النظام بدلًا من ذلك.</string>
+    <string name="as_builtin_browser">متصفح الملفات المدمج</string>
+    <string name="as_builtin_browser_sub">اختر البرنامج الثابت مع الفرز حسب التاريخ والحجم واختيار عدة ملفات دفعة واحدة. أوقف الخيار لاستخدام أداة الاختيار في النظام.</string>
+    <string name="imp_archive_alone">يجب استيراد نسخة VM الاحتياطية (.aessvm) بمفردها وليس مع ملفات أخرى.</string>
+    <string name="imp_joining">جارٍ ضمّ %2$d أجزاء من %1$s…</string>
+    <string name="imp_split_missing">الجزء %2$s من الأرشيف المقسّم %1$s مفقود. حدّد جميع أجزائه أو احتفظ بها في مجلد واحد.</string>
+</resources>

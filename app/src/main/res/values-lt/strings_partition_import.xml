@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Importuoti skaidinį</string>
+    <string name="vm_import_partition_working">Skaitomas skaidinys %1$s… Prieš importuodami sustabdykite visas VM.</string>
+    <string name="vm_import_partition_done">Skaidinys %1$s importuotas ir prijungtas. Sistema ir duomenys nepakito.</string>
+    <string name="vm_import_partition_exists">Ši VM jau turi skaidinį %1$s.</string>
+    <string name="vm_import_partition_conflict">VM aplankų struktūra šio skaidinio neleidžia.</string>
+    <string name="vm_import_partition_unsupported">Atvaizdo %1$s negalima importuoti šia parinktimi.</string>
+    <string name="vm_import_partition_which">Koks tai skaidinys?</string>
+    <string name="vm_import_partition_which_info">Failo pavadinimas nenurodo, kas jame yra. Pasirinkite skaidinį.</string>
+    <string name="vm_import_partition_have">%1$s (jau šioje VM)</string>
+    <string name="vm_import_partition_headline">Importuoti skaidinio atvaizdą į šią VM</string>
+    <string name="vm_import_partition_sub">Boot, recovery (originalus, TWRP, OrangeFox arba CWM), OEM, vendor, odm, product arba system_ext. Tipas nuskaitomas iš failo; jei nepavyksta, jūsų paklausiama. Tik recovery pakeičia esamą; likusi VM dalis nepasikeičia. Iš naujo paleiskite į recovery iš meniu ⋮.</string>
+    <string name="vm_import_partition_button">Importuoti…</string>
+    <string name="vm_import_recovery_done">Recovery importuotas. Norėdami jį naudoti, iš naujo paleiskite į recovery iš meniu ⋮.</string>
+</resources>

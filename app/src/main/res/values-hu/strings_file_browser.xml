@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Fájlok kiválasztása</string>
+    <string name="fb_title_single">Fájl kiválasztása</string>
+    <string name="fb_up">Fel</string>
+    <string name="fb_system_picker">Rendszerválasztó</string>
+    <string name="fb_use_system_picker">Inkább a rendszerválasztó használata</string>
+    <string name="fb_internal">Belső tárhely</string>
+    <string name="fb_removable">SD-kártya / USB %1$d</string>
+    <string name="fb_downloads">Letöltések</string>
+    <string name="fb_documents">Dokumentumok</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Név</string>
+    <string name="fb_sort_date">Dátum</string>
+    <string name="fb_sort_size">Méret</string>
+    <string name="fb_hidden">Rejtett</string>
+    <string name="fb_selected">%1$d kiválasztva</string>
+    <string name="fb_clear">Törlés</string>
+    <string name="fb_import">Importálás</string>
+    <string name="fb_empty">Itt nincs semmi</string>
+    <string name="fb_unreadable">Ez a mappa nem olvasható. Az Android egyes mappákat (például más alkalmazások adatait) minden alkalmazás elől zárva tart.</string>
+    <string name="fb_access_title">Hozzáférés engedélyezése a fájlokhoz</string>
+    <string name="fb_access_text">A firmware-fájlok listázásához és több fájl egyszerre történő kiválasztásához a böngészőnek hozzáférésre van szüksége a fájljaidhoz. Használhatod a rendszerválasztót is.</string>
+    <string name="fb_access_scoped">Az Android 10 a legtöbb fájlt elrejti azon alkalmazások elől, amelyek nem mondtak le a hatókörös tárolóról, így ez a böngésző nem tudja itt listázni őket. Használd inkább a rendszerválasztót.</string>
+    <string name="as_builtin_browser">Beépített fájlböngésző</string>
+    <string name="as_builtin_browser_sub">Firmware kiválasztása dátum és méret szerinti rendezéssel, egyszerre több fájllal. Kapcsold ki a rendszerválasztó használatához.</string>
+    <string name="imp_archive_alone">A VM-biztonsági mentést (.aessvm) önállóan kell importálni, nem más fájlokkal együtt.</string>
+    <string name="imp_joining">%2$d rész egyesítése: %1$s…</string>
+    <string name="imp_split_missing">A felosztott %1$s archívum %2$s. része hiányzik. Jelöld ki az összes részét, vagy tartsd őket egy mappában.</string>
+</resources>

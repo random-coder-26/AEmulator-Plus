@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Trimite un ROM</string>
+    <string name="submit_action">Trimite un ROM</string>
+    <string name="submit_intro">Distribuie un link de descărcare pentru un ROM. Trimiterile sunt verificate înainte de a apărea în catalog.</string>
+    <string name="submit_variant">Variantă</string>
+    <string name="submit_version">Categorie de versiune</string>
+    <string name="submit_pick_variant_first">Alege mai întâi o variantă</string>
+    <string name="submit_name">Numele ROM-ului</string>
+    <string name="submit_rom_version">Versiunea ROM-ului</string>
+    <string name="submit_device">Dispozitiv</string>
+    <string name="submit_url">URL de descărcare</string>
+    <string name="submit_size_mb">Dimensiunea fișierului în MB (opțional)</string>
+    <string name="submit_emulator">Versiunea emulatorului (opțional)</string>
+    <string name="submit_by">Numele tău</string>
+    <string name="submit_notes">Note (opțional)</string>
+    <string name="submit_send">Trimite</string>
+    <string name="submit_required">Obligatoriu</string>
+    <string name="submit_bad_url">Introdu un link http(s) valid</string>
+    <string name="submit_bad_size">Introdu un număr, 0 sau mai mare</string>
+    <string name="submit_success">Mulțumim! ROM-ul tău a fost trimis și va apărea în catalog după verificare.</string>
+    <string name="submit_another">Trimite altul</string>
+    <string name="submit_close">Închide</string>
+    <string name="submit_categories_failed">Nu s-au putut încărca categoriile: %1$s</string>
+    <string name="submit_err_duplicate">Acest link de descărcare a fost deja trimis.</string>
+    <string name="submit_err_rate_limited">Prea multe trimiteri. Încearcă din nou peste aproximativ %1$d min.</string>
+    <string name="submit_err_rejected">Serverul a respins trimiterea: %1$s</string>
+    <string name="submit_err_server">Serverul a returnat o eroare (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Serverul a trimis un răspuns neașteptat.</string>
+    <string name="catalog_err_bad_json">Catalogul nu este o listă de ROM-uri validă.</string>
+    <string name="catalog_err_too_many_roms">Catalogul are mai mult de 10000 de ROM-uri.</string>
+    <string name="catalog_tested_on">Emulator %1$s</string>
+    <string name="catalog_submitted_by">Trimis de %1$s</string>
+</resources>

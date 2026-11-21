@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Leabharlann</string>
+    <string name="tab_close">Dún an cluaisín</string>
+    <string name="tab_close_title">Dún %1$s?</string>
+    <string name="tab_close_text">Dúnann “Íosmhéadaigh” an cluaisín agus coinníonn sé an meaisín ag rith sa chúlra; oscail arís é ón leabharlann. Múchann “Múch” an meaisín.</string>
+    <string name="tab_minimize">Íosmhéadaigh</string>
+    <string name="tab_shutdown">Múch</string>
+    <string name="vm_slots_full">Tá na %1$d sliotán meaisín in úsáid. Múch ceann acu ar dtús.</string>
+    <string name="tab_group_title">2 chluaisín</string>
+    <string name="tab_split_failed">Ní féidir an meaisín sin a chur leis an gcluaisín seo a thuilleadh.</string>
+    <string name="tab_drag_label">Tarraing ar an scáileán chun é a roinnt</string>
+    <string name="tab_split_title">An roinnfidh tú 2 chluaisín?</string>
+    <string name="tab_split_text">Filleann gach meaisín ar a chluaisín féin. Leanann an dá cheann orthu ag rith.</string>
+    <string name="tab_split_action">Roinn</string>
+    <string name="tab_bar_hide">Folaigh an barra cluaisíní</string>
+    <string name="tab_bar_show">Taispeáin an barra cluaisíní</string>
+</resources>

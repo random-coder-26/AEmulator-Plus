@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Dosya seç</string>
+    <string name="fb_title_single">Dosya seç</string>
+    <string name="fb_up">Yukarı</string>
+    <string name="fb_system_picker">Sistem seçici</string>
+    <string name="fb_use_system_picker">Bunun yerine sistem seçiciyi kullan</string>
+    <string name="fb_internal">Dahili depolama</string>
+    <string name="fb_removable">SD kart / USB %1$d</string>
+    <string name="fb_downloads">İndirilenler</string>
+    <string name="fb_documents">Belgeler</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Ad</string>
+    <string name="fb_sort_date">Tarih</string>
+    <string name="fb_sort_size">Boyut</string>
+    <string name="fb_hidden">Gizli</string>
+    <string name="fb_selected">%1$d seçildi</string>
+    <string name="fb_clear">Temizle</string>
+    <string name="fb_import">İçe aktar</string>
+    <string name="fb_empty">Burada hiçbir şey yok</string>
+    <string name="fb_unreadable">Bu klasör okunamıyor. Android, bazı klasörleri (diğer uygulamaların verileri gibi) tüm uygulamalara kapalı tutar.</string>
+    <string name="fb_access_title">Dosyalara erişime izin ver</string>
+    <string name="fb_access_text">Aygıt yazılımı dosyalarınızı listelemek ve birden fazlasını aynı anda seçmek için tarayıcının dosyalarınıza erişmesi gerekir. Sistem seçiciyi de kullanabilirsiniz.</string>
+    <string name="fb_access_scoped">Android 10, kapsamlı depolamadan çıkmamış uygulamalardan çoğu dosyayı gizler; bu yüzden bu tarayıcı onları burada listeleyemez. Bunun yerine sistem seçiciyi kullanın.</string>
+    <string name="as_builtin_browser">Yerleşik dosya tarayıcısı</string>
+    <string name="as_builtin_browser_sub">Aygıt yazılımını tarih ve boyuta göre sıralayarak ve birden fazla dosyayı aynı anda seçin. Sistem seçiciyi kullanmak için kapatın.</string>
+    <string name="imp_archive_alone">Bir VM yedeği (.aessvm) diğer dosyalarla birlikte değil, tek başına içe aktarılmalıdır.</string>
+    <string name="imp_joining">%1$s dosyasının %2$d parçası birleştiriliyor…</string>
+    <string name="imp_split_missing">Bölünmüş %1$s arşivinin %2$s. parçası eksik. Tüm parçalarını seçin veya tek bir klasörde tutun.</string>
+</resources>

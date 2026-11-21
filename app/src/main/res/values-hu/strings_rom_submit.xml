@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">ROM beküldése</string>
+    <string name="submit_action">ROM beküldése</string>
+    <string name="submit_intro">Oszd meg egy ROM letöltési hivatkozását. A beküldéseket átnézzük, mielőtt megjelennek a katalógusban.</string>
+    <string name="submit_variant">Változat</string>
+    <string name="submit_version">Verziókategória</string>
+    <string name="submit_pick_variant_first">Előbb válassz változatot</string>
+    <string name="submit_name">ROM neve</string>
+    <string name="submit_rom_version">ROM verziója</string>
+    <string name="submit_device">Eszköz</string>
+    <string name="submit_url">Letöltési URL</string>
+    <string name="submit_size_mb">Fájlméret MB-ban (nem kötelező)</string>
+    <string name="submit_emulator">Emulátor verziója (nem kötelező)</string>
+    <string name="submit_by">A neved</string>
+    <string name="submit_notes">Megjegyzések (nem kötelező)</string>
+    <string name="submit_send">Beküldés</string>
+    <string name="submit_required">Kötelező</string>
+    <string name="submit_bad_url">Adj meg érvényes http(s) hivatkozást</string>
+    <string name="submit_bad_size">Adj meg egy számot, 0 vagy nagyobb</string>
+    <string name="submit_success">Köszönjük! A ROM-ot beküldted, az ellenőrzés után megjelenik a katalógusban.</string>
+    <string name="submit_another">Újabb beküldése</string>
+    <string name="submit_close">Bezárás</string>
+    <string name="submit_categories_failed">A kategóriák betöltése nem sikerült: %1$s</string>
+    <string name="submit_err_duplicate">Ezt a letöltési hivatkozást már beküldték.</string>
+    <string name="submit_err_rate_limited">Túl sok beküldés. Próbáld újra körülbelül %1$d perc múlva.</string>
+    <string name="submit_err_rejected">A szerver elutasította a beküldést: %1$s</string>
+    <string name="submit_err_server">A szerver hibát adott vissza (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">A szerver váratlan választ küldött.</string>
+    <string name="catalog_err_bad_json">A katalógus nem érvényes ROM-lista.</string>
+    <string name="catalog_err_too_many_roms">A katalógusban több mint 10000 ROM van.</string>
+    <string name="catalog_tested_on">Emulátor %1$s</string>
+    <string name="catalog_submitted_by">Beküldte: %1$s</string>
+</resources>

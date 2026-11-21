@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">ROM सबमिट करें</string>
+    <string name="submit_action">ROM सबमिट करें</string>
+    <string name="submit_intro">किसी ROM का डाउनलोड लिंक साझा करें। कैटलॉग में दिखने से पहले सबमिशन की समीक्षा की जाती है।</string>
+    <string name="submit_variant">वेरिएंट</string>
+    <string name="submit_version">वर्ज़न श्रेणी</string>
+    <string name="submit_pick_variant_first">पहले एक वेरिएंट चुनें</string>
+    <string name="submit_name">ROM का नाम</string>
+    <string name="submit_rom_version">ROM वर्ज़न</string>
+    <string name="submit_device">डिवाइस</string>
+    <string name="submit_url">डाउनलोड URL</string>
+    <string name="submit_size_mb">फ़ाइल का आकार MB में (वैकल्पिक)</string>
+    <string name="submit_emulator">एमुलेटर वर्ज़न (वैकल्पिक)</string>
+    <string name="submit_by">आपका नाम</string>
+    <string name="submit_notes">टिप्पणियाँ (वैकल्पिक)</string>
+    <string name="submit_send">सबमिट करें</string>
+    <string name="submit_required">ज़रूरी</string>
+    <string name="submit_bad_url">मान्य http(s) लिंक डालें</string>
+    <string name="submit_bad_size">एक संख्या डालें, 0 या अधिक</string>
+    <string name="submit_success">धन्यवाद! आपका ROM सबमिट हो गया है और समीक्षा के बाद कैटलॉग में दिखेगा।</string>
+    <string name="submit_another">एक और सबमिट करें</string>
+    <string name="submit_close">बंद करें</string>
+    <string name="submit_categories_failed">श्रेणियाँ लोड नहीं हो सकीं: %1$s</string>
+    <string name="submit_err_duplicate">यह डाउनलोड लिंक पहले ही सबमिट किया जा चुका है।</string>
+    <string name="submit_err_rate_limited">बहुत ज़्यादा सबमिशन। लगभग %1$d मिनट बाद फिर कोशिश करें।</string>
+    <string name="submit_err_rejected">सर्वर ने सबमिशन अस्वीकार कर दिया: %1$s</string>
+    <string name="submit_err_server">सर्वर ने त्रुटि लौटाई (HTTP %1$d)।</string>
+    <string name="submit_err_bad_response">सर्वर ने अप्रत्याशित जवाब भेजा।</string>
+    <string name="catalog_err_bad_json">कैटलॉग मान्य ROM सूची नहीं है।</string>
+    <string name="catalog_err_too_many_roms">कैटलॉग में 10000 से ज़्यादा ROM हैं।</string>
+    <string name="catalog_tested_on">एमुलेटर %1$s</string>
+    <string name="catalog_submitted_by">%1$s द्वारा सबमिट किया गया</string>
+</resources>

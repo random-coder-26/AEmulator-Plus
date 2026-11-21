@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">ROM yuborish</string>
+    <string name="submit_action">ROM yuborish</string>
+    <string name="submit_intro">ROM yuklab olish havolasini ulashing. Yuborilganlar katalogda paydo boʻlishidan oldin koʻrib chiqiladi.</string>
+    <string name="submit_variant">Variant</string>
+    <string name="submit_version">Versiya toifasi</string>
+    <string name="submit_pick_variant_first">Avval variantni tanlang</string>
+    <string name="submit_name">ROM nomi</string>
+    <string name="submit_rom_version">ROM versiyasi</string>
+    <string name="submit_device">Qurilma</string>
+    <string name="submit_url">Yuklab olish URL manzili</string>
+    <string name="submit_size_mb">Fayl hajmi MB hisobida (ixtiyoriy)</string>
+    <string name="submit_emulator">Emulyator versiyasi (ixtiyoriy)</string>
+    <string name="submit_by">Ismingiz</string>
+    <string name="submit_notes">Izohlar (ixtiyoriy)</string>
+    <string name="submit_send">Yuborish</string>
+    <string name="submit_required">Majburiy</string>
+    <string name="submit_bad_url">Yaroqli http(s) havolasini kiriting</string>
+    <string name="submit_bad_size">Son kiriting, 0 yoki undan koʻp</string>
+    <string name="submit_success">Rahmat! ROMingiz yuborildi va koʻrib chiqilgandan keyin katalogda paydo boʻladi.</string>
+    <string name="submit_another">Yana bittasini yuborish</string>
+    <string name="submit_close">Yopish</string>
+    <string name="submit_categories_failed">Toifalarni yuklab boʻlmadi: %1$s</string>
+    <string name="submit_err_duplicate">Bu yuklab olish havolasi allaqachon yuborilgan.</string>
+    <string name="submit_err_rate_limited">Juda koʻp yuborildi. Taxminan %1$d daqiqadan keyin qayta urinib koʻring.</string>
+    <string name="submit_err_rejected">Server yuborilganni rad etdi: %1$s</string>
+    <string name="submit_err_server">Server xato qaytardi (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Server kutilmagan javob yubordi.</string>
+    <string name="catalog_err_bad_json">Katalog yaroqli ROM roʻyxati emas.</string>
+    <string name="catalog_err_too_many_roms">Katalogda 10000 tadan ortiq ROM bor.</string>
+    <string name="catalog_tested_on">Emulyator %1$s</string>
+    <string name="catalog_submitted_by">Yuboruvchi: %1$s</string>
+</resources>

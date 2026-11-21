@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Impor partisi</string>
+    <string name="vm_import_partition_working">Membaca partisi %1$s… Hentikan semua VM sebelum mengimpor.</string>
+    <string name="vm_import_partition_done">Partisi %1$s diimpor dan dipasang. Sistem dan data tidak berubah.</string>
+    <string name="vm_import_partition_exists">VM ini sudah memiliki partisi %1$s.</string>
+    <string name="vm_import_partition_conflict">Tata letak folder VM tidak mengizinkan partisi ini.</string>
+    <string name="vm_import_partition_unsupported">Citra %1$s tidak dapat diimpor dengan opsi ini.</string>
+    <string name="vm_import_partition_which">Partisi apa ini?</string>
+    <string name="vm_import_partition_which_info">Nama file tidak menunjukkan isinya. Pilih partisinya.</string>
+    <string name="vm_import_partition_have">%1$s (sudah ada di VM ini)</string>
+    <string name="vm_import_partition_headline">Impor citra partisi ke VM ini</string>
+    <string name="vm_import_partition_sub">Boot, recovery (bawaan, TWRP, OrangeFox, atau CWM), OEM, vendor, odm, product, atau system_ext. Jenisnya dibaca dari file; Anda akan ditanya jika tidak dapat dibaca. Hanya recovery yang menggantikan yang sudah ada; sisa VM tidak berubah. Mulai ulang ke recovery dari menu ⋮.</string>
+    <string name="vm_import_partition_button">Impor…</string>
+    <string name="vm_import_recovery_done">Recovery diimpor. Mulai ulang ke recovery dari menu ⋮ untuk menggunakannya.</string>
+</resources>

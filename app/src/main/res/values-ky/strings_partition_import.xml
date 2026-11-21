@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Бөлүмдү импорттоо</string>
+    <string name="vm_import_partition_working">%1$s бөлүмү окулууда… Импорттоодон мурун бардык VMдерди токтотуңуз.</string>
+    <string name="vm_import_partition_done">%1$s бөлүмү импорттолду жана туташтырылды. Тутум жана дайындар өзгөргөн жок.</string>
+    <string name="vm_import_partition_exists">Бул VMде %1$s бөлүмү мурунтан эле бар.</string>
+    <string name="vm_import_partition_conflict">VM папка түзүмү бул бөлүмгө уруксат бербейт.</string>
+    <string name="vm_import_partition_unsupported">%1$s элесин бул параметр менен импорттоо мүмкүн эмес.</string>
+    <string name="vm_import_partition_which">Бул кайсы бөлүм?</string>
+    <string name="vm_import_partition_which_info">Файлдын аталышы анын ичинде эмне барын көрсөтпөйт. Бөлүмдү тандаңыз.</string>
+    <string name="vm_import_partition_have">%1$s (бул VMде мурунтан бар)</string>
+    <string name="vm_import_partition_headline">Бөлүм элесин ушул VMге импорттоо</string>
+    <string name="vm_import_partition_sub">Boot, recovery (баштапкы, TWRP, OrangeFox же CWM), OEM, vendor, odm, product же system_ext. Түрү файлдан окулат; окуу мүмкүн болбосо, сизден сурашат. Мурунтан барын recovery гана алмаштырат; VMдин калган бөлүгү өзгөрбөйт. ⋮ менюсунан recovery режимине кайра жүктөңүз.</string>
+    <string name="vm_import_partition_button">Импорттоо…</string>
+    <string name="vm_import_recovery_done">Recovery импорттолду. Аны колдонуу үчүн ⋮ менюсунан recovery режимине кайра жүктөңүз.</string>
+</resources>

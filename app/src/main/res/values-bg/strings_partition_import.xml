@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Импортиране на дял</string>
+    <string name="vm_import_partition_working">Дял %1$s се чете… Спрете всички ВМ преди импортирането.</string>
+    <string name="vm_import_partition_done">Дял %1$s е импортиран и монтиран. Системата и данните са непроменени.</string>
+    <string name="vm_import_partition_exists">Тази ВМ вече има дял %1$s.</string>
+    <string name="vm_import_partition_conflict">Структурата на папките на ВМ не позволява този дял.</string>
+    <string name="vm_import_partition_unsupported">Образ %1$s не може да се импортира с тази опция.</string>
+    <string name="vm_import_partition_which">Кой дял е това?</string>
+    <string name="vm_import_partition_which_info">Името на файла не казва какво съдържа. Изберете дяла.</string>
+    <string name="vm_import_partition_have">%1$s (вече в тази ВМ)</string>
+    <string name="vm_import_partition_headline">Импортиране на образ на дял в тази ВМ</string>
+    <string name="vm_import_partition_sub">Boot, recovery (оригинален, TWRP, OrangeFox или CWM), OEM, vendor, odm, product или system_ext. Типът се чете от файла; ако не може, ще бъдете попитани. Само recovery замества съществуващия; останалата част от ВМ не се променя. Рестартирайте в recovery от менюто ⋮.</string>
+    <string name="vm_import_partition_button">Импортиране…</string>
+    <string name="vm_import_recovery_done">Recovery е импортиран. За да го използвате, рестартирайте в recovery от менюто ⋮.</string>
+</resources>

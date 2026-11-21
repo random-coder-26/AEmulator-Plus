@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Εισαγωγή διαμερίσματος</string>
+    <string name="vm_import_partition_working">Ανάγνωση διαμερίσματος %1$s… Τερματίστε όλα τα VM πριν από την εισαγωγή.</string>
+    <string name="vm_import_partition_done">Το διαμέρισμα %1$s εισήχθη και προσαρτήθηκε. Το σύστημα και τα δεδομένα δεν άλλαξαν.</string>
+    <string name="vm_import_partition_exists">Αυτό το VM έχει ήδη διαμέρισμα %1$s.</string>
+    <string name="vm_import_partition_conflict">Η διάταξη φακέλων του VM δεν επιτρέπει αυτό το διαμέρισμα.</string>
+    <string name="vm_import_partition_unsupported">Μια εικόνα %1$s δεν μπορεί να εισαχθεί με αυτήν την επιλογή.</string>
+    <string name="vm_import_partition_which">Ποιο διαμέρισμα είναι αυτό;</string>
+    <string name="vm_import_partition_which_info">Το όνομα του αρχείου δεν δείχνει τι περιέχει. Επιλέξτε το διαμέρισμα.</string>
+    <string name="vm_import_partition_have">%1$s (ήδη σε αυτό το VM)</string>
+    <string name="vm_import_partition_headline">Εισαγωγή εικόνας διαμερίσματος σε αυτό το VM</string>
+    <string name="vm_import_partition_sub">Boot, recovery (αρχικό, TWRP, OrangeFox ή CWM), OEM, vendor, odm, product ή system_ext. Ο τύπος διαβάζεται από το αρχείο· σας ρωτάμε όταν δεν μπορεί. Μόνο το recovery αντικαθιστά ένα υπάρχον· το υπόλοιπο VM δεν αλλάζει. Κάντε επανεκκίνηση σε recovery από το μενού ⋮.</string>
+    <string name="vm_import_partition_button">Εισαγωγή…</string>
+    <string name="vm_import_recovery_done">Το recovery εισήχθη. Κάντε επανεκκίνηση σε recovery από το μενού ⋮ για να το χρησιμοποιήσετε.</string>
+</resources>

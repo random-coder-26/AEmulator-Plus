@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Odaberi datoteke</string>
+    <string name="fb_title_single">Odaberi datoteku</string>
+    <string name="fb_up">Gore</string>
+    <string name="fb_system_picker">Sistemski birač</string>
+    <string name="fb_use_system_picker">Umjesto toga upotrijebi sistemski birač</string>
+    <string name="fb_internal">Interna pohrana</string>
+    <string name="fb_removable">SD kartica / USB %1$d</string>
+    <string name="fb_downloads">Preuzimanja</string>
+    <string name="fb_documents">Dokumenti</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Naziv</string>
+    <string name="fb_sort_date">Datum</string>
+    <string name="fb_sort_size">Veličina</string>
+    <string name="fb_hidden">Skriveno</string>
+    <string name="fb_selected">Odabrano: %1$d</string>
+    <string name="fb_clear">Očisti</string>
+    <string name="fb_import">Uvezi</string>
+    <string name="fb_empty">Ovdje nema ničega</string>
+    <string name="fb_unreadable">Ova se mapa ne može pročitati. Android neke mape (poput podataka drugih aplikacija) drži zatvorenima za sve aplikacije.</string>
+    <string name="fb_access_title">Dopusti pristup datotekama</string>
+    <string name="fb_access_text">Da bi prikazao vaše datoteke firmwarea i omogućio odabir više njih odjednom, preglednik treba pristup vašim datotekama. Možete upotrijebiti i sistemski birač.</string>
+    <string name="fb_access_scoped">Android 10 skriva većinu datoteka od aplikacija koje nisu odustale od ograničene pohrane, pa ih ovaj preglednik ne može ovdje prikazati. Upotrijebite sistemski birač.</string>
+    <string name="as_builtin_browser">Ugrađeni preglednik datoteka</string>
+    <string name="as_builtin_browser_sub">Odaberite firmware sa sortiranjem po datumu i veličini i više datoteka odjednom. Isključite za upotrebu sistemskog birača.</string>
+    <string name="imp_archive_alone">Sigurnosnu kopiju VM-a (.aessvm) treba uvesti zasebno, a ne zajedno s drugim datotekama.</string>
+    <string name="imp_joining">Spajanje dijelova (%2$d) datoteke %1$s…</string>
+    <string name="imp_split_missing">Nedostaje dio %2$s podijeljene arhive %1$s. Odaberite sve njezine dijelove ili ih držite u jednoj mapi.</string>
+</resources>

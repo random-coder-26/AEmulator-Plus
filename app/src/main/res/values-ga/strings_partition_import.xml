@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Iompórtáil deighilt</string>
+    <string name="vm_import_partition_working">An deighilt %1$s á léamh… Stop gach VM sula n-iompórtálann tú.</string>
+    <string name="vm_import_partition_done">Iompórtáladh agus feistíodh an deighilt %1$s. Níor athraíodh an córas ná na sonraí.</string>
+    <string name="vm_import_partition_exists">Tá deighilt %1$s ag an VM seo cheana.</string>
+    <string name="vm_import_partition_conflict">Ní cheadaíonn leagan amach fillteán an VM an deighilt seo.</string>
+    <string name="vm_import_partition_unsupported">Ní féidir íomhá %1$s a iompórtáil leis an rogha seo.</string>
+    <string name="vm_import_partition_which">Cén deighilt í seo?</string>
+    <string name="vm_import_partition_which_info">Ní insíonn ainm an chomhaid cad atá ann. Roghnaigh an deighilt.</string>
+    <string name="vm_import_partition_have">%1$s (sa VM seo cheana)</string>
+    <string name="vm_import_partition_headline">Iompórtáil íomhá deighilte isteach sa VM seo</string>
+    <string name="vm_import_partition_sub">Boot, recovery (bunaidh, TWRP, OrangeFox nó CWM), OEM, vendor, odm, product nó system_ext. Léitear an cineál ón gcomhad; fiafraítear díot nuair nach féidir. Ní chuireann ach recovery ionad ceann atá ann cheana; ní athraítear an chuid eile den VM. Atosaigh go recovery ón roghchlár ⋮.</string>
+    <string name="vm_import_partition_button">Iompórtáil…</string>
+    <string name="vm_import_recovery_done">Iompórtáladh recovery. Atosaigh go recovery ón roghchlár ⋮ lena úsáid.</string>
+</resources>

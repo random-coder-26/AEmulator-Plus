@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Välj filer</string>
+    <string name="fb_title_single">Välj en fil</string>
+    <string name="fb_up">Upp</string>
+    <string name="fb_system_picker">Systemväljare</string>
+    <string name="fb_use_system_picker">Använd systemväljaren i stället</string>
+    <string name="fb_internal">Internminne</string>
+    <string name="fb_removable">SD-kort / USB %1$d</string>
+    <string name="fb_downloads">Nedladdningar</string>
+    <string name="fb_documents">Dokument</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Namn</string>
+    <string name="fb_sort_date">Datum</string>
+    <string name="fb_sort_size">Storlek</string>
+    <string name="fb_hidden">Dolda</string>
+    <string name="fb_selected">%1$d valda</string>
+    <string name="fb_clear">Rensa</string>
+    <string name="fb_import">Importera</string>
+    <string name="fb_empty">Ingenting här</string>
+    <string name="fb_unreadable">Den här mappen kan inte läsas. Android håller vissa mappar (som andra appars data) stängda för alla appar.</string>
+    <string name="fb_access_title">Tillåt åtkomst till filer</string>
+    <string name="fb_access_text">För att lista dina firmwarefiler och välja flera samtidigt behöver webbläsaren åtkomst till dina filer. Du kan också använda systemväljaren i stället.</string>
+    <string name="fb_access_scoped">Android 10 döljer de flesta filer för appar som inte har valt bort begränsad lagring, så den här webbläsaren kan inte lista dem här. Använd systemväljaren i stället.</string>
+    <string name="as_builtin_browser">Inbyggd filhanterare</string>
+    <string name="as_builtin_browser_sub">Välj firmware med sortering efter datum och storlek och flera filer samtidigt. Stäng av för att använda systemväljaren.</string>
+    <string name="imp_archive_alone">En VM-säkerhetskopia (.aessvm) måste importeras ensam, inte tillsammans med andra filer.</string>
+    <string name="imp_joining">Sammanfogar %2$d delar av %1$s…</string>
+    <string name="imp_split_missing">Del %2$s av det delade arkivet %1$s saknas. Markera alla delar eller ha dem i samma mapp.</string>
+</resources>

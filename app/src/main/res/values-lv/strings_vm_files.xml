@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">Pārlūkot VM failus</string>
+    <string name="vmf_unreadable">Šo mapi nevar nolasīt.</string>
+    <string name="vmf_readonly_folder">Tikai lasāms: šī mape nav VM pašas failu daļa. Varat skatīt un kopēt, bet ne mainīt.</string>
+    <string name="vmf_link">Saite</string>
+    <string name="vmf_no_folders">Šeit nav mapju</string>
+    <string name="vmf_preview_failed">Šo failu nevar nolasīt.</string>
+    <string name="vmf_preview_truncated">Rāda pirmos %1$s no %2$s</string>
+    <string name="vmf_copy">Kopēt</string>
+    <string name="vmf_copy_to">Kopēt uz</string>
+    <string name="vmf_copy_to_vm">Cita vieta šajā VM</string>
+    <string name="vmf_copy_to_device">Ārpus VM (ierīces krātuve)</string>
+    <string name="vmf_copy_here">Kopēt šeit</string>
+    <string name="vmf_new_folder">Jauna mape</string>
+    <string name="vmf_folder_name">Mapes nosaukums</string>
+    <string name="vmf_create">Izveidot</string>
+    <string name="vmf_new_name">Jauns nosaukums</string>
+    <string name="vmf_delete_one">Dzēst “%1$s”? To nevar atsaukt.</string>
+    <string name="vmf_delete_many">Dzēst %1$d vienumus? To nevar atsaukt.</string>
+    <string name="vmf_delete_core">Šī ir būtiska VM daļa (nodalījums vai attēls). Bez tās VM var vairs nestartēties.</string>
+    <string name="vmf_working_copy">Kopē…</string>
+    <string name="vmf_working_delete">Dzēš…</string>
+    <string name="vmf_working_rename">Pārsauc…</string>
+    <string name="vmf_result_copied">Nokopēti: %1$d</string>
+    <string name="vmf_result_copied_skipped">Nokopēti: %1$d. Izlaisti: %2$d (saites uz ārpus VM, ligzdas un tamlīdzīgi).</string>
+    <string name="vmf_result_deleted">Izdzēsti: %1$d</string>
+    <string name="vmf_failed">Neizdevās: %1$s</string>
+    <string name="vmf_readonly">Šis vienums nav VM pašas failu daļa, tāpēc to šeit nevar mainīt.</string>
+    <string name="vmf_protected">Šī ir VM iekšējā uzskaites daļa, un to šeit nevar mainīt.</string>
+    <string name="vmf_bad_name">Šis nosaukums nav atļauts.</string>
+    <string name="vmf_exists">Vienums ar šādu nosaukumu jau pastāv.</string>
+    <string name="vmf_no_space">Nepietiek brīvas vietas.</string>
+</resources>

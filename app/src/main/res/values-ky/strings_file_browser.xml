@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Файлдарды тандоо</string>
+    <string name="fb_title_single">Файл тандоо</string>
+    <string name="fb_up">Өйдө</string>
+    <string name="fb_system_picker">Тутумдук тандагыч</string>
+    <string name="fb_use_system_picker">Анын ордуна тутумдук тандагычты колдонуу</string>
+    <string name="fb_internal">Ички эс тутум</string>
+    <string name="fb_removable">SD карта / USB %1$d</string>
+    <string name="fb_downloads">Жүктөлүп алынгандар</string>
+    <string name="fb_documents">Документтер</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Аталышы</string>
+    <string name="fb_sort_date">Датасы</string>
+    <string name="fb_sort_size">Өлчөмү</string>
+    <string name="fb_hidden">Жашыруун</string>
+    <string name="fb_selected">%1$d тандалды</string>
+    <string name="fb_clear">Тазалоо</string>
+    <string name="fb_import">Импорттоо</string>
+    <string name="fb_empty">Бул жерде эч нерсе жок</string>
+    <string name="fb_unreadable">Бул папканы окуу мүмкүн эмес. Android айрым папкаларды (мисалы, башка колдонмолордун дайындарын) бардык колдонмолорго жабык кармайт.</string>
+    <string name="fb_access_title">Файлдарга кирүүгө уруксат берүү</string>
+    <string name="fb_access_text">Микропрограмма файлдарын тизмелеп, бир нечесин бир эле учурда тандоо үчүн серепчиге файлдарыңызга кирүү мүмкүнчүлүгү керек. Ошондой эле тутумдук тандагычты колдоно аласыз.</string>
+    <string name="fb_access_scoped">Android 10 чектелген сактагычтан баш тартпаган колдонмолордон көпчүлүк файлдарды жашырат, ошондуктан бул серепчи аларды бул жерде көрсөтө албайт. Анын ордуна тутумдук тандагычты колдонуңуз.</string>
+    <string name="as_builtin_browser">Орнотулган файл серепчиси</string>
+    <string name="as_builtin_browser_sub">Микропрограмманы датасы жана өлчөмү боюнча иргеп, бир нече файлды бир эле учурда тандаңыз. Тутумдук тандагычты колдонуу үчүн өчүрүңүз.</string>
+    <string name="imp_archive_alone">VM камдык көчүрмөсүн (.aessvm) башка файлдар менен бирге эмес, өзүнчө импорттоо керек.</string>
+    <string name="imp_joining">%1$s файлынын %2$d бөлүгү бириктирилүүдө…</string>
+    <string name="imp_split_missing">Бөлүнгөн %1$s архивинин %2$s бөлүгү жок. Анын бардык бөлүктөрүн тандаңыз же бир папкада сактаңыз.</string>
+</resources>

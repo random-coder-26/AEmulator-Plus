@@ -1,0 +1,46 @@
+<resources>
+    <string name="vs_hide_menu">مینو بٹن چھپائیں</string>
+    <string name="vs_hide_menu_sub">… بٹن چھپاتا ہے۔ فون کا Back بٹن یا بیک جیسچر Android کو Back بھیجنے کے بجائے ایمولیٹر مینو کھولتا ہے۔ گیسٹ کے نیویگیشن بٹن اب بھی Android کو کنٹرول کرتے ہیں۔</string>
+    <string name="vs_vibration">گیسٹ وائبریشن</string>
+    <string name="vs_vibration_sub">پرانی گیسٹ وائبریشن کو فون تک آگے بھیجتا ہے۔ اگلے بوٹ پر لاگو ہوتا ہے؛ ہر پلس زیادہ سے زیادہ 60 سیکنڈ تک محدود ہے۔</string>
+    <string name="nav_buttons">نیویگیشن بٹن</string>
+    <string name="nav_order">بٹنوں کی ترتیب (بائیں سے دائیں)</string>
+    <string name="nav_earlier">پہلے</string>
+    <string name="nav_later">بعد میں</string>
+    <string name="nav_reset">بٹن ری سیٹ کریں</string>
+    <string name="nav_search">تلاش</string>
+    <string name="nav_power">پاور</string>
+    <string name="nav_go_to_recovery">ریکوری پر جائیں</string>
+    <string name="nav_volume_down">آواز کم</string>
+    <string name="nav_volume_up">آواز زیادہ</string>
+    <string name="nav_up">D-pad اوپر</string>
+    <string name="nav_down">D-pad نیچے</string>
+    <string name="nav_left">D-pad بائیں</string>
+    <string name="nav_right">D-pad دائیں</string>
+    <string name="nav_center">D-pad درمیان</string>
+    <string name="nav_trackball">ٹریک بال</string>
+    <string name="nav_trackball_sub">گھمانے کے لیے نیویگیشن بار کے اوپر دائرے پر سوائپ کریں؛ منتخب کرنے کے لیے ٹیپ کریں۔</string>
+    <string name="nav_dpad_mode">ایرو کی موڈ</string>
+    <string name="nav_dpad_sub">بند: گیسٹ ایپس کے لیے حقیقی ریلیٹو ٹریک بال ایونٹس۔ آن: اس کے بجائے D-pad کی پریسز۔ دونوں نہیں بھیجتا۔</string>
+    <string name="nav_sensitivity">حساسیت: %1$d dp فی قدم (کم = تیز)</string>
+    <string name="nav_trackball_waiting">ابھی گیسٹ ٹریک بال کا کنکشن نہیں ہے</string>
+    <string name="nav_trackball_recovery">ریکوری: ایرو کی موڈ استعمال کریں</string>
+    <string name="vs_bluetooth">ہوسٹ بلوٹوتھ (تجرباتی)</string>
+    <string name="vs_bluetooth_sub">گیسٹ کو فون کے ذریعے بلوٹوتھ ڈیوائسز اسکین کرنے، پیئر لسٹ دیکھنے اور ان سے بات کرنے دیں: کلاسک سیریل (RFCOMM) اور Bluetooth LE (GATT)۔ بلوٹوتھ کی اجازت اور VM کا مکمل ری اسٹارٹ درکار ہے۔ خام HCI رسائی نہیں: گیسٹ فون کا اڈاپٹر ایک برج کے ذریعے دیکھتا ہے، اس لیے ہیڈسیٹس (آڈیو پروفائلز) معاون نہیں ہیں۔</string>
+    <string name="bluetooth_permission_denied">بلوٹوتھ کی اجازت مسترد کر دی گئی: گیسٹ ہوسٹ بلوٹوتھ کے بغیر بوٹ ہوگا۔</string>
+    <string name="vs_sf_tombstone">SurfaceFlinger کریش tombstone (ڈیبگ)</string>
+    <string name="vs_sf_tombstone_sub">اگر SurfaceFlinger کریش ہو جائے تو فرم ویئر مختصر رپورٹ کے بجائے لاگ میں عام tombstone (کریش ہونے والے فنکشن کے ساتھ) لکھتا ہے۔ بگ رپورٹ بھیجتے وقت استعمال کریں۔ اگلے مکمل VM بوٹ پر لاگو ہوگا۔</string>
+    <string name="vi_mouse_keyboard">ان پٹ: ماؤس اور کی بورڈ</string>
+    <string name="vi_mouse_keyboard_sub">گیسٹ میں ایک ٹچ پیڈ اور ایک کی بورڈ رجسٹر کرتا ہے اور اس کی ٹچ اسکرین ہٹا دیتا ہے۔ اسکرین ٹچ پیڈ بن جاتی ہے (کلک کے لیے ٹیپ کریں، اسکرول کے لیے دو انگلیاں) اور نیویگیشن بار میں کی بورڈ بٹن ظاہر ہوتا ہے۔ QEMU انجن (نیٹو 64 بٹ نہیں) اور VM کے مکمل ری اسٹارٹ کی ضرورت ہے۔</string>
+    <string name="vi_keypad">ان پٹ: کی پیڈ</string>
+    <string name="vi_keypad_sub">نیویگیشن بار میں کی پیڈ بٹن شامل کرتا ہے: ایرو کیز، OK، سافٹ کیز، کال/اختتام اور بٹن والے فون کی طرح 0–9 * #۔ ٹچ کام کرتا رہتا ہے اور اسے ماؤس اور کی بورڈ کے ساتھ ملایا جا سکتا ہے۔</string>
+    <string name="vi_keyboard">کی بورڈ</string>
+    <string name="vi_keypad_title">کی پیڈ</string>
+    <string name="vi_close">بند کریں</string>
+    <string name="vi_open_keyboard">کی بورڈ</string>
+    <string name="vi_open_keypad">کی پیڈ</string>
+    <string name="m_resize_screen">اسکرین کا سائز تبدیل کریں</string>
+    <string name="m_resize_done">سائز تبدیلی مکمل</string>
+    <string name="m_resize_reset">اسکرین کا سائز ری سیٹ کریں</string>
+    <string name="vi_resize_hint">سائز تبدیل کرنے کے لیے اسکرین کا کونا گھسیٹیں۔ مکمل ہونے پر مینو کھولیں اور “سائز تبدیلی مکمل” پر ٹیپ کریں۔</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">שליחת ROM</string>
+    <string name="submit_action">שליחת ROM</string>
+    <string name="submit_intro">שתף קישור להורדת ROM. הגשות נבדקות לפני שהן מופיעות בקטלוג.</string>
+    <string name="submit_variant">וריאנט</string>
+    <string name="submit_version">קטגוריית גרסה</string>
+    <string name="submit_pick_variant_first">בחר קודם וריאנט</string>
+    <string name="submit_name">שם ה-ROM</string>
+    <string name="submit_rom_version">גרסת ה-ROM</string>
+    <string name="submit_device">מכשיר</string>
+    <string name="submit_url">כתובת URL להורדה</string>
+    <string name="submit_size_mb">גודל הקובץ ב-MB (אופציונלי)</string>
+    <string name="submit_emulator">גרסת האמולטור (אופציונלי)</string>
+    <string name="submit_by">השם שלך</string>
+    <string name="submit_notes">הערות (אופציונלי)</string>
+    <string name="submit_send">שלח</string>
+    <string name="submit_required">חובה</string>
+    <string name="submit_bad_url">הזן קישור http(s) תקין</string>
+    <string name="submit_bad_size">הזן מספר, 0 ומעלה</string>
+    <string name="submit_success">תודה! ה-ROM שלך נשלח ויופיע בקטלוג לאחר בדיקה.</string>
+    <string name="submit_another">שליחת נוסף</string>
+    <string name="submit_close">סגור</string>
+    <string name="submit_categories_failed">לא ניתן היה לטעון קטגוריות: %1$s</string>
+    <string name="submit_err_duplicate">קישור ההורדה הזה כבר נשלח.</string>
+    <string name="submit_err_rate_limited">יותר מדי הגשות. נסה שוב בעוד כ-%1$d דקות.</string>
+    <string name="submit_err_rejected">השרת דחה את ההגשה: %1$s</string>
+    <string name="submit_err_server">השרת החזיר שגיאה (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">השרת שלח תגובה בלתי צפויה.</string>
+    <string name="catalog_err_bad_json">הקטלוג אינו רשימת ROM תקינה.</string>
+    <string name="catalog_err_too_many_roms">בקטלוג יש יותר מ-10000 ROM.</string>
+    <string name="catalog_tested_on">אמולטור %1$s</string>
+    <string name="catalog_submitted_by">נשלח על ידי %1$s</string>
+</resources>

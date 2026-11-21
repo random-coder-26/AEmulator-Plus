@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">VM файлдарын карап чыгуу</string>
+    <string name="vmf_unreadable">Бул папканы окуу мүмкүн эмес.</string>
+    <string name="vmf_readonly_folder">Окуу гана: бул папка VMдин өз файлдарына кирбейт. Карап жана көчүрө аласыз, бирок өзгөртө албайсыз.</string>
+    <string name="vmf_link">Шилтеме</string>
+    <string name="vmf_no_folders">Бул жерде папкалар жок</string>
+    <string name="vmf_preview_failed">Бул файлды окуу мүмкүн эмес.</string>
+    <string name="vmf_preview_truncated">%2$s ичинен биринчи %1$s көрсөтүлүүдө</string>
+    <string name="vmf_copy">Көчүрүү</string>
+    <string name="vmf_copy_to">Төмөнкүгө көчүрүү</string>
+    <string name="vmf_copy_to_vm">Ушул VMдеги башка жер</string>
+    <string name="vmf_copy_to_device">VMден тышкары (түзмөк эс тутуму)</string>
+    <string name="vmf_copy_here">Бул жерге көчүрүү</string>
+    <string name="vmf_new_folder">Жаңы папка</string>
+    <string name="vmf_folder_name">Папка аталышы</string>
+    <string name="vmf_create">Түзүү</string>
+    <string name="vmf_new_name">Жаңы аталыш</string>
+    <string name="vmf_delete_one">“%1$s” өчүрүлсүнбү? Муну артка кайтаруу мүмкүн эмес.</string>
+    <string name="vmf_delete_many">%1$d элемент өчүрүлсүнбү? Муну артка кайтаруу мүмкүн эмес.</string>
+    <string name="vmf_delete_core">Бул VMдин негизги бөлүгү (бөлүм же элес). Ансыз VM мындан ары башталбай калышы мүмкүн.</string>
+    <string name="vmf_working_copy">Көчүрүлүүдө…</string>
+    <string name="vmf_working_delete">Өчүрүлүүдө…</string>
+    <string name="vmf_working_rename">Аталышы өзгөртүлүүдө…</string>
+    <string name="vmf_result_copied">Көчүрүлдү: %1$d</string>
+    <string name="vmf_result_copied_skipped">Көчүрүлдү: %1$d. Өткөрүп жиберилди: %2$d (VMден тышкаркы шилтемелер, сокеттер ж.б.).</string>
+    <string name="vmf_result_deleted">Өчүрүлдү: %1$d</string>
+    <string name="vmf_failed">Ишке ашкан жок: %1$s</string>
+    <string name="vmf_readonly">Бул элемент VMдин өз файлдарына кирбейт, ошондуктан аны бул жерде өзгөртүүгө болбойт.</string>
+    <string name="vmf_protected">Бул VMдин ички эсебинин бир бөлүгү, аны бул жерде өзгөртүүгө болбойт.</string>
+    <string name="vmf_bad_name">Бул аталышка уруксат жок.</string>
+    <string name="vmf_exists">Мындай аталыштагы элемент мурунтан эле бар.</string>
+    <string name="vmf_no_space">Бош орун жетишсиз.</string>
+</resources>

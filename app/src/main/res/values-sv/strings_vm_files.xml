@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">Bläddra bland VM-filer</string>
+    <string name="vmf_unreadable">Den här mappen kan inte läsas.</string>
+    <string name="vmf_readonly_folder">Skrivskyddad: den här mappen ingår inte i VM:ens egna filer. Du kan titta och kopiera, inte ändra.</string>
+    <string name="vmf_link">Länk</string>
+    <string name="vmf_no_folders">Inga mappar här</string>
+    <string name="vmf_preview_failed">Den här filen kan inte läsas.</string>
+    <string name="vmf_preview_truncated">Visar de första %1$s av %2$s</string>
+    <string name="vmf_copy">Kopiera</string>
+    <string name="vmf_copy_to">Kopiera till</string>
+    <string name="vmf_copy_to_vm">En annan plats i den här VM:en</string>
+    <string name="vmf_copy_to_device">Utanför VM:en (enhetens lagring)</string>
+    <string name="vmf_copy_here">Kopiera hit</string>
+    <string name="vmf_new_folder">Ny mapp</string>
+    <string name="vmf_folder_name">Mappnamn</string>
+    <string name="vmf_create">Skapa</string>
+    <string name="vmf_new_name">Nytt namn</string>
+    <string name="vmf_delete_one">Ta bort ”%1$s”? Det går inte att ångra.</string>
+    <string name="vmf_delete_many">Ta bort %1$d objekt? Det går inte att ångra.</string>
+    <string name="vmf_delete_core">Det här är en central del av VM:en (en partition eller en avbild). Utan den kanske VM:en inte längre startar.</string>
+    <string name="vmf_working_copy">Kopierar…</string>
+    <string name="vmf_working_delete">Tar bort…</string>
+    <string name="vmf_working_rename">Byter namn…</string>
+    <string name="vmf_result_copied">Kopierade: %1$d</string>
+    <string name="vmf_result_copied_skipped">Kopierade: %1$d. Hoppade över: %2$d (länkar utanför VM:en, sockets och liknande).</string>
+    <string name="vmf_result_deleted">Borttagna: %1$d</string>
+    <string name="vmf_failed">Misslyckades: %1$s</string>
+    <string name="vmf_readonly">Det här objektet ingår inte i VM:ens egna filer och kan därför inte ändras här.</string>
+    <string name="vmf_protected">Det här är en del av VM:ens egen bokföring och kan inte ändras här.</string>
+    <string name="vmf_bad_name">Det namnet är inte tillåtet.</string>
+    <string name="vmf_exists">Ett objekt med det namnet finns redan.</string>
+    <string name="vmf_no_space">Inte tillräckligt med ledigt utrymme.</string>
+</resources>

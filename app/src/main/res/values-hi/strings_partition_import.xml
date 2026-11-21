@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">पार्टीशन इम्पोर्ट करें</string>
+    <string name="vm_import_partition_working">%1$s पार्टीशन पढ़ा जा रहा है… इम्पोर्ट से पहले सभी VM रोकें।</string>
+    <string name="vm_import_partition_done">%1$s पार्टीशन इम्पोर्ट और माउंट हो गया। सिस्टम और डेटा में कोई बदलाव नहीं हुआ।</string>
+    <string name="vm_import_partition_exists">इस VM में पहले से %1$s पार्टीशन है।</string>
+    <string name="vm_import_partition_conflict">VM का फ़ोल्डर ढाँचा इस पार्टीशन की अनुमति नहीं देता।</string>
+    <string name="vm_import_partition_unsupported">%1$s इमेज इस विकल्प से इम्पोर्ट नहीं की जा सकती।</string>
+    <string name="vm_import_partition_which">यह कौन-सा पार्टीशन है?</string>
+    <string name="vm_import_partition_which_info">फ़ाइल के नाम से पता नहीं चलता कि उसमें क्या है। पार्टीशन चुनें।</string>
+    <string name="vm_import_partition_have">%1$s (इस VM में पहले से है)</string>
+    <string name="vm_import_partition_headline">इस VM में पार्टीशन इमेज इम्पोर्ट करें</string>
+    <string name="vm_import_partition_sub">Boot, recovery (स्टॉक, TWRP, OrangeFox या CWM), OEM, vendor, odm, product या system_ext। प्रकार फ़ाइल से पढ़ा जाता है; न पढ़ पाने पर आपसे पूछा जाता है। केवल recovery मौजूदा को बदलता है; VM का बाकी हिस्सा नहीं बदलता। ⋮ मेन्यू से recovery में रीबूट करें।</string>
+    <string name="vm_import_partition_button">इम्पोर्ट करें…</string>
+    <string name="vm_import_recovery_done">Recovery इम्पोर्ट हो गया। इसे इस्तेमाल करने के लिए ⋮ मेन्यू से recovery में रीबूट करें।</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AEmulator Plus: strings of the built-in file browser (FileBrowser.kt). Add the same names to the translated values-xx folders. -->
+<resources>
+    <string name="fb_title_multi">Choose files</string>
+    <string name="fb_title_single">Choose a file</string>
+    <string name="fb_up">Up</string>
+    <string name="fb_search">Search</string>
+    <string name="fb_search_hint">Search in this folder</string>
+    <string name="fb_no_matches">No files or folders match</string>
+    <string name="fb_system_picker">System picker</string>
+    <string name="fb_use_system_picker">Use the system picker instead</string>
+
+    <string name="fb_internal">Internal storage</string>
+    <string name="fb_removable">SD card / USB %1$d</string>
+    <string name="fb_downloads">Download</string>
+    <string name="fb_documents">Documents</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+
+    <string name="fb_sort_name">Name</string>
+    <string name="fb_sort_date">Date</string>
+    <string name="fb_sort_size">Size</string>
+    <string name="fb_hidden">Hidden</string>
+
+    <string name="fb_selected">%1$d selected</string>
+    <string name="fb_clear">Clear</string>
+    <string name="fb_import">Import</string>
+
+    <string name="fb_empty">Nothing here</string>
+    <string name="fb_unreadable">This folder cannot be read. Android keeps some folders (such as other apps\' data) closed to every app.</string>
+
+    <string name="fb_access_title">Allow access to files</string>
+    <string name="fb_access_text">To list your firmware files and pick several at once, the browser needs access to your files. You can also use the system picker instead.</string>
+    <string name="fb_access_scoped">Android 10 hides most files from apps that have not opted out of scoped storage, so this browser cannot list them here. Use the system picker instead.</string>
+
+    <string name="as_builtin_browser">Built-in file browser</string>
+    <string name="as_builtin_browser_sub">Pick firmware with sorting by date and size and several files at once. Turn off to use the system picker.</string>
+
+    <string name="imp_archive_alone">A VM backup (.aessvm) has to be imported on its own, not together with other files.</string>
+    <string name="imp_joining">Joining %2$d parts of %1$s…</string>
+    <string name="imp_split_missing">Part %2$s of the split archive %1$s is missing. Select all its parts, or keep them in one folder.</string>
+</resources>

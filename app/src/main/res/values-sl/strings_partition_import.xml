@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Uvozi particijo</string>
+    <string name="vm_import_partition_working">Branje particije %1$s … Pred uvozom ustavite vse VM.</string>
+    <string name="vm_import_partition_done">Particija %1$s je uvožena in priklopljena. Sistem in podatki so nespremenjeni.</string>
+    <string name="vm_import_partition_exists">Ta VM že ima particijo %1$s.</string>
+    <string name="vm_import_partition_conflict">Razporeditev map VM ne dovoljuje te particije.</string>
+    <string name="vm_import_partition_unsupported">Slike %1$s ni mogoče uvoziti s to možnostjo.</string>
+    <string name="vm_import_partition_which">Katera particija je to?</string>
+    <string name="vm_import_partition_which_info">Ime datoteke ne pove, kaj vsebuje. Izberite particijo.</string>
+    <string name="vm_import_partition_have">%1$s (že v tem VM)</string>
+    <string name="vm_import_partition_headline">Uvozi sliko particije v ta VM</string>
+    <string name="vm_import_partition_sub">Boot, recovery (izvirni, TWRP, OrangeFox ali CWM), OEM, vendor, odm, product ali system_ext. Vrsta se prebere iz datoteke; če ni mogoče, boste vprašani. Samo recovery nadomesti obstoječega; preostanek VM ostane nespremenjen. Znova zaženite v recovery iz menija ⋮.</string>
+    <string name="vm_import_partition_button">Uvozi …</string>
+    <string name="vm_import_recovery_done">Recovery je uvožen. Za uporabo znova zaženite v recovery iz menija ⋮.</string>
+</resources>

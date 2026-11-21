@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AEmulator Plus: strings of "Browse VM files" (VmFileBrowser.kt, VmFileOps.kt). Add the same names to the translated values-xx folders. -->
+<resources>
+    <string name="vmf_browse">Browse VM files</string>
+
+    <string name="vmf_unreadable">This folder cannot be read.</string>
+    <string name="vmf_readonly_folder">Read-only: this folder is not part of the VM\'s own files. You can look and copy, not change.</string>
+    <string name="vmf_link">Link</string>
+    <string name="vmf_no_folders">No folders here</string>
+
+    <string name="vmf_preview_failed">This file cannot be read.</string>
+    <string name="vmf_preview_truncated">Showing the first %1$s of %2$s</string>
+
+    <string name="vmf_copy">Copy</string>
+    <string name="vmf_copy_to">Copy to</string>
+    <string name="vmf_copy_to_vm">Another place in this VM</string>
+    <string name="vmf_copy_to_device">Outside the VM (device storage)</string>
+    <string name="vmf_copy_here">Copy here</string>
+    <string name="vmf_new_folder">New folder</string>
+    <string name="vmf_folder_name">Folder name</string>
+    <string name="vmf_create">Create</string>
+    <string name="vmf_new_name">New name</string>
+
+    <string name="vmf_delete_one">Delete \"%1$s\"? This cannot be undone.</string>
+    <string name="vmf_delete_many">Delete %1$d items? This cannot be undone.</string>
+    <string name="vmf_delete_core">This is a core part of the VM (a partition or an image). Without it the VM may no longer start.</string>
+
+    <string name="vmf_working_copy">Copying…</string>
+    <string name="vmf_working_delete">Deleting…</string>
+    <string name="vmf_working_rename">Renaming…</string>
+    <string name="vmf_result_copied">Copied: %1$d</string>
+    <string name="vmf_result_copied_skipped">Copied: %1$d. Skipped: %2$d (links to outside the VM, sockets and the like).</string>
+    <string name="vmf_result_deleted">Deleted: %1$d</string>
+    <string name="vmf_failed">Failed: %1$s</string>
+
+    <string name="vmf_readonly">This item is not part of the VM\'s own files, so it cannot be changed here.</string>
+    <string name="vmf_protected">This is part of the VM\'s own bookkeeping and cannot be changed here.</string>
+    <string name="vmf_bad_name">That name is not allowed.</string>
+    <string name="vmf_exists">An item with that name already exists.</string>
+    <string name="vmf_no_space">Not enough free space.</string>
+</resources>

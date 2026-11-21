@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Faýllary saýlaň</string>
+    <string name="fb_title_single">Faýl saýlaň</string>
+    <string name="fb_up">Ýokary</string>
+    <string name="fb_system_picker">Ulgam saýlaýjysy</string>
+    <string name="fb_use_system_picker">Munuň ýerine ulgam saýlaýjysyny ulan</string>
+    <string name="fb_internal">Içki ýat</string>
+    <string name="fb_removable">SD kart / USB %1$d</string>
+    <string name="fb_downloads">Ýüklemeler</string>
+    <string name="fb_documents">Resminamalar</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Ady</string>
+    <string name="fb_sort_date">Senesi</string>
+    <string name="fb_sort_size">Ölçegi</string>
+    <string name="fb_hidden">Gizlin</string>
+    <string name="fb_selected">%1$d saýlandy</string>
+    <string name="fb_clear">Arassala</string>
+    <string name="fb_import">Import</string>
+    <string name="fb_empty">Bu ýerde hiç zat ýok</string>
+    <string name="fb_unreadable">Bu bukjany okap bolmaýar. Android käbir bukjalary (meselem, başga programmalaryň maglumatlaryny) ähli programmalar üçin ýapyk saklaýar.</string>
+    <string name="fb_access_title">Faýllara girmäge rugsat ber</string>
+    <string name="fb_access_text">Programma üpjünçilik faýllaryňyzy sanawlamak we birnäçesini birbada saýlamak üçin brauzere faýllaryňyza girmek gerek. Şeýle hem ulgam saýlaýjysyny ulanyp bilersiňiz.</string>
+    <string name="fb_access_scoped">Android 10 çäklendirilen ýatdan ýüz öwürmedik programmalardan faýllaryň köpüsini gizleýär, şonuň üçin bu brauzer olary bu ýerde görkezip bilmeýär. Munuň ýerine ulgam saýlaýjysyny ulanyň.</string>
+    <string name="as_builtin_browser">Içine ýerleşdirilen faýl brauzeri</string>
+    <string name="as_builtin_browser_sub">Programma üpjünçiligini sene we ölçeg boýunça tertipläp we birnäçe faýly birbada saýlaň. Ulgam saýlaýjysyny ulanmak üçin öçüriň.</string>
+    <string name="imp_archive_alone">VM ätiýaçlyk nusgasy (.aessvm) beýleki faýllar bilen bilelikde däl-de, ýeke özi import edilmeli.</string>
+    <string name="imp_joining">%1$s faýlynyň %2$d bölegi birleşdirilýär…</string>
+    <string name="imp_split_missing">Bölünen %1$s arhiwiniň %2$s bölegi ýok. Onuň ähli böleklerini saýlaň ýa-da bir bukjada saklaň.</string>
+</resources>

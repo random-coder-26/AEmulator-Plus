@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Бібліятэка</string>
+    <string name="tab_close">Закрыць укладку</string>
+    <string name="tab_close_title">Закрыць %1$s?</string>
+    <string name="tab_close_text">«Згарнуць» закрывае ўкладку, але машына працягвае працаваць у фоне; адкрыйце яе зноў з бібліятэкі. «Выключыць» выключае машыну.</string>
+    <string name="tab_minimize">Згарнуць</string>
+    <string name="tab_shutdown">Выключыць</string>
+    <string name="vm_slots_full">Усе %1$d слотаў для машын занятыя. Спачатку выключыце адну.</string>
+    <string name="tab_group_title">2 укладкі</string>
+    <string name="tab_split_failed">Гэту машыну больш нельга дадаць на гэту ўкладку.</string>
+    <string name="tab_drag_label">Перацягніце на экран, каб падзяліць</string>
+    <string name="tab_split_title">Падзяліць 2 укладкі?</string>
+    <string name="tab_split_text">Кожная машына вернецца на асобную ўкладку. Абедзве працягнуць працаваць.</string>
+    <string name="tab_split_action">Падзяліць</string>
+    <string name="tab_bar_hide">Схаваць панэль укладак</string>
+    <string name="tab_bar_show">Паказаць панэль укладак</string>
+</resources>

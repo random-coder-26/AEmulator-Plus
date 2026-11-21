@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Biblioteka</string>
+    <string name="tab_close">Uždaryti skirtuką</string>
+    <string name="tab_close_title">Uždaryti „%1$s“?</string>
+    <string name="tab_close_text">„Sutraukti“ uždaro skirtuką, bet mašina toliau veikia fone; vėl atidarykite ją iš bibliotekos. „Išjungti“ išjungia mašiną.</string>
+    <string name="tab_minimize">Sutraukti</string>
+    <string name="tab_shutdown">Išjungti</string>
+    <string name="vm_slots_full">Visos %1$d mašinų vietos užimtos. Pirmiausia išjunkite vieną.</string>
+    <string name="tab_group_title">2 skirtukai</string>
+    <string name="tab_split_failed">Šios mašinos nebegalima pridėti prie šio skirtuko.</string>
+    <string name="tab_drag_label">Vilkite į ekraną, kad padalytumėte</string>
+    <string name="tab_split_title">Atskirti 2 skirtukus?</string>
+    <string name="tab_split_text">Kiekviena mašina grįžta į savo skirtuką. Abi toliau veikia.</string>
+    <string name="tab_split_action">Atskirti</string>
+    <string name="tab_bar_hide">Slėpti skirtukų juostą</string>
+    <string name="tab_bar_show">Rodyti skirtukų juostą</string>
+</resources>

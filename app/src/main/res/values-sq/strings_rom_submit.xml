@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Paraqit një ROM</string>
+    <string name="submit_action">Paraqit një ROM</string>
+    <string name="submit_intro">Ndaj një lidhje shkarkimi të një ROM-i. Paraqitjet shqyrtohen para se të shfaqen në katalog.</string>
+    <string name="submit_variant">Varianti</string>
+    <string name="submit_version">Kategoria e versionit</string>
+    <string name="submit_pick_variant_first">Zgjidh fillimisht një variant</string>
+    <string name="submit_name">Emri i ROM-it</string>
+    <string name="submit_rom_version">Versioni i ROM-it</string>
+    <string name="submit_device">Pajisja</string>
+    <string name="submit_url">URL e shkarkimit</string>
+    <string name="submit_size_mb">Madhësia e skedarit në MB (opsionale)</string>
+    <string name="submit_emulator">Versioni i emulatorit (opsionale)</string>
+    <string name="submit_by">Emri yt</string>
+    <string name="submit_notes">Shënime (opsionale)</string>
+    <string name="submit_send">Paraqit</string>
+    <string name="submit_required">E detyrueshme</string>
+    <string name="submit_bad_url">Fut një lidhje të vlefshme http(s)</string>
+    <string name="submit_bad_size">Fut një numër, 0 ose më shumë</string>
+    <string name="submit_success">Faleminderit! ROM-i yt u paraqit dhe do të shfaqet në katalog pas shqyrtimit.</string>
+    <string name="submit_another">Paraqit një tjetër</string>
+    <string name="submit_close">Mbyll</string>
+    <string name="submit_categories_failed">Kategoritë nuk u ngarkuan dot: %1$s</string>
+    <string name="submit_err_duplicate">Kjo lidhje shkarkimi është paraqitur tashmë.</string>
+    <string name="submit_err_rate_limited">Shumë paraqitje. Provo përsëri pas rreth %1$d min.</string>
+    <string name="submit_err_rejected">Serveri e refuzoi paraqitjen: %1$s</string>
+    <string name="submit_err_server">Serveri ktheu një gabim (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Serveri dërgoi një përgjigje të papritur.</string>
+    <string name="catalog_err_bad_json">Katalogu nuk është listë e vlefshme ROM-esh.</string>
+    <string name="catalog_err_too_many_roms">Katalogu ka më shumë se 10000 ROM.</string>
+    <string name="catalog_tested_on">Emulatori %1$s</string>
+    <string name="catalog_submitted_by">Paraqitur nga %1$s</string>
+</resources>

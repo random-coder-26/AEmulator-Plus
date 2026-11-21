@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">پارٹیشن امپورٹ کریں</string>
+    <string name="vm_import_partition_working">%1$s پارٹیشن پڑھا جا رہا ہے… امپورٹ سے پہلے تمام VMs روک دیں۔</string>
+    <string name="vm_import_partition_done">%1$s پارٹیشن امپورٹ اور ماؤنٹ ہو گیا۔ سسٹم اور ڈیٹا میں کوئی تبدیلی نہیں ہوئی۔</string>
+    <string name="vm_import_partition_exists">اس VM میں پہلے سے %1$s پارٹیشن موجود ہے۔</string>
+    <string name="vm_import_partition_conflict">VM کا فولڈر ڈھانچا اس پارٹیشن کی اجازت نہیں دیتا۔</string>
+    <string name="vm_import_partition_unsupported">%1$s امیج اس آپشن سے امپورٹ نہیں کی جا سکتی۔</string>
+    <string name="vm_import_partition_which">یہ کون سا پارٹیشن ہے؟</string>
+    <string name="vm_import_partition_which_info">فائل کے نام سے پتا نہیں چلتا کہ اس میں کیا ہے۔ پارٹیشن منتخب کریں۔</string>
+    <string name="vm_import_partition_have">%1$s (اس VM میں پہلے سے موجود)</string>
+    <string name="vm_import_partition_headline">اس VM میں پارٹیشن امیج امپورٹ کریں</string>
+    <string name="vm_import_partition_sub">Boot، recovery (اسٹاک، TWRP، OrangeFox یا CWM)، OEM، vendor، odm، product یا system_ext۔ قسم فائل سے پڑھی جاتی ہے؛ نہ پڑھی جا سکے تو آپ سے پوچھا جاتا ہے۔ صرف recovery موجودہ کی جگہ لیتا ہے؛ VM کا باقی حصہ تبدیل نہیں ہوتا۔ ⋮ مینو سے recovery میں ریبوٹ کریں۔</string>
+    <string name="vm_import_partition_button">امپورٹ کریں…</string>
+    <string name="vm_import_recovery_done">Recovery امپورٹ ہو گیا۔ اسے استعمال کرنے کے لیے ⋮ مینو سے recovery میں ریبوٹ کریں۔</string>
+</resources>

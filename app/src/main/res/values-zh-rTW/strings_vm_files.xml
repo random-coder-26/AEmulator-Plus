@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">瀏覽虛擬機檔案</string>
+    <string name="vmf_unreadable">無法讀取此資料夾。</string>
+    <string name="vmf_readonly_folder">唯讀：此資料夾不屬於虛擬機本身的檔案。你可以檢視與複製，但不能變更。</string>
+    <string name="vmf_link">連結</string>
+    <string name="vmf_no_folders">這裡沒有資料夾</string>
+    <string name="vmf_preview_failed">無法讀取此檔案。</string>
+    <string name="vmf_preview_truncated">顯示前 %1$s（共 %2$s）</string>
+    <string name="vmf_copy">複製</string>
+    <string name="vmf_copy_to">複製到</string>
+    <string name="vmf_copy_to_vm">此虛擬機中的其他位置</string>
+    <string name="vmf_copy_to_device">虛擬機之外（裝置儲存空間）</string>
+    <string name="vmf_copy_here">複製到此處</string>
+    <string name="vmf_new_folder">新增資料夾</string>
+    <string name="vmf_folder_name">資料夾名稱</string>
+    <string name="vmf_create">建立</string>
+    <string name="vmf_new_name">新名稱</string>
+    <string name="vmf_delete_one">要刪除「%1$s」嗎？此操作無法復原。</string>
+    <string name="vmf_delete_many">要刪除 %1$d 個項目嗎？此操作無法復原。</string>
+    <string name="vmf_delete_core">這是虛擬機的核心部分（分割區或映像檔）。沒有它，虛擬機可能無法再啟動。</string>
+    <string name="vmf_working_copy">正在複製…</string>
+    <string name="vmf_working_delete">正在刪除…</string>
+    <string name="vmf_working_rename">正在重新命名…</string>
+    <string name="vmf_result_copied">已複製：%1$d</string>
+    <string name="vmf_result_copied_skipped">已複製：%1$d。已略過：%2$d（指向虛擬機之外的連結、通訊端等）。</string>
+    <string name="vmf_result_deleted">已刪除：%1$d</string>
+    <string name="vmf_failed">失敗：%1$s</string>
+    <string name="vmf_readonly">此項目不屬於虛擬機本身的檔案，因此無法在此變更。</string>
+    <string name="vmf_protected">這屬於虛擬機本身的內部記錄，無法在此變更。</string>
+    <string name="vmf_bad_name">不允許使用該名稱。</string>
+    <string name="vmf_exists">已存在同名項目。</string>
+    <string name="vmf_no_space">可用空間不足。</string>
+</resources>

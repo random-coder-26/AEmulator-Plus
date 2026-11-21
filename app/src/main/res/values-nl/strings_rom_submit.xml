@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">ROM indienen</string>
+    <string name="submit_action">ROM indienen</string>
+    <string name="submit_intro">Deel een downloadlink voor een ROM. Inzendingen worden beoordeeld voordat ze in de catalogus verschijnen.</string>
+    <string name="submit_variant">Variant</string>
+    <string name="submit_version">Versiecategorie</string>
+    <string name="submit_pick_variant_first">Kies eerst een variant</string>
+    <string name="submit_name">ROM-naam</string>
+    <string name="submit_rom_version">ROM-versie</string>
+    <string name="submit_device">Apparaat</string>
+    <string name="submit_url">Download-URL</string>
+    <string name="submit_size_mb">Bestandsgrootte in MB (optioneel)</string>
+    <string name="submit_emulator">Emulatorversie (optioneel)</string>
+    <string name="submit_by">Je naam</string>
+    <string name="submit_notes">Opmerkingen (optioneel)</string>
+    <string name="submit_send">Indienen</string>
+    <string name="submit_required">Verplicht</string>
+    <string name="submit_bad_url">Voer een geldige http(s)-link in</string>
+    <string name="submit_bad_size">Voer een getal in, 0 of meer</string>
+    <string name="submit_success">Bedankt! Je ROM is ingediend en verschijnt na beoordeling in de catalogus.</string>
+    <string name="submit_another">Nog een indienen</string>
+    <string name="submit_close">Sluiten</string>
+    <string name="submit_categories_failed">Categorieën laden mislukt: %1$s</string>
+    <string name="submit_err_duplicate">Deze downloadlink is al ingediend.</string>
+    <string name="submit_err_rate_limited">Te veel inzendingen. Probeer het over ongeveer %1$d min opnieuw.</string>
+    <string name="submit_err_rejected">De server heeft de inzending afgewezen: %1$s</string>
+    <string name="submit_err_server">De server gaf een fout terug (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">De server stuurde een onverwacht antwoord.</string>
+    <string name="catalog_err_bad_json">De catalogus is geen geldige ROM-lijst.</string>
+    <string name="catalog_err_too_many_roms">De catalogus bevat meer dan 10000 ROM’s.</string>
+    <string name="catalog_tested_on">Emulator %1$s</string>
+    <string name="catalog_submitted_by">Ingediend door %1$s</string>
+</resources>

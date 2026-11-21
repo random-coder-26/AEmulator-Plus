@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Выберите файлы</string>
+    <string name="fb_title_single">Выберите файл</string>
+    <string name="fb_up">Вверх</string>
+    <string name="fb_system_picker">Системный выбор</string>
+    <string name="fb_use_system_picker">Использовать системный выбор</string>
+    <string name="fb_internal">Внутренняя память</string>
+    <string name="fb_removable">SD-карта / USB %1$d</string>
+    <string name="fb_downloads">Загрузки</string>
+    <string name="fb_documents">Документы</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Название</string>
+    <string name="fb_sort_date">Дата</string>
+    <string name="fb_sort_size">Размер</string>
+    <string name="fb_hidden">Скрытые</string>
+    <string name="fb_selected">Выбрано: %1$d</string>
+    <string name="fb_clear">Очистить</string>
+    <string name="fb_import">Импорт</string>
+    <string name="fb_empty">Здесь ничего нет</string>
+    <string name="fb_unreadable">Эту папку нельзя прочитать. Android закрывает некоторые папки (например, данные других приложений) для всех приложений.</string>
+    <string name="fb_access_title">Разрешить доступ к файлам</string>
+    <string name="fb_access_text">Чтобы показать файлы прошивки и выбрать сразу несколько, обозревателю нужен доступ к вашим файлам. Можно также использовать системный выбор.</string>
+    <string name="fb_access_scoped">Android 10 скрывает большинство файлов от приложений, не отказавшихся от изолированного хранилища, поэтому этот обозреватель не может показать их здесь. Используйте системный выбор.</string>
+    <string name="as_builtin_browser">Встроенный обозреватель файлов</string>
+    <string name="as_builtin_browser_sub">Выбор прошивки с сортировкой по дате и размеру и сразу нескольких файлов. Отключите, чтобы использовать системный выбор.</string>
+    <string name="imp_archive_alone">Резервную копию ВМ (.aessvm) нужно импортировать отдельно, а не вместе с другими файлами.</string>
+    <string name="imp_joining">Склеивание частей (%2$d) файла %1$s…</string>
+    <string name="imp_split_missing">Отсутствует часть %2$s разделённого архива %1$s. Выберите все его части или держите их в одной папке.</string>
+</resources>

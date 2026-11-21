@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Indsend en ROM</string>
+    <string name="submit_action">Indsend en ROM</string>
+    <string name="submit_intro">Del et downloadlink til en ROM. Indsendelser gennemgås, før de vises i kataloget.</string>
+    <string name="submit_variant">Variant</string>
+    <string name="submit_version">Versionskategori</string>
+    <string name="submit_pick_variant_first">Vælg først en variant</string>
+    <string name="submit_name">ROM-navn</string>
+    <string name="submit_rom_version">ROM-version</string>
+    <string name="submit_device">Enhed</string>
+    <string name="submit_url">Download-URL</string>
+    <string name="submit_size_mb">Filstørrelse i MB (valgfrit)</string>
+    <string name="submit_emulator">Emulatorversion (valgfrit)</string>
+    <string name="submit_by">Dit navn</string>
+    <string name="submit_notes">Noter (valgfrit)</string>
+    <string name="submit_send">Indsend</string>
+    <string name="submit_required">Påkrævet</string>
+    <string name="submit_bad_url">Angiv et gyldigt http(s)-link</string>
+    <string name="submit_bad_size">Angiv et tal, 0 eller mere</string>
+    <string name="submit_success">Tak! Din ROM er indsendt og vises i kataloget efter gennemgang.</string>
+    <string name="submit_another">Indsend en til</string>
+    <string name="submit_close">Luk</string>
+    <string name="submit_categories_failed">Kunne ikke indlæse kategorier: %1$s</string>
+    <string name="submit_err_duplicate">Dette downloadlink er allerede indsendt.</string>
+    <string name="submit_err_rate_limited">For mange indsendelser. Prøv igen om ca. %1$d min.</string>
+    <string name="submit_err_rejected">Serveren afviste indsendelsen: %1$s</string>
+    <string name="submit_err_server">Serveren returnerede en fejl (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Serveren sendte et uventet svar.</string>
+    <string name="catalog_err_bad_json">Kataloget er ikke en gyldig ROM-liste.</string>
+    <string name="catalog_err_too_many_roms">Kataloget har mere end 10000 ROM\'er.</string>
+    <string name="catalog_tested_on">Emulator %1$s</string>
+    <string name="catalog_submitted_by">Indsendt af %1$s</string>
+</resources>

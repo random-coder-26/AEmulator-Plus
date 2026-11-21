@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">ROMを投稿</string>
+    <string name="submit_action">ROMを投稿</string>
+    <string name="submit_intro">ROMのダウンロードリンクを共有してください。投稿はカタログに表示される前に審査されます。</string>
+    <string name="submit_variant">バリアント</string>
+    <string name="submit_version">バージョンカテゴリ</string>
+    <string name="submit_pick_variant_first">先にバリアントを選んでください</string>
+    <string name="submit_name">ROM名</string>
+    <string name="submit_rom_version">ROMバージョン</string>
+    <string name="submit_device">デバイス</string>
+    <string name="submit_url">ダウンロードURL</string>
+    <string name="submit_size_mb">ファイルサイズ（MB、任意）</string>
+    <string name="submit_emulator">エミュレーターのバージョン（任意）</string>
+    <string name="submit_by">お名前</string>
+    <string name="submit_notes">メモ（任意）</string>
+    <string name="submit_send">投稿</string>
+    <string name="submit_required">必須</string>
+    <string name="submit_bad_url">有効なhttp(s)リンクを入力してください</string>
+    <string name="submit_bad_size">0以上の数値を入力してください</string>
+    <string name="submit_success">ありがとうございます！ROMを投稿しました。審査後にカタログに表示されます。</string>
+    <string name="submit_another">続けて投稿</string>
+    <string name="submit_close">閉じる</string>
+    <string name="submit_categories_failed">カテゴリを読み込めませんでした: %1$s</string>
+    <string name="submit_err_duplicate">このダウンロードリンクはすでに投稿されています。</string>
+    <string name="submit_err_rate_limited">投稿が多すぎます。約 %1$d 分後にもう一度お試しください。</string>
+    <string name="submit_err_rejected">サーバーが投稿を拒否しました: %1$s</string>
+    <string name="submit_err_server">サーバーがエラーを返しました（HTTP %1$d）。</string>
+    <string name="submit_err_bad_response">サーバーから予期しない応答がありました。</string>
+    <string name="catalog_err_bad_json">カタログは有効なROMリストではありません。</string>
+    <string name="catalog_err_too_many_roms">カタログのROMが10000件を超えています。</string>
+    <string name="catalog_tested_on">エミュレーター %1$s</string>
+    <string name="catalog_submitted_by">投稿者: %1$s</string>
+</resources>

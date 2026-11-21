@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">ส่ง ROM</string>
+    <string name="submit_action">ส่ง ROM</string>
+    <string name="submit_intro">แชร์ลิงก์ดาวน์โหลด ROM ข้อมูลที่ส่งจะได้รับการตรวจสอบก่อนปรากฏในแคตตาล็อก</string>
+    <string name="submit_variant">ตัวแปร</string>
+    <string name="submit_version">หมวดหมู่เวอร์ชัน</string>
+    <string name="submit_pick_variant_first">เลือกตัวแปรก่อน</string>
+    <string name="submit_name">ชื่อ ROM</string>
+    <string name="submit_rom_version">เวอร์ชัน ROM</string>
+    <string name="submit_device">อุปกรณ์</string>
+    <string name="submit_url">URL ดาวน์โหลด</string>
+    <string name="submit_size_mb">ขนาดไฟล์เป็น MB (ไม่บังคับ)</string>
+    <string name="submit_emulator">เวอร์ชันโปรแกรมจำลอง (ไม่บังคับ)</string>
+    <string name="submit_by">ชื่อของคุณ</string>
+    <string name="submit_notes">หมายเหตุ (ไม่บังคับ)</string>
+    <string name="submit_send">ส่ง</string>
+    <string name="submit_required">จำเป็น</string>
+    <string name="submit_bad_url">ป้อนลิงก์ http(s) ที่ถูกต้อง</string>
+    <string name="submit_bad_size">ป้อนตัวเลข 0 หรือมากกว่า</string>
+    <string name="submit_success">ขอบคุณ! ส่ง ROM ของคุณแล้ว และจะปรากฏในแคตตาล็อกหลังการตรวจสอบ</string>
+    <string name="submit_another">ส่งอีกรายการ</string>
+    <string name="submit_close">ปิด</string>
+    <string name="submit_categories_failed">โหลดหมวดหมู่ไม่ได้: %1$s</string>
+    <string name="submit_err_duplicate">ลิงก์ดาวน์โหลดนี้ถูกส่งไปแล้ว</string>
+    <string name="submit_err_rate_limited">ส่งมากเกินไป ลองอีกครั้งในอีกประมาณ %1$d นาที</string>
+    <string name="submit_err_rejected">เซิร์ฟเวอร์ปฏิเสธรายการที่ส่ง: %1$s</string>
+    <string name="submit_err_server">เซิร์ฟเวอร์ส่งข้อผิดพลาดกลับมา (HTTP %1$d)</string>
+    <string name="submit_err_bad_response">เซิร์ฟเวอร์ส่งการตอบกลับที่ไม่คาดคิดมา</string>
+    <string name="catalog_err_bad_json">แคตตาล็อกไม่ใช่รายการ ROM ที่ถูกต้อง</string>
+    <string name="catalog_err_too_many_roms">แคตตาล็อกมี ROM มากกว่า 10000 รายการ</string>
+    <string name="catalog_tested_on">โปรแกรมจำลอง %1$s</string>
+    <string name="catalog_submitted_by">ส่งโดย %1$s</string>
+</resources>

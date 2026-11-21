@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Importera partition</string>
+    <string name="vm_import_partition_working">Läser %1$s-partitionen… Stoppa alla VM innan du importerar.</string>
+    <string name="vm_import_partition_done">%1$s-partitionen importerades och monterades. System och data är oförändrade.</string>
+    <string name="vm_import_partition_exists">Den här VM:en har redan en %1$s-partition.</string>
+    <string name="vm_import_partition_conflict">VM:ens mappstruktur tillåter inte den här partitionen.</string>
+    <string name="vm_import_partition_unsupported">En %1$s-avbild kan inte importeras med det här alternativet.</string>
+    <string name="vm_import_partition_which">Vilken partition är det här?</string>
+    <string name="vm_import_partition_which_info">Filnamnet säger inte vad filen innehåller. Välj partitionen.</string>
+    <string name="vm_import_partition_have">%1$s (finns redan i den här VM:en)</string>
+    <string name="vm_import_partition_headline">Importera en partitionsavbild till den här VM:en</string>
+    <string name="vm_import_partition_sub">Boot, recovery (original, TWRP, OrangeFox eller CWM), OEM, vendor, odm, product eller system_ext. Typen läses från filen; du får frågan när den inte kan läsas. Bara recovery ersätter en befintlig; resten av VM:en är oförändrad. Starta om till recovery från ⋮-menyn.</string>
+    <string name="vm_import_partition_button">Importera…</string>
+    <string name="vm_import_recovery_done">Recovery importerades. Starta om till recovery från ⋮-menyn för att använda den.</string>
+</resources>

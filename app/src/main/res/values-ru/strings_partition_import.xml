@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Импорт раздела</string>
+    <string name="vm_import_partition_working">Чтение раздела %1$s… Перед импортом остановите все ВМ.</string>
+    <string name="vm_import_partition_done">Раздел %1$s импортирован и подключён. Система и данные не изменены.</string>
+    <string name="vm_import_partition_exists">В этой ВМ уже есть раздел %1$s.</string>
+    <string name="vm_import_partition_conflict">Структура папок ВМ не допускает этот раздел.</string>
+    <string name="vm_import_partition_unsupported">Образ %1$s нельзя импортировать этим способом.</string>
+    <string name="vm_import_partition_which">Что это за раздел?</string>
+    <string name="vm_import_partition_which_info">По имени файла не понять, что в нём. Выберите раздел.</string>
+    <string name="vm_import_partition_have">%1$s (уже в этой ВМ)</string>
+    <string name="vm_import_partition_headline">Импорт образа раздела в эту ВМ</string>
+    <string name="vm_import_partition_sub">Boot, recovery (стандартный, TWRP, OrangeFox или CWM), OEM, vendor, odm, product или system_ext. Тип определяется по файлу; если не получилось, вас спросят. Заменяется только recovery; остальное в ВМ не меняется. Перезагрузитесь в recovery из меню ⋮.</string>
+    <string name="vm_import_partition_button">Импорт…</string>
+    <string name="vm_import_recovery_done">Recovery импортирован. Чтобы им воспользоваться, перезагрузитесь в recovery из меню ⋮.</string>
+</resources>

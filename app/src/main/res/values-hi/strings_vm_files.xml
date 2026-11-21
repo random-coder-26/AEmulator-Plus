@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">VM की फ़ाइलें ब्राउज़ करें</string>
+    <string name="vmf_unreadable">यह फ़ोल्डर पढ़ा नहीं जा सकता।</string>
+    <string name="vmf_readonly_folder">केवल पढ़ने के लिए: यह फ़ोल्डर VM की अपनी फ़ाइलों का हिस्सा नहीं है। आप देख और कॉपी कर सकते हैं, बदल नहीं सकते।</string>
+    <string name="vmf_link">लिंक</string>
+    <string name="vmf_no_folders">यहाँ कोई फ़ोल्डर नहीं</string>
+    <string name="vmf_preview_failed">यह फ़ाइल पढ़ी नहीं जा सकती।</string>
+    <string name="vmf_preview_truncated">%2$s में से पहले %1$s दिखाए जा रहे हैं</string>
+    <string name="vmf_copy">कॉपी करें</string>
+    <string name="vmf_copy_to">यहाँ कॉपी करें:</string>
+    <string name="vmf_copy_to_vm">इस VM में कोई दूसरी जगह</string>
+    <string name="vmf_copy_to_device">VM के बाहर (डिवाइस स्टोरेज)</string>
+    <string name="vmf_copy_here">यहाँ कॉपी करें</string>
+    <string name="vmf_new_folder">नया फ़ोल्डर</string>
+    <string name="vmf_folder_name">फ़ोल्डर का नाम</string>
+    <string name="vmf_create">बनाएँ</string>
+    <string name="vmf_new_name">नया नाम</string>
+    <string name="vmf_delete_one">\"%1$s\" हटाएँ? इसे पहले जैसा नहीं किया जा सकता।</string>
+    <string name="vmf_delete_many">%1$d आइटम हटाएँ? इसे पहले जैसा नहीं किया जा सकता।</string>
+    <string name="vmf_delete_core">यह VM का एक मुख्य हिस्सा है (पार्टीशन या इमेज)। इसके बिना VM शायद शुरू न हो।</string>
+    <string name="vmf_working_copy">कॉपी हो रहा है…</string>
+    <string name="vmf_working_delete">हटाया जा रहा है…</string>
+    <string name="vmf_working_rename">नाम बदला जा रहा है…</string>
+    <string name="vmf_result_copied">कॉपी हुए: %1$d</string>
+    <string name="vmf_result_copied_skipped">कॉपी हुए: %1$d। छोड़े गए: %2$d (VM के बाहर के लिंक, सॉकेट आदि)।</string>
+    <string name="vmf_result_deleted">हटाए गए: %1$d</string>
+    <string name="vmf_failed">विफल: %1$s</string>
+    <string name="vmf_readonly">यह आइटम VM की अपनी फ़ाइलों का हिस्सा नहीं है, इसलिए इसे यहाँ बदला नहीं जा सकता।</string>
+    <string name="vmf_protected">यह VM के अपने आंतरिक रिकॉर्ड का हिस्सा है और इसे यहाँ बदला नहीं जा सकता।</string>
+    <string name="vmf_bad_name">यह नाम अनुमत नहीं है।</string>
+    <string name="vmf_exists">इस नाम का आइटम पहले से मौजूद है।</string>
+    <string name="vmf_no_space">खाली जगह पर्याप्त नहीं है।</string>
+</resources>

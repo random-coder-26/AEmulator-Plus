@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">בחירת קבצים</string>
+    <string name="fb_title_single">בחירת קובץ</string>
+    <string name="fb_up">למעלה</string>
+    <string name="fb_system_picker">בורר המערכת</string>
+    <string name="fb_use_system_picker">להשתמש בבורר המערכת במקום</string>
+    <string name="fb_internal">אחסון פנימי</string>
+    <string name="fb_removable">כרטיס SD / USB %1$d</string>
+    <string name="fb_downloads">הורדות</string>
+    <string name="fb_documents">מסמכים</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">שם</string>
+    <string name="fb_sort_date">תאריך</string>
+    <string name="fb_sort_size">גודל</string>
+    <string name="fb_hidden">מוסתרים</string>
+    <string name="fb_selected">%1$d נבחרו</string>
+    <string name="fb_clear">נקה</string>
+    <string name="fb_import">ייבא</string>
+    <string name="fb_empty">אין כאן כלום</string>
+    <string name="fb_unreadable">לא ניתן לקרוא את התיקייה הזו. Android משאיר חלק מהתיקיות (כמו נתוני אפליקציות אחרות) סגורות בפני כל האפליקציות.</string>
+    <string name="fb_access_title">אפשר גישה לקבצים</string>
+    <string name="fb_access_text">כדי להציג את קובצי הקושחה שלך ולבחור כמה בבת אחת, הדפדפן זקוק לגישה לקבצים שלך. אפשר גם להשתמש בבורר המערכת במקום.</string>
+    <string name="fb_access_scoped">Android 10 מסתיר את רוב הקבצים מאפליקציות שלא ויתרו על אחסון בהיקף מוגבל, ולכן הדפדפן הזה לא יכול להציג אותם כאן. השתמש בבורר המערכת במקום.</string>
+    <string name="as_builtin_browser">דפדפן קבצים מובנה</string>
+    <string name="as_builtin_browser_sub">בחירת קושחה עם מיון לפי תאריך וגודל ובחירת כמה קבצים בבת אחת. כבה כדי להשתמש בבורר המערכת.</string>
+    <string name="imp_archive_alone">גיבוי של מכונה וירטואלית (.aessvm) חייב להיות מיובא לבדו, לא יחד עם קבצים אחרים.</string>
+    <string name="imp_joining">מחבר %2$d חלקים של %1$s…</string>
+    <string name="imp_split_missing">חלק %2$s של הארכיון המפוצל %1$s חסר. בחר את כל החלקים שלו או שמור אותם בתיקייה אחת.</string>
+</resources>

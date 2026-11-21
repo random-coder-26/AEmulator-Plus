@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">资料库</string>
+    <string name="tab_close">关闭标签页</string>
+    <string name="tab_close_title">关闭“%1$s”？</string>
+    <string name="tab_close_text">“最小化”会关闭标签页，但虚拟机仍在后台运行，可从资料库重新打开；“关机”会关闭虚拟机。</string>
+    <string name="tab_minimize">最小化</string>
+    <string name="tab_shutdown">关机</string>
+    <string name="vm_slots_full">%1$d 个虚拟机位置已全部占用，请先关闭其中一个。</string>
+    <string name="tab_group_title">2 个标签页</string>
+    <string name="tab_split_failed">该虚拟机无法再添加到此标签页。</string>
+    <string name="tab_drag_label">拖到屏幕上进行分屏</string>
+    <string name="tab_split_title">拆分 2 个标签页？</string>
+    <string name="tab_split_text">每台虚拟机会回到各自的标签页。两者都会继续运行。</string>
+    <string name="tab_split_action">拆分</string>
+    <string name="tab_bar_hide">隐藏标签栏</string>
+    <string name="tab_bar_show">显示标签栏</string>
+</resources>

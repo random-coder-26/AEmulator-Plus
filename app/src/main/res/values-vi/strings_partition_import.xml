@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Nhập phân vùng</string>
+    <string name="vm_import_partition_working">Đang đọc phân vùng %1$s… Hãy dừng mọi máy ảo trước khi nhập.</string>
+    <string name="vm_import_partition_done">Đã nhập và gắn phân vùng %1$s. Hệ thống và dữ liệu không thay đổi.</string>
+    <string name="vm_import_partition_exists">Máy ảo này đã có phân vùng %1$s.</string>
+    <string name="vm_import_partition_conflict">Cấu trúc thư mục của máy ảo không cho phép phân vùng này.</string>
+    <string name="vm_import_partition_unsupported">Không thể nhập ảnh %1$s bằng tùy chọn này.</string>
+    <string name="vm_import_partition_which">Đây là phân vùng nào?</string>
+    <string name="vm_import_partition_which_info">Tên tệp không cho biết nội dung. Hãy chọn phân vùng.</string>
+    <string name="vm_import_partition_have">%1$s (đã có trong máy ảo này)</string>
+    <string name="vm_import_partition_headline">Nhập ảnh phân vùng vào máy ảo này</string>
+    <string name="vm_import_partition_sub">Boot, recovery (gốc, TWRP, OrangeFox hoặc CWM), OEM, vendor, odm, product hoặc system_ext. Loại được đọc từ tệp; bạn sẽ được hỏi khi không đọc được. Chỉ recovery thay thế bản đã có; phần còn lại của máy ảo không thay đổi. Khởi động lại vào recovery từ menu ⋮.</string>
+    <string name="vm_import_partition_button">Nhập…</string>
+    <string name="vm_import_recovery_done">Đã nhập recovery. Khởi động lại vào recovery từ menu ⋮ để sử dụng.</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Senda inn ROM</string>
+    <string name="submit_action">Senda inn ROM</string>
+    <string name="submit_intro">Deildu niðurhalstengli á ROM. Innsendingar eru yfirfarnar áður en þær birtast í skránni.</string>
+    <string name="submit_variant">Afbrigði</string>
+    <string name="submit_version">Útgáfuflokkur</string>
+    <string name="submit_pick_variant_first">Veldu fyrst afbrigði</string>
+    <string name="submit_name">Heiti ROM</string>
+    <string name="submit_rom_version">Útgáfa ROM</string>
+    <string name="submit_device">Tæki</string>
+    <string name="submit_url">Niðurhals-URL</string>
+    <string name="submit_size_mb">Skráarstærð í MB (valfrjálst)</string>
+    <string name="submit_emulator">Útgáfa hermis (valfrjálst)</string>
+    <string name="submit_by">Nafnið þitt</string>
+    <string name="submit_notes">Athugasemdir (valfrjálst)</string>
+    <string name="submit_send">Senda</string>
+    <string name="submit_required">Nauðsynlegt</string>
+    <string name="submit_bad_url">Sláðu inn gildan http(s)-tengil</string>
+    <string name="submit_bad_size">Sláðu inn tölu, 0 eða hærri</string>
+    <string name="submit_success">Takk! ROM-ið þitt var sent inn og birtist í skránni eftir yfirferð.</string>
+    <string name="submit_another">Senda annað</string>
+    <string name="submit_close">Loka</string>
+    <string name="submit_categories_failed">Ekki tókst að hlaða flokkum: %1$s</string>
+    <string name="submit_err_duplicate">Þessi niðurhalstengill hefur þegar verið sendur inn.</string>
+    <string name="submit_err_rate_limited">Of margar innsendingar. Reyndu aftur eftir um %1$d mín.</string>
+    <string name="submit_err_rejected">Þjónninn hafnaði innsendingunni: %1$s</string>
+    <string name="submit_err_server">Þjónninn skilaði villu (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Þjónninn sendi óvænt svar.</string>
+    <string name="catalog_err_bad_json">Skráin er ekki gildur ROM-listi.</string>
+    <string name="catalog_err_too_many_roms">Í skránni eru fleiri en 10000 ROM.</string>
+    <string name="catalog_tested_on">Hermir %1$s</string>
+    <string name="catalog_submitted_by">Sent inn af %1$s</string>
+</resources>

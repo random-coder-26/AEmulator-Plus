@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Pilih file</string>
+    <string name="fb_title_single">Pilih file</string>
+    <string name="fb_up">Naik</string>
+    <string name="fb_system_picker">Pemilih sistem</string>
+    <string name="fb_use_system_picker">Gunakan pemilih sistem</string>
+    <string name="fb_internal">Penyimpanan internal</string>
+    <string name="fb_removable">Kartu SD / USB %1$d</string>
+    <string name="fb_downloads">Unduhan</string>
+    <string name="fb_documents">Dokumen</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Nama</string>
+    <string name="fb_sort_date">Tanggal</string>
+    <string name="fb_sort_size">Ukuran</string>
+    <string name="fb_hidden">Tersembunyi</string>
+    <string name="fb_selected">%1$d dipilih</string>
+    <string name="fb_clear">Bersihkan</string>
+    <string name="fb_import">Impor</string>
+    <string name="fb_empty">Tidak ada apa-apa di sini</string>
+    <string name="fb_unreadable">Folder ini tidak dapat dibaca. Android menutup beberapa folder (seperti data aplikasi lain) bagi semua aplikasi.</string>
+    <string name="fb_access_title">Izinkan akses ke file</string>
+    <string name="fb_access_text">Untuk menampilkan file firmware dan memilih beberapa sekaligus, peramban memerlukan akses ke file Anda. Anda juga dapat menggunakan pemilih sistem.</string>
+    <string name="fb_access_scoped">Android 10 menyembunyikan sebagian besar file dari aplikasi yang belum keluar dari penyimpanan terbatas, sehingga peramban ini tidak dapat menampilkannya di sini. Gunakan pemilih sistem.</string>
+    <string name="as_builtin_browser">Peramban file bawaan</string>
+    <string name="as_builtin_browser_sub">Pilih firmware dengan pengurutan berdasarkan tanggal dan ukuran serta beberapa file sekaligus. Matikan untuk menggunakan pemilih sistem.</string>
+    <string name="imp_archive_alone">Cadangan VM (.aessvm) harus diimpor sendiri, bukan bersama file lain.</string>
+    <string name="imp_joining">Menggabungkan %2$d bagian dari %1$s…</string>
+    <string name="imp_split_missing">Bagian %2$s dari arsip terpisah %1$s tidak ada. Pilih semua bagiannya atau simpan dalam satu folder.</string>
+</resources>

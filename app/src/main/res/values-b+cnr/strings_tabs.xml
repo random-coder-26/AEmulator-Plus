@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Biblioteka</string>
+    <string name="tab_close">Zatvori karticu</string>
+    <string name="tab_close_title">Zatvoriti %1$s?</string>
+    <string name="tab_close_text">“Umanji” zatvara karticu, a mašina nastavlja da radi u pozadini; ponovo je otvorite iz biblioteke. “Ugasi” isključuje mašinu.</string>
+    <string name="tab_minimize">Umanji</string>
+    <string name="tab_shutdown">Ugasi</string>
+    <string name="vm_slots_full">Sva %1$d mjesta za mašine su zauzeta. Prvo ugasite jednu.</string>
+    <string name="tab_group_title">2 kartice</string>
+    <string name="tab_split_failed">Ta mašina se više ne može dodati ovoj kartici.</string>
+    <string name="tab_drag_label">Povucite na ekran za podjelu</string>
+    <string name="tab_split_title">Razdvojiti 2 kartice?</string>
+    <string name="tab_split_text">Svaka mašina se vraća na vlastitu karticu. Obje nastavljaju raditi.</string>
+    <string name="tab_split_action">Razdvoji</string>
+    <string name="tab_bar_hide">Sakrij traku kartica</string>
+    <string name="tab_bar_show">Prikaži traku kartica</string>
+</resources>

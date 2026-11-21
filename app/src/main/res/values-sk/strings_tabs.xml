@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Knižnica</string>
+    <string name="tab_close">Zavrieť kartu</string>
+    <string name="tab_close_title">Zavrieť %1$s?</string>
+    <string name="tab_close_text">„Minimalizovať“ zavrie kartu a stroj ďalej beží na pozadí; znova ho otvorte z knižnice. „Vypnúť“ stroj vypne.</string>
+    <string name="tab_minimize">Minimalizovať</string>
+    <string name="tab_shutdown">Vypnúť</string>
+    <string name="vm_slots_full">Všetkých %1$d slotov pre stroje je obsadených. Najprv jeden vypnite.</string>
+    <string name="tab_group_title">2 karty</string>
+    <string name="tab_split_failed">Tento stroj už nemožno pridať k tejto karte.</string>
+    <string name="tab_drag_label">Presunutím na obrazovku rozdelíte</string>
+    <string name="tab_split_title">Rozdeliť 2 karty?</string>
+    <string name="tab_split_text">Každý stroj sa vráti na vlastnú kartu. Obidva naďalej bežia.</string>
+    <string name="tab_split_action">Rozdeliť</string>
+    <string name="tab_bar_hide">Skryť panel kariet</string>
+    <string name="tab_bar_show">Zobraziť panel kariet</string>
+</resources>

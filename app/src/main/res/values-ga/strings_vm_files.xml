@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">Brabhsáil comhaid an VM</string>
+    <string name="vmf_unreadable">Ní féidir an fillteán seo a léamh.</string>
+    <string name="vmf_readonly_folder">Inléite amháin: ní cuid de chomhaid féin an VM é an fillteán seo. Is féidir leat breathnú agus cóipeáil, ach gan athrú.</string>
+    <string name="vmf_link">Nasc</string>
+    <string name="vmf_no_folders">Níl fillteáin ar bith anseo</string>
+    <string name="vmf_preview_failed">Ní féidir an comhad seo a léamh.</string>
+    <string name="vmf_preview_truncated">Ag taispeáint na gcéad %1$s as %2$s</string>
+    <string name="vmf_copy">Cóipeáil</string>
+    <string name="vmf_copy_to">Cóipeáil go</string>
+    <string name="vmf_copy_to_vm">Áit eile sa VM seo</string>
+    <string name="vmf_copy_to_device">Lasmuigh den VM (stóras an ghléis)</string>
+    <string name="vmf_copy_here">Cóipeáil anseo</string>
+    <string name="vmf_new_folder">Fillteán nua</string>
+    <string name="vmf_folder_name">Ainm an fhillteáin</string>
+    <string name="vmf_create">Cruthaigh</string>
+    <string name="vmf_new_name">Ainm nua</string>
+    <string name="vmf_delete_one">Scrios “%1$s”? Ní féidir é seo a chealú.</string>
+    <string name="vmf_delete_many">Scrios %1$d mír? Ní féidir é seo a chealú.</string>
+    <string name="vmf_delete_core">Is cuid lárnach den VM é seo (deighilt nó íomhá). Gan é, b’fhéidir nach dtosóidh an VM a thuilleadh.</string>
+    <string name="vmf_working_copy">Á chóipeáil…</string>
+    <string name="vmf_working_delete">Á scriosadh…</string>
+    <string name="vmf_working_rename">Á athainmniú…</string>
+    <string name="vmf_result_copied">Cóipeáilte: %1$d</string>
+    <string name="vmf_result_copied_skipped">Cóipeáilte: %1$d. Scipeáilte: %2$d (naisc lasmuigh den VM, soic agus a leithéid).</string>
+    <string name="vmf_result_deleted">Scriosta: %1$d</string>
+    <string name="vmf_failed">Theip: %1$s</string>
+    <string name="vmf_readonly">Ní cuid de chomhaid féin an VM í an mhír seo, mar sin ní féidir í a athrú anseo.</string>
+    <string name="vmf_protected">Is cuid de thaifead inmheánach an VM é seo agus ní féidir é a athrú anseo.</string>
+    <string name="vmf_bad_name">Ní cheadaítear an t-ainm sin.</string>
+    <string name="vmf_exists">Tá mír leis an ainm sin ann cheana.</string>
+    <string name="vmf_no_space">Níl go leor spás saor ann.</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Pumili ng mga file</string>
+    <string name="fb_title_single">Pumili ng file</string>
+    <string name="fb_up">Pataas</string>
+    <string name="fb_system_picker">System picker</string>
+    <string name="fb_use_system_picker">Gamitin na lang ang system picker</string>
+    <string name="fb_internal">Internal storage</string>
+    <string name="fb_removable">SD card / USB %1$d</string>
+    <string name="fb_downloads">Mga Download</string>
+    <string name="fb_documents">Mga Dokumento</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Pangalan</string>
+    <string name="fb_sort_date">Petsa</string>
+    <string name="fb_sort_size">Laki</string>
+    <string name="fb_hidden">Nakatago</string>
+    <string name="fb_selected">%1$d ang napili</string>
+    <string name="fb_clear">I-clear</string>
+    <string name="fb_import">I-import</string>
+    <string name="fb_empty">Walang laman dito</string>
+    <string name="fb_unreadable">Hindi mabasa ang folder na ito. Isinasara ng Android ang ilang folder (tulad ng data ng ibang app) sa lahat ng app.</string>
+    <string name="fb_access_title">Payagan ang access sa mga file</string>
+    <string name="fb_access_text">Para ilista ang iyong mga firmware file at makapili ng marami nang sabay, kailangan ng browser ng access sa iyong mga file. Maaari mo ring gamitin na lang ang system picker.</string>
+    <string name="fb_access_scoped">Itinatago ng Android 10 ang karamihan ng mga file sa mga app na hindi umalis sa scoped storage, kaya hindi ito mailista ng browser na ito dito. Gamitin na lang ang system picker.</string>
+    <string name="as_builtin_browser">Built-in na file browser</string>
+    <string name="as_builtin_browser_sub">Pumili ng firmware na may pag-uuri ayon sa petsa at laki at maraming file nang sabay. I-off para gamitin ang system picker.</string>
+    <string name="imp_archive_alone">Ang VM backup (.aessvm) ay kailangang i-import nang mag-isa, hindi kasama ng iba pang file.</string>
+    <string name="imp_joining">Pinagsasama ang %2$d bahagi ng %1$s…</string>
+    <string name="imp_split_missing">Nawawala ang bahaging %2$s ng hinating archive na %1$s. Piliin ang lahat ng bahagi nito, o ilagay ang mga ito sa iisang folder.</string>
+</resources>

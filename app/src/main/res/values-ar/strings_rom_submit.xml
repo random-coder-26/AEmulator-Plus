@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">إرسال ROM</string>
+    <string name="submit_action">إرسال ROM</string>
+    <string name="submit_intro">شارك رابط تنزيل ROM. تُراجَع الطلبات المرسلة قبل ظهورها في الكتالوج.</string>
+    <string name="submit_variant">النسخة</string>
+    <string name="submit_version">فئة الإصدار</string>
+    <string name="submit_pick_variant_first">اختر نسخة أولًا</string>
+    <string name="submit_name">اسم ROM</string>
+    <string name="submit_rom_version">إصدار ROM</string>
+    <string name="submit_device">الجهاز</string>
+    <string name="submit_url">رابط التنزيل</string>
+    <string name="submit_size_mb">حجم الملف بالميغابايت (اختياري)</string>
+    <string name="submit_emulator">إصدار المحاكي (اختياري)</string>
+    <string name="submit_by">اسمك</string>
+    <string name="submit_notes">ملاحظات (اختياري)</string>
+    <string name="submit_send">إرسال</string>
+    <string name="submit_required">مطلوب</string>
+    <string name="submit_bad_url">أدخل رابط http(s) صالحًا</string>
+    <string name="submit_bad_size">أدخل رقمًا، 0 أو أكثر</string>
+    <string name="submit_success">شكرًا لك! تم إرسال ROM الخاص بك وسيظهر في الكتالوج بعد المراجعة.</string>
+    <string name="submit_another">إرسال آخر</string>
+    <string name="submit_close">إغلاق</string>
+    <string name="submit_categories_failed">تعذّر تحميل الفئات: %1$s</string>
+    <string name="submit_err_duplicate">تم إرسال رابط التنزيل هذا من قبل.</string>
+    <string name="submit_err_rate_limited">طلبات كثيرة جدًا. أعد المحاولة بعد حوالي %1$d دقيقة.</string>
+    <string name="submit_err_rejected">رفض الخادم الطلب: %1$s</string>
+    <string name="submit_err_server">أعاد الخادم خطأً (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">أرسل الخادم ردًا غير متوقع.</string>
+    <string name="catalog_err_bad_json">الكتالوج ليس قائمة ROM صالحة.</string>
+    <string name="catalog_err_too_many_roms">يحتوي الكتالوج على أكثر من 10000 ROM.</string>
+    <string name="catalog_tested_on">المحاكي %1$s</string>
+    <string name="catalog_submitted_by">أرسله %1$s</string>
+</resources>

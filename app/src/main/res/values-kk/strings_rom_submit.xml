@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">ROM жіберу</string>
+    <string name="submit_action">ROM жіберу</string>
+    <string name="submit_intro">ROM жүктеу сілтемесімен бөлісіңіз. Жіберілгендер каталогта көрінбес бұрын тексеріледі.</string>
+    <string name="submit_variant">Нұсқа түрі</string>
+    <string name="submit_version">Нұсқа санаты</string>
+    <string name="submit_pick_variant_first">Алдымен нұсқа түрін таңдаңыз</string>
+    <string name="submit_name">ROM атауы</string>
+    <string name="submit_rom_version">ROM нұсқасы</string>
+    <string name="submit_device">Құрылғы</string>
+    <string name="submit_url">Жүктеу URL мекенжайы</string>
+    <string name="submit_size_mb">Файл өлшемі МБ-мен (міндетті емес)</string>
+    <string name="submit_emulator">Эмулятор нұсқасы (міндетті емес)</string>
+    <string name="submit_by">Атыңыз</string>
+    <string name="submit_notes">Ескертпелер (міндетті емес)</string>
+    <string name="submit_send">Жіберу</string>
+    <string name="submit_required">Міндетті</string>
+    <string name="submit_bad_url">Жарамды http(s) сілтемесін енгізіңіз</string>
+    <string name="submit_bad_size">Сан енгізіңіз, 0 немесе одан көп</string>
+    <string name="submit_success">Рақмет! ROM жіберілді және тексеруден кейін каталогта пайда болады.</string>
+    <string name="submit_another">Тағы біреуін жіберу</string>
+    <string name="submit_close">Жабу</string>
+    <string name="submit_categories_failed">Санаттарды жүктеу мүмкін болмады: %1$s</string>
+    <string name="submit_err_duplicate">Бұл жүктеу сілтемесі бұрын жіберілген.</string>
+    <string name="submit_err_rate_limited">Жіберулер тым көп. Шамамен %1$d мин өткен соң қайталаңыз.</string>
+    <string name="submit_err_rejected">Сервер жіберуден бас тартты: %1$s</string>
+    <string name="submit_err_server">Сервер қате қайтарды (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Сервер күтпеген жауап жіберді.</string>
+    <string name="catalog_err_bad_json">Каталог жарамды ROM тізімі емес.</string>
+    <string name="catalog_err_too_many_roms">Каталогта 10000-нан астам ROM бар.</string>
+    <string name="catalog_tested_on">Эмулятор %1$s</string>
+    <string name="catalog_submitted_by">Жіберген: %1$s</string>
+</resources>

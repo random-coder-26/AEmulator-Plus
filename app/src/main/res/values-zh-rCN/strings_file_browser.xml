@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">选择文件</string>
+    <string name="fb_title_single">选择文件</string>
+    <string name="fb_up">上一级</string>
+    <string name="fb_system_picker">系统选择器</string>
+    <string name="fb_use_system_picker">改用系统选择器</string>
+    <string name="fb_internal">内部存储</string>
+    <string name="fb_removable">SD 卡 / USB %1$d</string>
+    <string name="fb_downloads">下载</string>
+    <string name="fb_documents">文档</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">名称</string>
+    <string name="fb_sort_date">日期</string>
+    <string name="fb_sort_size">大小</string>
+    <string name="fb_hidden">隐藏</string>
+    <string name="fb_selected">已选择 %1$d 项</string>
+    <string name="fb_clear">清除</string>
+    <string name="fb_import">导入</string>
+    <string name="fb_empty">这里什么也没有</string>
+    <string name="fb_unreadable">无法读取此文件夹。Android 会对所有应用关闭某些文件夹（例如其他应用的数据）。</string>
+    <string name="fb_access_title">允许访问文件</string>
+    <string name="fb_access_text">要列出固件文件并一次选择多个，浏览器需要访问你的文件。你也可以改用系统选择器。</string>
+    <string name="fb_access_scoped">Android 10 会对未退出分区存储的应用隐藏大多数文件，因此此浏览器无法在此列出它们。请改用系统选择器。</string>
+    <string name="as_builtin_browser">内置文件浏览器</string>
+    <string name="as_builtin_browser_sub">按日期和大小排序选择固件，并可一次选择多个文件。关闭后使用系统选择器。</string>
+    <string name="imp_archive_alone">虚拟机备份（.aessvm）必须单独导入，不能与其他文件一起导入。</string>
+    <string name="imp_joining">正在合并 %1$s 的 %2$d 个分卷…</string>
+    <string name="imp_split_missing">分卷压缩包 %1$s 缺少第 %2$s 部分。请选择所有分卷，或将它们放在同一文件夹中。</string>
+</resources>

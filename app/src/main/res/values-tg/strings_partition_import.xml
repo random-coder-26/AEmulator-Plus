@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Воридкунии бахш</string>
+    <string name="vm_import_partition_working">Бахши %1$s хонда шуда истодааст… Пеш аз воридкунӣ ҳамаи VM-ҳоро қатъ кунед.</string>
+    <string name="vm_import_partition_done">Бахши %1$s ворид ва васл карда шуд. Низом ва маълумот тағйир наёфтанд.</string>
+    <string name="vm_import_partition_exists">Дар ин VM аллакай бахши %1$s вуҷуд дорад.</string>
+    <string name="vm_import_partition_conflict">Сохтори ҷузвдонҳои VM ин бахшро иҷозат намедиҳад.</string>
+    <string name="vm_import_partition_unsupported">Тасвири %1$s-ро бо ин имконият ворид кардан мумкин нест.</string>
+    <string name="vm_import_partition_which">Ин кадом бахш аст?</string>
+    <string name="vm_import_partition_which_info">Номи файл нишон намедиҳад, ки дар он чӣ ҳаст. Бахшро интихоб кунед.</string>
+    <string name="vm_import_partition_have">%1$s (аллакай дар ин VM)</string>
+    <string name="vm_import_partition_headline">Воридкунии тасвири бахш ба ин VM</string>
+    <string name="vm_import_partition_sub">Boot, recovery (аслӣ, TWRP, OrangeFox ё CWM), OEM, vendor, odm, product ё system_ext. Навъ аз файл хонда мешавад; агар хонда нашавад, аз шумо мепурсанд. Танҳо recovery мавҷудаашро иваз мекунад; боқимондаи VM тағйир намеёбад. Аз менюи ⋮ ба recovery аз нав бор кунед.</string>
+    <string name="vm_import_partition_button">Воридкунӣ…</string>
+    <string name="vm_import_recovery_done">Recovery ворид шуд. Барои истифода аз он аз менюи ⋮ ба recovery аз нав бор кунед.</string>
+</resources>

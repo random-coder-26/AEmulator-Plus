@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Wybierz pliki</string>
+    <string name="fb_title_single">Wybierz plik</string>
+    <string name="fb_up">W górę</string>
+    <string name="fb_system_picker">Selektor systemowy</string>
+    <string name="fb_use_system_picker">Użyj zamiast tego selektora systemowego</string>
+    <string name="fb_internal">Pamięć wewnętrzna</string>
+    <string name="fb_removable">Karta SD / USB %1$d</string>
+    <string name="fb_downloads">Pobrane</string>
+    <string name="fb_documents">Dokumenty</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Nazwa</string>
+    <string name="fb_sort_date">Data</string>
+    <string name="fb_sort_size">Rozmiar</string>
+    <string name="fb_hidden">Ukryte</string>
+    <string name="fb_selected">Zaznaczono: %1$d</string>
+    <string name="fb_clear">Wyczyść</string>
+    <string name="fb_import">Importuj</string>
+    <string name="fb_empty">Nic tu nie ma</string>
+    <string name="fb_unreadable">Nie można odczytać tego folderu. Android trzyma niektóre foldery (np. dane innych aplikacji) zamknięte dla wszystkich aplikacji.</string>
+    <string name="fb_access_title">Zezwól na dostęp do plików</string>
+    <string name="fb_access_text">Aby wyświetlić pliki firmware i wybrać kilka naraz, przeglądarka potrzebuje dostępu do Twoich plików. Możesz też użyć zamiast tego selektora systemowego.</string>
+    <string name="fb_access_scoped">Android 10 ukrywa większość plików przed aplikacjami, które nie zrezygnowały z ograniczonego dostępu do pamięci, więc ta przeglądarka nie może ich tu wyświetlić. Użyj zamiast tego selektora systemowego.</string>
+    <string name="as_builtin_browser">Wbudowana przeglądarka plików</string>
+    <string name="as_builtin_browser_sub">Wybieraj firmware z sortowaniem według daty i rozmiaru oraz kilka plików naraz. Wyłącz, aby używać selektora systemowego.</string>
+    <string name="imp_archive_alone">Kopię zapasową VM (.aessvm) trzeba importować osobno, nie razem z innymi plikami.</string>
+    <string name="imp_joining">Łączenie %2$d części pliku %1$s…</string>
+    <string name="imp_split_missing">Brakuje części %2$s podzielonego archiwum %1$s. Zaznacz wszystkie jego części lub trzymaj je w jednym folderze.</string>
+</resources>

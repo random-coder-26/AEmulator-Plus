@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Impordi partitsioon</string>
+    <string name="vm_import_partition_working">Loetakse partitsiooni %1$s… Peata enne importi kõik VM-id.</string>
+    <string name="vm_import_partition_done">Partitsioon %1$s imporditi ja haakati. Süsteem ja andmed on muutmata.</string>
+    <string name="vm_import_partition_exists">Selles VM-is on partitsioon %1$s juba olemas.</string>
+    <string name="vm_import_partition_conflict">VM-i kaustastruktuur ei luba seda partitsiooni.</string>
+    <string name="vm_import_partition_unsupported">Kujutist %1$s ei saa selle valikuga importida.</string>
+    <string name="vm_import_partition_which">Mis partitsioon see on?</string>
+    <string name="vm_import_partition_which_info">Failinimi ei ütle, mis selles on. Vali partitsioon.</string>
+    <string name="vm_import_partition_have">%1$s (juba selles VM-is)</string>
+    <string name="vm_import_partition_headline">Impordi partitsioonikujutis sellesse VM-i</string>
+    <string name="vm_import_partition_sub">Boot, recovery (originaal, TWRP, OrangeFox või CWM), OEM, vendor, odm, product või system_ext. Tüüp loetakse failist; kui seda ei saa lugeda, küsitakse sinult. Ainult recovery asendab olemasoleva; ülejäänud VM jääb muutmata. Taaskäivita recovery’sse menüüst ⋮.</string>
+    <string name="vm_import_partition_button">Impordi…</string>
+    <string name="vm_import_recovery_done">Recovery imporditi. Selle kasutamiseks taaskäivita recovery’sse menüüst ⋮.</string>
+</resources>

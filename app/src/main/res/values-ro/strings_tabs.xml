@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Bibliotecă</string>
+    <string name="tab_close">Închide fila</string>
+    <string name="tab_close_title">Închizi %1$s?</string>
+    <string name="tab_close_text">„Minimizează” închide fila, iar mașina continuă să ruleze în fundal; deschide-o din nou din bibliotecă. „Oprește” oprește mașina.</string>
+    <string name="tab_minimize">Minimizează</string>
+    <string name="tab_shutdown">Oprește</string>
+    <string name="vm_slots_full">Toate cele %1$d sloturi pentru mașini sunt ocupate. Oprește mai întâi una.</string>
+    <string name="tab_group_title">2 file</string>
+    <string name="tab_split_failed">Această mașină nu mai poate fi adăugată la această filă.</string>
+    <string name="tab_drag_label">Trage pe ecran pentru a împărți</string>
+    <string name="tab_split_title">Separi cele 2 file?</string>
+    <string name="tab_split_text">Fiecare mașină revine la o filă proprie. Ambele rămân în funcțiune.</string>
+    <string name="tab_split_action">Separă</string>
+    <string name="tab_bar_hide">Ascunde bara de file</string>
+    <string name="tab_bar_show">Afișează bara de file</string>
+</resources>

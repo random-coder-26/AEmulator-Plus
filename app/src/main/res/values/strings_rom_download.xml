@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AEmulator Plus: strings of background ROM downloads (RomDownloadService.kt). Add the same names to the translated values-xx folders. -->
+<resources>
+    <string name="rom_dl_channel">ROM download</string>
+    <string name="rom_dl_channel_done">ROM download finished</string>
+    <string name="rom_dl_done">ROM downloaded</string>
+    <string name="rom_dl_done_text">Tap to import %1$s</string>
+    <string name="rom_dl_page">Download link</string>
+    <string name="rom_dl_page_text">This link is a web page. Tap to open it in the browser.</string>
+    <string name="rom_dl_failed">ROM download failed</string>
+    <string name="rom_dl_cannot_start">The download could not be started in the background.</string>
+    <string name="rom_dl_hide">Hide</string>
+    <string name="rom_dl_busy">A download is already in progress.</string>
+</resources>

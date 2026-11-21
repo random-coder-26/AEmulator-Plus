@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AEmulator Plus: the single "Import partition" option of the VM settings (PartitionImport.kt). Add the same names to the translated values-xx folders. -->
+<resources>
+    <string name="vm_import_partition">Import partition</string>
+    <string name="vm_import_partition_working">Reading %1$s partition… Stop all VMs before importing.</string>
+    <string name="vm_import_partition_done">%1$s partition imported and mounted. System and data are unchanged.</string>
+    <string name="vm_import_partition_exists">This VM already has a %1$s partition.</string>
+    <string name="vm_import_partition_conflict">The VM\'s folder layout does not allow this partition.</string>
+    <string name="vm_import_partition_unsupported">A %1$s image cannot be imported with this option.</string>
+    <string name="vm_import_partition_which">Which partition is this?</string>
+    <string name="vm_import_partition_which_info">The file name does not say what it holds. Pick the partition.</string>
+    <string name="vm_import_partition_have">%1$s (already in this VM)</string>
+    <string name="vm_import_partition_headline">Import a partition image into this VM</string>
+    <string name="vm_import_partition_sub">Boot, recovery (stock, TWRP, OrangeFox or CWM), OEM, vendor, odm, product or system_ext. The type is read from the file; you are asked when it cannot be. Only recovery replaces an existing one; the rest of the VM is unchanged. Reboot to recovery from the ⋮ menu.</string>
+    <string name="vm_import_partition_button">Import…</string>
+    <string name="vm_import_recovery_done">Recovery imported. Reboot to recovery from the ⋮ menu to use it.</string>
+</resources>

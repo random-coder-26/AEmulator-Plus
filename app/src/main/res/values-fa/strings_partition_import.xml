@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">وارد کردن پارتیشن</string>
+    <string name="vm_import_partition_working">در حال خواندن پارتیشن %1$s… پیش از وارد کردن همهٔ ماشینهای مجازی را متوقف کنید.</string>
+    <string name="vm_import_partition_done">پارتیشن %1$s وارد و متصل شد. سیستم و دادهها بدون تغییرند.</string>
+    <string name="vm_import_partition_exists">این ماشین مجازی از قبل پارتیشن %1$s دارد.</string>
+    <string name="vm_import_partition_conflict">ساختار پوشههای ماشین مجازی این پارتیشن را مجاز نمیکند.</string>
+    <string name="vm_import_partition_unsupported">تصویر %1$s را نمیتوان با این گزینه وارد کرد.</string>
+    <string name="vm_import_partition_which">این کدام پارتیشن است؟</string>
+    <string name="vm_import_partition_which_info">نام فایل نشان نمیدهد چه چیزی دارد. پارتیشن را انتخاب کنید.</string>
+    <string name="vm_import_partition_have">%1$s (از قبل در این ماشین مجازی)</string>
+    <string name="vm_import_partition_headline">وارد کردن تصویر پارتیشن به این ماشین مجازی</string>
+    <string name="vm_import_partition_sub">Boot، recovery (اصلی، TWRP، OrangeFox یا CWM)، OEM، vendor، odm، product یا system_ext. نوع از روی فایل خوانده میشود؛ اگر ممکن نباشد از شما پرسیده میشود. فقط recovery جایگزین موردِ موجود میشود؛ بقیهٔ ماشین مجازی بدون تغییر میماند. از منوی ⋮ به recovery ریبوت کنید.</string>
+    <string name="vm_import_partition_button">وارد کردن…</string>
+    <string name="vm_import_recovery_done">Recovery وارد شد. برای استفاده از آن، از منوی ⋮ به recovery ریبوت کنید.</string>
+</resources>

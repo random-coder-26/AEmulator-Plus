@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Esita ROM</string>
+    <string name="submit_action">Esita ROM</string>
+    <string name="submit_intro">Jaga ROM-i allalaadimislinki. Esitatud kirjed vaadatakse enne kataloogis ilmumist üle.</string>
+    <string name="submit_variant">Variant</string>
+    <string name="submit_version">Versiooni kategooria</string>
+    <string name="submit_pick_variant_first">Vali esmalt variant</string>
+    <string name="submit_name">ROM-i nimi</string>
+    <string name="submit_rom_version">ROM-i versioon</string>
+    <string name="submit_device">Seade</string>
+    <string name="submit_url">Allalaadimise URL</string>
+    <string name="submit_size_mb">Faili suurus MB-des (valikuline)</string>
+    <string name="submit_emulator">Emulaatori versioon (valikuline)</string>
+    <string name="submit_by">Sinu nimi</string>
+    <string name="submit_notes">Märkused (valikuline)</string>
+    <string name="submit_send">Esita</string>
+    <string name="submit_required">Kohustuslik</string>
+    <string name="submit_bad_url">Sisesta kehtiv http(s)-link</string>
+    <string name="submit_bad_size">Sisesta arv, 0 või rohkem</string>
+    <string name="submit_success">Aitäh! Sinu ROM on esitatud ja ilmub pärast ülevaatust kataloogi.</string>
+    <string name="submit_another">Esita veel üks</string>
+    <string name="submit_close">Sulge</string>
+    <string name="submit_categories_failed">Kategooriaid ei saanud laadida: %1$s</string>
+    <string name="submit_err_duplicate">See allalaadimislink on juba esitatud.</string>
+    <string name="submit_err_rate_limited">Liiga palju esitusi. Proovi uuesti umbes %1$d min pärast.</string>
+    <string name="submit_err_rejected">Server lükkas esituse tagasi: %1$s</string>
+    <string name="submit_err_server">Server tagastas vea (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Server saatis ootamatu vastuse.</string>
+    <string name="catalog_err_bad_json">Kataloog ei ole kehtiv ROM-ide loend.</string>
+    <string name="catalog_err_too_many_roms">Kataloogis on üle 10000 ROM-i.</string>
+    <string name="catalog_tested_on">Emulaator %1$s</string>
+    <string name="catalog_submitted_by">Esitaja: %1$s</string>
+</resources>

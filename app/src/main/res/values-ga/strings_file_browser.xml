@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Roghnaigh comhaid</string>
+    <string name="fb_title_single">Roghnaigh comhad</string>
+    <string name="fb_up">Suas</string>
+    <string name="fb_system_picker">Roghnóir an chórais</string>
+    <string name="fb_use_system_picker">Úsáid roghnóir an chórais ina ionad</string>
+    <string name="fb_internal">Stóras inmheánach</string>
+    <string name="fb_removable">Cárta SD / USB %1$d</string>
+    <string name="fb_downloads">Íoslódálacha</string>
+    <string name="fb_documents">Doiciméid</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Ainm</string>
+    <string name="fb_sort_date">Dáta</string>
+    <string name="fb_sort_size">Méid</string>
+    <string name="fb_hidden">Folaithe</string>
+    <string name="fb_selected">%1$d roghnaithe</string>
+    <string name="fb_clear">Glan</string>
+    <string name="fb_import">Iompórtáil</string>
+    <string name="fb_empty">Níl rud ar bith anseo</string>
+    <string name="fb_unreadable">Ní féidir an fillteán seo a léamh. Coimeádann Android roinnt fillteán (amhail sonraí aipeanna eile) dúnta do gach aip.</string>
+    <string name="fb_access_title">Lig rochtain ar chomhaid</string>
+    <string name="fb_access_text">Chun do chomhaid dathábhair a liostú agus go leor acu a roghnú in éineacht, teastaíonn rochtain ar do chomhaid ón mbrabhsálaí. Is féidir leat roghnóir an chórais a úsáid ina ionad freisin.</string>
+    <string name="fb_access_scoped">Folaíonn Android 10 formhór na gcomhad ó aipeanna nár éirigh as stóras sainchuimsithe, mar sin ní féidir leis an mbrabhsálaí seo iad a liostú anseo. Úsáid roghnóir an chórais ina ionad.</string>
+    <string name="as_builtin_browser">Brabhsálaí comhad ionsuite</string>
+    <string name="as_builtin_browser_sub">Roghnaigh dathábhar le sórtáil de réir dáta agus méide agus go leor comhad in éineacht. Múch chun roghnóir an chórais a úsáid.</string>
+    <string name="imp_archive_alone">Ní mór cúltaca VM (.aessvm) a iompórtáil as féin, ní in éineacht le comhaid eile.</string>
+    <string name="imp_joining">%2$d chuid de %1$s á gcomhcheangal…</string>
+    <string name="imp_split_missing">Tá cuid %2$s den chartlann roinnte %1$s ar iarraidh. Roghnaigh a codanna go léir, nó coinnigh in aon fhillteán amháin iad.</string>
+</resources>

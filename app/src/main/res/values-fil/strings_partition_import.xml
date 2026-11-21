@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">I-import ang partition</string>
+    <string name="vm_import_partition_working">Binabasa ang %1$s partition… Itigil ang lahat ng VM bago mag-import.</string>
+    <string name="vm_import_partition_done">Na-import at na-mount ang %1$s partition. Hindi nagbago ang system at data.</string>
+    <string name="vm_import_partition_exists">May %1$s partition na ang VM na ito.</string>
+    <string name="vm_import_partition_conflict">Hindi pinapayagan ng layout ng folder ng VM ang partition na ito.</string>
+    <string name="vm_import_partition_unsupported">Hindi ma-import ang %1$s image gamit ang opsyong ito.</string>
+    <string name="vm_import_partition_which">Anong partition ito?</string>
+    <string name="vm_import_partition_which_info">Hindi sinasabi ng pangalan ng file kung ano ang laman nito. Piliin ang partition.</string>
+    <string name="vm_import_partition_have">%1$s (nasa VM na ito)</string>
+    <string name="vm_import_partition_headline">Mag-import ng partition image sa VM na ito</string>
+    <string name="vm_import_partition_sub">Boot, recovery (stock, TWRP, OrangeFox o CWM), OEM, vendor, odm, product o system_ext. Binabasa ang uri mula sa file; tatanungin ka kapag hindi ito mabasa. Recovery lang ang pumapalit sa dati; hindi nagbabago ang natitirang bahagi ng VM. Mag-reboot sa recovery mula sa ⋮ menu.</string>
+    <string name="vm_import_partition_button">I-import…</string>
+    <string name="vm_import_recovery_done">Na-import ang recovery. Mag-reboot sa recovery mula sa ⋮ menu para magamit ito.</string>
+</resources>

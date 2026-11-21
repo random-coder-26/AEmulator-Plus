@@ -1,0 +1,20 @@
+--- a/modules/gralloc/gralloc.cpp	2026-11-17 10:30:17.059015642 +0000
++++ b/modules/gralloc/gralloc.cpp	2026-11-17 10:30:17.071020031 +0000
+@@ -134,7 +134,16 @@
+         // If we have only one buffer, we never use page-flipping. Instead,
+         // we return a regular buffer which will be memcpy'ed to the main
+         // screen when post is called.
+-        int newUsage = (usage & ~GRALLOC_USAGE_HW_FB) | GRALLOC_USAGE_HW_2D;
++        //
++        // We are called with m->lock held, and the pmem path in
++        // gralloc_alloc_buffer() goes through init_pmem_area(), which takes
++        // that same (non-recursive) lock: self-deadlock. So this buffer must
++        // be plain ashmem: clear every usage bit that makes
++        // gralloc_alloc_buffer() select pmem (HW_2D and HW_TEXTURE) instead
++        // of forcing HW_2D on.
++        int newUsage = usage & ~(GRALLOC_USAGE_HW_FB |
++                                 GRALLOC_USAGE_HW_2D |
++                                 GRALLOC_USAGE_HW_TEXTURE);
+         return gralloc_alloc_buffer(dev, bufferSize, newUsage, pHandle);
+     }
+ 

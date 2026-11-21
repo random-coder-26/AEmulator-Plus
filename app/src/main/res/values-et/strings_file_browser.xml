@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Vali failid</string>
+    <string name="fb_title_single">Vali fail</string>
+    <string name="fb_up">Üles</string>
+    <string name="fb_system_picker">Süsteemi valija</string>
+    <string name="fb_use_system_picker">Kasuta selle asemel süsteemi valijat</string>
+    <string name="fb_internal">Sisemälu</string>
+    <string name="fb_removable">SD-kaart / USB %1$d</string>
+    <string name="fb_downloads">Allalaadimised</string>
+    <string name="fb_documents">Dokumendid</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Nimi</string>
+    <string name="fb_sort_date">Kuupäev</string>
+    <string name="fb_sort_size">Suurus</string>
+    <string name="fb_hidden">Peidetud</string>
+    <string name="fb_selected">%1$d valitud</string>
+    <string name="fb_clear">Tühjenda</string>
+    <string name="fb_import">Impordi</string>
+    <string name="fb_empty">Siin pole midagi</string>
+    <string name="fb_unreadable">Seda kausta ei saa lugeda. Android hoiab mõned kaustad (nt teiste rakenduste andmed) kõigile rakendustele suletuna.</string>
+    <string name="fb_access_title">Luba juurdepääs failidele</string>
+    <string name="fb_access_text">Püsivara failide loetlemiseks ja mitme korraga valimiseks vajab brauser juurdepääsu teie failidele. Võite kasutada ka süsteemi valijat.</string>
+    <string name="fb_access_scoped">Android 10 peidab enamiku faile rakenduste eest, mis pole piiratud salvestusruumist loobunud, seega ei saa see brauser neid siin loetleda. Kasuta selle asemel süsteemi valijat.</string>
+    <string name="as_builtin_browser">Sisseehitatud failibrauser</string>
+    <string name="as_builtin_browser_sub">Vali püsivara sortimisega kuupäeva ja suuruse järgi ning mitu faili korraga. Lülita välja, et kasutada süsteemi valijat.</string>
+    <string name="imp_archive_alone">VM-i varukoopia (.aessvm) tuleb importida eraldi, mitte koos teiste failidega.</string>
+    <string name="imp_joining">Liidetakse faili %1$s %2$d osa…</string>
+    <string name="imp_split_missing">Jagatud arhiivi %1$s osa %2$s puudub. Vali kõik selle osad või hoia need ühes kaustas.</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Tuo osio</string>
+    <string name="vm_import_partition_working">Luetaan %1$s-osiota… Pysäytä kaikki VM:t ennen tuontia.</string>
+    <string name="vm_import_partition_done">%1$s-osio tuotu ja liitetty. Järjestelmä ja tiedot ovat ennallaan.</string>
+    <string name="vm_import_partition_exists">Tässä VM:ssä on jo %1$s-osio.</string>
+    <string name="vm_import_partition_conflict">VM:n kansiorakenne ei salli tätä osiota.</string>
+    <string name="vm_import_partition_unsupported">%1$s-kuvaa ei voi tuoda tällä vaihtoehdolla.</string>
+    <string name="vm_import_partition_which">Mikä osio tämä on?</string>
+    <string name="vm_import_partition_which_info">Tiedostonimi ei kerro, mitä se sisältää. Valitse osio.</string>
+    <string name="vm_import_partition_have">%1$s (jo tässä VM:ssä)</string>
+    <string name="vm_import_partition_headline">Tuo osiokuva tähän VM:ään</string>
+    <string name="vm_import_partition_sub">Boot, recovery (alkuperäinen, TWRP, OrangeFox tai CWM), OEM, vendor, odm, product tai system_ext. Tyyppi luetaan tiedostosta; sinulta kysytään, kun sitä ei voi lukea. Vain recovery korvaa olemassa olevan; muu VM pysyy ennallaan. Käynnistä uudelleen recoveryyn ⋮-valikosta.</string>
+    <string name="vm_import_partition_button">Tuo…</string>
+    <string name="vm_import_recovery_done">Recovery tuotu. Käytä sitä käynnistämällä uudelleen recoveryyn ⋮-valikosta.</string>
+</resources>

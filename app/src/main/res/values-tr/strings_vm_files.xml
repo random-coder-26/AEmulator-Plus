@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">VM dosyalarına göz at</string>
+    <string name="vmf_unreadable">Bu klasör okunamıyor.</string>
+    <string name="vmf_readonly_folder">Salt okunur: bu klasör VM’nin kendi dosyalarının parçası değil. Bakabilir ve kopyalayabilirsiniz, değiştiremezsiniz.</string>
+    <string name="vmf_link">Bağlantı</string>
+    <string name="vmf_no_folders">Burada klasör yok</string>
+    <string name="vmf_preview_failed">Bu dosya okunamıyor.</string>
+    <string name="vmf_preview_truncated">%2$s içinden ilk %1$s gösteriliyor</string>
+    <string name="vmf_copy">Kopyala</string>
+    <string name="vmf_copy_to">Şuraya kopyala</string>
+    <string name="vmf_copy_to_vm">Bu VM içinde başka bir yer</string>
+    <string name="vmf_copy_to_device">VM dışına (cihaz depolaması)</string>
+    <string name="vmf_copy_here">Buraya kopyala</string>
+    <string name="vmf_new_folder">Yeni klasör</string>
+    <string name="vmf_folder_name">Klasör adı</string>
+    <string name="vmf_create">Oluştur</string>
+    <string name="vmf_new_name">Yeni ad</string>
+    <string name="vmf_delete_one">“%1$s” silinsin mi? Bu geri alınamaz.</string>
+    <string name="vmf_delete_many">%1$d öğe silinsin mi? Bu geri alınamaz.</string>
+    <string name="vmf_delete_core">Bu, VM’nin temel bir parçasıdır (bir bölüm veya imaj). Olmadan VM artık başlamayabilir.</string>
+    <string name="vmf_working_copy">Kopyalanıyor…</string>
+    <string name="vmf_working_delete">Siliniyor…</string>
+    <string name="vmf_working_rename">Yeniden adlandırılıyor…</string>
+    <string name="vmf_result_copied">Kopyalanan: %1$d</string>
+    <string name="vmf_result_copied_skipped">Kopyalanan: %1$d. Atlanan: %2$d (VM dışına bağlantılar, soketler vb.).</string>
+    <string name="vmf_result_deleted">Silinen: %1$d</string>
+    <string name="vmf_failed">Başarısız: %1$s</string>
+    <string name="vmf_readonly">Bu öğe VM’nin kendi dosyalarının parçası olmadığından burada değiştirilemez.</string>
+    <string name="vmf_protected">Bu, VM’nin kendi iç kayıtlarının parçasıdır ve burada değiştirilemez.</string>
+    <string name="vmf_bad_name">Bu ada izin verilmiyor.</string>
+    <string name="vmf_exists">Bu adda bir öğe zaten var.</string>
+    <string name="vmf_no_space">Yeterli boş alan yok.</string>
+</resources>

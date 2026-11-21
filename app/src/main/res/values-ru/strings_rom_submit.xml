@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Предложить ROM</string>
+    <string name="submit_action">Предложить ROM</string>
+    <string name="submit_intro">Поделитесь ссылкой на загрузку ROM. Заявки проверяются, прежде чем попасть в каталог.</string>
+    <string name="submit_variant">Вариант</string>
+    <string name="submit_version">Категория версии</string>
+    <string name="submit_pick_variant_first">Сначала выберите вариант</string>
+    <string name="submit_name">Название ROM</string>
+    <string name="submit_rom_version">Версия ROM</string>
+    <string name="submit_device">Устройство</string>
+    <string name="submit_url">URL для загрузки</string>
+    <string name="submit_size_mb">Размер файла в МБ (необязательно)</string>
+    <string name="submit_emulator">Версия эмулятора (необязательно)</string>
+    <string name="submit_by">Ваше имя</string>
+    <string name="submit_notes">Примечания (необязательно)</string>
+    <string name="submit_send">Отправить</string>
+    <string name="submit_required">Обязательно</string>
+    <string name="submit_bad_url">Введите корректную ссылку http(s)</string>
+    <string name="submit_bad_size">Введите число, 0 или больше</string>
+    <string name="submit_success">Спасибо! Ваш ROM отправлен и появится в каталоге после проверки.</string>
+    <string name="submit_another">Отправить ещё</string>
+    <string name="submit_close">Закрыть</string>
+    <string name="submit_categories_failed">Не удалось загрузить категории: %1$s</string>
+    <string name="submit_err_duplicate">Эта ссылка на загрузку уже была отправлена.</string>
+    <string name="submit_err_rate_limited">Слишком много заявок. Повторите примерно через %1$d мин.</string>
+    <string name="submit_err_rejected">Сервер отклонил заявку: %1$s</string>
+    <string name="submit_err_server">Сервер вернул ошибку (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Сервер прислал неожиданный ответ.</string>
+    <string name="catalog_err_bad_json">Каталог не является корректным списком ROM.</string>
+    <string name="catalog_err_too_many_roms">В каталоге больше 10000 ROM.</string>
+    <string name="catalog_tested_on">Эмулятор %1$s</string>
+    <string name="catalog_submitted_by">Отправил(а): %1$s</string>
+    <string name="submit_not_direct_title">Нужна прямая ссылка</string>
+    <string name="submit_not_direct_text">Ссылка должна быть прямой ссылкой на файл прошивки. Ссылки на веб-страницы и на файлообменники, которые сначала открывают страницу, не принимаются.\n\nРекомендуемый сайт для загрузки — archive.org.</string>
+</resources>

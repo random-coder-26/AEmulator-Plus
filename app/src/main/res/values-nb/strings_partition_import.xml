@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Importer partisjon</string>
+    <string name="vm_import_partition_working">Leser %1$s-partisjonen… Stopp alle VM-er før import.</string>
+    <string name="vm_import_partition_done">%1$s-partisjonen er importert og montert. System og data er uendret.</string>
+    <string name="vm_import_partition_exists">Denne VM-en har allerede en %1$s-partisjon.</string>
+    <string name="vm_import_partition_conflict">VM-ens mappestruktur tillater ikke denne partisjonen.</string>
+    <string name="vm_import_partition_unsupported">Et %1$s-bilde kan ikke importeres med dette alternativet.</string>
+    <string name="vm_import_partition_which">Hvilken partisjon er dette?</string>
+    <string name="vm_import_partition_which_info">Filnavnet sier ikke hva den inneholder. Velg partisjonen.</string>
+    <string name="vm_import_partition_have">%1$s (allerede i denne VM-en)</string>
+    <string name="vm_import_partition_headline">Importer et partisjonsbilde til denne VM-en</string>
+    <string name="vm_import_partition_sub">Boot, recovery (original, TWRP, OrangeFox eller CWM), OEM, vendor, odm, product eller system_ext. Typen leses fra filen; du blir spurt når den ikke kan leses. Bare recovery erstatter en eksisterende; resten av VM-en er uendret. Start på nytt til recovery fra ⋮-menyen.</string>
+    <string name="vm_import_partition_button">Importer…</string>
+    <string name="vm_import_recovery_done">Recovery er importert. Start på nytt til recovery fra ⋮-menyen for å bruke den.</string>
+</resources>

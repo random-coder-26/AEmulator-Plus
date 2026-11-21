@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Könyvtár</string>
+    <string name="tab_close">Lap bezárása</string>
+    <string name="tab_close_title">Bezárja a következőt: %1$s?</string>
+    <string name="tab_close_text">A „Kicsinyítés” bezárja a lapot, de a gép a háttérben tovább fut; nyissa meg újra a könyvtárból. A „Leállítás” kikapcsolja a gépet.</string>
+    <string name="tab_minimize">Kicsinyítés</string>
+    <string name="tab_shutdown">Leállítás</string>
+    <string name="vm_slots_full">Minden géphely foglalt (%1$d). Előbb állítson le egyet.</string>
+    <string name="tab_group_title">2 lap</string>
+    <string name="tab_split_failed">Ez a gép már nem adható hozzá ehhez a laphoz.</string>
+    <string name="tab_drag_label">Húzd a képernyőre a szétválasztáshoz</string>
+    <string name="tab_split_title">Szétválasztod a 2 lapot?</string>
+    <string name="tab_split_text">Minden gép visszakerül a saját lapjára. Mindkettő tovább fut.</string>
+    <string name="tab_split_action">Szétválasztás</string>
+    <string name="tab_bar_hide">Lapsáv elrejtése</string>
+    <string name="tab_bar_show">Lapsáv megjelenítése</string>
+</resources>

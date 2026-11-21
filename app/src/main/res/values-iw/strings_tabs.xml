@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">ספרייה</string>
+    <string name="tab_close">סגור לשונית</string>
+    <string name="tab_close_title">לסגור את %1$s?</string>
+    <string name="tab_close_text">“מזער” סוגר את הלשונית ומשאיר את המכונה פועלת ברקע; פתח אותה שוב מהספרייה. “כבה” מכבה את המכונה.</string>
+    <string name="tab_minimize">מזער</string>
+    <string name="tab_shutdown">כבה</string>
+    <string name="vm_slots_full">כל %1$d משבצות המכונות בשימוש. כבה קודם אחת מהן.</string>
+    <string name="tab_group_title">2 לשוניות</string>
+    <string name="tab_split_failed">אי אפשר עוד להוסיף את המכונה הזו ללשונית הזו.</string>
+    <string name="tab_drag_label">גרור למסך כדי לפצל</string>
+    <string name="tab_split_title">לפצל 2 לשוניות?</string>
+    <string name="tab_split_text">כל מכונה חוזרת ללשונית משלה. שתיהן ממשיכות לפעול.</string>
+    <string name="tab_split_action">פיצול</string>
+    <string name="tab_bar_hide">הסתר את סרגל הלשוניות</string>
+    <string name="tab_bar_show">הצג את סרגל הלשוניות</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Bibliotek</string>
+    <string name="tab_close">Stäng flik</string>
+    <string name="tab_close_title">Vill du stänga %1$s?</string>
+    <string name="tab_close_text">”Minimera” stänger fliken men låter maskinen fortsätta köra i bakgrunden; öppna den igen från biblioteket. ”Stäng av” stänger av maskinen.</string>
+    <string name="tab_minimize">Minimera</string>
+    <string name="tab_shutdown">Stäng av</string>
+    <string name="vm_slots_full">Alla %1$d maskinplatser används. Stäng av en först.</string>
+    <string name="tab_group_title">2 flikar</string>
+    <string name="tab_split_failed">Den maskinen kan inte längre läggas till i den här fliken.</string>
+    <string name="tab_drag_label">Dra till skärmen för att dela</string>
+    <string name="tab_split_title">Dela upp 2 flikar?</string>
+    <string name="tab_split_text">Varje maskin går tillbaka till en egen flik. Båda fortsätter köra.</string>
+    <string name="tab_split_action">Dela upp</string>
+    <string name="tab_bar_hide">Dölj flikfältet</string>
+    <string name="tab_bar_show">Visa flikfältet</string>
+</resources>

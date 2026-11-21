@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">VMのファイルを参照</string>
+    <string name="vmf_unreadable">このフォルダは読み取れません。</string>
+    <string name="vmf_readonly_folder">読み取り専用: このフォルダはVM自身のファイルではありません。表示とコピーはできますが、変更はできません。</string>
+    <string name="vmf_link">リンク</string>
+    <string name="vmf_no_folders">ここにフォルダはありません</string>
+    <string name="vmf_preview_failed">このファイルは読み取れません。</string>
+    <string name="vmf_preview_truncated">%2$s のうち最初の %1$s を表示しています</string>
+    <string name="vmf_copy">コピー</string>
+    <string name="vmf_copy_to">コピー先</string>
+    <string name="vmf_copy_to_vm">このVM内の別の場所</string>
+    <string name="vmf_copy_to_device">VMの外（端末のストレージ）</string>
+    <string name="vmf_copy_here">ここにコピー</string>
+    <string name="vmf_new_folder">新しいフォルダ</string>
+    <string name="vmf_folder_name">フォルダ名</string>
+    <string name="vmf_create">作成</string>
+    <string name="vmf_new_name">新しい名前</string>
+    <string name="vmf_delete_one">「%1$s」を削除しますか？この操作は元に戻せません。</string>
+    <string name="vmf_delete_many">%1$d 件の項目を削除しますか？この操作は元に戻せません。</string>
+    <string name="vmf_delete_core">これはVMの中核となる部分（パーティションまたはイメージ）です。これがないと、VMが起動しなくなる可能性があります。</string>
+    <string name="vmf_working_copy">コピー中…</string>
+    <string name="vmf_working_delete">削除中…</string>
+    <string name="vmf_working_rename">名前を変更中…</string>
+    <string name="vmf_result_copied">コピー済み: %1$d</string>
+    <string name="vmf_result_copied_skipped">コピー済み: %1$d。スキップ: %2$d（VM外へのリンク、ソケットなど）。</string>
+    <string name="vmf_result_deleted">削除済み: %1$d</string>
+    <string name="vmf_failed">失敗: %1$s</string>
+    <string name="vmf_readonly">この項目はVM自身のファイルではないため、ここでは変更できません。</string>
+    <string name="vmf_protected">これはVM自身の管理情報の一部であり、ここでは変更できません。</string>
+    <string name="vmf_bad_name">その名前は使用できません。</string>
+    <string name="vmf_exists">その名前の項目はすでに存在します。</string>
+    <string name="vmf_no_space">空き容量が足りません。</string>
+</resources>

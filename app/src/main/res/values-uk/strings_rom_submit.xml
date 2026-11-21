@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">Запропонувати ROM</string>
+    <string name="submit_action">Запропонувати ROM</string>
+    <string name="submit_intro">Поділіться посиланням на завантаження ROM. Заявки перевіряються, перш ніж потрапити до каталогу.</string>
+    <string name="submit_variant">Варіант</string>
+    <string name="submit_version">Категорія версії</string>
+    <string name="submit_pick_variant_first">Спершу виберіть варіант</string>
+    <string name="submit_name">Назва ROM</string>
+    <string name="submit_rom_version">Версія ROM</string>
+    <string name="submit_device">Пристрій</string>
+    <string name="submit_url">URL для завантаження</string>
+    <string name="submit_size_mb">Розмір файлу в МБ (необов’язково)</string>
+    <string name="submit_emulator">Версія емулятора (необов’язково)</string>
+    <string name="submit_by">Ваше ім’я</string>
+    <string name="submit_notes">Примітки (необов’язково)</string>
+    <string name="submit_send">Надіслати</string>
+    <string name="submit_required">Обов’язково</string>
+    <string name="submit_bad_url">Введіть дійсне посилання http(s)</string>
+    <string name="submit_bad_size">Введіть число, 0 або більше</string>
+    <string name="submit_success">Дякуємо! Ваш ROM надіслано, і після перевірки він з’явиться в каталозі.</string>
+    <string name="submit_another">Надіслати ще</string>
+    <string name="submit_close">Закрити</string>
+    <string name="submit_categories_failed">Не вдалося завантажити категорії: %1$s</string>
+    <string name="submit_err_duplicate">Це посилання на завантаження вже надсилали.</string>
+    <string name="submit_err_rate_limited">Забагато заявок. Повторіть приблизно через %1$d хв.</string>
+    <string name="submit_err_rejected">Сервер відхилив заявку: %1$s</string>
+    <string name="submit_err_server">Сервер повернув помилку (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Сервер надіслав несподівану відповідь.</string>
+    <string name="catalog_err_bad_json">Каталог не є дійсним списком ROM.</string>
+    <string name="catalog_err_too_many_roms">У каталозі понад 10000 ROM.</string>
+    <string name="catalog_tested_on">Емулятор %1$s</string>
+    <string name="catalog_submitted_by">Надіслав(-ла): %1$s</string>
+</resources>

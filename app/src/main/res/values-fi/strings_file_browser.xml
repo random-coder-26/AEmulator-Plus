@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Valitse tiedostot</string>
+    <string name="fb_title_single">Valitse tiedosto</string>
+    <string name="fb_up">Ylös</string>
+    <string name="fb_system_picker">Järjestelmän valitsin</string>
+    <string name="fb_use_system_picker">Käytä sen sijaan järjestelmän valitsinta</string>
+    <string name="fb_internal">Sisäinen tallennustila</string>
+    <string name="fb_removable">SD-kortti / USB %1$d</string>
+    <string name="fb_downloads">Lataukset</string>
+    <string name="fb_documents">Asiakirjat</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Nimi</string>
+    <string name="fb_sort_date">Päiväys</string>
+    <string name="fb_sort_size">Koko</string>
+    <string name="fb_hidden">Piilotetut</string>
+    <string name="fb_selected">%1$d valittu</string>
+    <string name="fb_clear">Tyhjennä</string>
+    <string name="fb_import">Tuo</string>
+    <string name="fb_empty">Täällä ei ole mitään</string>
+    <string name="fb_unreadable">Tätä kansiota ei voi lukea. Android pitää joitakin kansioita (kuten muiden sovellusten tietoja) suljettuina kaikilta sovelluksilta.</string>
+    <string name="fb_access_title">Salli pääsy tiedostoihin</string>
+    <string name="fb_access_text">Jotta selain voi näyttää laiteohjelmistotiedostosi ja valita useita kerralla, sillä on oltava pääsy tiedostoihisi. Voit myös käyttää sen sijaan järjestelmän valitsinta.</string>
+    <string name="fb_access_scoped">Android 10 piilottaa useimmat tiedostot sovelluksilta, jotka eivät ole luopuneet rajatusta tallennustilasta, joten tämä selain ei voi luetella niitä tässä. Käytä sen sijaan järjestelmän valitsinta.</string>
+    <string name="as_builtin_browser">Sisäänrakennettu tiedostoselain</string>
+    <string name="as_builtin_browser_sub">Valitse laiteohjelmisto lajittelemalla päiväyksen ja koon mukaan ja valitse useita tiedostoja kerralla. Kytke pois käyttääksesi järjestelmän valitsinta.</string>
+    <string name="imp_archive_alone">VM-varmuuskopio (.aessvm) on tuotava erikseen, ei muiden tiedostojen kanssa.</string>
+    <string name="imp_joining">Yhdistetään tiedoston %1$s %2$d osaa…</string>
+    <string name="imp_split_missing">Jaetun arkiston %1$s osa %2$s puuttuu. Valitse kaikki sen osat tai pidä ne samassa kansiossa.</string>
+</resources>

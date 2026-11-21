@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">Pregledaj fajlove VM-a</string>
+    <string name="vmf_unreadable">Ovaj folder se ne može pročitati.</string>
+    <string name="vmf_readonly_folder">Samo za čitanje: ovaj folder nije dio vlastitih fajlova VM-a. Možete pregledati i kopirati, ali ne i mijenjati.</string>
+    <string name="vmf_link">Link</string>
+    <string name="vmf_no_folders">Ovdje nema foldera</string>
+    <string name="vmf_preview_failed">Ovaj fajl se ne može pročitati.</string>
+    <string name="vmf_preview_truncated">Prikazano prvih %1$s od %2$s</string>
+    <string name="vmf_copy">Kopiraj</string>
+    <string name="vmf_copy_to">Kopiraj u</string>
+    <string name="vmf_copy_to_vm">Drugo mjesto u ovoj VM</string>
+    <string name="vmf_copy_to_device">Izvan VM-a (memorija uređaja)</string>
+    <string name="vmf_copy_here">Kopiraj ovdje</string>
+    <string name="vmf_new_folder">Novi folder</string>
+    <string name="vmf_folder_name">Naziv foldera</string>
+    <string name="vmf_create">Napravi</string>
+    <string name="vmf_new_name">Novi naziv</string>
+    <string name="vmf_delete_one">Izbrisati „%1$s“? Ovo se ne može poništiti.</string>
+    <string name="vmf_delete_many">Izbrisati stavke (%1$d)? Ovo se ne može poništiti.</string>
+    <string name="vmf_delete_core">Ovo je ključni dio VM-a (particija ili slika). Bez njega se VM možda više neće pokrenuti.</string>
+    <string name="vmf_working_copy">Kopiranje…</string>
+    <string name="vmf_working_delete">Brisanje…</string>
+    <string name="vmf_working_rename">Preimenovanje…</string>
+    <string name="vmf_result_copied">Kopirano: %1$d</string>
+    <string name="vmf_result_copied_skipped">Kopirano: %1$d. Preskočeno: %2$d (linkovi izvan VM-a, utičnice i slično).</string>
+    <string name="vmf_result_deleted">Izbrisano: %1$d</string>
+    <string name="vmf_failed">Neuspjeh: %1$s</string>
+    <string name="vmf_readonly">Ova stavka nije dio vlastitih fajlova VM-a pa se ovdje ne može mijenjati.</string>
+    <string name="vmf_protected">Ovo je dio interne evidencije VM-a i ovdje se ne može mijenjati.</string>
+    <string name="vmf_bad_name">Taj naziv nije dozvoljen.</string>
+    <string name="vmf_exists">Stavka s tim nazivom već postoji.</string>
+    <string name="vmf_no_space">Nema dovoljno slobodnog prostora.</string>
+</resources>

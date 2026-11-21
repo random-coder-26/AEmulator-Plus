@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Izaberi fajlove</string>
+    <string name="fb_title_single">Izaberi fajl</string>
+    <string name="fb_up">Gore</string>
+    <string name="fb_system_picker">Sistemski birač</string>
+    <string name="fb_use_system_picker">Umjesto toga koristi sistemski birač</string>
+    <string name="fb_internal">Interna memorija</string>
+    <string name="fb_removable">SD kartica / USB %1$d</string>
+    <string name="fb_downloads">Preuzimanja</string>
+    <string name="fb_documents">Dokumenti</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Naziv</string>
+    <string name="fb_sort_date">Datum</string>
+    <string name="fb_sort_size">Veličina</string>
+    <string name="fb_hidden">Skriveno</string>
+    <string name="fb_selected">Izabrano: %1$d</string>
+    <string name="fb_clear">Očisti</string>
+    <string name="fb_import">Uvezi</string>
+    <string name="fb_empty">Ovdje nema ničega</string>
+    <string name="fb_unreadable">Ovaj folder se ne može pročitati. Android neke foldere (poput podataka drugih aplikacija) drži zatvorenima za sve aplikacije.</string>
+    <string name="fb_access_title">Dozvoli pristup fajlovima</string>
+    <string name="fb_access_text">Da bi prikazao vaše firmver fajlove i omogućio izbor više njih odjednom, pregledač treba pristup vašim fajlovima. Možete koristiti i sistemski birač.</string>
+    <string name="fb_access_scoped">Android 10 skriva većinu fajlova od aplikacija koje nisu odustale od ograničene memorije, pa ih ovaj pregledač ne može ovdje prikazati. Koristite sistemski birač.</string>
+    <string name="as_builtin_browser">Ugrađeni pregledač fajlova</string>
+    <string name="as_builtin_browser_sub">Izaberite firmver uz sortiranje po datumu i veličini i više fajlova odjednom. Isključite za korišćenje sistemskog birača.</string>
+    <string name="imp_archive_alone">Rezervnu kopiju VM-a (.aessvm) treba uvesti zasebno, a ne zajedno s drugim fajlovima.</string>
+    <string name="imp_joining">Spajanje dijelova (%2$d) fajla %1$s…</string>
+    <string name="imp_split_missing">Nedostaje dio %2$s podijeljene arhive %1$s. Izaberite sve njene dijelove ili ih držite u jednom folderu.</string>
+</resources>

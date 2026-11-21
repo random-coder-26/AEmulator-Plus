@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fb_title_multi">Zgjidh skedarë</string>
+    <string name="fb_title_single">Zgjidh një skedar</string>
+    <string name="fb_up">Lart</string>
+    <string name="fb_system_picker">Zgjedhësi i sistemit</string>
+    <string name="fb_use_system_picker">Përdor në vend të tij zgjedhësin e sistemit</string>
+    <string name="fb_internal">Hapësira e brendshme</string>
+    <string name="fb_removable">Kartë SD / USB %1$d</string>
+    <string name="fb_downloads">Shkarkimet</string>
+    <string name="fb_documents">Dokumentet</string>
+    <string name="fb_firmware">aemulator/firmware</string>
+    <string name="fb_sort_name">Emri</string>
+    <string name="fb_sort_date">Data</string>
+    <string name="fb_sort_size">Madhësia</string>
+    <string name="fb_hidden">Të fshehura</string>
+    <string name="fb_selected">%1$d të zgjedhura</string>
+    <string name="fb_clear">Pastro</string>
+    <string name="fb_import">Importo</string>
+    <string name="fb_empty">Këtu nuk ka asgjë</string>
+    <string name="fb_unreadable">Ky dosje nuk mund të lexohet. Android i mban disa dosje (si të dhënat e aplikacioneve të tjera) të mbyllura për të gjitha aplikacionet.</string>
+    <string name="fb_access_title">Lejo qasjen te skedarët</string>
+    <string name="fb_access_text">Që të listojë skedarët e firmuerit dhe të zgjedhësh disa njëherësh, shfletuesi ka nevojë për qasje te skedarët e tu. Mund të përdorësh edhe zgjedhësin e sistemit.</string>
+    <string name="fb_access_scoped">Android 10 fsheh pjesën më të madhe të skedarëve nga aplikacionet që nuk kanë hequr dorë nga ruajtja e kufizuar, prandaj ky shfletues nuk mund t’i listojë këtu. Përdor në vend të tij zgjedhësin e sistemit.</string>
+    <string name="as_builtin_browser">Shfletuesi i integruar i skedarëve</string>
+    <string name="as_builtin_browser_sub">Zgjidh firmuerin me renditje sipas datës dhe madhësisë dhe disa skedarë njëherësh. Çaktivizoje për të përdorur zgjedhësin e sistemit.</string>
+    <string name="imp_archive_alone">Një kopje rezervë e VM-së (.aessvm) duhet të importohet më vete, jo bashkë me skedarë të tjerë.</string>
+    <string name="imp_joining">Po bashkohen %2$d pjesë të %1$s…</string>
+    <string name="imp_split_missing">Mungon pjesa %2$s e arkivit të ndarë %1$s. Zgjidh të gjitha pjesët e tij ose mbaji në një dosje.</string>
+</resources>

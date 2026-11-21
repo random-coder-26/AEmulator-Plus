@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">导入分区</string>
+    <string name="vm_import_partition_working">正在读取 %1$s 分区… 导入前请停止所有虚拟机。</string>
+    <string name="vm_import_partition_done">已导入并挂载 %1$s 分区。系统和数据保持不变。</string>
+    <string name="vm_import_partition_exists">此虚拟机已有 %1$s 分区。</string>
+    <string name="vm_import_partition_conflict">虚拟机的文件夹结构不允许此分区。</string>
+    <string name="vm_import_partition_unsupported">无法用此选项导入 %1$s 映像。</string>
+    <string name="vm_import_partition_which">这是哪个分区？</string>
+    <string name="vm_import_partition_which_info">文件名无法说明其内容。请选择分区。</string>
+    <string name="vm_import_partition_have">%1$s（此虚拟机中已有）</string>
+    <string name="vm_import_partition_headline">将分区映像导入此虚拟机</string>
+    <string name="vm_import_partition_sub">支持 boot、recovery（原厂、TWRP、OrangeFox 或 CWM）、OEM、vendor、odm、product 或 system_ext。类型会从文件中读取；无法读取时会询问你。只有 recovery 会替换现有的；虚拟机的其余部分保持不变。请通过 ⋮ 菜单重启到 recovery。</string>
+    <string name="vm_import_partition_button">导入…</string>
+    <string name="vm_import_recovery_done">已导入 recovery。请通过 ⋮ 菜单重启到 recovery 来使用它。</string>
+</resources>

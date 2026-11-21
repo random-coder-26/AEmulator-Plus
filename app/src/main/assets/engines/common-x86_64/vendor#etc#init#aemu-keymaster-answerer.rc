@@ -1,0 +1,5 @@
+# The host side of the kiwi (Cuttlefish) keymaster client: makes /dev/hvc1 a pty and answers the keymaster channel on it.
+# Installed by TreeFixer only for ro.product.system.device containing "vsoc_kiwi_". This file sorts before
+# android.hardware.keymaster@4.1-service.remote.rc, so init defines (and starts) it first. Runs as root: it creates the /dev link.
+service aemu-keymaster-answerer /vendor/bin/hw/aemu-keymaster-answerer
+    class early_hal

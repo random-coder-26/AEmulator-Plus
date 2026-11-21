@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">VM fayllarına bax</string>
+    <string name="vmf_unreadable">Bu qovluğu oxumaq mümkün deyil.</string>
+    <string name="vmf_readonly_folder">Yalnız oxumaq üçün: bu qovluq VM-in öz fayllarına aid deyil. Baxa və kopyalaya bilərsiniz, dəyişə bilməzsiniz.</string>
+    <string name="vmf_link">Keçid</string>
+    <string name="vmf_no_folders">Burada qovluq yoxdur</string>
+    <string name="vmf_preview_failed">Bu faylı oxumaq mümkün deyil.</string>
+    <string name="vmf_preview_truncated">%2$s içindən ilk %1$s göstərilir</string>
+    <string name="vmf_copy">Kopyala</string>
+    <string name="vmf_copy_to">Bura kopyala:</string>
+    <string name="vmf_copy_to_vm">Bu VM-də başqa yer</string>
+    <string name="vmf_copy_to_device">VM-dən kənar (cihaz yaddaşı)</string>
+    <string name="vmf_copy_here">Bura kopyala</string>
+    <string name="vmf_new_folder">Yeni qovluq</string>
+    <string name="vmf_folder_name">Qovluq adı</string>
+    <string name="vmf_create">Yarat</string>
+    <string name="vmf_new_name">Yeni ad</string>
+    <string name="vmf_delete_one">“%1$s” silinsin? Bu geri qaytarıla bilməz.</string>
+    <string name="vmf_delete_many">%1$d element silinsin? Bu geri qaytarıla bilməz.</string>
+    <string name="vmf_delete_core">Bu VM-in əsas hissəsidir (bölmə və ya təsvir). Onsuz VM artıq başlamaya bilər.</string>
+    <string name="vmf_working_copy">Kopyalanır…</string>
+    <string name="vmf_working_delete">Silinir…</string>
+    <string name="vmf_working_rename">Adı dəyişdirilir…</string>
+    <string name="vmf_result_copied">Kopyalandı: %1$d</string>
+    <string name="vmf_result_copied_skipped">Kopyalandı: %1$d. Ötürüldü: %2$d (VM-dən kənara keçidlər, soketlər və s.).</string>
+    <string name="vmf_result_deleted">Silindi: %1$d</string>
+    <string name="vmf_failed">Uğursuz oldu: %1$s</string>
+    <string name="vmf_readonly">Bu element VM-in öz fayllarına aid deyil, ona görə burada dəyişdirilə bilməz.</string>
+    <string name="vmf_protected">Bu, VM-in daxili uçotunun bir hissəsidir və burada dəyişdirilə bilməz.</string>
+    <string name="vmf_bad_name">Bu ada icazə verilmir.</string>
+    <string name="vmf_exists">Bu adda element artıq var.</string>
+    <string name="vmf_no_space">Kifayət qədər boş yer yoxdur.</string>
+</resources>

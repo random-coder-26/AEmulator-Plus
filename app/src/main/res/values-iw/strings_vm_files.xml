@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vmf_browse">עיון בקבצי המכונה הווירטואלית</string>
+    <string name="vmf_unreadable">לא ניתן לקרוא את התיקייה הזו.</string>
+    <string name="vmf_readonly_folder">לקריאה בלבד: התיקייה הזו אינה חלק מהקבצים של המכונה הווירטואלית עצמה. אפשר להציג ולהעתיק, לא לשנות.</string>
+    <string name="vmf_link">קישור</string>
+    <string name="vmf_no_folders">אין כאן תיקיות</string>
+    <string name="vmf_preview_failed">לא ניתן לקרוא את הקובץ הזה.</string>
+    <string name="vmf_preview_truncated">מוצגים %1$s הראשונים מתוך %2$s</string>
+    <string name="vmf_copy">העתק</string>
+    <string name="vmf_copy_to">העתק אל</string>
+    <string name="vmf_copy_to_vm">מקום אחר במכונה הווירטואלית הזו</string>
+    <string name="vmf_copy_to_device">מחוץ למכונה הווירטואלית (אחסון המכשיר)</string>
+    <string name="vmf_copy_here">העתק לכאן</string>
+    <string name="vmf_new_folder">תיקייה חדשה</string>
+    <string name="vmf_folder_name">שם התיקייה</string>
+    <string name="vmf_create">צור</string>
+    <string name="vmf_new_name">שם חדש</string>
+    <string name="vmf_delete_one">למחוק את \"%1$s\"? אי אפשר לבטל פעולה זו.</string>
+    <string name="vmf_delete_many">למחוק %1$d פריטים? אי אפשר לבטל פעולה זו.</string>
+    <string name="vmf_delete_core">זה חלק מרכזי במכונה הווירטואלית (מחיצה או תמונה). בלעדיו ייתכן שהמכונה הווירטואלית לא תיטען עוד.</string>
+    <string name="vmf_working_copy">מעתיק…</string>
+    <string name="vmf_working_delete">מוחק…</string>
+    <string name="vmf_working_rename">משנה שם…</string>
+    <string name="vmf_result_copied">הועתקו: %1$d</string>
+    <string name="vmf_result_copied_skipped">הועתקו: %1$d. דולגו: %2$d (קישורים אל מחוץ למכונה הווירטואלית, סוקטים וכדומה).</string>
+    <string name="vmf_result_deleted">נמחקו: %1$d</string>
+    <string name="vmf_failed">נכשל: %1$s</string>
+    <string name="vmf_readonly">הפריט הזה אינו חלק מהקבצים של המכונה הווירטואלית עצמה, ולכן אי אפשר לשנות אותו כאן.</string>
+    <string name="vmf_protected">זה חלק מהרישום הפנימי של המכונה הווירטואלית ואי אפשר לשנות אותו כאן.</string>
+    <string name="vmf_bad_name">השם הזה אינו מותר.</string>
+    <string name="vmf_exists">כבר קיים פריט בשם הזה.</string>
+    <string name="vmf_no_space">אין מספיק מקום פנוי.</string>
+</resources>

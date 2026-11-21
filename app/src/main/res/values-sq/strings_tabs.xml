@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Biblioteka</string>
+    <string name="tab_close">Mbyll skedën</string>
+    <string name="tab_close_title">Të mbyllet %1$s?</string>
+    <string name="tab_close_text">“Minimizo” mbyll skedën dhe e lë makinën të vazhdojë në sfond; hape sërish nga biblioteka. “Fik” e fik makinën.</string>
+    <string name="tab_minimize">Minimizo</string>
+    <string name="tab_shutdown">Fik</string>
+    <string name="vm_slots_full">Të gjitha %1$d vendet për makina janë në përdorim. Fik fillimisht një.</string>
+    <string name="tab_group_title">2 skeda</string>
+    <string name="tab_split_failed">Ajo makinë nuk mund të shtohet më në këtë skedë.</string>
+    <string name="tab_drag_label">Zvarrite te ekrani për ta ndarë</string>
+    <string name="tab_split_title">Të ndahen 2 skeda?</string>
+    <string name="tab_split_text">Çdo makinë kthehet në skedën e vet. Të dyja vazhdojnë të punojnë.</string>
+    <string name="tab_split_action">Ndaj</string>
+    <string name="tab_bar_hide">Fshih shiritin e skedave</string>
+    <string name="tab_bar_show">Shfaq shiritin e skedave</string>
+</resources>

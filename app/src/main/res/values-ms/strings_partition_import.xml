@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">Import partition</string>
+    <string name="vm_import_partition_working">Membaca partition %1$s… Hentikan semua VM sebelum mengimport.</string>
+    <string name="vm_import_partition_done">Partition %1$s diimport dan dilekapkan. Sistem dan data tidak berubah.</string>
+    <string name="vm_import_partition_exists">VM ini sudah mempunyai partition %1$s.</string>
+    <string name="vm_import_partition_conflict">Susun atur folder VM tidak membenarkan partition ini.</string>
+    <string name="vm_import_partition_unsupported">Imej %1$s tidak boleh diimport dengan pilihan ini.</string>
+    <string name="vm_import_partition_which">Partition yang mana ini?</string>
+    <string name="vm_import_partition_which_info">Nama fail tidak menyatakan kandungannya. Pilih partition.</string>
+    <string name="vm_import_partition_have">%1$s (sudah ada dalam VM ini)</string>
+    <string name="vm_import_partition_headline">Import imej partition ke dalam VM ini</string>
+    <string name="vm_import_partition_sub">Boot, recovery (asal, TWRP, OrangeFox atau CWM), OEM, vendor, odm, product atau system_ext. Jenis dibaca daripada fail; anda akan ditanya jika tidak dapat dibaca. Hanya recovery menggantikan yang sedia ada; selebihnya VM tidak berubah. Mulakan semula ke recovery daripada menu ⋮.</string>
+    <string name="vm_import_partition_button">Import…</string>
+    <string name="vm_import_recovery_done">Recovery diimport. Mulakan semula ke recovery daripada menu ⋮ untuk menggunakannya.</string>
+</resources>

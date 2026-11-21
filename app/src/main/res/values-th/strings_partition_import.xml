@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vm_import_partition">นำเข้าพาร์ติชัน</string>
+    <string name="vm_import_partition_working">กำลังอ่านพาร์ติชัน %1$s… หยุด VM ทั้งหมดก่อนนำเข้า</string>
+    <string name="vm_import_partition_done">นำเข้าและเมานต์พาร์ติชัน %1$s แล้ว ระบบและข้อมูลไม่เปลี่ยนแปลง</string>
+    <string name="vm_import_partition_exists">VM นี้มีพาร์ติชัน %1$s อยู่แล้ว</string>
+    <string name="vm_import_partition_conflict">โครงสร้างโฟลเดอร์ของ VM ไม่รองรับพาร์ติชันนี้</string>
+    <string name="vm_import_partition_unsupported">นำเข้าอิมเมจ %1$s ด้วยตัวเลือกนี้ไม่ได้</string>
+    <string name="vm_import_partition_which">นี่คือพาร์ติชันอะไร</string>
+    <string name="vm_import_partition_which_info">ชื่อไฟล์ไม่ได้บอกว่าไฟล์นี้เก็บอะไร เลือกพาร์ติชัน</string>
+    <string name="vm_import_partition_have">%1$s (มีอยู่แล้วใน VM นี้)</string>
+    <string name="vm_import_partition_headline">นำเข้าอิมเมจพาร์ติชันไปยัง VM นี้</string>
+    <string name="vm_import_partition_sub">รองรับ boot, recovery (ต้นฉบับ, TWRP, OrangeFox หรือ CWM), OEM, vendor, odm, product หรือ system_ext ระบบอ่านประเภทจากไฟล์ และจะถามเมื่ออ่านไม่ได้ มีเพียง recovery ที่แทนที่ของเดิม ส่วนที่เหลือของ VM ไม่เปลี่ยนแปลง รีบูตเข้า recovery จากเมนู ⋮</string>
+    <string name="vm_import_partition_button">นำเข้า…</string>
+    <string name="vm_import_recovery_done">นำเข้า recovery แล้ว รีบูตเข้า recovery จากเมนู ⋮ เพื่อใช้งาน</string>
+</resources>

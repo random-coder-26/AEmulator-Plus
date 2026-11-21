@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added for AEmulator Plus, 2026-11-10: tabs and several machines at once -->
+<resources>
+    <string name="tab_home">Библиотека</string>
+    <string name="tab_close">Затваряне на раздела</string>
+    <string name="tab_close_title">Да се затвори ли %1$s?</string>
+    <string name="tab_close_text">„Свиване“ затваря раздела, а машината продължава да работи на заден план; отворете я отново от библиотеката. „Изключване“ изключва машината.</string>
+    <string name="tab_minimize">Свиване</string>
+    <string name="tab_shutdown">Изключване</string>
+    <string name="vm_slots_full">Всички %1$d слота за машини са заети. Първо изключете една.</string>
+    <string name="tab_group_title">2 раздела</string>
+    <string name="tab_split_failed">Тази машина вече не може да бъде добавена към този раздел.</string>
+    <string name="tab_drag_label">Плъзнете върху екрана за разделяне</string>
+    <string name="tab_split_title">Разделяне на 2 раздела?</string>
+    <string name="tab_split_text">Всяка машина се връща в собствен раздел. И двете продължават да работят.</string>
+    <string name="tab_split_action">Разделяне</string>
+    <string name="tab_bar_hide">Скриване на лентата с раздели</string>
+    <string name="tab_bar_show">Показване на лентата с раздели</string>
+</resources>

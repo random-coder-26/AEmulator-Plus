@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit_title">ROM iber</string>
+    <string name="submit_action">ROM iber</string>
+    <string name="submit_intro">ROM ýüklemek baglanyşygy bilen paýlaşyň. Iberilenler katalogda peýda bolmazdan öň gözden geçirilýär.</string>
+    <string name="submit_variant">Warianty</string>
+    <string name="submit_version">Wersiýa kategoriýasy</string>
+    <string name="submit_pick_variant_first">Ilki wariant saýlaň</string>
+    <string name="submit_name">ROM ady</string>
+    <string name="submit_rom_version">ROM wersiýasy</string>
+    <string name="submit_device">Enjam</string>
+    <string name="submit_url">Ýüklemek URL salgysy</string>
+    <string name="submit_size_mb">Faýlyň ölçegi MB bilen (hökman däl)</string>
+    <string name="submit_emulator">Emulýator wersiýasy (hökman däl)</string>
+    <string name="submit_by">Adyňyz</string>
+    <string name="submit_notes">Bellikler (hökman däl)</string>
+    <string name="submit_send">Iber</string>
+    <string name="submit_required">Hökmany</string>
+    <string name="submit_bad_url">Dogry http(s) baglanyşygyny giriziň</string>
+    <string name="submit_bad_size">San giriziň, 0 ýa-da ondan köp</string>
+    <string name="submit_success">Sag boluň! ROM-yňyz iberildi we gözden geçirilenden soň katalogda peýda bolar.</string>
+    <string name="submit_another">Ýene birini iber</string>
+    <string name="submit_close">Ýap</string>
+    <string name="submit_categories_failed">Kategoriýalary ýükläp bolmady: %1$s</string>
+    <string name="submit_err_duplicate">Bu ýüklemek baglanyşygy eýýäm iberildi.</string>
+    <string name="submit_err_rate_limited">Gaty köp iberildi. Takmynan %1$d min. soň täzeden synanyşyň.</string>
+    <string name="submit_err_rejected">Serwer iberileni ret etdi: %1$s</string>
+    <string name="submit_err_server">Serwer ýalňyşlyk gaýtardy (HTTP %1$d).</string>
+    <string name="submit_err_bad_response">Serwer garaşylmadyk jogap iberdi.</string>
+    <string name="catalog_err_bad_json">Katalog dogry ROM sanawy däl.</string>
+    <string name="catalog_err_too_many_roms">Katalogda 10000-den köp ROM bar.</string>
+    <string name="catalog_tested_on">Emulýator %1$s</string>
+    <string name="catalog_submitted_by">Iberen: %1$s</string>
+</resources>
